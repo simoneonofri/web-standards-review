@@ -1,0 +1,212 @@
+{
+  "coverage": {
+    "device-sensor-and-native-boundaries": "supported",
+    "permission-lifecycle": "supported",
+    "user-intent-and-trusted-ui": "supported"
+  },
+  "derived_pattern_candidates": [
+    {
+      "derivation_chain": {
+        "alternative_interpretation": "errors may be intentionally coarse in omitted text",
+        "conclusion": "error behavior may create an oracle",
+        "confidence": 0.58,
+        "inference_rule": "error behavior",
+        "missing_evidence": [
+          "complete error privacy rationale"
+        ],
+        "premises": [
+          "errors differ by state",
+          "caller can observe errors"
+        ]
+      },
+      "pattern_id": "candidate-error-oracle"
+    }
+  ],
+  "explicit_patterns": [],
+  "limitations": [
+    "synthetic fixture, not W3C evidence"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no script loading behavior is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "artifact_id": "art-device-capability-api",
+          "evidence_span": "If document does not have transient activation, reject with NotAllowedError.",
+          "interpretation": "The request algorithm requires transient user activation.",
+          "locator": "section 1",
+          "normative_strength": "must",
+          "source_id": "src-device-capability-api",
+          "source_kind": "normative-algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-device-capability-api-01",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "user-intent-and-trusted-ui",
+      "security_properties": [
+        "authorization"
+      ],
+      "spec_id": "device-capability-api",
+      "spec_version": "2026-01-01",
+      "statement": "The request algorithm requires transient user activation.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "artifact_id": "art-device-capability-api",
+          "evidence_span": "The user agent invokes the platform device service.",
+          "interpretation": "The operation crosses from web content to a native capability.",
+          "locator": "section 2",
+          "normative_strength": "must",
+          "source_id": "src-device-capability-api",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-device-capability-api-02",
+      "observation_type": "trust-boundary",
+      "open_questions": [],
+      "security_category": "device-sensor-and-native-boundaries",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "device-capability-api",
+      "spec_version": "2026-01-01",
+      "statement": "The operation crosses from web content to a native capability.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.42,
+      "evidence": [],
+      "evidence_class": "hypothesis",
+      "observation_id": "obs-device-capability-api-03",
+      "observation_type": "unresolved-question",
+      "open_questions": [
+        "source text missing"
+      ],
+      "security_category": "permission-lifecycle",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "device-capability-api",
+      "spec_version": "2026-01-01",
+      "statement": "Permission revocation behavior is not supplied.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    }
+  ],
+  "optional_spec_profile": {
+    "facets": [
+      "webidl-javascript",
+      "sensor-device",
+      "native-capability",
+      "iframe",
+      "bfcache"
+    ],
+    "primary_family": null,
+    "secondary_families": []
+  },
+  "security_checks": [],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "protected capability"
+    ],
+    "attacker_models": [
+      "malicious-origin"
+    ],
+    "capabilities": [],
+    "components": [
+      "browser"
+    ],
+    "dependencies": [],
+    "entry_points": [
+      "invoke"
+    ],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "origin-boundary"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithms",
+      "webidl"
+    ],
+    "limitations": [
+      "synthetic fixture"
+    ],
+    "missing_artifacts": [
+      "full dependency text"
+    ],
+    "score": 0.75
+  },
+  "specification": {
+    "spec_id": "device-capability-api",
+    "title": "Device Capability Api",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}

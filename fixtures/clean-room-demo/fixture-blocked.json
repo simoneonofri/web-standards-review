@@ -1,0 +1,14 @@
+{
+  "schema_version": "threat-modeling-flow-fixture/v1",
+  "fixture_id": "clean-room-blocked-v1",
+  "expected_outcome": "blocked",
+  "publication_authorized": false,
+  "expected_contract_failure": true,
+  "artifacts": {
+    "model": "fixtures/clean-room-demo/model.json",
+    "dictionary": "fixtures/clean-room-demo/dictionary.json",
+    "threats": "fixtures/clean-room-demo/threats-invalid-model-id.json",
+    "quality_gate": "fixtures/clean-room-demo/quality-gate-blocked.json"
+  },
+  "provider_requirements": []
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/web-standards-review/review-lock-v1.schema.json",
+  "title": "Web Standards Review lock v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "skill", "marketplace", "version", "commit", "artifact_digest", "overlay_version", "overlay_digest", "contract_versions", "generated_digest", "core_path"],
+  "properties": {
+    "schema_version": {"const": "review-lock/v1"},
+    "skill": {"type": "string"},
+    "marketplace": {"const": "web-standards-review"},
+    "version": {"type": "string"},
+    "commit": {"type": "string"},
+    "artifact_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "overlay_version": {"type": ["string", "integer"]},
+    "overlay_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "contract_versions": {"type": "object", "additionalProperties": {"type": "string"}},
+    "generated_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "core_path": {"type": "string"}
+  }
+}

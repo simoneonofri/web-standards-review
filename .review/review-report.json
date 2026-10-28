@@ -1,0 +1,11 @@
+{
+  "boundary_status": "pass",
+  "export_manifest_sha256": "sha256:0016a5f3eef0f770a10aea671920f200e29c44a98c036ce309b3983db6953c61",
+  "human_review_required": true,
+  "publication_status": "publication_review_required",
+  "remote_created": false,
+  "remote_write": false,
+  "rights_status": "pass",
+  "schema_version": "marketplace-export-review/v1",
+  "source_commit": "f09aa45868e9933c3e3f8cc3145a7e8620a6f470"
+}

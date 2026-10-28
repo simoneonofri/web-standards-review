@@ -1,0 +1,107 @@
+{
+  "files": {
+    ".review/boundary-audit.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/projection.diff": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/provenance.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/rights.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    "PROJECT_STATUS.md": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "SKILL.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/artifact-contract.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/feature-scope.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/feature-scope.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/integrated-threat-model.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/method.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/review-bundle.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/__init__.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/materialize_feature_scope.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/materialize_pinned_scope.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/validate_review_bundle.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_materialize_feature_scope.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_validate_review_bundle.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    }
+  },
+  "manifest_reference": "manifests/w3c-spec-code.publication.json#include_paths",
+  "pending": [],
+  "schema_version": "rights-manifest/v1"
+}

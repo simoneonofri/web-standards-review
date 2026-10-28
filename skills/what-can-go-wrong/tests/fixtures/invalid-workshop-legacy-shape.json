@@ -1,0 +1,85 @@
+{
+  "threats": [
+    {
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "actor_or_condition": "A replay-capable intermediary",
+      "action_or_failure": "reuses a request outside its intended transaction",
+      "violated_property_or_interest": "freshness and transaction integrity",
+      "consequence": "the receiver acts on stale authority",
+      "threat_story": "A replay-capable intermediary reuses a request outside its intended transaction, causing the receiver to act on stale authority.",
+      "evidence_status": "inferred",
+      "evidence": [{"source_reference": "Synthetic request algorithm"}]
+    }
+  ],
+  "workshop_simulation": {
+    "mode": "card_workshop",
+    "deck": {
+      "artifact_reference": "artifacts/synthetic-deck.json",
+      "validation_status": "passed",
+      "deck_id": "synthetic-deck",
+      "title": "Synthetic Deck",
+      "version": "1.0.0",
+      "status": "playtest",
+      "generation_mode": "source-to-cards",
+      "play_mode": "collaborative",
+      "cards_used": [
+        {
+          "card_id": "TEST-MSG-01",
+          "suit": "MSG",
+          "rank": 1,
+          "title": "Replayable request",
+          "prompt": "Could this request be replayed outside its transaction?",
+          "applies_to": ["data_flow"],
+          "source_trace": [
+            {
+              "source_kind": "review_material",
+              "source_reference": "Synthetic request algorithm",
+              "evidence_status": "inferred"
+            }
+          ],
+          "prompt_template_id": "STRIDE-TAMPERING-FLOW",
+          "prompt_family": "stride_per_element",
+          "source_item_id": "request-algorithm",
+          "applicability_rule_id": "data_flow_replay",
+          "expected_bad_event_shape": "A request is replayed before the receiver acts.",
+          "card_status": "keep"
+        }
+      ]
+    },
+    "card_plays": [
+      {
+        "play_id": "PLAY-001",
+        "deck_id": "synthetic-deck",
+        "card_id": "TEST-MSG-01",
+        "suit": "MSG",
+        "rank": 1,
+        "target_model_element_ids": ["DF-01"],
+        "model_element_type": "data_flow",
+        "model_element_name": "Request flow",
+        "prompt": "Could this request be replayed outside its transaction?",
+        "answer": "The request can be replayed unless it is bound to a fresh transaction.",
+        "answer_status": "generated_threat",
+        "candidate_relation": "new_partially_covered_threat",
+        "non_producing_reason": "",
+        "related_threat_ids": [],
+        "relatedness_basis": "",
+        "derived_threat_ids": ["T-01"],
+        "applicability_basis": "The card applies to a transaction-bearing data flow.",
+        "review_basis": "source_checked",
+        "question_generation_inputs": ["Card TEST-MSG-01", "Model element DF-01"],
+        "source_reread_status": "cached_source_packet",
+        "source_signal_used": "The algorithm sends a transaction-bearing request.",
+        "source_to_question_rationale": "The source signal exposes a replay surface.",
+        "question_basis": "source_grounded",
+        "answer_basis_summary": "Answer based on the accepted model and source packet.",
+        "source_reference": "Synthetic request algorithm",
+        "prompt_template_id": "STRIDE-TAMPERING-FLOW",
+        "prompt_family": "stride_per_element",
+        "source_item_id": "request-algorithm",
+        "applicability_rule_id": "data_flow_replay",
+        "expected_bad_event_shape": "A request is replayed before the receiver acts."
+      }
+    ]
+  }
+}

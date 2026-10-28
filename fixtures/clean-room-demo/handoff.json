@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "handoff_id": "H-clean-room-01",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "producer_agent": "reconciler",
+  "producer_role": "threat reconciliation",
+  "consumer_role": "response reconciliation",
+  "artifact_kind": "threat_package",
+  "artifact_path": "fixtures/clean-room-demo/threats.json",
+  "input_artifacts": [
+    "fixtures/clean-room-demo/model.json",
+    "fixtures/clean-room-demo/dictionary.json"
+  ],
+  "exclusive_write_scope": [
+    "fixtures/clean-room-demo/reconciled"
+  ],
+  "source_corpus_manifest": "fixtures/clean-room-demo/source-corpus-manifest.json",
+  "id_authority": "threat_reconciliation",
+  "status": "ready",
+  "validation": {
+    "result": "pass",
+    "checks": [
+      "concrete-threat gate",
+      "model reference resolution"
+    ],
+    "evidence_paths": [
+      "fixtures/clean-room-demo/threats.json"
+    ]
+  },
+  "provenance": {
+    "created_at": "2026-08-26T00:00:00Z",
+    "source_inputs_hash": "sha256:synthetic",
+    "tool_or_runner": "clean-room-fixture"
+  },
+  "blocking_issues": []
+}

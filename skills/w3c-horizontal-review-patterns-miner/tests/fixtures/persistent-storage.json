@@ -1,0 +1,21 @@
+{
+  "specification": {
+    "spec_id": "synthetic-persistent-storage",
+    "title": "Synthetic Persistent Storage API",
+    "version": "2026-01-01"
+  },
+  "spec_profile": {
+    "primary_family": "storage-cache-persistent-state",
+    "secondary_families": ["network-fetch-protocol"],
+    "facets": [
+      "webidl-javascript",
+      "storage-state",
+      "persistent-state",
+      "service-worker",
+      "third-party",
+      "cross-origin",
+      "cross-site-observability",
+      "network"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "threat-knowledge",
+  "source": {
+    "repository": "simoneonofri/threat-knowledge",
+    "repository_path": "threat-knowledge",
+    "commit": "778eeb22e2815ea4ad4a58d2dc78e25329e09083"
+  },
+  "target_path": "skills/threat-knowledge",
+  "include_paths": [
+    {
+      "source": "references/concept-boundaries.md",
+      "target": "references/concept-boundaries.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/source-authority.md",
+      "target": "references/source-authority.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/threat-knowledge.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:b38759260a23a0616ac1e1514bed32b7240e0c8edc200c37367a486af9f32ed1",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/threat-knowledge/references/public-sources.json",
+      "target": "references/public-sources.json",
+      "sha256": "sha256:c3ab4fb0e7e6b1eb9b9122219ff9db40fbade640af64a86f5ca4af912824975f",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "references/source-authority.md",
+      "find": "references/framework-index.json",
+      "replace": "references/public-sources.json",
+      "expected_count": 1
+    }
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/threat-knowledge.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:8b2b16f085d34ceeef4253d54e9de95ec9a38699e0ed19025c97ec68c1e5e004"
+}

@@ -1,0 +1,45 @@
+{
+  "contract_versions": [],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:44dcb556081b231c5300848b4667b3e2b28d600578cb7dd40df6c847fb5ace6b",
+      "size": 3617
+    },
+    {
+      "binary": false,
+      "path": "scripts/update_catalog.py",
+      "sha256": "sha256:ba0a7d1887f5cc8342dc5c6cf5288af72bd25dc4af86cc5fe26b509bf5e69aa2",
+      "size": 27386
+    },
+    {
+      "binary": false,
+      "path": "tests/test_update_catalog.py",
+      "sha256": "sha256:dd99f1af66f048a0501fc392c95209da39ed0f457c9c401b5c9bb7f00fd41b3d",
+      "size": 3718
+    }
+  ],
+  "output_digest": "sha256:f622fc90fff00c71a0d6df6591844886e1aab5fd1185442c948816cb2720c2ea",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "rights_manifest_reference": "manifests/strategy-charter-miner.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "strategy-charter-miner",
+  "source_commit": "ef1c7239bdb65fe6a76a347deac0292fb45d48be",
+  "source_repository": "simoneonofri/w3c-strategy-miner",
+  "tool_version": "reviewctl/0.2.0"
+}

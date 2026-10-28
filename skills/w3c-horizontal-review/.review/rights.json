@@ -1,0 +1,72 @@
+{
+  "files": {
+    ".review/boundary-audit.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/projection.diff": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/provenance.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/rights.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    "PROJECT_STATUS.md": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "SKILL.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "assets/templates/security-review-non-blocking-editorial-v1.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/extractors.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/run-contract.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/structured-review-comment.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/horizontal_packet.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    }
+  },
+  "manifest_reference": "manifests/w3c-horizontal-review.publication.json#include_paths",
+  "pending": [],
+  "schema_version": "rights-manifest/v1"
+}

@@ -1,0 +1,85 @@
+{
+  "actors": [
+    "requesting-origin",
+    "user-agent"
+  ],
+  "anti_patterns": [
+    "ambient authority",
+    "silent fallback"
+  ],
+  "applicability": {
+    "facets_all": [],
+    "facets_any": [
+      "html-dom",
+      "network"
+    ],
+    "facets_none": [],
+    "not_applicable_when": [
+      "the feature has no authority and capability delegation behavior"
+    ],
+    "preconditions": [
+      "authority and capability delegation is part of the processing model"
+    ],
+    "spec_families": [
+      "html-dom-css-rendering"
+    ]
+  },
+  "assets": [
+    "origin authority",
+    "protected capability"
+  ],
+  "assumptions": [
+    "the supplied specification version is complete enough for this category"
+  ],
+  "attacker_capabilities": [
+    "malicious-origin"
+  ],
+  "category": "authority-and-capability-delegation",
+  "conceptual_key": "authority-and-capability-delegation|context|boundary|failure-mode|expected-property-01",
+  "confidence": 0.82,
+  "context": [
+    "a specification exposes behavior relevant to authority and capability delegation",
+    "a web actor can trigger or observe the behavior"
+  ],
+  "evidence_classes": [
+    "explicit-normative"
+  ],
+  "expected_security_properties": [
+    "authorization",
+    "integrity"
+  ],
+  "failure_modes": [
+    "underspecified authority and capability delegation behavior"
+  ],
+  "maturity": "candidate",
+  "mechanisms": [
+    "normative check",
+    "fail-closed processing"
+  ],
+  "occurrence_ids": [
+    "occ-example"
+  ],
+  "pattern_id": "origin-bound-capability-delegation",
+  "provenance": {
+    "resolution_validated_occurrences": 0,
+    "status": "candidate",
+    "supporting_occurrences": 1,
+    "supporting_specifications": 1
+  },
+  "residual_risks": [
+    "implementation variation if conformance text is incomplete"
+  ],
+  "summary": "Reusable security relationship for authority and capability delegation where normative behavior should preserve a specific security property.",
+  "threats": [
+    "confused-deputy or information-disclosure condition"
+  ],
+  "title": "Bind delegated capability to the intended origin",
+  "trust_boundaries": [
+    "origin-boundary"
+  ],
+  "variants": [],
+  "verification_strategies": [
+    "inspect normative algorithms",
+    "inspect error handling"
+  ]
+}

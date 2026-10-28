@@ -1,0 +1,91 @@
+--- a/scripts/validate_review_bundle.py
++++ b/scripts/validate_review_bundle.py
+@@ -25,0 +26,3 @@
++        if not isinstance(item, dict):
++            errors.append(f"{location}[{index}]: expected object")
++            continue
+@@ -65 +68 @@
+-    implementation_ids = unique_ids([item for item in implementations if isinstance(item, dict)], "implementation_id", "implementations", errors)
++    implementation_ids = unique_ids(implementations, "implementation_id", "implementations", errors)
+@@ -68 +71,14 @@
+-            errors.append(f"implementations[{index}]: expected object")
++            continue
++        location = f"implementations[{index}]"
++        require_keys(implementation, {"implementation_id", "repository", "revision", "scope", "evidence_status"}, location, errors)
++        for field in ("repository", "revision"):
++            if field in implementation and (not isinstance(implementation[field], str) or not implementation[field].strip()):
++                errors.append(f"{location}.{field}: expected non-empty string")
++        if "scope" in implementation:
++            scope = implementation["scope"]
++            if not isinstance(scope, list) or not scope or any(not isinstance(item, str) for item in scope):
++                errors.append(f"{location}.scope: expected non-empty array of strings")
++        if "evidence_status" in implementation:
++            status = implementation["evidence_status"]
++            if not isinstance(status, str) or status not in {"available", "partial", "non_public", "unavailable"}:
++                errors.append(f"{location}.evidence_status: invalid status")
+@@ -76,3 +92,11 @@
+-    control_ids = unique_ids([item for item in controls if isinstance(item, dict)], "control_id", "controls", errors)
+-    unique_ids([item for item in mappings if isinstance(item, dict)], "mapping_id", "mappings", errors)
+-    unique_ids([item for item in discrepancies if isinstance(item, dict)], "discrepancy_id", "discrepancies", errors)
++    control_ids = unique_ids(controls, "control_id", "controls", errors)
++    for index, control in enumerate(controls):
++        if not isinstance(control, dict):
++            continue
++        location = f"controls[{index}]"
++        require_keys(control, {"control_id", "spec_anchor", "protected_property", "required_behavior"}, location, errors)
++        for field in ("spec_anchor", "protected_property", "required_behavior"):
++            if field in control and (not isinstance(control[field], str) or not control[field].strip()):
++                errors.append(f"{location}.{field}: expected non-empty string")
++    unique_ids(mappings, "mapping_id", "mappings", errors)
++    unique_ids(discrepancies, "discrepancy_id", "discrepancies", errors)
+@@ -81,2 +105 @@
+-            errors.append(f"mappings[{index}]: expected object")
+-            continue
++            continue  # unique_ids already reported this row with its original index.
+@@ -111,2 +134 @@
+-            errors.append(f"discrepancies[{index}]: expected object")
+-            continue
++            continue  # unique_ids already reported this row with its original index.
+--- a/tests/test_validate_review_bundle.py
++++ b/tests/test_validate_review_bundle.py
+@@ -109,0 +110,40 @@
++
++
++def test_mixed_implementation_rows_preserve_original_error_indices():
++    import copy
++    bundle = valid_bundle()
++    implementation = bundle["implementations"][0]
++    bundle["implementations"] = ["bad", implementation, copy.deepcopy(implementation)]
++    errors = validate(bundle)
++    assert "implementations[0]: expected object" in errors
++    assert "implementations[2].implementation_id: duplicate value 'engine-a'" in errors
++
++
++def test_malformed_control_rows_are_rejected_even_without_mappings():
++    bundle = valid_bundle()
++    bundle["controls"] = [None]
++    bundle["mappings"] = []
++    assert "controls[0]: expected object" in validate(bundle)
++
++
++def test_control_requires_source_anchor_property_and_behavior():
++    bundle = valid_bundle()
++    bundle["controls"] = [{"control_id": "CTRL-1"}]
++    errors = validate(bundle)
++    for field in ("spec_anchor", "protected_property", "required_behavior"):
++        assert any("controls[0]" in error and "missing required key" in error and field in error for error in errors)
++
++
++def test_implementation_requires_pinned_repository_scope_and_evidence_status():
++    bundle = valid_bundle()
++    bundle["implementations"] = [{"implementation_id": "engine-a"}]
++    errors = validate(bundle)
++    for field in ("repository", "revision", "scope", "evidence_status"):
++        assert any("implementations[0]" in error and "missing required key" in error and field in error for error in errors)
++
++
++def test_present_core_fields_must_have_declared_schema_shapes():
++    for collection, field, value in (("implementations", "revision", ""), ("implementations", "scope", []), ("implementations", "evidence_status", []), ("controls", "spec_anchor", None)):
++        bundle = valid_bundle()
++        bundle[collection][0][field] = value
++        assert any(collection + "[0]." + field in error for error in validate(bundle)), (collection, field)

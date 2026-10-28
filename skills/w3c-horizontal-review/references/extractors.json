@@ -1,0 +1,74 @@
+{
+  "schema_version": "horizontal-extractor-registry/v1",
+  "extractors": [
+    {
+      "id": "w3c-webappsec-miner",
+      "target_kinds": [
+        "specification",
+        "as_is"
+      ],
+      "role": "extraction"
+    },
+    {
+      "id": "whatwg-miner",
+      "target_kinds": [
+        "specification",
+        "as_is"
+      ],
+      "role": "extraction"
+    },
+    {
+      "id": "w3c-spec-miner",
+      "target_kinds": [
+        "specification",
+        "as_is"
+      ],
+      "role": "extraction"
+    },
+    {
+      "id": "w3c-security-pattern-miner",
+      "target_kinds": [
+        "specification",
+        "as_is"
+      ],
+      "role": "extraction"
+    },
+    {
+      "id": "w3c-horizontal-review-patterns-miner",
+      "target_kinds": [
+        "specification",
+        "charter"
+      ],
+      "role": "extraction"
+    },
+    {
+      "id": "standards-vulnerability-intel-miner",
+      "target_kinds": [
+        "specification",
+        "charter"
+      ],
+      "role": "extraction"
+    },
+    {
+      "id": "strategy-charter-miner",
+      "target_kinds": [
+        "charter"
+      ],
+      "role": "extraction"
+    },
+    {
+      "id": "threat-knowledge",
+      "target_kinds": [
+        "specification"
+      ],
+      "role": "elicitation"
+    },
+    {
+      "id": "w3c-spec-code",
+      "target_kinds": [
+        "specification"
+      ],
+      "role": "implementation"
+    }
+  ]
+}

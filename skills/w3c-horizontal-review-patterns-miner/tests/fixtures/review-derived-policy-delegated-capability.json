@@ -1,0 +1,46 @@
+{
+  "specification": {
+    "spec_id": "review-derived-policy-delegated-capability",
+    "title": "Review-Derived Policy Delegated Capability",
+    "version": "2026-06-23",
+    "derivation": {
+      "source": "local w3c-knowledge findings",
+      "finding_count": 2133,
+      "observed_repositories": [
+        "w3c/screen-orientation",
+        "w3c/geolocation-api",
+        "w3c/sensors",
+        "w3c/secure-payment-confirmation",
+        "w3c/vibration"
+      ],
+      "observed_review_themes": [
+        "permission policy integration",
+        "cross-origin iframe defaults",
+        "relationship to Permissions API",
+        "user activation",
+        "high-entropy device or orientation state"
+      ]
+    }
+  },
+  "spec_profile": {
+    "primary_family": "permission-policy-manifest",
+    "secondary_families": [
+      "device-sensor-native-capability",
+      "identity-credential-payment"
+    ],
+    "facets": [
+      "manifest-policy",
+      "permission-delegation",
+      "iframe",
+      "third-party",
+      "cross-origin",
+      "trusted-ui",
+      "native-ui",
+      "sensor-device",
+      "native-capability",
+      "physical-world-data",
+      "stable-identifier",
+      "high-entropy"
+    ]
+  }
+}

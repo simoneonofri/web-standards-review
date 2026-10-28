@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/threat-model-contract-v1/multi-agent-handoff.schema.json",
+  "title": "Threat Model Multi-Agent Handoff v1",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "handoff_id",
+    "run_id",
+    "producer_agent",
+    "producer_role",
+    "consumer_role",
+    "artifact_kind",
+    "artifact_path",
+    "input_artifacts",
+    "exclusive_write_scope",
+    "source_corpus_manifest",
+    "id_authority",
+    "status",
+    "validation",
+    "provenance",
+    "blocking_issues"
+  ],
+  "properties": {
+    "contract_version": {"const": 1},
+    "handoff_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "producer_agent": {"type": "string", "minLength": 1},
+    "producer_role": {"type": "string", "minLength": 1},
+    "consumer_role": {"type": "string", "minLength": 1},
+    "artifact_kind": {
+      "enum": [
+        "model_packet",
+        "dfd_bundle",
+        "candidate_ledger",
+        "elicitation_trace",
+        "threat_package",
+        "response_package",
+        "quality_gate",
+        "assembled_report"
+      ]
+    },
+    "artifact_path": {"type": "string", "minLength": 1},
+    "input_artifacts": {"type": "array", "items": {"type": "string"}},
+    "exclusive_write_scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "source_corpus_manifest": {"type": "string", "minLength": 1},
+    "id_authority": {
+      "enum": ["none", "model", "threat_reconciliation", "response_reconciliation", "assembler"]
+    },
+    "status": {"enum": ["draft", "ready", "blocked"]},
+    "validation": {
+      "type": "object",
+      "required": ["result", "checks", "evidence_paths"],
+      "properties": {
+        "result": {"enum": ["pass", "fail", "not-run"]},
+        "checks": {"type": "array", "items": {"type": "string"}},
+        "evidence_paths": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["created_at", "source_inputs_hash"],
+      "properties": {
+        "created_at": {"type": "string", "minLength": 1},
+        "source_inputs_hash": {"type": "string", "minLength": 1},
+        "tool_or_runner": {"type": "string"},
+        "notes": {"type": "string"}
+      }
+    },
+    "blocking_issues": {"type": "array", "items": {"type": "string"}}
+  }
+}

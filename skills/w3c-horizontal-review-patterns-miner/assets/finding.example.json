@@ -1,0 +1,31 @@
+{
+  "finding_id": "example-geolocation-like-api-2026-01-01-privacy-stable-identifier-linkability-device-handle",
+  "spec_id": "example-geolocation-like-api",
+  "spec_version": "2026-01-01",
+  "review_kind": "privacy",
+  "pattern_id": "privacy-stable-identifier-linkability",
+  "status": "confirmed",
+  "facets": ["sensor-device", "third-party", "stable-identifier"],
+  "trigger": "The API returns a stable device handle to embedded origins.",
+  "asset_or_data": "device identity",
+  "actor": "embedded third party",
+  "trust_boundary": "cross-origin",
+  "failure_mode": "cross-site correlation",
+  "expected_property": "identifier scoped and rotated by an appropriate boundary",
+  "suggested_mitigation": "partition by top-level site and requesting origin",
+  "evidence": [
+    {
+      "source_id": "normalized-source-id",
+      "source_kind": "spec-section",
+      "locator": "section-4.2",
+      "evidence_span": "The deviceHandle attribute returns the same value for the same physical device.",
+      "interpretation": "A stable device handle can support cross-site correlation if exposed to embedded origins."
+    }
+  ],
+  "provenance_class": "empirical",
+  "confidence": 0.92,
+  "resolution": {
+    "status": "unresolved",
+    "source_id": null
+  }
+}

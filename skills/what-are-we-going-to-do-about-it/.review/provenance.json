@@ -1,0 +1,131 @@
+{
+  "contract_versions": [
+    "threat-package/v1",
+    "response-package/v1"
+  ],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:a49e722033c624dcb7d94b28dd9870890047bbe428d93177ef4678850a90e73a",
+      "size": 11950
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:e70ba985e8d32d90249359d4725916e1b6a176c62d442011b2b7627256cb01d0",
+      "size": 309
+    },
+    {
+      "binary": false,
+      "path": "contracts/response-analysis-v1.md",
+      "sha256": "sha256:da6dafa041c25ef39438f9cd965e6bcf2edf73c97e6f1655a79b669802f978b8",
+      "size": 6815
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/accept-without-owner.json",
+      "sha256": "sha256:56077db1341346ca6a55194566fdec2a3913089ce0d039f943a777ef2e42d6d5",
+      "size": 872
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/best-practice-response.json",
+      "sha256": "sha256:497699a2c7afc2648546c8524e31750998585e644c26de505b6c8b6c60a4a05a",
+      "size": 872
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/generic-keyword-response.json",
+      "sha256": "sha256:8fcedee88dc82c0036392e6f1dc7db03ed4d689d0451ea573d9033263ba492c7",
+      "size": 938
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/missing-baseline-response.json",
+      "sha256": "sha256:19f90b5eb3d30915f9852f5ce06391d1da61762cb3369eb21c85bb259ff0ab3f",
+      "size": 1038
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/out-of-scope-response.json",
+      "sha256": "sha256:ad8e7a6eb589b227a0984938956a01078019f99712f6ba9f626df88d6a4463bf",
+      "size": 947
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/reduce-without-remaining.json",
+      "sha256": "sha256:b612ba619c95083aeb987a227810140a42dcb5c58486c59f9f2b342599ae2d73",
+      "size": 858
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/threat-package-two.json",
+      "sha256": "sha256:763ea2a9cd10641921beb91e09622d9059624f2be2f62059772f77af938fe0dd",
+      "size": 2027
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/threat-package-valid.json",
+      "sha256": "sha256:4c280a7a0645422ac611ef685dd24cf481da8e63f638784b89758761b086e434",
+      "size": 1169
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/transfer-without-receiver.json",
+      "sha256": "sha256:4ef39569fff6a5403354073d67f3562315944c0a6fd8abe9e3a0e93d9e726186",
+      "size": 913
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/valid-eliminate.json",
+      "sha256": "sha256:d36acc7629e776e35174480b2fd8693e471c8fbd7dea664ca0345f5e82ecbfb7",
+      "size": 1051
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/valid-response-handoff.json",
+      "sha256": "sha256:8c44653b76c91bfc9768b0b859f19fbb5b5895357eb81ad6f4f36b12d3e2250b",
+      "size": 1080
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/valid-unresolved-coverage.json",
+      "sha256": "sha256:6b368fef48f7ac1943a263fe6613ca3b14079fc3c0fe19d08a564640a522d518",
+      "size": 1833
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_response_package.py",
+      "sha256": "sha256:07130238e511283ec199241ffe80931a4c4bb18262dd3498845a4cfc634f874a",
+      "size": 6543
+    },
+    {
+      "binary": false,
+      "path": "tests/test_response_package_validator.py",
+      "sha256": "sha256:195a27468180362015172dbd097aedc7a9527539d7eff8180b419d0a97885368",
+      "size": 7569
+    }
+  ],
+  "output_digest": "sha256:e1486d37f2d611fb72298f38a9ef57d9882c5708ebc90a5e7f8c498da3052a6a",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "isolated-unit-tests"
+  ],
+  "rights_manifest_reference": "manifests/what-are-we-going-to-do-about-it.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "what-are-we-going-to-do-about-it",
+  "source_commit": "46a10e58ae09e3450c9a16a3026dca8f8a01ae14",
+  "source_repository": "simoneonofri/what-are-we-going-to-do-about-it",
+  "tool_version": "reviewctl/0.2.0"
+}

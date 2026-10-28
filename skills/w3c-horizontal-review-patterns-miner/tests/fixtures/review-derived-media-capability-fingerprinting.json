@@ -1,0 +1,46 @@
+{
+  "specification": {
+    "spec_id": "review-derived-media-capability-fingerprinting",
+    "title": "Review-Derived Media Capability and Fingerprinting API",
+    "version": "2026-06-23",
+    "derivation": {
+      "source": "local w3c-knowledge findings",
+      "finding_count": 2133,
+      "observed_repositories": [
+        "w3c/media-capabilities",
+        "w3c/webcodecs",
+        "w3c/webrtc-stats",
+        "w3c/mediacapture-main",
+        "w3c/mediacapture-image"
+      ],
+      "observed_review_themes": [
+        "hardware capability exposure",
+        "media codec and statistics fingerprinting",
+        "permission and user opt-in",
+        "background or session-bound capture state",
+        "bystander and physical-world data"
+      ]
+    }
+  },
+  "spec_profile": {
+    "primary_family": "media-capture-realtime",
+    "secondary_families": [
+      "device-sensor-native-capability",
+      "computational-js-webidl-api"
+    ],
+    "facets": [
+      "webidl-javascript",
+      "media-capture",
+      "sensor-device",
+      "personal-data",
+      "sensitive-data",
+      "physical-world-data",
+      "background",
+      "window",
+      "iframe",
+      "permission-delegation",
+      "high-entropy",
+      "native-capability"
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "contract_versions": [
+    "source-corpus-manifest/v1",
+    "model-packet/v1",
+    "threat-package/v1",
+    "review-publication-gate/v1"
+  ],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:f5690f09b967949c201edb1acfef1bd126345d53c7696b1d73cee217b997b9e5",
+      "size": 9727
+    },
+    {
+      "binary": false,
+      "path": "references/bounded-local-poc.md",
+      "sha256": "sha256:6017e9f4c1021b78c36f002782278ed7edd9aaa2631ad0615c4da8c128e479d8",
+      "size": 4366
+    },
+    {
+      "binary": false,
+      "path": "references/fact-check-publication-gate.md",
+      "sha256": "sha256:786b89abb9c1a1f7d050df12417658504ca2a658c6a10040ae9babf8f9ad268a",
+      "size": 4826
+    },
+    {
+      "binary": false,
+      "path": "references/focused-w3c-security-reply.md",
+      "sha256": "sha256:90d420defdec02f72f5d3f1d59753ef5d78d2f8454c7016cc966d36c163a2f01",
+      "size": 8146
+    },
+    {
+      "binary": false,
+      "path": "schemas/review-publication-gate-v1.schema.json",
+      "sha256": "sha256:5ff307dffe4641e9fe05c4fa66d45c4c7e32bbd00850c56f3683474fdb6b0880",
+      "size": 2217
+    },
+    {
+      "binary": false,
+      "path": "scripts/assemble_threat_model_report.py",
+      "sha256": "sha256:fe8cfdb4ce6d79b5ea6db9e16ac18be7dc23465cb2eabac3215ae57aec4eed45",
+      "size": 2690
+    },
+    {
+      "binary": false,
+      "path": "scripts/build_publication_gate.py",
+      "sha256": "sha256:542aa6e31fd82c29522ddd4190aaf4ad7c2c1cebe8e176a341c76540955429f7",
+      "size": 2352
+    },
+    {
+      "binary": false,
+      "path": "scripts/export_report.py",
+      "sha256": "sha256:04e67bdd812a7f66bb58d34586dfba2258c89cc4b62b70f293c62c0e73c3e74c",
+      "size": 2258
+    },
+    {
+      "binary": false,
+      "path": "scripts/run_spec_review.py",
+      "sha256": "sha256:bbed4987b50439384cfdd2d24e806ec2cf85bc78edba98c1682181a8f6cb127d",
+      "size": 994
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_focused_review.py",
+      "sha256": "sha256:c419b145d3bc507d9c2725a4ffc09a2efc7cf60bc0e6ebe5e33ab8d9b437a95e",
+      "size": 1519
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_poc.py",
+      "sha256": "sha256:b6b13129291342fcadaaf5be2b4ea77ecc3e43ef9355ad69b5a874e868484b22",
+      "size": 1077
+    },
+    {
+      "binary": false,
+      "path": "spec_review/__init__.py",
+      "sha256": "sha256:414946144df3d289826b66d8fe994b98cec507a77b56634f1473aa746656f753",
+      "size": 461
+    },
+    {
+      "binary": false,
+      "path": "spec_review/focused_review_contract.py",
+      "sha256": "sha256:b1d1eccc3824e7c27fdb886f50b60cea3d04db31636300052bbab9a4a67417e9",
+      "size": 36891
+    },
+    {
+      "binary": false,
+      "path": "spec_review/pipeline.py",
+      "sha256": "sha256:e64255ce689bb6a4387f44e40ed4854aeb97a68fb1392a60875d82fb43637197",
+      "size": 421
+    },
+    {
+      "binary": false,
+      "path": "spec_review/poc_contract.py",
+      "sha256": "sha256:5e1030341fa1350677ca082ade395a87b4f43aa4a4ebb8bae0de69581ca68b0a",
+      "size": 7436
+    },
+    {
+      "binary": false,
+      "path": "spec_review/publication_gate.py",
+      "sha256": "sha256:a88c2bfa30a16262bbac41218e751a3f2a7c187f6f44401551dba828f57c6adc",
+      "size": 19687
+    },
+    {
+      "binary": false,
+      "path": "spec_review/report_assembler.py",
+      "sha256": "sha256:1d96f7b28f3a73ed85f1cd23439ce8772bdf50b8ae262fac727ae3cc29bc01e1",
+      "size": 123841
+    },
+    {
+      "binary": false,
+      "path": "spec_review/report_contract.py",
+      "sha256": "sha256:2ab3382e7288a51954a98bfd8db18d4883e56a6c1e4f2b65fcb752de6a23db4a",
+      "size": 18003
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/fact-check-invalid.json",
+      "sha256": "sha256:1c4558c6f03f7419477fb8ae1d590d6df93cd242f8dd1fd499ed16b06ea0675c",
+      "size": 834
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/fact-check-valid.json",
+      "sha256": "sha256:c84c749e80f86d99f8d6b9019555d562c948a44cd44f549d481724c4a5d37b11",
+      "size": 1263
+    },
+    {
+      "binary": false,
+      "path": "tests/test_focused_review_contract.py",
+      "sha256": "sha256:737ee9cfa109d496e813ff97a9aed69520175b34f84993e944ad05c975416c40",
+      "size": 38448
+    },
+    {
+      "binary": false,
+      "path": "tests/test_poc_contract.py",
+      "sha256": "sha256:183a0536387d697a167b133ac98f6fee2a7ee11496d9dbc89868185a8cd632c0",
+      "size": 3311
+    },
+    {
+      "binary": false,
+      "path": "tests/test_publication_gate.py",
+      "sha256": "sha256:d266ca146deefbea3346a627e850cd53dc9b4780d590dcc4fe677117ff666924",
+      "size": 8927
+    },
+    {
+      "binary": false,
+      "path": "tests/test_report_assembler.py",
+      "sha256": "sha256:1145ce7181c6034a0066578b038a5efee977cad420b84cf0c58a620c569e5174",
+      "size": 28181
+    }
+  ],
+  "output_digest": "sha256:fdfa5daa86f5bde961df1dc9b15bfdd58b702b7d5e0c39ccba69c88551d5309d",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "focused-review-contract",
+    "poc-contract",
+    "publication-gate",
+    "report-assembler"
+  ],
+  "rights_manifest_reference": "manifests/spec-review.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "spec-review",
+  "source_commit": "2c020c62c04911fe1c121b937f944f936e2372f0",
+  "source_repository": "simoneonofri/spec-security-review",
+  "tool_version": "reviewctl/0.2.0"
+}

@@ -1,0 +1,52 @@
+{
+  "contract_versions": [],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:b6c482b9087bc71013da2091067ca2744442a675058ebc2b60cd395171e90026",
+      "size": 9442
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:30532ee2820247e7d299ecc7836e90cb4f722d9a962826701536e06a01828a86",
+      "size": 272
+    },
+    {
+      "binary": false,
+      "path": "references/marketplace-integration.md",
+      "sha256": "sha256:5daa9cc4d209bac4cff4163decb953ad0821aecbefbdc8e0952fb1664ceda4b9",
+      "size": 4331
+    },
+    {
+      "binary": false,
+      "path": "references/response-patterns.md",
+      "sha256": "sha256:29ab752d03b5a8d70c9d58d11d861d8bc321a75107d7adb33693e4512e0e8fab",
+      "size": 3547
+    }
+  ],
+  "output_digest": "sha256:08e8f3aacc56eec320f64a9fd15bbb5be3a8734c1b27e725fbbcad5dbbcadbf7",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow",
+    "additive-private-migration"
+  ],
+  "rights_manifest_reference": "manifests/w3c-issue-pr-review.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "w3c-issue-pr-review",
+  "source_commit": "b5510892575b7cc5e2cf251c38c340cb9ec052f5",
+  "source_repository": "w3c-issue-pr-review-portable",
+  "tool_version": "reviewctl/0.2.0"
+}

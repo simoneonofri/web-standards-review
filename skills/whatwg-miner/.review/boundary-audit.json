@@ -1,0 +1,141 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:a9de3f84539ffe28d9afa1850e9d3a33658760decaa9381b75600b075c256e80",
+      "size": 215638
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:1a492af79682787aae30bed977df0ae26c44072fb7e98544742830bfe24f13d6",
+      "size": 4269
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:41c75050b4141a265c2c01e331912468979d3c4ac57067d9310e6137f9df32ee",
+      "size": 3970
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:88666d3403041250c9e0c471f9c54987e2118bdc12582a6899de0fae1cd3cac6",
+      "size": 3093
+    },
+    {
+      "binary": false,
+      "path": "catalog/coverage.json",
+      "sha256": "sha256:8a230ae0581bcd0800cdcab16b5af2bc68b978b82e00e9d46d42cfb87ee3fd31",
+      "size": 8455
+    },
+    {
+      "binary": false,
+      "path": "catalog/coverage.md",
+      "sha256": "sha256:ad46ea2619d3233184c8066d262995bfb3c644b72968515c177f0f167fd5b7b5",
+      "size": 5638
+    },
+    {
+      "binary": false,
+      "path": "catalog/inventory.json",
+      "sha256": "sha256:5c164436a5044c24681dad5d03ba4155de328fee90dc4d67178876369b4e3b2a",
+      "size": 5759
+    },
+    {
+      "binary": false,
+      "path": "catalog/security-features.json",
+      "sha256": "sha256:05d01bb8aa52fc5465904821abfec3b919b3b7942321f287377053c0563c437b",
+      "size": 56298
+    },
+    {
+      "binary": false,
+      "path": "catalog/security-features.md",
+      "sha256": "sha256:a9c4dc0bfc6bc5e7b9cbe436806ff5b847e211f98df664551981e786d5981587",
+      "size": 40266
+    },
+    {
+      "binary": false,
+      "path": "references/coverage-seed.json",
+      "sha256": "sha256:a673d8f7de4b4871614e20607beb4430a142c9467ccc8c69feb9c2734cfb3dbc",
+      "size": 4816
+    },
+    {
+      "binary": false,
+      "path": "references/schema.md",
+      "sha256": "sha256:e2a4c9ec8351ee44dd838ec5c03b80f28cfad583e4f100fc9ad13db4a915a147",
+      "size": 3901
+    },
+    {
+      "binary": false,
+      "path": "references/seed-findings.json",
+      "sha256": "sha256:905ae0e16f27185864cec4eadf1c9f913d49dcb28f26e01d6dd3707b883b0819",
+      "size": 45696
+    },
+    {
+      "binary": false,
+      "path": "scripts/build_catalog.py",
+      "sha256": "sha256:c44f395361f53df454c9a024428d76f04fb6cc7954f320e287477d7a6d575d43",
+      "size": 6456
+    },
+    {
+      "binary": false,
+      "path": "scripts/fetch_specs.py",
+      "sha256": "sha256:8f3a99d6a98a8973988ce090e0361107f79a4b040d2e309ae359a9937358a846",
+      "size": 1769
+    },
+    {
+      "binary": false,
+      "path": "scripts/inventory.py",
+      "sha256": "sha256:ad69209dc2220690d947012e4f0d3b5c74e2b925a14b3b03276a5f6921caca2b",
+      "size": 871
+    },
+    {
+      "binary": false,
+      "path": "scripts/mine_specs.py",
+      "sha256": "sha256:47be2687b5ddcf0195a35fee1ea86578e4c516dde26bff9bba0c81695786218a",
+      "size": 1760
+    },
+    {
+      "binary": false,
+      "path": "scripts/query_catalog.py",
+      "sha256": "sha256:342880851a38f03d04a04c6828ef09a6ec682f39f0e27eacbad775e7f459572c",
+      "size": 1425
+    },
+    {
+      "binary": false,
+      "path": "scripts/refresh.py",
+      "sha256": "sha256:d822f1dbd81df3ee2131a87836a6d6864f58a5241580064ca8ec216b367f068b",
+      "size": 2358
+    },
+    {
+      "binary": false,
+      "path": "scripts/whatwg_miner.py",
+      "sha256": "sha256:bc71d82496ace013d820937fa7b2eb0609bec11b8cb9cb6c8130f962989dfc6d",
+      "size": 16101
+    },
+    {
+      "binary": false,
+      "path": "tests/test_catalog.py",
+      "sha256": "sha256:811b49be6464c9033380a2a12aad49672167e2a8be554cf308fd2f7e7b64fa05",
+      "size": 3969
+    },
+    {
+      "binary": false,
+      "path": "tests/test_miner.py",
+      "sha256": "sha256:14a1af17b18d6dfaee0a454bf846ec5bf711d3ecf346d58bf843905cb828c827",
+      "size": 2179
+    }
+  ],
+  "root_digest": "sha256:ed8d632a7ea8c9bcb57f0efd658ba11ea0f2a30f9b10cefab8ae5a2065f8c45a",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

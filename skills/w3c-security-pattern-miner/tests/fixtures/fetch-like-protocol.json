@@ -1,0 +1,203 @@
+{
+  "coverage": {
+    "confidentiality-and-information-disclosure": "supported",
+    "protocol-negotiation-versioning-and-downgrade": "supported",
+    "state-storage-and-cache": "supported",
+    "url-fetch-and-redirect-handling": "supported"
+  },
+  "derived_pattern_candidates": [],
+  "explicit_patterns": [],
+  "limitations": [
+    "synthetic fixture, not W3C evidence"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no script loading behavior is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "artifact_id": "art-fetch-like-protocol",
+          "evidence_span": "On redirect, return to the credential mode check step.",
+          "interpretation": "Redirects re-run credential mode checks.",
+          "locator": "section 1",
+          "normative_strength": "must",
+          "source_id": "src-fetch-like-protocol",
+          "source_kind": "normative-algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-fetch-like-protocol-01",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "url-fetch-and-redirect-handling",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "fetch-like-protocol",
+      "spec_version": "2026-01-01",
+      "statement": "Redirects re-run credential mode checks.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "artifact_id": "art-fetch-like-protocol",
+          "evidence_span": "The cache key MUST include request origin.",
+          "interpretation": "Cache entries include origin in the cache key.",
+          "locator": "section 2",
+          "normative_strength": "must",
+          "source_id": "src-fetch-like-protocol",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-fetch-like-protocol-02",
+      "observation_type": "security-mechanism",
+      "open_questions": [],
+      "security_category": "state-storage-and-cache",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "fetch-like-protocol",
+      "spec_version": "2026-01-01",
+      "statement": "Cache entries include origin in the cache key.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.91,
+      "evidence": [
+        {
+          "artifact_id": "art-fetch-like-protocol",
+          "evidence_span": "If the version is unsupported, abort the exchange.",
+          "interpretation": "Unsupported versions fail closed.",
+          "locator": "section 3",
+          "normative_strength": "must",
+          "source_id": "src-fetch-like-protocol",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-fetch-like-protocol-03",
+      "observation_type": "failure-mode",
+      "open_questions": [],
+      "security_category": "protocol-negotiation-versioning-and-downgrade",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "fetch-like-protocol",
+      "spec_version": "2026-01-01",
+      "statement": "Unsupported versions fail closed.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    }
+  ],
+  "optional_spec_profile": {
+    "facets": [
+      "http-network-protocol",
+      "network",
+      "cross-origin",
+      "credential-material"
+    ],
+    "primary_family": null,
+    "secondary_families": []
+  },
+  "security_checks": [],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "protected capability"
+    ],
+    "attacker_models": [
+      "malicious-origin"
+    ],
+    "capabilities": [],
+    "components": [
+      "browser"
+    ],
+    "dependencies": [],
+    "entry_points": [
+      "invoke"
+    ],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "origin-boundary"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithms",
+      "webidl"
+    ],
+    "limitations": [
+      "synthetic fixture"
+    ],
+    "missing_artifacts": [
+      "full dependency text"
+    ],
+    "score": 0.75
+  },
+  "specification": {
+    "spec_id": "fetch-like-protocol",
+    "title": "Fetch Like Protocol",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}

@@ -1,0 +1,31 @@
+name: review-knowledge
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: review_knowledge
+      POSTGRES_USER: review_knowledge
+      POSTGRES_PASSWORD: ${KNOWLEDGE_DB_PASSWORD:?}
+    volumes:
+      - knowledge-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -h 127.0.0.1 -U review_knowledge -d review_knowledge"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+  api:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://review_knowledge:${KNOWLEDGE_DB_PASSWORD:?}@db:5432/review_knowledge
+      W3C_KNOWLEDGE_EMBEDDING_MODEL_DIR: /models/e5-small
+      W3C_KNOWLEDGE_EMBEDDING_THREADS: ${KNOWLEDGE_EMBEDDING_THREADS:-2}
+    volumes:
+      - knowledge-models:/models
+    ports:
+      - "127.0.0.1:${KNOWLEDGE_PORT:-18080}:8000"
+volumes:
+  knowledge-data:
+  knowledge-models:

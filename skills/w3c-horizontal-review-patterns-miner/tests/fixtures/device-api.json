@@ -1,0 +1,25 @@
+{
+  "specification": {
+    "spec_id": "synthetic-device-api",
+    "title": "Synthetic Location Device API",
+    "version": "2026-01-01"
+  },
+  "spec_profile": {
+    "primary_family": "device-sensor-native-capability",
+    "secondary_families": ["computational-js-webidl-api", "permission-policy-manifest"],
+    "facets": [
+      "webidl-javascript",
+      "window",
+      "iframe",
+      "third-party",
+      "sensor-device",
+      "permission-delegation",
+      "personal-data",
+      "sensitive-data",
+      "physical-world-data",
+      "native-capability",
+      "high-entropy",
+      "stable-identifier"
+    ]
+  }
+}

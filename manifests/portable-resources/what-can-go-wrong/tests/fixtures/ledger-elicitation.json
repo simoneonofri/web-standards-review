@@ -1,0 +1,96 @@
+{
+  "schema_version": "candidate-ledger/v1",
+  "run_id": "run-clean-room-v1",
+  "stage": "elicitation",
+  "model_sha256": "560b3f4a8fdee96b919ebf6c171d207d5d24d181be0102a19abb4c2ba11aeb3f",
+  "candidates": [
+    {
+      "candidate_id": "C-walk-01",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-01",
+      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
+      "affected_model_elements": [
+        "DF-01",
+        "PO-01"
+      ],
+      "disposition": "pending",
+      "rationale": "Awaiting independent reconciliation.",
+      "counterevidence": []
+    },
+    {
+      "candidate_id": "C-walk-02",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-02",
+      "observation": "A malicious remote service retains request metadata after the stated purpose ends, violating confidentiality and causing the user and a named non-user remain observable over time.",
+      "affected_model_elements": [
+        "DF-01",
+        "EE-02"
+      ],
+      "disposition": "pending",
+      "rationale": "Awaiting independent reconciliation.",
+      "counterevidence": []
+    },
+    {
+      "candidate_id": "C-walk-03",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-03",
+      "observation": "A user-agent failure bypasses the policy and intent check, violating user control and causing a request is sent without the user's current intent.",
+      "affected_model_elements": [
+        "PO-01",
+        "DF-01"
+      ],
+      "disposition": "pending",
+      "rationale": "Awaiting independent reconciliation.",
+      "counterevidence": []
+    },
+    {
+      "candidate_id": "C-walk-04",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-04",
+      "observation": "A deployment operator logs full request payloads for debugging, violating confidentiality and causing operators gain a secondary copy outside the protocol purpose.",
+      "affected_model_elements": [
+        "DF-01",
+        "TB-01"
+      ],
+      "disposition": "pending",
+      "rationale": "Awaiting independent reconciliation.",
+      "counterevidence": []
+    },
+    {
+      "candidate_id": "C-walk-05",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-05",
+      "observation": "An unresolved service outage prevents the remote service from completing requests, violating availability and causing the user cannot complete the mediated action or obtain recovery.",
+      "affected_model_elements": [
+        "EE-02",
+        "DF-01"
+      ],
+      "disposition": "pending",
+      "rationale": "Awaiting independent reconciliation.",
+      "counterevidence": []
+    },
+    {
+      "candidate_id": "C-independent-01",
+      "origin_method": "independent-prompts",
+      "source_artifact": "independent-trace.json#Q-01",
+      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
+      "affected_model_elements": [
+        "DF-01",
+        "PO-01"
+      ],
+      "disposition": "pending",
+      "rationale": "Awaiting independent reconciliation.",
+      "counterevidence": []
+    },
+    {
+      "candidate_id": "C-gap-01",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-gap",
+      "observation": "An unspecified actor might reveal unspecified information.",
+      "affected_model_elements": [],
+      "disposition": "pending",
+      "rationale": "Candidate needs reconciliation.",
+      "counterevidence": []
+    }
+  ]
+}

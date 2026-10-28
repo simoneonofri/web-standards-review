@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "response_package_id": "responses-demo",
+  "model_id": "model-demo",
+  "threat_package_id": "threats-demo",
+  "source_contract_version": 1,
+  "responses": [
+    {
+      "response_id": "R-01",
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01", "PO-01"],
+      "erta": "Reduce",
+      "response": "Require the user agent to fail closed when the policy check does not pass.",
+      "mechanism_or_text": "Normative fail-closed policy-check requirement.",
+      "owner": "User agent",
+      "evidence_status": "inferred",
+      "evidence": [{"source_reference": "Proposed spec text"}],
+      "assumptions": ["A-001"],
+      "transfer_receiver": "",
+      "acceptance_rationale": "",
+      "revisit_trigger": "",
+      "remaining_threat": "A user agent bug could still disclose metadata.",
+      "next_action": "Add or verify fail-closed text.",
+      "status": "proposed"
+    }
+  ],
+  "unresolved_threats": [],
+  "cross_cutting_assumptions": [],
+  "skeptic_result": {"status": "ready-for-skeptic-check"},
+  "next_actions": ["Review proposed normative text."]
+}

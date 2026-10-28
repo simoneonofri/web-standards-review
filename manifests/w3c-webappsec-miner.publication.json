@@ -1,0 +1,217 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "w3c-webappsec-miner",
+  "source": {
+    "repository": "simoneonofri/w3c-webappsec-miner",
+    "repository_path": "w3c-webappsec-miner",
+    "commit": "ccc851a4933f75ac562d628252af67bf9e7d8aea"
+  },
+  "target_path": "skills/w3c-webappsec-miner",
+  "include_paths": [
+    {
+      "source": "catalog/CATALOG.md",
+      "target": "catalog/CATALOG.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/exceptions.json",
+      "target": "catalog/exceptions.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/secure-defaults.json",
+      "target": "catalog/secure-defaults.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/security-controls.json",
+      "target": "catalog/security-controls.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/charter-deliverables.json",
+      "target": "references/charter-deliverables.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/method.md",
+      "target": "references/method.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/source-snapshots.json",
+      "target": "references/source-snapshots.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/charter-deliverables.schema.json",
+      "target": "schemas/charter-deliverables.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/exceptions.schema.json",
+      "target": "schemas/exceptions.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/secure-defaults.schema.json",
+      "target": "schemas/secure-defaults.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/security-controls.schema.json",
+      "target": "schemas/security-controls.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/extract_charter.py",
+      "target": "scripts/extract_charter.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/query_catalog.py",
+      "target": "scripts/query_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/render_catalog.py",
+      "target": "scripts/render_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/validate_catalog.py",
+      "target": "scripts/validate_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/charter-mini.html",
+      "target": "tests/fixtures/charter-mini.html",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_catalog.py",
+      "target": "tests/test_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/w3c-webappsec-miner.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:c6e20f2ce48639ce3ddc5f38e098d66ca76ddb73e470f254abaa39b745c7633f",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "scripts/query_catalog.py",
+      "find": "    default_ids = {value for control in controls for value in control[\"default_ids\"]}\n    exception_ids = {value for control in controls for value in control[\"exception_ids\"]}\n    defaults = [item for item in load(\"catalog/secure-defaults.json\")[\"defaults\"] if item[\"default_id\"] in default_ids]\n    exceptions = [item for item in load(\"catalog/exceptions.json\")[\"exceptions\"] if item[\"exception_id\"] in exception_ids]\n    if args.json:\n        print(json.dumps({\"controls\": controls, \"defaults\": defaults, \"exceptions\": exceptions}, indent=2, ensure_ascii=False))\n",
+      "replace": "    default_ids = {value for control in controls for value in control[\"default_ids\"]}\n    exception_ids = {value for control in controls for value in control[\"exception_ids\"]}\n    defaults = [item for item in load(\"catalog/secure-defaults.json\")[\"defaults\"] if item[\"default_id\"] in default_ids]\n    exception_ids.update(value for default in defaults for value in default[\"exception_ids\"])\n    exceptions = [item for item in load(\"catalog/exceptions.json\")[\"exceptions\"] if item[\"exception_id\"] in exception_ids]\n    if args.json:\n        print(json.dumps({\"controls\": controls, \"defaults\": defaults, \"exceptions\": exceptions}, indent=2, ensure_ascii=False))\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_catalog.py",
+      "find": "    return {value for value in ids if isinstance(value, str)}\n\n\ndef validate() -> list[str]:\n    errors: list[str] = []\n    controls_doc = load(\"catalog/security-controls.json\")\n",
+      "replace": "    return {value for value in ids if isinstance(value, str)}\n\n\ndef string_array(record: dict[str, Any], key: str, context: str, errors: list[str], *, non_empty: bool = False) -> list[str]:\n    value = record.get(key)\n    if not isinstance(value, list) or any(not isinstance(item, str) or not item.strip() for item in value):\n        errors.append(f\"{context}: {key} must be an array of non-empty strings\")\n        return []\n    if non_empty and not value:\n        errors.append(f\"{context}: {key} must be non-empty\")\n    if len(value) != len(set(value)):\n        errors.append(f\"{context}: {key} must not contain duplicates\")\n    return value\n\n\ndef validate() -> list[str]:\n    errors: list[str] = []\n    controls_doc = load(\"catalog/security-controls.json\")\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_catalog.py",
+      "find": "        for key in (\"title\", \"family\", \"mechanism\", \"review_question\", \"normative_strength\"):\n            if not control.get(key):\n                errors.append(f\"{context}: missing {key}\")\n        if not control.get(\"applicability\") or not control.get(\"limitations\"):\n            errors.append(f\"{context}: applicability and limitations must be non-empty\")\n        for value in control.get(\"default_ids\", []):\n            if value not in default_ids:\n                errors.append(f\"{context}: unknown default {value}\")\n        for value in control.get(\"exception_ids\", []):\n            if value not in exception_ids:\n                errors.append(f\"{context}: unknown exception {value}\")\n        validate_evidence(control.get(\"evidence\"), context, errors)\n    for default in defaults:\n        context = default.get(\"default_id\", \"default\")\n        for value in default.get(\"control_ids\", []):\n            if value not in control_ids:\n                errors.append(f\"{context}: unknown control {value}\")\n        for value in default.get(\"exception_ids\", []):\n            if value not in exception_ids:\n                errors.append(f\"{context}: unknown exception {value}\")\n        validate_evidence(default.get(\"evidence\"), context, errors)\n    for exception in exceptions:\n        context = exception.get(\"exception_id\", \"exception\")\n        for value in exception.get(\"control_ids\", []):\n            if value not in control_ids:\n                errors.append(f\"{context}: unknown control {value}\")\n        validate_evidence(exception.get(\"evidence\"), context, errors)\n",
+      "replace": "        for key in (\"title\", \"family\", \"mechanism\", \"review_question\", \"normative_strength\"):\n            if not control.get(key):\n                errors.append(f\"{context}: missing {key}\")\n        applicability = string_array(control, \"applicability\", context, errors, non_empty=True)\n        if not applicability or not control.get(\"limitations\"):\n            errors.append(f\"{context}: applicability and limitations must be non-empty\")\n        for value in string_array(control, \"default_ids\", context, errors):\n            if value not in default_ids:\n                errors.append(f\"{context}: unknown default {value}\")\n        for value in string_array(control, \"exception_ids\", context, errors):\n            if value not in exception_ids:\n                errors.append(f\"{context}: unknown exception {value}\")\n        validate_evidence(control.get(\"evidence\"), context, errors)\n    for default in defaults:\n        context = default.get(\"default_id\", \"default\")\n        for value in string_array(default, \"control_ids\", context, errors, non_empty=True):\n            if value not in control_ids:\n                errors.append(f\"{context}: unknown control {value}\")\n        for value in string_array(default, \"exception_ids\", context, errors):\n            if value not in exception_ids:\n                errors.append(f\"{context}: unknown exception {value}\")\n        validate_evidence(default.get(\"evidence\"), context, errors)\n    for exception in exceptions:\n        context = exception.get(\"exception_id\", \"exception\")\n        for value in string_array(exception, \"control_ids\", context, errors, non_empty=True):\n            if value not in control_ids:\n                errors.append(f\"{context}: unknown control {value}\")\n        validate_evidence(exception.get(\"evidence\"), context, errors)\n",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_catalog.py",
+      "find": "            self.assertTrue(output.read_text(encoding=\"utf-8\").startswith(\"# WebAppSec API security control catalog\"))\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "replace": "            self.assertTrue(output.read_text(encoding=\"utf-8\").startswith(\"# WebAppSec API security control catalog\"))\n\n\n    def test_query_includes_exceptions_linked_through_selected_defaults(self) -> None:\n        import contextlib\n        import io\n        from unittest.mock import patch\n        module = load_script(\"query_catalog.py\")\n        original_load = module.load\n        def selected_load(path):\n            data = original_load(path)\n            if path == \"catalog/security-controls.json\":\n                data[\"controls\"] = [control for control in data[\"controls\"] if control[\"control_id\"] == \"WAM-WELL-01\"]\n            return data\n        output = io.StringIO()\n        with patch.object(module, \"load\", side_effect=selected_load), patch.object(sys, \"argv\", [\"query_catalog.py\", \"--json\"]), contextlib.redirect_stdout(output):\n            self.assertEqual(module.main(), 0)\n        payload = json.loads(output.getvalue())\n        expected = {value for default in payload[\"defaults\"] for value in default[\"exception_ids\"]}\n        self.assertTrue({\"WAE-01\", \"WAE-02\", \"WAE-03\"} <= expected)\n        self.assertTrue(expected <= {item[\"exception_id\"] for item in payload[\"exceptions\"]})\n\n    def test_validator_rejects_missing_required_reference_array(self) -> None:\n        from unittest.mock import patch\n        module = load_script(\"validate_catalog.py\")\n        original_load = module.load\n        def incomplete_load(path):\n            data = original_load(path)\n            if path == \"catalog/security-controls.json\":\n                data[\"controls\"][0].pop(\"default_ids\")\n            return data\n        with patch.object(module, \"load\", side_effect=incomplete_load):\n            errors = module.validate()\n        self.assertTrue(any(\"default_ids must be an array\" in error for error in errors))\n\n    def test_validator_rejects_malformed_applicability_array(self) -> None:\n        from unittest.mock import patch\n        module = load_script(\"validate_catalog.py\")\n        original_load = module.load\n        def malformed_load(path):\n            data = original_load(path)\n            if path == \"catalog/security-controls.json\":\n                data[\"controls\"][0][\"applicability\"] = \"powerful-feature\"\n            return data\n        with patch.object(module, \"load\", side_effect=malformed_load):\n            errors = module.validate()\n        self.assertTrue(any(\"applicability must be an array\" in error for error in errors))\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "expected_count": 1
+    }
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/w3c-webappsec-miner.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:89a77a0ad0672da95d611821a7695f64477adb629916c006d93f843a47592a60"
+}

@@ -1,0 +1,266 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "spec-review",
+  "source": {
+    "repository": "simoneonofri/spec-security-review",
+    "repository_path": "spec-security-review",
+    "commit": "2c020c62c04911fe1c121b937f944f936e2372f0"
+  },
+  "target_path": "skills/spec-review",
+  "include_paths": [
+    {
+      "source": "references/bounded-local-poc.md",
+      "target": "references/bounded-local-poc.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/fact-check-publication-gate.md",
+      "target": "references/fact-check-publication-gate.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/focused-w3c-security-reply.md",
+      "target": "references/focused-w3c-security-reply.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/review-publication-gate-v1.schema.json",
+      "target": "schemas/review-publication-gate-v1.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/assemble_threat_model_report.py",
+      "target": "scripts/assemble_threat_model_report.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/build_publication_gate.py",
+      "target": "scripts/build_publication_gate.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/export_report.py",
+      "target": "scripts/export_report.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/run_spec_review.py",
+      "target": "scripts/run_spec_review.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/validate_focused_review.py",
+      "target": "scripts/validate_focused_review.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/validate_poc.py",
+      "target": "scripts/validate_poc.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "spec_review/__init__.py",
+      "target": "spec_review/__init__.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "spec_review/focused_review_contract.py",
+      "target": "spec_review/focused_review_contract.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "spec_review/pipeline.py",
+      "target": "spec_review/pipeline.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "spec_review/poc_contract.py",
+      "target": "spec_review/poc_contract.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "spec_review/publication_gate.py",
+      "target": "spec_review/publication_gate.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "spec_review/report_assembler.py",
+      "target": "spec_review/report_assembler.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "spec_review/report_contract.py",
+      "target": "spec_review/report_contract.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/fact-check-invalid.json",
+      "target": "tests/fixtures/fact-check-invalid.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/fact-check-valid.json",
+      "target": "tests/fixtures/fact-check-valid.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_focused_review_contract.py",
+      "target": "tests/test_focused_review_contract.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_poc_contract.py",
+      "target": "tests/test_poc_contract.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_publication_gate.py",
+      "target": "tests/test_publication_gate.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_report_assembler.py",
+      "target": "tests/test_report_assembler.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/spec-review.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:f5690f09b967949c201edb1acfef1bd126345d53c7696b1d73cee217b997b9e5",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "references/fact-check-publication-gate.md",
+      "find": "Simone-specific writing, knowledge, or orchestration systems.",
+      "replace": "personal writing, knowledge, or orchestration systems.",
+      "expected_count": 1
+    },
+    {"path": "references/fact-check-publication-gate.md", "find": "The fact-check result is produced by the independent `fact-check` skill. The\npublication gate validates the required cross-skill fields but does not import\npersonal writing, knowledge, or orchestration systems.\n\n## Command\n\n", "replace": "The fact-check result is produced by the independent `fact-check` skill. The\npublication gate validates the required cross-skill fields but does not import\npersonal writing, knowledge, or orchestration systems.\n\nThe caller conducting the final review records `analysis-gate.json` from the actual upstream results; it is a run artifact, not a sixth shared handoff automatically produced by the five-stage flow. The extended report assembler consumes and validates this gate rather than creating it. Use `gate: analysis`, an honest aggregate `status`, and named `checks` for `source_corpus`, `model_packet`, `dfd_representation`, `baseline_elicitation`, `response_mapping`, and `independent_review`; include `additional_elicitation_reconciliation` when additional analysis is in scope. Preserve the supporting results and evidence in the run directory. A missing check or unperformed review cannot be replaced with a fabricated passing status.\n\n## Command\n\n", "expected_count": 1},
+    {"path": "references/focused-w3c-security-reply.md", "find": "\n## Required artifacts\n\nCreate a private `evidence-packet.json` and a separate public `comment.md`. Do not put private notes, unused sources, uncertainty analysis, or local PoC details in `comment.md`.\n\nThe evidence packet must use this shape:\n\n", "replace": "\n## Required artifacts\n\nCreate a private `evidence-packet.json` and a separate public `comment.md`. Do not put private notes, unused sources, uncertainty analysis, or local PoC details in `comment.md`. Keep the detailed uncertainty analysis private, while preserving every material qualification in the public comment.\n\nThe evidence packet must use this shape:\n\n", "expected_count": 1},
+    {"path": "references/focused-w3c-security-reply.md", "find": "\nAlways preserve `search_evidence`, including when no related prior finding is found. An empty `prior_feedback` list is valid when that bounded negative search is recorded; do not invent a prior-finding URL. Search-evidence URLs remain private unless the same URL is independently registered as the prior-feedback boundary, required finding evidence, or consensus evidence. Mark only the finding-evidence links that the public comment needs as `public_required: true`; keep corroborating sources false and private. A finding source marked `public_required: false` is not permitted in `comment.md`, and duplicate source URLs are invalid even when their role labels differ. Required public sources must have distinct evidence roles. Set `requested_change_strength` to `informative_documentation` or `normative_requirement`; the requested-change wording and final ask must preserve that force. List every material requested-change object separately in `requested_change_components`; entries must be atomic, derived from `requested_change`, and reproduced in full in the final ask. Use `public_projection_markers` for short, stable technical terms or phrases drawn verbatim from the corresponding finding field that must survive in `comment.md`; every material prerequisite, limitation, non-claim, and uncertainty needs a marker that distinguishes that entry from the others in the same field. The validator rejects generic, shared-only, duplicate, or unrelated markers. These markers are integrity checks between the packet and its projection, not a final-text template.\n\n## Public projection\n\nWrite `comment.md` as ordinary issue prose, not as a review report. It must:\n", "replace": "\nAlways preserve `search_evidence`, including when no related prior finding is found. An empty `prior_feedback` list is valid when that bounded negative search is recorded; do not invent a prior-finding URL. Search-evidence URLs remain private unless the same URL is independently registered as the prior-feedback boundary, required finding evidence, or consensus evidence. Mark only the finding-evidence links that the public comment needs as `public_required: true`; keep corroborating sources false and private. A finding source marked `public_required: false` is not permitted in `comment.md`, and duplicate source URLs are invalid even when their role labels differ. Required public sources must have distinct evidence roles. Set `requested_change_strength` to `informative_documentation` or `normative_requirement`; the requested-change wording and final ask must preserve that force. List every material requested-change object separately in `requested_change_components`; entries must be atomic, derived from `requested_change`, and reproduced in full in the final ask. Use `public_projection_markers` for short, stable technical terms or phrases drawn verbatim from the corresponding finding field that must survive in `comment.md`; every material prerequisite, limitation, non-claim, and uncertainty needs a marker that distinguishes that entry from the others in the same field. The validator rejects generic, shared-only, duplicate, or unrelated markers. These markers are integrity checks between the packet and its projection, not a final-text template.\n\nWhen `finding.uncertainties` is non-empty, add an `uncertainties` entry to `public_projection_markers` with a distinct derived marker for each material uncertainty. The empty-uncertainty example above does not need that entry.\n\n## Public projection\n\nWrite `comment.md` as ordinary issue prose, not as a review report. It must:\n", "expected_count": 1}
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [
+    "source-corpus-manifest/v1",
+    "model-packet/v1",
+    "threat-package/v1",
+    "review-publication-gate/v1"
+  ],
+  "rights_manifest_reference": "manifests/spec-review.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "focused-review-contract",
+    "poc-contract",
+    "publication-gate",
+    "report-assembler"
+  ],
+  "exclude_paths": [
+    "SKILL.md",
+    "agents",
+    "review-bundles",
+    "spec_security_review"
+  ],
+  "expected_output_digest": "sha256:fdfa5daa86f5bde961df1dc9b15bfdd58b702b7d5e0c39ccba69c88551d5309d"
+}

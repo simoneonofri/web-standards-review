@@ -1,0 +1,38 @@
+{
+  "specification": {
+    "spec_id": "review-derived-ml-native-computation",
+    "title": "Review-Derived ML Native Computation API",
+    "version": "2026-06-23",
+    "derivation": {
+      "source": "local w3c-knowledge findings",
+      "finding_count": 2133,
+      "observed_repositories": [
+        "webmachinelearning/webnn",
+        "webmachinelearning/webmcp"
+      ],
+      "observed_review_themes": [
+        "security and privacy considerations refresh",
+        "resource limits for native computation",
+        "kernel size, dilation, and stride bounds",
+        "document-scoped objects and navigator exposure",
+        "sensitive data handling"
+      ]
+    }
+  },
+  "spec_profile": {
+    "primary_family": "computational-js-webidl-api",
+    "secondary_families": [
+      "device-sensor-native-capability"
+    ],
+    "facets": [
+      "webidl-javascript",
+      "computation",
+      "window",
+      "dedicated-worker",
+      "native-capability",
+      "sensitive-data",
+      "high-entropy",
+      "persistent-state"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "response_package_id": "responses-oos",
+  "model_id": "model-minimal",
+  "threat_package_id": "threats-minimal",
+  "source_contract_version": 1,
+  "responses": [
+    {
+      "response_id": "R-01",
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "erta": "Transfer",
+      "response": "This is out of scope.",
+      "mechanism_or_text": "Out of scope for the specification.",
+      "owner": "Specification editor",
+      "evidence_status": "assumed",
+      "evidence": [],
+      "assumptions": ["Some other layer handles it."],
+      "transfer_receiver": "Unknown",
+      "acceptance_rationale": "",
+      "revisit_trigger": "",
+      "remaining_threat": "Unknown layer may not handle it.",
+      "next_action": "Name the responsible layer.",
+      "status": "proposed"
+    }
+  ],
+  "unresolved_threats": [],
+  "cross_cutting_assumptions": [],
+  "skeptic_result": {},
+  "next_actions": []
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "independent-review-gate/v1",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "model_id": "model-clean-room",
+  "outcome": "pass",
+  "publication_authorized": false,
+  "remaining_questions": [
+    "T-05 remains blocked but explicitly owned for pre-publication resolution."
+  ],
+  "skeptic_review": "The fixture proves handoff mechanics, not exhaustive threat coverage."
+}

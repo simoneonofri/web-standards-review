@@ -1,0 +1,72 @@
+{
+  "processed_specifications": [
+    {
+      "categories_evaluated": [
+        "authority-and-capability-delegation",
+        "confidentiality-and-information-disclosure",
+        "conformance-and-implementation-variance",
+        "cross-origin-communication",
+        "cryptography-and-randomness",
+        "device-sensor-and-native-boundaries",
+        "extensibility-and-unknown-fields",
+        "external-dependency-assumptions",
+        "freshness-and-anti-replay",
+        "integrity-and-authenticity",
+        "origin-and-site-isolation",
+        "permission-lifecycle",
+        "privacy-security-intersections",
+        "resource-exhaustion-and-amplification",
+        "revocation-recovery-and-rollback",
+        "safe-defaults-and-fail-closed-behavior",
+        "secure-context-and-transport",
+        "state-storage-and-cache"
+      ],
+      "extraction_method_version": "0.1",
+      "processing_date": "2026-07-21",
+      "result_identifier": "pointerevents4-WD-2026-07-01",
+      "source_completeness": {
+        "available_artifacts": [
+          "immutable specification snapshot",
+          "fixed editor source",
+          "whole-section inventory",
+          "WebIDL extraction",
+          "normative-algorithm extraction",
+          "security/privacy section",
+          "review and resolution signals",
+          "prior Recommendation and implementation report"
+        ],
+        "counts": {
+          "available_records": 30,
+          "local_algorithm_blocks": 36,
+          "manifest_records": 32,
+          "source_packet_considerations": 4,
+          "source_packet_evidence_ids": 124,
+          "source_packet_references": 21,
+          "source_packet_section_inventory": 122,
+          "source_packet_text_sections": 117,
+          "source_packet_webidl_blocks": 10,
+          "validated_exact_full_sections": 122
+        },
+        "limitations": [
+          "L2 review material is primarily Level 3 or historical feature review and does not establish Level 4 consensus",
+          "No implementation behavior was tested by this mining run",
+          "Source completeness is not a security-quality score"
+        ],
+        "missing_artifacts": [
+          "complete normalized dependency text",
+          "dedicated Level 4 SPQ",
+          "dedicated Level 4 security/privacy/TAG review",
+          "separate Level 4 explainer"
+        ],
+        "score": 0.94,
+        "source_mode": "W3C Knowledge Source Packet v1 plus validated exact-version full-section supplement primary; immutable local snapshot and checkout cross-check; archived review signals supplemental",
+        "source_packet_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d",
+        "w3c_knowledge_source_packet_v1": "available and identity-verified; raw packet 117/122 text sections; validated bundle 122/122"
+      },
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01",
+      "status": "processed"
+    }
+  ],
+  "schema_version": "0.1"
+}

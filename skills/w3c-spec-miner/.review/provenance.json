@@ -1,0 +1,81 @@
+{
+  "contract_versions": [],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:e5996d5aca6cb80aa0550cdb25b4114615df207846d245a640b023d822c9e9b0",
+      "size": 3484
+    },
+    {
+      "binary": false,
+      "path": "references/method.md",
+      "sha256": "sha256:1cac858737b4cede16fb4efcd9caf19094722bb22cfcc3735ece6c657100d0de",
+      "size": 2817
+    },
+    {
+      "binary": false,
+      "path": "references/pattern-definitions.json",
+      "sha256": "sha256:9a291913e677fffdf8f5411e8dfd28688c314303f10aee9b4a6682c5390f4f6e",
+      "size": 14173
+    },
+    {
+      "binary": false,
+      "path": "references/schema.md",
+      "sha256": "sha256:b669c31af4678a3851594c96aea76762832619a156c8284ef1ed6ec74a0ada5e",
+      "size": 1648
+    },
+    {
+      "binary": false,
+      "path": "scripts/mine.py",
+      "sha256": "sha256:f67cb5074b77e9dbe749ba5d5ef0960ef5037fa3980d69986c2e1ca437a8c829",
+      "size": 13690
+    },
+    {
+      "binary": false,
+      "path": "scripts/refresh.py",
+      "sha256": "sha256:2800165cd0076efd021b3d8baf0d94a1daa8a3ce69e528b414223caf96f64811",
+      "size": 6594
+    },
+    {
+      "binary": false,
+      "path": "scripts/render_catalog.py",
+      "sha256": "sha256:6a237560d30a125fecf925bd8a9ecb59dcc2640988ccda330de6c3d5e06f911a",
+      "size": 976
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate.py",
+      "sha256": "sha256:8c5f4d84930e64aaf9328bd85fe183bb5aaa0ea9ac4a96316a737d426f7c5946",
+      "size": 1828
+    },
+    {
+      "binary": false,
+      "path": "tests/test_mine.py",
+      "sha256": "sha256:694b50b6d8446b98ae06c48104eca25f8b32d8c7eb9b86c3be5ab193e3295537",
+      "size": 8992
+    }
+  ],
+  "output_digest": "sha256:213e62efb6cf49f66454dd320bb178e46ffca5b35c39728788a660d61b30460c",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "rights_manifest_reference": "manifests/w3c-spec-miner.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "w3c-spec-miner",
+  "source_commit": "7203303b9db8048b3d07ca90ccdf845fee4068ec",
+  "source_repository": "simoneonofri/w3c-spec-miner",
+  "tool_version": "reviewctl/0.2.0"
+}

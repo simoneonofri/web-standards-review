@@ -1,0 +1,14 @@
+--- a/scripts/validate_fact_check_result.py
++++ b/scripts/validate_fact_check_result.py
+@@ -174,0 +175,2 @@
++        if len(referenced_sources) != len(set(referenced_sources)):
++            errors.append(f"{label}.source_ids must not contain duplicates")
+--- a/tests/test_fact_check_result.py
++++ b/tests/test_fact_check_result.py
+@@ -109,0 +110,6 @@
++
++
++def test_claim_source_references_must_be_unique():
++    payload = load_fixture()
++    payload["claims"][0]["source_ids"] *= 2
++    assert any("source_ids must not contain duplicates" in error for error in MODULE.validate_result(payload))

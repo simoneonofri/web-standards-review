@@ -1,0 +1,27 @@
+--- a/scripts/validate_response_package.py
++++ b/scripts/validate_response_package.py
+@@ -94 +94 @@
+-        if GENERIC_RESPONSE_RE.search(combined):
++        if GENERIC_RESPONSE_RE.search(combined) or GENERIC_RESPONSE_RE.fullmatch(str(mechanism or "").strip()):
+--- a/tests/test_response_package_validator.py
++++ b/tests/test_response_package_validator.py
+@@ -202,0 +203,19 @@
++
++
++def test_generic_mechanism_is_not_hidden_by_response_summary():
++    package = load_valid_package()
++    package["responses"][0].update(response="Mitigate", mechanism_or_text="validate inputs")
++    errors = MODULE.validate_specific_responses(package)
++    assert any("generic keyword-routing text" in error for error in errors)
++
++
++def test_short_summary_can_use_a_concrete_threat_specific_mechanism():
++    package = load_valid_package()
++    package["responses"][0]["response"] = "Validate inputs"
++    assert MODULE.validate_specific_responses(package) == []
++
++
++def test_specific_mechanism_is_not_rejected_for_a_generic_introductory_phrase():
++    package = load_valid_package()
++    package["responses"][0].update(response="Reject replayed requests", mechanism_or_text="Improve security by rejecting stale transaction identifiers before processing the request.")
++    assert MODULE.validate_specific_responses(package) == []

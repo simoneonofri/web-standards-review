@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import sys
+
+# Read-only commands must not dirty the checkout before install/update/export.
+sys.dont_write_bytecode = True
+
+if len(sys.argv) > 1 and sys.argv[1] == "validate-bundle":
+    from validate_bundle import main as validate_bundle_main
+
+    raise SystemExit(validate_bundle_main(sys.argv[2:]))
+
+from reviewctl import main
+
+raise SystemExit(main())

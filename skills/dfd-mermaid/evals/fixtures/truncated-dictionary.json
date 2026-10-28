@@ -1,0 +1,20 @@
+{
+  "contract_version": 1,
+  "model_id": "model-minimal",
+  "rows": [
+    {
+      "canonical_id": "EE-01",
+      "mermaid_node_id": "EE1_Service",
+      "type": "External Entity",
+      "visible_label": "EE-01 Service",
+      "name": "Service",
+      "description": "Remote service receiving the request.",
+      "specification_reference": "Section 1 Service (#service)",
+      "evidence_status": "verified",
+      "assumptions": [],
+      "boundary_membership": [],
+      "flow_source": "",
+      "flow_destination": ""
+    }
+  ]
+}

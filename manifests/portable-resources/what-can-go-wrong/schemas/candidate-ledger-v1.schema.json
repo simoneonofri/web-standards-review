@@ -1,0 +1,374 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:web-standards-review:candidate-ledger:v1",
+  "title": "Candidate ledger v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "stage",
+    "model_sha256",
+    "candidates"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "candidate-ledger/v1"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "stage": {
+      "enum": [
+        "elicitation",
+        "reconciliation"
+      ]
+    },
+    "model_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "elicitation_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "threat_package_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "baseline_threat_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "origin_method",
+        "source_artifact",
+        "observation",
+        "affected_model_elements",
+        "disposition",
+        "rationale",
+        "counterevidence"
+      ],
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^C-[A-Za-z0-9_.-]+$"
+        },
+        "origin_method": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "source_artifact": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "observation": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "affected_model_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "uniqueItems": true
+        },
+        "disposition": {
+          "enum": [
+            "pending",
+            "retained_unique",
+            "confirmed_existing",
+            "refined_existing",
+            "duplicate",
+            "not_concrete",
+            "not_applicable",
+            "insufficient_evidence",
+            "out_of_scope",
+            "blocked",
+            "deferred",
+            "needs_manual_review"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "counterevidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        },
+        "retained_threat_id": {
+          "type": "string",
+          "pattern": "^T-\\d{2,}$"
+        },
+        "evidence_basis": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "review_basis",
+            "source_references"
+          ],
+          "properties": {
+            "review_basis": {
+              "enum": [
+                "source_checked",
+                "model_inference",
+                "assumption_based"
+              ]
+            },
+            "source_references": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            },
+            "inference_rationale": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "assumption_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "review_basis": {
+                    "const": "source_checked"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "source_references": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "review_basis": {
+                    "enum": [
+                      "model_inference",
+                      "assumption_based"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "inference_rationale"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "review_basis": {
+                    "const": "assumption_based"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "assumption_ids"
+                ],
+                "properties": {
+                  "assumption_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "concrete_bad_event": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "actor_or_condition",
+            "action_or_failure",
+            "violated_property_or_interest",
+            "consequence"
+          ],
+          "properties": {
+            "actor_or_condition": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "action_or_failure": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "violated_property_or_interest": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "consequence": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "const": "retained_unique"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "concrete_bad_event"
+            ],
+            "properties": {
+              "affected_model_elements": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "retained_unique",
+                  "confirmed_existing",
+                  "refined_existing",
+                  "duplicate"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "retained_threat_id",
+              "evidence_basis"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "retained_threat_id"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "reconciliation"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "elicitation_sha256",
+          "threat_package_sha256",
+          "baseline_threat_ids"
+        ]
+      },
+      "else": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "elicitation_sha256"
+              ]
+            },
+            {
+              "required": [
+                "threat_package_sha256"
+              ]
+            },
+            {
+              "required": [
+                "baseline_threat_ids"
+              ]
+            }
+          ]
+        },
+        "properties": {
+          "candidates": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "disposition": {
+                  "enum": [
+                    "pending",
+                    "not_concrete",
+                    "not_applicable",
+                    "insufficient_evidence",
+                    "out_of_scope",
+                    "blocked",
+                    "deferred",
+                    "needs_manual_review"
+                  ]
+                }
+              },
+              "not": {
+                "required": [
+                  "retained_threat_id"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "specification": {
+    "spec_id": "synthetic-identity-protocol",
+    "title": "Synthetic Federated Credential Protocol",
+    "version": "2026-01-01"
+  },
+  "spec_profile": {
+    "primary_family": "identity-credential-payment",
+    "secondary_families": ["network-fetch-protocol", "cryptographic-api-protocol"],
+    "facets": [
+      "http-network-protocol",
+      "network",
+      "identity-credential",
+      "cryptography",
+      "top-level",
+      "iframe",
+      "third-party",
+      "cross-origin",
+      "native-ui",
+      "stable-identifier",
+      "credential-material",
+      "trusted-ui",
+      "cross-site-observability"
+    ]
+  }
+}

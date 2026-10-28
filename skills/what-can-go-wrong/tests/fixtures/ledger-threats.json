@@ -1,0 +1,166 @@
+{
+  "contract_version": 1,
+  "threat_package_id": "threats-clean-room",
+  "model_id": "model-clean-room",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "source_contract_version": 1,
+  "threats": [
+    {
+      "threat_id": "T-01",
+      "affected_model_elements": [
+        "DF-01",
+        "PO-01"
+      ],
+      "actor_or_condition": "An implementation",
+      "action_or_failure": "sends fields outside the declared allowlist",
+      "violated_property_or_interest": "data minimization",
+      "consequence": "the remote service receives unnecessary personal data",
+      "threat_story": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
+      "evidence_status": "inferred",
+      "evidence": [
+        {
+          "source_reference": "Synthetic specification and model walk"
+        }
+      ],
+      "assumptions": [
+        "A-001"
+      ],
+      "lens": [
+        "model-walk"
+      ],
+      "weakness": "",
+      "harm": "the remote service receives unnecessary personal data",
+      "response_hint": "Remove undeclared fields from the protocol surface.",
+      "responsibility_or_transfer_hint": "Specification and user agent",
+      "remaining_question": "",
+      "prompt_seed": "What if an implementation sends fields outside the declared allowlist?"
+    },
+    {
+      "threat_id": "T-02",
+      "affected_model_elements": [
+        "DF-01",
+        "EE-02"
+      ],
+      "actor_or_condition": "A malicious remote service",
+      "action_or_failure": "retains request metadata after the stated purpose ends",
+      "violated_property_or_interest": "confidentiality",
+      "consequence": "the user and a named non-user remain observable over time",
+      "threat_story": "A malicious remote service retains request metadata after the stated purpose ends, violating confidentiality and causing the user and a named non-user remain observable over time.",
+      "evidence_status": "inferred",
+      "evidence": [
+        {
+          "source_reference": "Synthetic specification and model walk"
+        }
+      ],
+      "assumptions": [
+        "A-002"
+      ],
+      "lens": [
+        "model-walk"
+      ],
+      "weakness": "",
+      "harm": "the user and a named non-user remain observable over time",
+      "response_hint": "Bound retention and expose a deletion signal.",
+      "responsibility_or_transfer_hint": "Remote service with deployer evidence",
+      "remaining_question": "",
+      "prompt_seed": "What if a malicious remote service retains request metadata after the stated purpose ends?"
+    },
+    {
+      "threat_id": "T-03",
+      "affected_model_elements": [
+        "PO-01",
+        "DF-01"
+      ],
+      "actor_or_condition": "A user-agent failure",
+      "action_or_failure": "bypasses the policy and intent check",
+      "violated_property_or_interest": "user control",
+      "consequence": "a request is sent without the user's current intent",
+      "threat_story": "A user-agent failure bypasses the policy and intent check, violating user control and causing a request is sent without the user's current intent.",
+      "evidence_status": "inferred",
+      "evidence": [
+        {
+          "source_reference": "Synthetic specification and model walk"
+        }
+      ],
+      "assumptions": [
+        "A-001"
+      ],
+      "lens": [
+        "model-walk"
+      ],
+      "weakness": "",
+      "harm": "a request is sent without the user's current intent",
+      "response_hint": "Fail closed and test the denied path.",
+      "responsibility_or_transfer_hint": "User agent",
+      "remaining_question": "",
+      "prompt_seed": "What if a user-agent failure bypasses the policy and intent check?"
+    },
+    {
+      "threat_id": "T-04",
+      "affected_model_elements": [
+        "DF-01",
+        "TB-01"
+      ],
+      "actor_or_condition": "A deployment operator",
+      "action_or_failure": "logs full request payloads for debugging",
+      "violated_property_or_interest": "confidentiality",
+      "consequence": "operators gain a secondary copy outside the protocol purpose",
+      "threat_story": "A deployment operator logs full request payloads for debugging, violating confidentiality and causing operators gain a secondary copy outside the protocol purpose.",
+      "evidence_status": "inferred",
+      "evidence": [
+        {
+          "source_reference": "Synthetic specification and model walk"
+        }
+      ],
+      "assumptions": [
+        "A-002"
+      ],
+      "lens": [
+        "model-walk"
+      ],
+      "weakness": "",
+      "harm": "operators gain a secondary copy outside the protocol purpose",
+      "response_hint": "Document and test a minimized logging profile.",
+      "responsibility_or_transfer_hint": "Deployment operator",
+      "remaining_question": "",
+      "prompt_seed": "What if a deployment operator logs full request payloads for debugging?"
+    },
+    {
+      "threat_id": "T-05",
+      "affected_model_elements": [
+        "EE-02",
+        "DF-01"
+      ],
+      "actor_or_condition": "An unresolved service outage",
+      "action_or_failure": "prevents the remote service from completing requests",
+      "violated_property_or_interest": "availability",
+      "consequence": "the user cannot complete the mediated action or obtain recovery",
+      "threat_story": "An unresolved service outage prevents the remote service from completing requests, violating availability and causing the user cannot complete the mediated action or obtain recovery.",
+      "evidence_status": "inferred",
+      "evidence": [
+        {
+          "source_reference": "Synthetic specification and model walk"
+        }
+      ],
+      "assumptions": [],
+      "lens": [
+        "model-walk"
+      ],
+      "weakness": "",
+      "harm": "the user cannot complete the mediated action or obtain recovery",
+      "response_hint": "Define an owner and recovery requirement.",
+      "responsibility_or_transfer_hint": "Specification editor and deployer",
+      "remaining_question": "The current source does not define a recovery contract.",
+      "prompt_seed": "What if an unresolved service outage prevents the remote service from completing requests?"
+    }
+  ],
+  "coverage_notes": [
+    "Every accepted model element is walked; the fixture is method evidence, not methodological completeness."
+  ],
+  "blocked_elements": [],
+  "unresolved_model_gaps": [],
+  "skeptic_result": {
+    "status": "ready-for-response-mapping"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "deck_id": "wapi-review",
+  "title": "Web API Review Deck",
+  "version": "1.0.0",
+  "status": "playtest",
+  "description": "A compact deck for testing source-grounded card generation.",
+  "generation_mode": "source-to-cards",
+  "play_mode": "collaborative",
+  "method_notes": [
+    "The deck supports what can go wrong and does not replace the system model."
+  ],
+  "suits": [
+    {"id": "MSG", "name": "Messages", "description": "Message and callback flows."},
+    {"id": "AUT", "name": "Authority", "description": "Authority and principal decisions."},
+    {"id": "STA", "name": "State", "description": "Stored and lifecycle state."},
+    {"id": "ERR", "name": "Errors", "description": "Failure and fallback behavior."}
+  ],
+  "cards": [
+    {
+      "id": "WAPI-MSG-01",
+      "suit": "MSG",
+      "rank": 1,
+      "title": "Replayable delivery",
+      "prompt": "Could this message be replayed outside the transaction where it was created?",
+      "look_for": ["freshness", "audience binding", "transaction binding"],
+      "outputs": ["threat story", "affected element", "remaining question"],
+      "applies_to": ["data_flow", "trust_boundary"],
+      "anti_patterns": ["Do not infer replayability from the diagram label alone."],
+      "framework_prompts": ["STRIDE:Tampering"],
+      "source_trace": [
+        {
+          "source_kind": "primary_source",
+          "source_reference": "Specification request algorithm",
+          "source_item_id": "request-a-position",
+          "source_locator": "#request-a-position",
+          "derivation_notes": "The algorithm delivers a result to a recipient callback.",
+          "evidence_status": "verified"
+        }
+      ],
+      "prompt_template_id": "STRIDE-TAMPERING-FLOW",
+      "prompt_family": "stride_per_element",
+      "source_item_id": "request-a-position",
+      "applicability_rule_id": "data_flow_tampering_or_replay",
+      "expected_bad_event_shape": "A message or callback is replayed or substituted before the receiver acts.",
+      "card_status": "keep"
+    },
+    {
+      "id": "WAPI-AUT-01",
+      "suit": "AUT",
+      "rank": 1,
+      "title": "Wrong principal",
+      "prompt": "Could an operation be authorized using the wrong principal or execution context?",
+      "look_for": ["origin", "principal", "delegated context"],
+      "outputs": ["threat story", "affected element"],
+      "applies_to": ["process", "policy_decision"],
+      "anti_patterns": ["Do not treat a missing control as the threat story."],
+      "framework_prompts": ["STRIDE:Expansion of Authority"],
+      "source_trace": [
+        {
+          "source_kind": "review_material",
+          "source_reference": "Horizontal review authority check",
+          "source_item_id": "authority-check",
+          "evidence_status": "inferred"
+        }
+      ],
+      "prompt_template_id": "AUTHORITY-PRINCIPAL",
+      "prompt_family": "workshop_prompt_design",
+      "source_item_id": "authority-check",
+      "applicability_rule_id": "operation_uses_caller_authority",
+      "expected_bad_event_shape": "An operation executes with authority belonging to a different principal.",
+      "card_status": "new"
+    },
+    {
+      "id": "WAPI-STA-01",
+      "suit": "STA",
+      "rank": 1,
+      "title": "Stale state",
+      "prompt": "Could stale state remain authoritative after its validity or consent has changed?",
+      "look_for": ["revocation", "expiry", "cache invalidation"],
+      "outputs": ["threat story", "assumption"],
+      "applies_to": ["data_store", "process"],
+      "anti_patterns": ["Do not assume lifecycle behavior that is absent from the source."],
+      "framework_prompts": ["STRIDE:Tampering"],
+      "source_trace": [
+        {
+          "source_kind": "assumption",
+          "source_reference": "The model contains stored authorization state.",
+          "evidence_status": "assumed"
+        }
+      ],
+      "prompt_template_id": "STATE-STALE-AUTHORITY",
+      "prompt_family": "workshop_prompt_design",
+      "source_item_id": "stored-authorization-state",
+      "applicability_rule_id": "stored_state_controls_future_operation",
+      "expected_bad_event_shape": "Expired or revoked state continues to authorize an operation.",
+      "card_status": "keep"
+    },
+    {
+      "id": "WAPI-ERR-01",
+      "suit": "ERR",
+      "rank": 1,
+      "title": "Fail-open fallback",
+      "prompt": "Could an error or unavailable dependency force the system into a less protected fallback?",
+      "look_for": ["fallback", "retry", "default behavior"],
+      "outputs": ["threat story", "model gap"],
+      "applies_to": ["process", "data_flow"],
+      "anti_patterns": ["Do not create a threat when the fallback is not modeled; record a model gap."],
+      "framework_prompts": ["STRIDE:Denial of Service"],
+      "source_trace": [
+        {
+          "source_kind": "user_notes",
+          "source_reference": "Workshop note about dependency failure",
+          "evidence_status": "inferred"
+        }
+      ],
+      "prompt_template_id": "ERROR-FALLBACK",
+      "prompt_family": "workshop_prompt_design",
+      "source_item_id": "dependency-failure-note",
+      "applicability_rule_id": "dependency_failure_changes_control_path",
+      "expected_bad_event_shape": "A failure redirects execution to a fallback with weaker checks.",
+      "card_status": "rewrite",
+      "change_notes": ["Narrowed the prompt to fallback behavior after the first play-test."]
+    }
+  ],
+  "playtest_log": [
+    "Initial contract fixture."
+  ]
+}

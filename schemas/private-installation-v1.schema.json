@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/web-standards-review/private-installation-v1.schema.json",
+  "title": "Web Standards Review private installation v1",
+  "type": "object",
+  "required": ["schema_version", "skill", "marketplace", "public", "overlay", "generated", "lock", "contract_versions"],
+  "properties": {
+    "schema_version": {"const": "private-installation/v1"},
+    "skill": {"type": "string"},
+    "marketplace": {"const": "web-standards-review"},
+    "public": {
+      "type": "object",
+      "required": ["version", "commit", "artifact_digest", "core"],
+      "properties": {
+        "version": {"type": "string"},
+        "commit": {"type": "string"},
+        "artifact_digest": {"type": "string"},
+        "core": {"type": "string"}
+      }
+    },
+    "overlay": {"type": "string"},
+    "generated": {"type": "string"},
+    "lock": {"type": "string"},
+    "contract_versions": {"type": "object", "additionalProperties": {"type": "string"}},
+    "provider_interfaces": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "update": {"type": "object"},
+    "promotion_candidate": {"type": "string"},
+    "promotion_claims": {"type": "object"},
+    "promotion_report": {"type": "string"}
+  }
+}

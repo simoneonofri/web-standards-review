@@ -1,0 +1,25 @@
+{
+  "schema_version": "publication-manifest/v1", "project": "web-standards-review", "skill_id": "fact-check",
+  "source": {"repository": "simoneonofri/fact-check", "repository_path": "fact-check", "commit": "ebd93617f4167b06256a67766d878ec30194db36"}, "target_path": "skills/fact-check", "host_projection": "portable",
+  "include_paths": [
+    {"source": "SKILL.md", "rights": {"source_class": "original", "rights_status": "maintainer-owned", "include_decision": "include"}},
+    {"source": "agents/openai.yaml", "rights": {"source_class": "original", "rights_status": "maintainer-owned", "include_decision": "include"}},
+    {"source": "schemas/fact-check-result-v1.schema.json", "rights": {"source_class": "original", "rights_status": "maintainer-owned", "include_decision": "include"}},
+    {"source": "scripts/validate_fact_check_result.py", "rights": {"source_class": "original", "rights_status": "maintainer-owned", "include_decision": "include"}},
+    {"source": "tests/test_fact_check_result.py", "rights": {"source_class": "original", "rights_status": "maintainer-owned", "include_decision": "include"}},
+    {"source": "tests/fixtures/fact-check-result-valid.json", "rights": {"source_class": "synthetic-fixture", "rights_status": "synthetic-approved", "include_decision": "include"}}
+  ], "normalizations": [
+    {"path": "SKILL.md", "find": "## Scope\n", "replace": "<!-- section:scope -->\n## Scope\n", "expected_count": 1},
+    {"path": "SKILL.md", "find": "## Contract\n", "replace": "<!-- section:contract protected -->\n## Contract\n", "expected_count": 1},
+    {"path": "SKILL.md", "find": "## Source Rules\n", "replace": "<!-- section:source-rules -->\n## Source Rules\n", "expected_count": 1},
+    {"path": "SKILL.md", "find": "## Workflow\n", "replace": "<!-- section:workflow -->\n## Workflow\n", "expected_count": 1},
+    {"path": "SKILL.md", "find": "## Human-Readable Output\n", "replace": "<!-- section:human-readable-output -->\n## Human-Readable Output\n", "expected_count": 1},
+    {"path": "SKILL.md", "find": "## W3C And Standards Guardrails\n", "replace": "<!-- section:w3c-and-standards-guardrails -->\n## W3C And Standards Guardrails\n", "expected_count": 1},
+    {"path": "SKILL.md", "find": "## Guardrails\n", "replace": "<!-- section:guardrails -->\n## Guardrails\n", "expected_count": 1},
+    {"path": "SKILL.md", "find": "- `references/fact-check-result-contract.md` for field semantics and gate rules;", "replace": "- `tests/fixtures/fact-check-result-valid.json` for a complete synthetic result;", "expected_count": 1},
+    {"path": "scripts/validate_fact_check_result.py", "find": "        if not _string_array(referenced_sources):\n            errors.append(f\"{label}.source_ids must be an array of non-empty source IDs\")\n            referenced_sources = []\n        unknown_sources = sorted(set(referenced_sources) - source_ids)\n        if unknown_sources:\n            errors.append(f\"{label}.source_ids references unknown sources: {unknown_sources}\")\n", "replace": "        if not _string_array(referenced_sources):\n            errors.append(f\"{label}.source_ids must be an array of non-empty source IDs\")\n            referenced_sources = []\n        if len(referenced_sources) != len(set(referenced_sources)):\n            errors.append(f\"{label}.source_ids must not contain duplicates\")\n        unknown_sources = sorted(set(referenced_sources) - source_ids)\n        if unknown_sources:\n            errors.append(f\"{label}.source_ids references unknown sources: {unknown_sources}\")\n", "expected_count": 1},
+    {"path": "tests/test_fact_check_result.py", "find": "    )\n    assert schema[\"properties\"][\"schema_version\"][\"const\"] == \"fact-check-result/v1\"\n    assert \"not_checkable\" in schema[\"$defs\"][\"claim\"][\"properties\"][\"status\"][\"enum\"]\n", "replace": "    )\n    assert schema[\"properties\"][\"schema_version\"][\"const\"] == \"fact-check-result/v1\"\n    assert \"not_checkable\" in schema[\"$defs\"][\"claim\"][\"properties\"][\"status\"][\"enum\"]\n\n\ndef test_claim_source_references_must_be_unique():\n    payload = load_fixture()\n    payload[\"claims\"][0][\"source_ids\"] *= 2\n    assert any(\"source_ids must not contain duplicates\" in error for error in MODULE.validate_result(payload))\n", "expected_count": 1}
+  ],
+  "private_dependency_replacements": [], "provider_interfaces": ["EvidenceProvider"], "human_review_decision": "publication_review_required", "rights_manifest_reference": "manifests/fact-check.publication.json#include_paths", "rights_pending": ["Human rights and allowlist review is required before publication."], "expected_public_contracts": ["fact-check-result/v1"], "required_tests": ["boundary-audit", "isolated-unit-tests"],
+  "expected_output_digest": "sha256:6aa73b83d687bc2c57127cd04cb306b387ff8da36d6a24317460b28b7af7a40b"
+}

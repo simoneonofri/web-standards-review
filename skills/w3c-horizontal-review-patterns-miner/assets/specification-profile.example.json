@@ -1,0 +1,55 @@
+{
+  "specification": {
+    "spec_id": "example-geolocation-like-api",
+    "title": "Example Location Sensor API",
+    "shortname": "example-location-sensor",
+    "version": "2026-01-01",
+    "status": "synthetic-example",
+    "source_url": null
+  },
+  "spec_profile": {
+    "primary_family": "device-sensor-native-capability",
+    "secondary_families": ["computational-js-webidl-api", "permission-policy-manifest"],
+    "facets": [
+      {
+        "facet_id": "webidl-javascript",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "source_id": "example-spec",
+            "source_kind": "spec-section",
+            "locator": "section-2",
+            "evidence_span": "The API exposes Navigator.locationSensor.",
+            "interpretation": "The feature is exposed as a JavaScript API."
+          }
+        ]
+      },
+      {
+        "facet_id": "sensor-device",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "source_id": "example-spec",
+            "source_kind": "spec-section",
+            "locator": "section-3",
+            "evidence_span": "The user agent obtains location readings from the device.",
+            "interpretation": "The feature depends on a device sensor."
+          }
+        ]
+      },
+      {
+        "facet_id": "physical-world-data",
+        "confidence": 0.92,
+        "evidence": [
+          {
+            "source_id": "example-spec",
+            "source_kind": "spec-section",
+            "locator": "section-3",
+            "evidence_span": "Readings describe the user's physical location.",
+            "interpretation": "Location is physical-world data."
+          }
+        ]
+      }
+    ]
+  }
+}

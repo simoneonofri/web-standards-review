@@ -1,0 +1,168 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "w3c-spec-code",
+  "source": {
+    "repository": "simoneonofri/w3c-spec-code",
+    "repository_path": "w3c-spec-code",
+    "commit": "7af3a8ca3c19be73252d386cd21a630d3d7c5ddb"
+  },
+  "target_path": "skills/w3c-spec-code",
+  "include_paths": [
+    {
+      "source": "references/artifact-contract.md",
+      "target": "references/artifact-contract.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/feature-scope.md",
+      "target": "references/feature-scope.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/feature-scope.schema.json",
+      "target": "references/feature-scope.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/integrated-threat-model.md",
+      "target": "references/integrated-threat-model.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/method.md",
+      "target": "references/method.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/review-bundle.schema.json",
+      "target": "references/review-bundle.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/__init__.py",
+      "target": "scripts/__init__.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/materialize_feature_scope.py",
+      "target": "scripts/materialize_feature_scope.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/validate_review_bundle.py",
+      "target": "scripts/validate_review_bundle.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_materialize_feature_scope.py",
+      "target": "tests/test_materialize_feature_scope.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_validate_review_bundle.py",
+      "target": "tests/test_validate_review_bundle.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/w3c-spec-code.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:5cb567eefb07442f7fdcaf10c28f939f7ca45801754711190d0c505631735c82",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/w3c-spec-code/scripts/materialize_pinned_scope.py",
+      "target": "scripts/materialize_pinned_scope.py",
+      "sha256": "sha256:0481b9467d1ca93c636b92a81432da3fe47358cd0c95111c9e37bfbf8eda46ec",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "references/feature-scope.md",
+      "find": "scripts/materialize_feature_scope.py",
+      "replace": "scripts/materialize_pinned_scope.py",
+      "expected_count": 1
+    },
+    {
+      "path": "references/method.md",
+      "find": "Always run the Codex Security preflight. Run the bounded scan by default after the map identifies the relevant source scope and expected controls and when the exact repository and read-only authorization are available; otherwise preserve the failed precondition as evidence.",
+      "replace": "Record scanner evidence only when the user explicitly requests a scan. Without that request, set scan.status to not_requested and complete the specification-to-code baseline independently. If requested, verify the exact repository, bounded source scope, and authorization before invoking the scanner; preserve unavailable or failed preconditions as evidence.",
+      "expected_count": 1
+    },
+    {"path": "scripts/validate_review_bundle.py", "find": "        errors.append(\"discrepancies: expected array\")\n        discrepancies = []\n    implementation_ids = unique_ids([item for item in implementations if isinstance(item, dict)], \"implementation_id\", \"implementations\", errors)\n    target_status = bundle.get(\"implementation_target_status\")\n    if target_status not in {\"resolved\", \"partial\", \"unavailable\", \"not_applicable\"}:\n        errors.append(\"implementation_target_status: invalid status\")\n    if target_status == \"resolved\" and not implementations:\n        errors.append(\"implementations: resolved status requires at least one target\")\n    if target_status in {\"unavailable\", \"not_applicable\"} and implementations:\n        errors.append(f\"implementations: {target_status!r} status requires an empty target array\")\n", "replace": "        errors.append(\"discrepancies: expected array\")\n        discrepancies = []\n    implementation_ids = unique_ids([item for item in implementations if isinstance(item, dict)], \"implementation_id\", \"implementations\", errors)\n    for index, implementation in enumerate(implementations):\n        if not isinstance(implementation, dict):\n            errors.append(f\"implementations[{index}]: expected object\")\n    target_status = bundle.get(\"implementation_target_status\")\n    if target_status not in {\"resolved\", \"partial\", \"unavailable\", \"not_applicable\"}:\n        errors.append(\"implementation_target_status: invalid status\")\n    if target_status == \"resolved\" and not implementation_ids:\n        errors.append(\"implementations: resolved status requires at least one target\")\n    if target_status in {\"unavailable\", \"not_applicable\"} and implementations:\n        errors.append(f\"implementations: {target_status!r} status requires an empty target array\")\n", "expected_count": 1},
+    {"path": "tests/test_validate_review_bundle.py", "find": "def test_valid_bundle() -> None:\n    assert validate(valid_bundle()) == []\n\n\ndef test_unknown_control_is_rejected() -> None:\n    bundle = valid_bundle()\n", "replace": "def test_valid_bundle() -> None:\n    assert validate(valid_bundle()) == []\n\ndef test_resolved_target_requires_an_identified_implementation() -> None:\n    bundle = valid_bundle()\n    bundle[\"implementations\"] = [\"engine-a\"]\n    bundle[\"mappings\"] = []\n    errors = validate(bundle)\n    assert \"implementations[0]: expected object\" in errors\n    assert \"implementations: resolved status requires at least one target\" in errors\n\ndef test_valid_target_does_not_hide_a_malformed_implementation() -> None:\n    bundle = valid_bundle()\n    bundle[\"implementations\"].append(None)\n    assert \"implementations[1]: expected object\" in validate(bundle)\n\n\ndef test_unknown_control_is_rejected() -> None:\n    bundle = valid_bundle()\n", "expected_count": 1},
+    {"path": "scripts/validate_review_bundle.py", "find": "def unique_ids(items: list[dict[str, Any]], key: str, location: str, errors: list[str]) -> set[str]:\n    seen: set[str] = set()\n    for index, item in enumerate(items):\n        value = item.get(key)\n        if not isinstance(value, str) or not value:\n            errors.append(f\"{location}[{index}].{key}: expected non-empty string\")\n", "replace": "def unique_ids(items: list[dict[str, Any]], key: str, location: str, errors: list[str]) -> set[str]:\n    seen: set[str] = set()\n    for index, item in enumerate(items):\n        if not isinstance(item, dict):\n            errors.append(f\"{location}[{index}]: expected object\")\n            continue\n        value = item.get(key)\n        if not isinstance(value, str) or not value:\n            errors.append(f\"{location}[{index}].{key}: expected non-empty string\")\n", "expected_count": 1},
+    {"path": "scripts/validate_review_bundle.py", "find": "    if not isinstance(discrepancies, list):\n        errors.append(\"discrepancies: expected array\")\n        discrepancies = []\n    implementation_ids = unique_ids([item for item in implementations if isinstance(item, dict)], \"implementation_id\", \"implementations\", errors)\n    for index, implementation in enumerate(implementations):\n        if not isinstance(implementation, dict):\n            errors.append(f\"implementations[{index}]: expected object\")\n    target_status = bundle.get(\"implementation_target_status\")\n    if target_status not in {\"resolved\", \"partial\", \"unavailable\", \"not_applicable\"}:\n        errors.append(\"implementation_target_status: invalid status\")\n", "replace": "    if not isinstance(discrepancies, list):\n        errors.append(\"discrepancies: expected array\")\n        discrepancies = []\n    implementation_ids = unique_ids(implementations, \"implementation_id\", \"implementations\", errors)\n    for index, implementation in enumerate(implementations):\n        if not isinstance(implementation, dict):\n            continue\n        location = f\"implementations[{index}]\"\n        require_keys(implementation, {\"implementation_id\", \"repository\", \"revision\", \"scope\", \"evidence_status\"}, location, errors)\n        for field in (\"repository\", \"revision\"):\n            if field in implementation and (not isinstance(implementation[field], str) or not implementation[field].strip()):\n                errors.append(f\"{location}.{field}: expected non-empty string\")\n        if \"scope\" in implementation:\n            scope = implementation[\"scope\"]\n            if not isinstance(scope, list) or not scope or any(not isinstance(item, str) for item in scope):\n                errors.append(f\"{location}.scope: expected non-empty array of strings\")\n        if \"evidence_status\" in implementation:\n            status = implementation[\"evidence_status\"]\n            if not isinstance(status, str) or status not in {\"available\", \"partial\", \"non_public\", \"unavailable\"}:\n                errors.append(f\"{location}.evidence_status: invalid status\")\n    target_status = bundle.get(\"implementation_target_status\")\n    if target_status not in {\"resolved\", \"partial\", \"unavailable\", \"not_applicable\"}:\n        errors.append(\"implementation_target_status: invalid status\")\n", "expected_count": 1},
+    {"path": "scripts/validate_review_bundle.py", "find": "        errors.append(\"implementations: resolved status requires at least one target\")\n    if target_status in {\"unavailable\", \"not_applicable\"} and implementations:\n        errors.append(f\"implementations: {target_status!r} status requires an empty target array\")\n    control_ids = unique_ids([item for item in controls if isinstance(item, dict)], \"control_id\", \"controls\", errors)\n    unique_ids([item for item in mappings if isinstance(item, dict)], \"mapping_id\", \"mappings\", errors)\n    unique_ids([item for item in discrepancies if isinstance(item, dict)], \"discrepancy_id\", \"discrepancies\", errors)\n    for index, mapping in enumerate(mappings):\n        if not isinstance(mapping, dict):\n            errors.append(f\"mappings[{index}]: expected object\")\n            continue\n        require_keys(mapping, {\"mapping_id\", \"spec_control_id\", \"implementation_id\", \"code_anchors\", \"test_anchors\", \"spec_to_code_status\", \"code_to_spec_status\", \"scan_evidence\", \"counterevidence\", \"ownership\", \"confidence\", \"limitations\"}, f\"mappings[{index}]\", errors)\n        control_id = mapping.get(\"spec_control_id\")\n        if control_id != \"implementation_only\" and control_id not in control_ids:\n", "replace": "        errors.append(\"implementations: resolved status requires at least one target\")\n    if target_status in {\"unavailable\", \"not_applicable\"} and implementations:\n        errors.append(f\"implementations: {target_status!r} status requires an empty target array\")\n    control_ids = unique_ids(controls, \"control_id\", \"controls\", errors)\n    for index, control in enumerate(controls):\n        if not isinstance(control, dict):\n            continue\n        location = f\"controls[{index}]\"\n        require_keys(control, {\"control_id\", \"spec_anchor\", \"protected_property\", \"required_behavior\"}, location, errors)\n        for field in (\"spec_anchor\", \"protected_property\", \"required_behavior\"):\n            if field in control and (not isinstance(control[field], str) or not control[field].strip()):\n                errors.append(f\"{location}.{field}: expected non-empty string\")\n    unique_ids(mappings, \"mapping_id\", \"mappings\", errors)\n    unique_ids(discrepancies, \"discrepancy_id\", \"discrepancies\", errors)\n    for index, mapping in enumerate(mappings):\n        if not isinstance(mapping, dict):\n            continue  # unique_ids already reported this row with its original index.\n        require_keys(mapping, {\"mapping_id\", \"spec_control_id\", \"implementation_id\", \"code_anchors\", \"test_anchors\", \"spec_to_code_status\", \"code_to_spec_status\", \"scan_evidence\", \"counterevidence\", \"ownership\", \"confidence\", \"limitations\"}, f\"mappings[{index}]\", errors)\n        control_id = mapping.get(\"spec_control_id\")\n        if control_id != \"implementation_only\" and control_id not in control_ids:\n", "expected_count": 1},
+    {"path": "scripts/validate_review_bundle.py", "find": "        errors.append(\"scan: expected object\")\n    for index, discrepancy in enumerate(discrepancies):\n        if not isinstance(discrepancy, dict):\n            errors.append(f\"discrepancies[{index}]: expected object\")\n            continue\n        require_keys(discrepancy, {\"discrepancy_id\", \"kind\", \"evidence\", \"counterevidence\", \"ownership\", \"gate_status\"}, f\"discrepancies[{index}]\", errors)\n        if discrepancy.get(\"kind\") not in DISCREPANCY_KIND:\n            errors.append(f\"discrepancies[{index}].kind: invalid kind\")\n", "replace": "        errors.append(\"scan: expected object\")\n    for index, discrepancy in enumerate(discrepancies):\n        if not isinstance(discrepancy, dict):\n            continue  # unique_ids already reported this row with its original index.\n        require_keys(discrepancy, {\"discrepancy_id\", \"kind\", \"evidence\", \"counterevidence\", \"ownership\", \"gate_status\"}, f\"discrepancies[{index}]\", errors)\n        if discrepancy.get(\"kind\") not in DISCREPANCY_KIND:\n            errors.append(f\"discrepancies[{index}].kind: invalid kind\")\n", "expected_count": 1},
+    {"path": "tests/test_validate_review_bundle.py", "find": "    bundle[\"mappings\"] = []\n    bundle[\"limitations\"] = [\"No exact implementation repository could be resolved.\"]\n    assert validate(bundle) == []\n", "replace": "    bundle[\"mappings\"] = []\n    bundle[\"limitations\"] = [\"No exact implementation repository could be resolved.\"]\n    assert validate(bundle) == []\n\n\ndef test_mixed_implementation_rows_preserve_original_error_indices():\n    import copy\n    bundle = valid_bundle()\n    implementation = bundle[\"implementations\"][0]\n    bundle[\"implementations\"] = [\"bad\", implementation, copy.deepcopy(implementation)]\n    errors = validate(bundle)\n    assert \"implementations[0]: expected object\" in errors\n    assert \"implementations[2].implementation_id: duplicate value 'engine-a'\" in errors\n\n\ndef test_malformed_control_rows_are_rejected_even_without_mappings():\n    bundle = valid_bundle()\n    bundle[\"controls\"] = [None]\n    bundle[\"mappings\"] = []\n    assert \"controls[0]: expected object\" in validate(bundle)\n\n\ndef test_control_requires_source_anchor_property_and_behavior():\n    bundle = valid_bundle()\n    bundle[\"controls\"] = [{\"control_id\": \"CTRL-1\"}]\n    errors = validate(bundle)\n    for field in (\"spec_anchor\", \"protected_property\", \"required_behavior\"):\n        assert any(\"controls[0]\" in error and \"missing required key\" in error and field in error for error in errors)\n\n\ndef test_implementation_requires_pinned_repository_scope_and_evidence_status():\n    bundle = valid_bundle()\n    bundle[\"implementations\"] = [{\"implementation_id\": \"engine-a\"}]\n    errors = validate(bundle)\n    for field in (\"repository\", \"revision\", \"scope\", \"evidence_status\"):\n        assert any(\"implementations[0]\" in error and \"missing required key\" in error and field in error for error in errors)\n\n\ndef test_present_core_fields_must_have_declared_schema_shapes():\n    for collection, field, value in ((\"implementations\", \"revision\", \"\"), (\"implementations\", \"scope\", []), (\"implementations\", \"evidence_status\", []), (\"controls\", \"spec_anchor\", None)):\n        bundle = valid_bundle()\n        bundle[collection][0][field] = value\n        assert any(collection + \"[0].\" + field in error for error in validate(bundle)), (collection, field)\n", "expected_count": 1}
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/w3c-spec-code.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:4ef7dbea8bb9b235974c320270a63bce2a3a91d2089cef62b539096e39293d1e"
+}

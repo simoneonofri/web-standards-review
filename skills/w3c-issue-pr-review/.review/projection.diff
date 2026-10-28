@@ -1,0 +1,4 @@
+--- a/references/marketplace-integration.md
++++ b/references/marketplace-integration.md
+@@ -12,0 +13 @@
++| Threat/privacy prompts for an accepted target model | `threat-knowledge`; supply the selected model elements, assumptions and question | Model-attached prompt candidates and source limits; verify any resulting claim against target evidence before drafting the thread response |

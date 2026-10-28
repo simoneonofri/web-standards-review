@@ -1,0 +1,4 @@
+interface:
+  display_name: "What Are We Building"
+  short_description: "Extract corpus-grounded spec models for DFDs"
+  default_prompt: "Use $what-are-we-building to extract a retrieval-grounded DFD-ready system model from this specification and related review materials."

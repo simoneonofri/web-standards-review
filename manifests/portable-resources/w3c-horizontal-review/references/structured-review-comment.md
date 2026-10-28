@@ -1,0 +1,26 @@
+# Structured Security review comment
+
+Use `assets/templates/security-review-non-blocking-editorial-v1.md` from this skill directory when the requested output is one structured, non-blocking editorial Security review comment. This is an output format, not a finding-discovery or severity policy. A caller's venue template takes precedence. Do not impose this format on a concise thread reply, a multi-finding report or the four-question threat-model report.
+
+## Applicability
+
+Confirm that the point is editorial and non-blocking from the analysis and applicable review policy. Verify the exact reviewed snapshot, the review-request link and the current Working Draft before using the template's opening claim. If those assertions cannot be supported, keep the result a partial draft or choose an appropriate different format; do not invent a current-version check or silently rewrite the fixed boilerplate. A proposed comment remains an individual recommendation unless adoption is evidenced.
+
+## Populate the template
+
+Preserve the boilerplate, headings, labels and order exactly. Replace all `{{...}}` slots with supported, destination-appropriate content. Use the same verified Security review request URL in both occurrences of `security_review_url`. Keep the completed draft separate from the detailed evidence packet and never overwrite the installed template.
+
+| Slot | Content |
+| --- | --- |
+| `reviewed_version_label`, `reviewed_version_url` | Exact version identifier and recoverable reviewed snapshot URL. |
+| `review_request_label`, `security_review_url` | Review request identifier and verified request URL. |
+| `finding_title` | One concise title for the supported editorial point. |
+| `description` | What the current text says and the specific clarification needed. Keep source facts separate from interpretation. |
+| `evidence_markdown` | Necessary public-source links or bounded quotations with exact locators and versions. Evidence sections are not automatically affected sections. |
+| `impact` | Bounded consequence of the documentation issue, preserving actual protections and limitations. Do not inflate an editorial clarification into an unproved technical defect. |
+| `suggestion` | Concrete, proportionate editorial change; preserve informative versus normative force. |
+| `affected_sections` | Markdown list of the exact sections proposed to change, with verified links. |
+
+The visible labels are **Description**, **Impact**, **Suggestion** and **Affected sections**. Evidence occupies its existing unlabelled slot after Description. Do not substitute Concern, add Supporting context, or introduce a separate Evidence heading. Do not infer extra findings from empty fields.
+
+Before delivery, check every slot is populated, re-read the authoritative working draft when revising it, verify source support and public/private boundaries with `fact-check`, and preserve accepted user edits. If a requested edit changes fixed template text, distinguish an intentional template revision from a content-slot edit rather than regenerating over it. Producing or checking the comment does not authorize posting it. This portable route has no dependency on a personal profile, private library, hosted document or private service configuration.

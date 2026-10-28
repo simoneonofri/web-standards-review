@@ -1,0 +1,203 @@
+{
+  "coverage": {
+    "authentication": "supported",
+    "authorization": "supported",
+    "credential-lifecycle": "supported",
+    "freshness-and-anti-replay": "supported"
+  },
+  "derived_pattern_candidates": [],
+  "explicit_patterns": [],
+  "limitations": [
+    "synthetic fixture, not W3C evidence"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no script loading behavior is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "artifact_id": "art-identity-protocol",
+          "evidence_span": "The verifier MUST validate the issuer signature.",
+          "interpretation": "The protocol authenticates issuer responses.",
+          "locator": "section 1",
+          "normative_strength": "must",
+          "source_id": "src-identity-protocol",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-identity-protocol-01",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "authentication",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "identity-protocol",
+      "spec_version": "2026-01-01",
+      "statement": "The protocol authenticates issuer responses.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "artifact_id": "art-identity-protocol",
+          "evidence_span": "The response includes the challenge supplied by the verifier.",
+          "interpretation": "Credential responses include a challenge.",
+          "locator": "section 2",
+          "normative_strength": "must",
+          "source_id": "src-identity-protocol",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-identity-protocol-02",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "freshness-and-anti-replay",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "identity-protocol",
+      "spec_version": "2026-01-01",
+      "statement": "Credential responses include a challenge.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "artifact_id": "art-identity-protocol",
+          "evidence_span": "The explainer notes different errors for unknown accounts.",
+          "interpretation": "Errors vary by account existence.",
+          "locator": "section 3",
+          "normative_strength": null,
+          "source_id": "src-identity-protocol",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-identity-protocol-03",
+      "observation_type": "failure-mode",
+      "open_questions": [],
+      "security_category": "error-channels-and-oracles",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "identity-protocol",
+      "spec_version": "2026-01-01",
+      "statement": "Errors vary by account existence.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    }
+  ],
+  "optional_spec_profile": {
+    "facets": [
+      "identity-credential",
+      "credential-material",
+      "trusted-ui",
+      "cross-origin"
+    ],
+    "primary_family": null,
+    "secondary_families": []
+  },
+  "security_checks": [],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "protected capability"
+    ],
+    "attacker_models": [
+      "malicious-origin"
+    ],
+    "capabilities": [],
+    "components": [
+      "browser"
+    ],
+    "dependencies": [],
+    "entry_points": [
+      "invoke"
+    ],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "origin-boundary"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithms",
+      "webidl"
+    ],
+    "limitations": [
+      "synthetic fixture"
+    ],
+    "missing_artifacts": [
+      "full dependency text"
+    ],
+    "score": 0.75
+  },
+  "specification": {
+    "spec_id": "identity-protocol",
+    "title": "Identity Protocol",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}

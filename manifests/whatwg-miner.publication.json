@@ -1,0 +1,212 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "whatwg-miner",
+  "source": {
+    "repository": "simoneonofri/whatwg-miner",
+    "repository_path": "whatwg-miner",
+    "commit": "85ca56bb804da7196a3104b5f1720cb5723b8422"
+  },
+  "target_path": "skills/whatwg-miner",
+  "include_paths": [
+    {
+      "source": "catalog/coverage.json",
+      "target": "catalog/coverage.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/coverage.md",
+      "target": "catalog/coverage.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/inventory.json",
+      "target": "catalog/inventory.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/security-features.json",
+      "target": "catalog/security-features.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/security-features.md",
+      "target": "catalog/security-features.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/coverage-seed.json",
+      "target": "references/coverage-seed.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/schema.md",
+      "target": "references/schema.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/seed-findings.json",
+      "target": "references/seed-findings.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/build_catalog.py",
+      "target": "scripts/build_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/fetch_specs.py",
+      "target": "scripts/fetch_specs.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/inventory.py",
+      "target": "scripts/inventory.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/mine_specs.py",
+      "target": "scripts/mine_specs.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/query_catalog.py",
+      "target": "scripts/query_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/whatwg_miner.py",
+      "target": "scripts/whatwg_miner.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_catalog.py",
+      "target": "tests/test_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_miner.py",
+      "target": "tests/test_miner.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/whatwg-miner.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:88666d3403041250c9e0c471f9c54987e2118bdc12582a6899de0fae1cd3cac6",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/whatwg-miner/scripts/refresh.py",
+      "target": "scripts/refresh.py",
+      "sha256": "sha256:d822f1dbd81df3ee2131a87836a6d6864f58a5241580064ca8ec216b367f068b",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "scripts/whatwg_miner.py",
+      "find": "standards-security review",
+      "replace": "standards review",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/query_catalog.py",
+      "find": "    findings = load_json(args.catalog)[\"findings\"]\n    if args.standard:\n        needle = args.standard.casefold()\n        findings = [item for item in findings if needle in item[\"standard_id\"].casefold() or needle in item[\"standard\"].casefold()]\n    if args.category:\n        findings = [item for item in findings if item[\"category\"] == args.category]\n    if args.text:\n",
+      "replace": "    findings = load_json(args.catalog)[\"findings\"]\n    if args.standard:\n        needle = args.standard.casefold()\n        findings = [item for item in findings if needle in item[\"standard_id\"].casefold() or needle in item.get(\"standard\", \"\").casefold()]\n    if args.category:\n        findings = [item for item in findings if item[\"category\"] == args.category]\n    if args.text:\n",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_catalog.py",
+      "find": "                self.assertEqual((CATALOG / name).read_bytes(), (output / name).read_bytes())\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "replace": "                self.assertEqual((CATALOG / name).read_bytes(), (output / name).read_bytes())\n\n\n    def test_standard_filter_handles_findings_without_optional_display_name(self) -> None:\n        import copy\n        record = copy.deepcopy(self.features[\"findings\"][0])\n        record.pop(\"standard\", None)\n        with tempfile.TemporaryDirectory() as temporary:\n            path = Path(temporary) / \"catalog.json\"\n            path.write_text(json.dumps({\"findings\": [record]}))\n            for needle, expected_count in ((record[\"standard_id\"], 1), (\"no-matching-standard\", 0)):\n                with self.subTest(needle=needle):\n                    result = subprocess.run([sys.executable, str(ROOT / \"scripts/query_catalog.py\"), \"--catalog\", str(path), \"--standard\", needle, \"--json\"], capture_output=True, text=True)\n                    self.assertEqual(result.returncode, 0, result.stderr)\n                    self.assertEqual(len(json.loads(result.stdout)), expected_count)\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "expected_count": 1
+    }
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/whatwg-miner.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:89ffcaead902649b27ca27787b9679988d92fb85094831a0f29b766c19d05bc7"
+}

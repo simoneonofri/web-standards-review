@@ -1,0 +1,47 @@
+--- a/scripts/validate_model_packet.py
++++ b/scripts/validate_model_packet.py
+@@ -190,0 +191,8 @@
++            if collection == "data_flows":
++                endpoints = {
++                    "flow_source": element.get("source") or element.get("flow_source"),
++                    "flow_destination": element.get("destination") or element.get("target") or element.get("flow_destination"),
++                }
++                for field, expected in endpoints.items():
++                    if row.get(field) != expected:
++                        errors.append(f"{where}.{field}: must preserve the model flow endpoint from {row_id}")
+@@ -215,2 +223,5 @@
+-        for boundary_id in row.get("boundary_membership", []):
+-            if boundary_id not in valid_boundaries:
++        memberships = row.get("boundary_membership", [])
++        if not isinstance(memberships, list):
++            continue  # The first pass already reports the invalid array.
++        for boundary_id in memberships:
++            if not isinstance(boundary_id, str) or boundary_id not in valid_boundaries:
+--- a/tests/test_model_packet_validator.py
++++ b/tests/test_model_packet_validator.py
+@@ -52,0 +53,25 @@
++
++
++def validate_modified_dictionary(tmp_path, mutate):
++    import json
++    dictionary = json.loads((ROOT / "evals/fixtures/valid-minimal-dictionary.json").read_text())
++    mutate(dictionary)
++    path = tmp_path / "dictionary.json"
++    path.write_text(json.dumps(dictionary))
++    return subprocess.run([sys.executable, str(ROOT / "scripts/validate_model_packet.py"), str(ROOT / "evals/fixtures/valid-minimal-model.json"), str(path)], capture_output=True, text=True)
++
++
++def test_dictionary_preserves_model_flow_direction(tmp_path):
++    def reverse(dictionary):
++        flow = next(row for row in dictionary["rows"] if row["canonical_id"].startswith("DF-"))
++        flow["flow_source"], flow["flow_destination"] = flow["flow_destination"], flow["flow_source"]
++    result = validate_modified_dictionary(tmp_path, reverse)
++    assert result.returncode == 1
++    assert "must preserve the model flow endpoint" in result.stdout
++
++
++def test_null_dictionary_membership_does_not_crash(tmp_path):
++    result = validate_modified_dictionary(tmp_path, lambda dictionary: dictionary["rows"][0].update(boundary_membership=None))
++    assert result.returncode == 1
++    assert "must be an array" in result.stdout
++    assert "Traceback" not in result.stderr

@@ -1,0 +1,19 @@
+{
+  "specification": {
+    "spec_id": "synthetic-data-format",
+    "title": "Synthetic Versioned Widget Data Format",
+    "version": "2026-01-01"
+  },
+  "spec_profile": {
+    "primary_family": "data-format-serialization",
+    "secondary_families": ["network-fetch-protocol"],
+    "facets": [
+      "data-format-serialization",
+      "http-network-protocol",
+      "network",
+      "computation",
+      "sensitive-data",
+      "cross-site-observability"
+    ]
+  }
+}

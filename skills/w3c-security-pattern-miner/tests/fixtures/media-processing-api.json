@@ -1,0 +1,202 @@
+{
+  "coverage": {
+    "device-sensor-and-native-boundaries": "supported",
+    "lifecycle-navigation-and-bfcache": "supported",
+    "media-codecs-and-untrusted-binary-input": "supported",
+    "resource-exhaustion-and-amplification": "supported"
+  },
+  "derived_pattern_candidates": [],
+  "explicit_patterns": [],
+  "limitations": [
+    "synthetic fixture, not W3C evidence"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no script loading behavior is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.68,
+      "evidence": [
+        {
+          "artifact_id": "art-media-processing-api",
+          "evidence_span": "User agents are advised to process encoded media in an isolated decoder.",
+          "interpretation": "Encoded media is treated as untrusted input.",
+          "locator": "section 1",
+          "normative_strength": null,
+          "source_id": "src-media-processing-api",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-media-processing-api-01",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "media-codecs-and-untrusted-binary-input",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "media-processing-api",
+      "spec_version": "2026-01-01",
+      "statement": "Encoded media is treated as untrusted input.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "artifact_id": "art-media-processing-api",
+          "evidence_span": "If allocation exceeds the configured limit, reject.",
+          "interpretation": "Allocation is bounded before decoding.",
+          "locator": "section 2",
+          "normative_strength": "must",
+          "source_id": "src-media-processing-api",
+          "source_kind": "normative-algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-media-processing-api-02",
+      "observation_type": "security-mechanism",
+      "open_questions": [],
+      "security_category": "resource-exhaustion-and-amplification",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "media-processing-api",
+      "spec_version": "2026-01-01",
+      "statement": "Allocation is bounded before decoding.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "artifact_id": "art-media-processing-api",
+          "evidence_span": "AbortSignal aborts pending decode operations.",
+          "interpretation": "Cancellation stops pending decoder work.",
+          "locator": "section 3",
+          "normative_strength": "must",
+          "source_id": "src-media-processing-api",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-media-processing-api-03",
+      "observation_type": "testable-behavior",
+      "open_questions": [],
+      "security_category": "lifecycle-navigation-and-bfcache",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "media-processing-api",
+      "spec_version": "2026-01-01",
+      "statement": "Cancellation stops pending decoder work.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    }
+  ],
+  "optional_spec_profile": {
+    "facets": [
+      "media-capture",
+      "native-capability",
+      "background"
+    ],
+    "primary_family": null,
+    "secondary_families": []
+  },
+  "security_checks": [],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "protected capability"
+    ],
+    "attacker_models": [
+      "malicious-origin"
+    ],
+    "capabilities": [],
+    "components": [
+      "browser"
+    ],
+    "dependencies": [],
+    "entry_points": [
+      "invoke"
+    ],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "origin-boundary"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithms",
+      "webidl"
+    ],
+    "limitations": [
+      "synthetic fixture"
+    ],
+    "missing_artifacts": [
+      "full dependency text"
+    ],
+    "score": 0.75
+  },
+  "specification": {
+    "spec_id": "media-processing-api",
+    "title": "Media Processing Api",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}

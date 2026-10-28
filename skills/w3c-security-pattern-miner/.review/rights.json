@@ -1,0 +1,292 @@
+{
+  "files": {
+    ".review/boundary-audit.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/projection.diff": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/provenance.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/rights.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    "PROJECT_STATUS.md": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "SKILL.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "assets/catalog.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/checklist-report-template.md": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/security-check.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/security-mining-report-template.md": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/security-observation.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/security-pattern.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/spec-mining-result.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "catalog/occurrences.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "catalog/processed-specifications.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "catalog/security-checks.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "catalog/security-patterns.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "evals/prompts.jsonl": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "evals/rubric.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/architecture.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/catalog-policy.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/evaluation.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/evidence-and-provenance.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/extraction-method.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/implicit-pattern-inference.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/review-workflows.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/security-check-model.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/security-observation-model.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/security-pattern-model.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/security-taxonomy.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/w3c-knowledge-contract.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/catalog.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/security-check.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/security-observation.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/security-pattern.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/spec-mining-result.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/merge_catalog.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/normalize_result.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/render_checklist.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/select_checks.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/validate_assets.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/fixtures/device-capability-api.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/fetch-like-protocol.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/identity-protocol.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/lifecycle-feature.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/media-processing-api.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/mixed-version-invalid.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/persistent-storage-api.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/script-loading-feature.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/structured-data-format.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/test_assets.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_catalog_merge.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_check_selection.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_normalization.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_rendering.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    }
+  },
+  "manifest_reference": "manifests/w3c-security-pattern-miner.publication.json#include_paths",
+  "pending": [],
+  "schema_version": "rights-manifest/v1"
+}

@@ -1,0 +1,880 @@
+{
+  "occurrences": [
+    {
+      "category": "device-sensor-and-native-boundaries",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Pointer events contain additional information ... such as the angle or tilt ... geometry ... and pressure.",
+          "interpretation": "The specification identifies device sensor values exposed to an origin.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a714 #security-and-privacy-considerations",
+          "normalized_records": [
+            {
+              "content_hash": "819a92926dbf9b2b91f4a7b9025ec6a0ae9b3608756e5e62e6ec5339b63c8c50",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "0b091a7a-cdeb-4155-ad79-6730faf6b14f"
+              ],
+              "fragment": "security-and-privacy-considerations",
+              "normative": false,
+              "record_id": "c8236e84-d7ce-46e7-89e8-fbe759f4e0dd",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#security-and-privacy-considerations",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-pe4-01",
+      "occurrence_id": "occ-pointerevents4-010f66d15e8d",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "privacy-security-intersections",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "This information can also be potentially used for the purposes of building a user profile and/or attempting to \"fingerprint\" and track a particular user.",
+          "interpretation": "The specification expressly identifies profiling and fingerprinting risk.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a714 #security-and-privacy-considerations",
+          "normalized_records": [
+            {
+              "content_hash": "819a92926dbf9b2b91f4a7b9025ec6a0ae9b3608756e5e62e6ec5339b63c8c50",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "0b091a7a-cdeb-4155-ad79-6730faf6b14f"
+              ],
+              "fragment": "security-and-privacy-considerations",
+              "normative": false,
+              "record_id": "c8236e84-d7ce-46e7-89e8-fbe759f4e0dd",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#security-and-privacy-considerations",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-pe4-02",
+      "occurrence_id": "occ-pointerevents4-02ee299db182",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "integrity-and-authenticity",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Set the event's pointerId, pointerType, isPrimary and isTrusted to match ... the parent pointer event.",
+          "interpretation": "Nested samples receive parent provenance and identity attributes.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a712.3 #populating-and-maintaining-the-coalesced-and-predicted-events-lists",
+          "normalized_records": [
+            {
+              "content_hash": "6ce4cf188722a65b4f675a8e40c1aac1a47a9b215b0a6e1035dabafa0dfa0775",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "a05e98bc-9894-4a45-934b-7f3c9e578cfe"
+              ],
+              "fragment": "populating-and-maintaining-the-coalesced-and-predicted-events-lists",
+              "normative": true,
+              "record_id": "33687577-61a5-49b5-afdd-0866f704025b",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#populating-and-maintaining-the-coalesced-and-predicted-events-lists",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "should",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-pe4-13",
+      "occurrence_id": "occ-pointerevents4-03cde506dd09",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "cross-origin-communication",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "touch-action does not apply/cascade through to embedded browsing contexts",
+          "interpretation": "The declarative policy stops at the embedded browsing-context boundary.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a710.1 #the-touch-action-css-property",
+          "normalized_records": [
+            {
+              "content_hash": "ed23edc90dcd9bd149309e8aaebb85bad5ccae4cfd5c64b9e5c2d74b386220d0",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "b1b5b787-4c69-4b36-8daa-5d724fab977a"
+              ],
+              "fragment": "the-touch-action-css-property",
+              "normative": true,
+              "record_id": "9304c115-1c47-4561-8c84-e27870b136f9",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#the-touch-action-css-property",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-pe4-18",
+      "occurrence_id": "occ-pointerevents4-08d602e3254e",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "secure-context-and-transport",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "[SecureContext] sequence<PointerEvent> getCoalescedEvents();",
+          "interpretation": "The WebIDL extended attribute limits this high-fidelity accessor to secure contexts.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.1 WebIDL",
+          "normalized_records": [
+            {
+              "content_hash": "2c10d5c4c8f600bb1e7c858c2858f15d7087a31f1cd420b7e3def9857d165e39",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4"
+              ],
+              "record_id": "fb4c6c09-776f-420b-895a-df478c7f891f",
+              "record_type": "webidl",
+              "section_id": "e47999d6-f979-4f22-9802-795917b941e4",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#webidl-1641249507",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "webidl"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-07",
+      "occurrence_id": "occ-pointerevents4-0f69560ea293",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "resource-exhaustion-and-amplification",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "user agents SHOULD dispatch pointerrawupdate events as soon as possible and as frequently as the JavaScript can handle the events",
+          "interpretation": "The feature deliberately exposes a high-rate event stream; coalescing is the available pressure valve.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.3.5 #the-pointerrawupdate-event",
+          "normalized_records": [
+            {
+              "content_hash": "55df0b1eae039ae90d6e8d1e7412bbaebfe047f35867c07d9185f7797e9672a1",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "5b800def-ab24-40da-ac60-3b338ff4b613"
+              ],
+              "fragment": "the-pointerrawupdate-event",
+              "normative": true,
+              "record_id": "421c6d02-4c24-47f8-a3ff-7727a2a425db",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#the-pointerrawupdate-event",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "should",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-15",
+      "occurrence_id": "occ-pointerevents4-104ccd5bddae",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "integrity-and-authenticity",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "the event dispatch algorithm sets the isTrusted bit of the event to false but the same bits in the ... events list remain unchanged from their original true values",
+          "interpretation": "Parent and nested-event trust bits intentionally diverge after redispatch.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a712.1 and \u00a712.2",
+          "normalized_records": [
+            {
+              "content_hash": "b15e9a3c97b1c307bd28c93da1076bb8c8ac6e680429596610c67dabbed0f755",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "aadf22a0-9298-4ff6-929f-af4edcfd8531"
+              ],
+              "fragment": "coalesced-events",
+              "normative": true,
+              "record_id": "77d61a23-cf65-4f51-8bdd-abaff3a1327a",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#coalesced-events",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            },
+            {
+              "content_hash": "27db9004cd3959c6a8389e6983c086e2c2512b2a1374f80f2c2cf8d3fa83324f",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "ad07080c-2682-40a7-9aed-f149eeb8b339"
+              ],
+              "fragment": "predicted-events",
+              "normative": true,
+              "record_id": "3bdf04b7-d6fe-476d-9ff7-b1de48d9a498",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#predicted-events",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-pe4-14",
+      "occurrence_id": "occ-pointerevents4-142b6022291c",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "authority-and-capability-delegation",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Pointer capture allows the events for a particular pointer ... to be retargeted to a particular element other than the normal hit test result",
+          "interpretation": "Capture is a scoped delegation of event-target authority.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a711.1 #pointer-capture",
+          "normalized_records": [
+            {
+              "content_hash": "e33f55d5e6c26d6387c7d7c002fac3251d0d76e72b17d572c69f4fdb9e1195c7",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "69b649be-17a7-44ba-a2d9-4b5e339e9c0c"
+              ],
+              "fragment": "pointer-capture",
+              "normative": true,
+              "record_id": "2e72a2f0-9550-4b66-973e-51dc05fdec22",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#pointer-capture",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "derived-from-normative-behavior",
+      "observation_id": "obs-pe4-21",
+      "occurrence_id": "occ-pointerevents4-3445b829bcfa",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "safe-defaults-and-fail-closed-behavior",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Fire a pointercancel event. Fire a pointerout event. Fire a pointerleave event. Implicitly release the pointer capture if the pointer is currently captured.",
+          "interpretation": "The suppression path performs explicit cleanup and notification.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.1.3.3 #suppressing-a-pointer-event-stream",
+          "normalized_records": [
+            {
+              "content_hash": "9472d6a518074161cedddda8bde514b786d0adccea097c706cc099cdeffc3564",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "7d212827-7753-4e9c-bb33-7ca14a15187c"
+              ],
+              "fragment": "suppressing-a-pointer-event-stream",
+              "normative": true,
+              "record_id": "f788cf66-2d7b-4e1c-b030-75652b04689a",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#suppressing-a-pointer-event-stream",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-pe4-12",
+      "occurrence_id": "occ-pointerevents4-3454e54fc06e",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "authority-and-capability-delegation",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "If the pointer is not in the active buttons state or the element's node document is not the active document of the pointer, then terminate these steps.",
+          "interpretation": "Capture authority is bound to a live pointer and its active document.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a711.2 #setting-pointer-capture",
+          "normalized_records": [
+            {
+              "content_hash": "f86efec7ee29e28a55b3b013e1b6253a383dcb9a1dc5ef1ecb54146837849e4b",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "0cb7598a-222f-486d-89e5-23b8423da597"
+              ],
+              "fragment": "setting-pointer-capture",
+              "normative": true,
+              "record_id": "2ae75195-f1f2-4094-891f-db6efa5de21a",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#setting-pointer-capture",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-pe4-10",
+      "occurrence_id": "occ-pointerevents4-3c22ef19c29d",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "secure-context-and-transport",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "MUST fire a pointer event named pointerrawupdate, and only do so within a secure context",
+          "interpretation": "High-frequency raw updates are gated on secure context.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.3.5 #the-pointerrawupdate-event",
+          "normalized_records": [
+            {
+              "content_hash": "55df0b1eae039ae90d6e8d1e7412bbaebfe047f35867c07d9185f7797e9672a1",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "5b800def-ab24-40da-ac60-3b338ff4b613"
+              ],
+              "fragment": "the-pointerrawupdate-event",
+              "normative": true,
+              "record_id": "421c6d02-4c24-47f8-a3ff-7727a2a425db",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#the-pointerrawupdate-event",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-06",
+      "occurrence_id": "occ-pointerevents4-44825a88574b",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "cryptography-and-randomness",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "the pointerId MUST only be associated explicitly with that particular pointing device for the lifetime of the page / session, and a new randomized pointerId MUST be chosen ... in a new session",
+          "interpretation": "Session rotation reduces cross-session linkage.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.1 #dom-pointerevent-pointerid",
+          "normalized_records": [
+            {
+              "content_hash": "58cd5479553f4a3c64c4784f679b9f637dc48e9fe0fb4bf93302c90e59a91869",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "4f6e2afb-d615-4919-bd32-99e81784f0b5"
+              ],
+              "fragment": "pointerevent-interface",
+              "normative": true,
+              "record_id": "e47999d6-f979-4f22-9802-795917b941e4",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#pointerevent-interface",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-04",
+      "occurrence_id": "occ-pointerevents4-4ab11ef8fe72",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "revocation-recovery-and-rollback",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Immediately after firing the pointerup or pointercancel events, the user agent MUST clear the pending pointer capture target override",
+          "interpretation": "Capture authority is revoked on pointer termination.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a711.5 #implicit-release-of-pointer-capture",
+          "normalized_records": [
+            {
+              "content_hash": "b37706650b2f8ce92c51322dfb8c078a66aabfcf966575c86dbfcaa52a249e1f",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "dea11f72-ac2a-43b2-be7b-6b0dc476a082"
+              ],
+              "fragment": "implicit-release-of-pointer-capture",
+              "normative": true,
+              "record_id": "c1a9d994-98c8-48e9-83c0-291447a40564",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#implicit-release-of-pointer-capture",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-pe4-11",
+      "occurrence_id": "occ-pointerevents4-4c53eb825262",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "external-dependency-assumptions",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "The algorithms in this section assume that the native platform OS will provide the following",
+          "interpretation": "The processing model inherits input authenticity and ordering from the native platform.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a74.2.1 #native-os-requirements",
+          "normalized_records": [
+            {
+              "content_hash": "145116ae505009ca560f64e11c6999a22e9eb40cc931f5f5d3d198877c54a1a8",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "160d1c39-d62b-4be5-b66a-c6bb9f40c5a2"
+              ],
+              "fragment": "native-os-requirements",
+              "normative": false,
+              "record_id": "8a743367-b6ce-4c9f-9b59-de0d3cbd953d",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#native-os-requirements",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-pe4-16",
+      "occurrence_id": "occ-pointerevents4-4d77cad7a0a1",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "confidentiality-and-information-disclosure",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Return the maximum number of simultaneous touch contacts supported by the device.",
+          "interpretation": "The API exposes a device capability that can contribute to a fingerprint.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a79 #extensions-to-the-navigator-interface",
+          "normalized_records": [
+            {
+              "content_hash": "81f2ce7724c205290dcce7210e0630946d0d7eb03c7a44a36065ff54fb80ca42",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "86d4c2e0-d443-4e97-8800-1b92337c2c93"
+              ],
+              "fragment": "extensions-to-the-navigator-interface",
+              "normative": true,
+              "record_id": "fd04ce6a-eccb-4d05-be25-89fafd399758",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#extensions-to-the-navigator-interface",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-17",
+      "occurrence_id": "occ-pointerevents4-4fecbf32f149",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "confidentiality-and-information-disclosure",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "It is the responsibility of user agents to ensure that their specific implementation of a prediction algorithm does not rely on any additional data - such as the user's full interaction history across different sites",
+          "interpretation": "The published Level 4 text records the intended data-minimization boundary.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a714 #security-and-privacy-considerations",
+          "normalized_records": [
+            {
+              "content_hash": "819a92926dbf9b2b91f4a7b9025ec6a0ae9b3608756e5e62e6ec5339b63c8c50",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "0b091a7a-cdeb-4155-ad79-6730faf6b14f"
+              ],
+              "fragment": "security-and-privacy-considerations",
+              "normative": false,
+              "record_id": "c8236e84-d7ce-46e7-89e8-fbe759f4e0dd",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#security-and-privacy-considerations",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        },
+        {
+          "artifact_id": "pointerevents-pr-527",
+          "evidence_span": "clarifies that the expectation is for the prediction to only use the past events from the current gesture/interaction",
+          "interpretation": "The merged change ties the final wording to the PING issue.",
+          "locator": "PR #527 merged 2024-11-06",
+          "normative_strength": null,
+          "source_id": "L2-POINTEREVENTS_PR_527",
+          "source_kind": "resolution"
+        }
+      ],
+      "evidence_class": "resolution-validated",
+      "observation_id": "obs-pe4-09",
+      "occurrence_id": "occ-pointerevents4-5d9999011c96",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "state-storage-and-cache",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "The persistentDeviceId value of 0 MUST be reserved ... the persistentDeviceId MUST only be associated ... for the lifetime of the page / session, and a new randomized persistentDeviceId MUST be chosen ... in a new session.",
+          "interpretation": "Unknown devices fail to zero and identifiable devices rotate between sessions.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.1 #dom-pointerevent-persistentdeviceid",
+          "normalized_records": [
+            {
+              "content_hash": "58cd5479553f4a3c64c4784f679b9f637dc48e9fe0fb4bf93302c90e59a91869",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "4f6e2afb-d615-4919-bd32-99e81784f0b5"
+              ],
+              "fragment": "pointerevent-interface",
+              "normative": true,
+              "record_id": "e47999d6-f979-4f22-9802-795917b941e4",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#pointerevent-interface",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-05",
+      "occurrence_id": "occ-pointerevents4-68f9a1eeb373",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "origin-and-site-isolation",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "all active pointers in the top-level browsing context ... must be unique, and the identifier MUST NOT be influenced by any other top-level browsing context",
+          "interpretation": "The identifier namespace is scoped across active pointers and isolated between top-level contexts.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.1 #dom-pointerevent-pointerid",
+          "normalized_records": [
+            {
+              "content_hash": "58cd5479553f4a3c64c4784f679b9f637dc48e9fe0fb4bf93302c90e59a91869",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "4f6e2afb-d615-4919-bd32-99e81784f0b5"
+              ],
+              "fragment": "pointerevent-interface",
+              "normative": true,
+              "record_id": "e47999d6-f979-4f22-9802-795917b941e4",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#pointerevent-interface",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-03",
+      "occurrence_id": "occ-pointerevents4-88015e01f332",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "freshness-and-anti-replay",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "The PointerEventInit dictionary is used ... to construct untrusted (synthetic) pointer events.",
+          "interpretation": "The event model distinguishes script-created input from trusted user-agent events.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.1 #pointerevent-interface",
+          "normalized_records": [
+            {
+              "content_hash": "58cd5479553f4a3c64c4784f679b9f637dc48e9fe0fb4bf93302c90e59a91869",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "4f6e2afb-d615-4919-bd32-99e81784f0b5"
+              ],
+              "fragment": "pointerevent-interface",
+              "normative": true,
+              "record_id": "e47999d6-f979-4f22-9802-795917b941e4",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#pointerevent-interface",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "derived-from-cross-reference",
+      "observation_id": "obs-pe4-22",
+      "occurrence_id": "occ-pointerevents4-bcadc08b3f59",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "extensibility-and-unknown-fields",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "If the device type cannot be detected ... the value MUST be an empty string ... other ... types ... SHOULD be vendor prefixed",
+          "interpretation": "Unknown and extension values have defined handling.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a75.1 #dom-pointerevent-pointertype",
+          "normalized_records": [
+            {
+              "content_hash": "58cd5479553f4a3c64c4784f679b9f637dc48e9fe0fb4bf93302c90e59a91869",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "4f6e2afb-d615-4919-bd32-99e81784f0b5"
+              ],
+              "fragment": "pointerevent-interface",
+              "normative": true,
+              "record_id": "e47999d6-f979-4f22-9802-795917b941e4",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#pointerevent-interface",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": "must",
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-23",
+      "occurrence_id": "occ-pointerevents4-bd2fd1545688",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "conformance-and-implementation-variance",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Warning This section needs to be revised.",
+          "interpretation": "The Working Draft itself marks the algorithm as unfinished.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a74.2.5 #hit-test",
+          "normalized_records": [
+            {
+              "content_hash": "b6c1f377d9543603a6413be84e10a539ffc7865c94a6ad43913954bbb687a1f2",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "b7e97b68-c93e-45e5-947a-1550783bc158"
+              ],
+              "fragment": "hit-test",
+              "normative": false,
+              "record_id": "30da3dd4-ebd8-4fb7-9661-c1b3b487fa66",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#hit-test",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        },
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "Editor's note TODO.",
+          "interpretation": "Native attribute initialization remains incomplete.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a74.2.11 #set-mouseevent-attributes-from-native",
+          "normalized_records": [
+            {
+              "content_hash": "49248ee260f618cbee7b5aed58c99f4d4a2ef0cacbed980fe2f546c035c3e495",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "0bd8df44-9a7f-4bbb-9897-86194d33e595"
+              ],
+              "fragment": "set-mouseevent-attributes-from-native",
+              "normative": false,
+              "record_id": "b50f47c7-58c1-4c70-8abc-e052de91f11a",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#set-mouseevent-attributes-from-native",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-pe4-20",
+      "occurrence_id": "occ-pointerevents4-e3c1f1aae81a",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "conformance-and-implementation-variance",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "These specifics of user agent gesture recognition are not defined in this specification, and they may differ between implementations.",
+          "interpretation": "Security-sensitive consumers cannot assume one cross-browser event sequence.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a713 #compatibility-mapping-with-mouse-events",
+          "normalized_records": [
+            {
+              "content_hash": "bddb27461f029a50afc3e5dfb0f6317969b56d3a100daa73a9053679a5c156ee",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "51acf319-a20b-4ec3-a2cd-df50aa286cb1"
+              ],
+              "fragment": "compatibility-mapping-with-mouse-events",
+              "normative": true,
+              "record_id": "71a70150-fce9-44d8-83fa-595cce2e88d2",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#compatibility-mapping-with-mouse-events",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-pe4-19",
+      "occurrence_id": "occ-pointerevents4-eff36ea181ac",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    },
+    {
+      "category": "permission-lifecycle",
+      "evidence": [
+        {
+          "artifact_id": "w3c-knowledge-source-packet-v1-plus-exact-sections",
+          "evidence_span": "user agents may consider including the ability for users to disable access ... and/or to make it available only after an explicit opt-in",
+          "interpretation": "The mitigation is discretionary and supplies no permission lifecycle.",
+          "local_crosscheck_source_id": "L1-PE4-WD-20260701",
+          "locator": "\u00a714 #security-and-privacy-considerations",
+          "normalized_records": [
+            {
+              "content_hash": "819a92926dbf9b2b91f4a7b9025ec6a0ae9b3608756e5e62e6ec5339b63c8c50",
+              "evidence_ids": [
+                "3aa22cb8-e160-4775-9d5f-eeb2fd2cf3f4",
+                "0b091a7a-cdeb-4155-ad79-6730faf6b14f"
+              ],
+              "fragment": "security-and-privacy-considerations",
+              "normative": false,
+              "record_id": "c8236e84-d7ce-46e7-89e8-fbe759f4e0dd",
+              "record_type": "section",
+              "source_packet_contract_version": 1,
+              "source_url": "https://www.w3.org/TR/2026/WD-pointerevents4-20260701/#security-and-privacy-considerations",
+              "specification_version_id": "b3c7c8b0-a3e2-44cd-8205-829452c0981d"
+            }
+          ],
+          "normative_strength": null,
+          "source_id": "W3CK-SPV1-PE4-WD-20260701",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-informative",
+      "observation_id": "obs-pe4-08",
+      "occurrence_id": "occ-pointerevents4-f564d7b05dab",
+      "spec_id": "pointerevents4",
+      "spec_version": "WD-2026-07-01"
+    }
+  ],
+  "schema_version": "0.1"
+}

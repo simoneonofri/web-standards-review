@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "charter_url": "https://w3c.github.io/charter-drafts/2026/charter-wg-webappsec-2026.html",
+  "categories": {"normative": 17, "tentative": 3, "other": 4},
+  "deliverables": [
+    {"deliverable_id": "fetch-metadata", "title": "Fetch Metadata Request Headers", "category": "normative", "source_url": "https://www.w3.org/TR/fetch-metadata/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "change-password-url", "title": "A Well-Known URL for Changing Passwords", "category": "normative", "source_url": "https://www.w3.org/TR/change-password-url/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "passkey-endpoints-1", "title": "A Well-Known URL for Relying Party Passkey Endpoints", "category": "normative", "source_url": "https://www.w3.org/TR/passkey-endpoints-1/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "trusted-types", "title": "Trusted Types", "category": "normative", "source_url": "https://www.w3.org/TR/trusted-types/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "CSP3", "title": "Content Security Policy Level 3", "category": "normative", "source_url": "https://www.w3.org/TR/CSP3/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "mixed-content", "title": "Mixed Content", "category": "normative", "source_url": "https://www.w3.org/TR/mixed-content/", "draft_state": "Candidate Recommendation Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "upgrade-insecure-requests", "title": "Upgrade Insecure Requests", "category": "normative", "source_url": "https://www.w3.org/TR/upgrade-insecure-requests/", "draft_state": "Candidate Recommendation", "mining_status": "control-mined"},
+    {"deliverable_id": "secure-contexts", "title": "Secure Contexts", "category": "normative", "source_url": "https://www.w3.org/TR/secure-contexts/", "draft_state": "Candidate Recommendation Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "clear-site-data", "title": "Clear Site Data", "category": "normative", "source_url": "https://www.w3.org/TR/clear-site-data/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "referrer-policy", "title": "Referrer Policy", "category": "normative", "source_url": "https://www.w3.org/TR/referrer-policy/", "draft_state": "Candidate Recommendation", "mining_status": "control-mined"},
+    {"deliverable_id": "credential-management-1", "title": "Credential Management Level 1", "category": "normative", "source_url": "https://www.w3.org/TR/credential-management-1/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "permissions", "title": "Permissions", "category": "normative", "source_url": "https://www.w3.org/TR/permissions/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "permissions-policy-1", "title": "Permissions Policy", "category": "normative", "source_url": "https://www.w3.org/TR/permissions-policy-1/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "document-policy", "title": "Document Policy", "category": "normative", "source_url": "https://wicg.github.io/document-policy/", "draft_state": "Incubation in the Web Platform Incubator Community Group", "mining_status": "editor-draft-control-mined"},
+    {"deliverable_id": "sri-2", "title": "Subresource Integrity Level 2", "category": "normative", "source_url": "https://www.w3.org/TR/sri-2/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "dbsc-1", "title": "Device Bound Session Credentials", "category": "normative", "source_url": "https://www.w3.org/TR/dbsc-1/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "webcrypto-2", "title": "Web Cryptography Level 2", "category": "normative", "source_url": "https://www.w3.org/TR/webcrypto-2/", "draft_state": "Working Draft", "mining_status": "control-mined"},
+    {"deliverable_id": "source-code-transparency", "title": "Source Code Transparency", "category": "tentative", "source_url": "https://github.com/w3c/webappsec/blob/main/meetings/2023/2023-09-15-TPAC-minutes.md#source-code-transparency-sketch", "draft_state": "Early proposal discussed by the Working Group", "mining_status": "inventory-only"},
+    {"deliverable_id": "securer-contexts", "title": "Securer Contexts", "category": "tentative", "source_url": "https://github.com/mikewest/securer-contexts", "draft_state": "Incubation proposal", "mining_status": "inventory-only"},
+    {"deliverable_id": "dbsc-sso", "title": "Device Bound Session Credentials for Single Sign-On", "category": "tentative", "source_url": "https://github.com/WICG/dbsc-sso", "draft_state": "Incubation in the Web Platform Incubator Community Group", "mining_status": "inventory-only"},
+    {"deliverable_id": "post-spectre-webdev", "title": "Post-Spectre Web Development", "category": "other", "source_url": "https://www.w3.org/TR/post-spectre-webdev/", "draft_state": "Working Draft", "mining_status": "inventory-only"},
+    {"deliverable_id": "csp-embedded-enforcement", "title": "Content Security Policy: Embedded Enforcement", "category": "other", "source_url": "https://www.w3.org/TR/csp-embedded-enforcement/", "draft_state": "Working Draft", "mining_status": "inventory-only"},
+    {"deliverable_id": "cookie-security-privacy-model", "title": "Security and privacy model for cookies", "category": "other", "source_url": null, "draft_state": null, "mining_status": "inventory-only"},
+    {"deliverable_id": "permissions-best-practices", "title": "Permissions best practices", "category": "other", "source_url": null, "draft_state": null, "mining_status": "inventory-only"}
+  ]
+}

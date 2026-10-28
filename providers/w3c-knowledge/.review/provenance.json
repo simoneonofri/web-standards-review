@@ -1,0 +1,247 @@
+{
+  "schema_version": "reviewed-component-snapshot/v1",
+  "component": "w3c-knowledge",
+  "source_repository": "simoneonofri/w3c-knowledge",
+  "source_base_commit": "b3b517f05bf3b1d89c514fdcfa596a8f1db8cb45",
+  "source_selection": "reviewed-working-tree-files",
+  "files": [
+    {
+      "path": "alembic.ini",
+      "source_sha256": "88c5b6522c01065a8d4b3aea88ce0329e6d7400104ed1517b325e76e0189e6eb",
+      "output_sha256": "88c5b6522c01065a8d4b3aea88ce0329e6d7400104ed1517b325e76e0189e6eb",
+      "transformations": []
+    },
+    {
+      "path": "config/sources.yaml",
+      "source_sha256": "2e0cc6fb0b931626093429c6b94296a633d662e5c984210666f4b6fa84450679",
+      "output_sha256": "2e0cc6fb0b931626093429c6b94296a633d662e5c984210666f4b6fa84450679",
+      "transformations": []
+    },
+    {
+      "path": "migrations/env.py",
+      "source_sha256": "5dc358ad56a98f17bbc3b3a53ee3bc492d9af6345eb7411ef0ef8faf289beaf4",
+      "output_sha256": "5dc358ad56a98f17bbc3b3a53ee3bc492d9af6345eb7411ef0ef8faf289beaf4",
+      "transformations": []
+    },
+    {
+      "path": "migrations/versions/0001_initial.py",
+      "source_sha256": "985f6ab2e9ced329c5e2c2c112d3a2f08e24c742d9ac97294df840e78b2cdea6",
+      "output_sha256": "985f6ab2e9ced329c5e2c2c112d3a2f08e24c742d9ac97294df840e78b2cdea6",
+      "transformations": []
+    },
+    {
+      "path": "migrations/versions/0002_expand_artifact_link_object_id.py",
+      "source_sha256": "a30d3b4a99cb08d9658afd7a03ede72af8edf5574457f609138fbf18d108fb6c",
+      "output_sha256": "a30d3b4a99cb08d9658afd7a03ede72af8edf5574457f609138fbf18d108fb6c",
+      "transformations": []
+    },
+    {
+      "path": "migrations/versions/0003_tr_bootstrap_lite.py",
+      "source_sha256": "44412c7163442e8bfb0f02c95a1c856d4ef9dea6cfd429e1efa8406ee2b1b7ac",
+      "output_sha256": "44412c7163442e8bfb0f02c95a1c856d4ef9dea6cfd429e1efa8406ee2b1b7ac",
+      "transformations": []
+    },
+    {
+      "path": "pyproject.toml",
+      "source_sha256": "68edf6f0be07f89b6a1f8c0bb621ff20d0a05da5ea239ca5dded9b0ce1a241e7",
+      "output_sha256": "15bb0d568918aaded7185990222d7b45a484d8665cbe9bb145d6aa43ef863fec",
+      "transformations": [
+        "portable-local-vector-retrieval-v1"
+      ]
+    },
+    {
+      "path": "w3c_knowledge/__init__.py",
+      "source_sha256": "1944f80898e80aa59ccd932ccecd6fbc6f0f5821b1f4e8f5cf7f01e6db3db597",
+      "output_sha256": "1944f80898e80aa59ccd932ccecd6fbc6f0f5821b1f4e8f5cf7f01e6db3db597",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/adapters/github.py",
+      "source_sha256": "0ed4bd3aac71e722b0ad04f43c48f52cc36969ff98029e106ecc829da78133e0",
+      "output_sha256": "0ed4bd3aac71e722b0ad04f43c48f52cc36969ff98029e106ecc829da78133e0",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/adapters/html.py",
+      "source_sha256": "56f7e3f3497bcb3e2b124599df346ba1c4db3732b0992aa78469b759180557f9",
+      "output_sha256": "56f7e3f3497bcb3e2b124599df346ba1c4db3732b0992aa78469b759180557f9",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/adapters/ietf_datatracker.py",
+      "source_sha256": "f58cd67f79cac363aa0f8f6233ac8c902e7d847f584a4f30862479c2b9666f95",
+      "output_sha256": "f58cd67f79cac363aa0f8f6233ac8c902e7d847f584a4f30862479c2b9666f95",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/adapters/rfc_editor.py",
+      "source_sha256": "d925bd1e5ad2bccf94cbd0ffeaa5f625fe359c04de651edc186fad7aab954fb7",
+      "output_sha256": "d925bd1e5ad2bccf94cbd0ffeaa5f625fe359c04de651edc186fad7aab954fb7",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/adapters/w3c.py",
+      "source_sha256": "c0204540d57b6e08109dcc155ed0aa4f3d3de8ab55d62ff16d71a2c793784bed",
+      "output_sha256": "c0204540d57b6e08109dcc155ed0aa4f3d3de8ab55d62ff16d71a2c793784bed",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/analysis/analyzers.py",
+      "source_sha256": "5440daf741ce7f2cef430cc6b7eb8cd8f6fcfcd7f87d75478c3d289212d74692",
+      "output_sha256": "5440daf741ce7f2cef430cc6b7eb8cd8f6fcfcd7f87d75478c3d289212d74692",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/api/v1/routes.py",
+      "source_sha256": "d13c7d97ff303c58c4de9a637e7b2e6c0def5abaa8847423eaba7e63d808f356",
+      "output_sha256": "5c97b1994ecdb5dfa8d12d475f57ccd2522074c251ad662aa520208a75217708",
+      "transformations": [
+        "portable-local-vector-retrieval-v1"
+      ]
+    },
+    {
+      "path": "w3c_knowledge/cli.py",
+      "source_sha256": "756b114351b3b72faf09088f56b93e4aece50fec810de4c20d3a57cea96046a6",
+      "output_sha256": "53cde25b6aab8349e98043fbc86de3f9ff1e3451a32e64a36f7679c5f89ee9f1",
+      "transformations": [
+        "portable-local-vector-retrieval-v1"
+      ]
+    },
+    {
+      "path": "w3c_knowledge/config.py",
+      "source_sha256": "883ab02f913c95800a9a6c8fff2d7f675b5bf88ca93c38eb8eaa93dd556cceca",
+      "output_sha256": "8649daab1554aa34017a25220e8790c9c1fac50190446017309c4847801c1321",
+      "transformations": [
+        "Use platform temporary directory for the optional RFC mirror.",
+        "portable-local-vector-retrieval-v1"
+      ]
+    },
+    {
+      "path": "w3c_knowledge/db.py",
+      "source_sha256": "703d7bda1e41b2ff44a235ef6de40fde913344c81b83d40214d0ee681f16ee18",
+      "output_sha256": "703d7bda1e41b2ff44a235ef6de40fde913344c81b83d40214d0ee681f16ee18",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/graph.py",
+      "source_sha256": "5f1998084396c5fc67865d5b6b56085eb0dbfaaab81b328c21c96526b03d4957",
+      "output_sha256": "5f1998084396c5fc67865d5b6b56085eb0dbfaaab81b328c21c96526b03d4957",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/ingestion/service.py",
+      "source_sha256": "18e6056960f98802c314449862d3cd746c51fb51ac8b0d3d9cc374575cd8c018",
+      "output_sha256": "18e6056960f98802c314449862d3cd746c51fb51ac8b0d3d9cc374575cd8c018",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/ingestion/source_config.py",
+      "source_sha256": "22ec8cfa316b928162157013a0d05bd74dac9a5fda3e09c580da4b45d6141a63",
+      "output_sha256": "22ec8cfa316b928162157013a0d05bd74dac9a5fda3e09c580da4b45d6141a63",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/main.py",
+      "source_sha256": "6586e25f57bb14b758e339fd55dd20a48ecc1fb7f3299399446bc9b9cde03778",
+      "output_sha256": "6586e25f57bb14b758e339fd55dd20a48ecc1fb7f3299399446bc9b9cde03778",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/models.py",
+      "source_sha256": "3a74e8bdc3855251a826e29f46f43dc73f8e1af59f4f2653ec861b14842aeea4",
+      "output_sha256": "3a74e8bdc3855251a826e29f46f43dc73f8e1af59f4f2653ec861b14842aeea4",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/openapi/__init__.py",
+      "source_sha256": "83127ecd9fec966d760fde507d2aff0f26a46ea3653965746b112c669e3d4987",
+      "output_sha256": "83127ecd9fec966d760fde507d2aff0f26a46ea3653965746b112c669e3d4987",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/openapi/export.py",
+      "source_sha256": "e999fcb0d5c7532851eca802e3edd7418d1f69185654c7674657b8600ab8b06d",
+      "output_sha256": "e999fcb0d5c7532851eca802e3edd7418d1f69185654c7674657b8600ab8b06d",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/parsing/diff.py",
+      "source_sha256": "ddde3ba13d632b61de566b97d56e3798f86a44475a7e662986b487bf8c250110",
+      "output_sha256": "ddde3ba13d632b61de566b97d56e3798f86a44475a7e662986b487bf8c250110",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/parsing/rfc.py",
+      "source_sha256": "d367ff313ebf9c083e91013f083d930ed421be1596b355bc016cdf5ab2525850",
+      "output_sha256": "d367ff313ebf9c083e91013f083d930ed421be1596b355bc016cdf5ab2525850",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/parsing/specification.py",
+      "source_sha256": "aec6a5abfc944121188b8b4335f4148dc3605c58a50ff9037381e91709efeb0b",
+      "output_sha256": "aec6a5abfc944121188b8b4335f4148dc3605c58a50ff9037381e91709efeb0b",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/parsing/urls.py",
+      "source_sha256": "47f01420c4fe4df37a712e05589ec97cd5f5a37fece14e8ad184b9b9b37df378",
+      "output_sha256": "47f01420c4fe4df37a712e05589ec97cd5f5a37fece14e8ad184b9b9b37df378",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/process_context.py",
+      "source_sha256": "aafe1d031b1ebf6691c8c4167b6948680335c0e3a7a84c6ded75486cc2fdc5c1",
+      "output_sha256": "aafe1d031b1ebf6691c8c4167b6948680335c0e3a7a84c6ded75486cc2fdc5c1",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/schemas.py",
+      "source_sha256": "97bc7f506efa8828d6bdfc6d1ec2748319389e8fb15253447162ca35f725d955",
+      "output_sha256": "97bc7f506efa8828d6bdfc6d1ec2748319389e8fb15253447162ca35f725d955",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/search/service.py",
+      "source_sha256": "9444d5998cd44b9337846c78907a001817964a231ad336da6e7edd7b01cdc577",
+      "output_sha256": "9444d5998cd44b9337846c78907a001817964a231ad336da6e7edd7b01cdc577",
+      "transformations": []
+    },
+    {
+      "path": "w3c_knowledge/security.py",
+      "source_sha256": "986cfdf8301b86b2631b4e152c2a5720173b8943b39f64694e72d11914408d99",
+      "output_sha256": "986cfdf8301b86b2631b4e152c2a5720173b8943b39f64694e72d11914408d99",
+      "transformations": []
+    }
+  ],
+  "excluded": [
+    "database contents",
+    "credentials and environment files",
+    "source history",
+    "private handoffs",
+    "downloaded corpora",
+    "tests with upstream content"
+  ],
+  "publication_status": "publication_review_required",
+  "retrieval_mode": "lexical-and-local-vector-hybrid",
+  "embeddings_implemented": true,
+  "local_vector_adaptation": {
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "runtime": "onnx-cpu",
+    "data_included": false,
+    "model_weights_included": false,
+    "new_files": [
+      "w3c_knowledge/search/embeddings.py",
+      "w3c_knowledge/search/vector_store.py",
+      "w3c_knowledge/search/vectors.py",
+      "migrations/versions/0004_local_vectors.py",
+      "tests/test_vectors.py",
+      "tests/smoke_local_vectors.py"
+    ]
+  },
+  "startup_readiness": {
+    "probe": "TCP localhost",
+    "temporary_initialization_server_excluded": true,
+    "database_contents_included": false
+  }
+}

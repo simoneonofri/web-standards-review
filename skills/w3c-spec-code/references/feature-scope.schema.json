@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/simoneonofri/w3c-spec-code/references/feature-scope.schema.json",
+  "title": "Feature-scoped implementation review manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "feature",
+    "implementation",
+    "entry_points",
+    "feature_paths",
+    "supporting_paths",
+    "engine_dependencies",
+    "excluded_paths",
+    "budgets"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "w3c-spec-code-feature-scope/v1"
+    },
+    "feature": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "specification_url",
+        "specification_revision",
+        "specification_anchors"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "specification_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "specification_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "specification_anchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "implementation": {
+      "type": "object",
+      "required": [
+        "repository",
+        "revision"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "entry_points": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/relativePath"
+      }
+    },
+    "feature_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/relativePath"
+      }
+    },
+    "supporting_paths": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidencedPath"
+      }
+    },
+    "engine_dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/engineDependency"
+      }
+    },
+    "excluded_paths": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relativePath"
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "required": [
+        "max_files",
+        "max_bytes"
+      ],
+      "properties": {
+        "max_files": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "max_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1073741824
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)\\.git(?:/|$)).+"
+    },
+    "evidencedPath": {
+      "type": "object",
+      "required": [
+        "path",
+        "rationale",
+        "evidence"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 20
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "control_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "engineDependency": {
+      "type": "object",
+      "required": [
+        "engine",
+        "path",
+        "rationale",
+        "evidence"
+      ],
+      "properties": {
+        "engine": {
+          "enum": [
+            "v8",
+            "spidermonkey",
+            "javascriptcore",
+            "other"
+          ]
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 20
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "control_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

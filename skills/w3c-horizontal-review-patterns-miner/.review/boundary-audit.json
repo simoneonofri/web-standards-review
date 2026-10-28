@@ -1,0 +1,189 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:65ffdda75d7884ad9dca373e3c027136cb76fe21bc86483fa6bf1631386e28b2",
+      "size": 153713
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:8fca347c234c30750d3e0de490fd251affc76e2adfd2c4c50d66486d6fcf4b6c",
+      "size": 6229
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:97cac05045acbd582e96599cd568e51a158afc0a4e843f2b48cbb37f3e5a809e",
+      "size": 5795
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:8a720864c6f733044c942b76680b561d1a97b326018b9a8a47a6abcfef73cbc8",
+      "size": 3496
+    },
+    {
+      "binary": false,
+      "path": "assets/finding.example.json",
+      "sha256": "sha256:0159b98a9c06825141f379c607550013e7657f358a6a507273b7e1946d650354",
+      "size": 1256
+    },
+    {
+      "binary": false,
+      "path": "assets/review-report-template.md",
+      "sha256": "sha256:a568f2cefd93847a9b97b5b8bf7bdfd67e7a4ed3e342848425d882aa4e2f1097",
+      "size": 322
+    },
+    {
+      "binary": false,
+      "path": "assets/review-result.example.json",
+      "sha256": "sha256:97d5012d50b6f4b87c9cff5701b492b46c71f15e0b31b9e2feba98fe32c7267d",
+      "size": 1762
+    },
+    {
+      "binary": false,
+      "path": "assets/specification-profile.example.json",
+      "sha256": "sha256:876979f8298238b79c92b7d5e985077d99ac6c0a21b7ecb1d20e2cb7590cc949",
+      "size": 1683
+    },
+    {
+      "binary": false,
+      "path": "references/architecture.md",
+      "sha256": "sha256:b5eb204dbcef448b32bced2e7e6cb1ac3e0bbd77e26d481625de86d61d851950",
+      "size": 1271
+    },
+    {
+      "binary": false,
+      "path": "references/evidence-and-confidence.md",
+      "sha256": "sha256:15c84ea19c71a1b5cd70883a2c27f3fd44537ab720efbb850d4d4d29da85bbed",
+      "size": 1760
+    },
+    {
+      "binary": false,
+      "path": "references/finding-model.md",
+      "sha256": "sha256:71757a8187b444bfe44ad59769af06748709283e507c759ccf2e5d9b950d2549",
+      "size": 1785
+    },
+    {
+      "binary": false,
+      "path": "references/review-patterns.json",
+      "sha256": "sha256:f728663fa5684437db7fcc11443e083ee32e86a002fc5bd48ba03fbc12c5b8a8",
+      "size": 87292
+    },
+    {
+      "binary": false,
+      "path": "references/specification-taxonomy.json",
+      "sha256": "sha256:030c678bf1611f353e7842c740bef1ebae97de682a9861bd1f82eec4b9336dc0",
+      "size": 11090
+    },
+    {
+      "binary": false,
+      "path": "references/w3c-knowledge-contract.md",
+      "sha256": "sha256:42a52260cecdbc86793bf5237af76a7a26562fb2728c565648ad1957eadbde70",
+      "size": 1476
+    },
+    {
+      "binary": false,
+      "path": "scripts/select_patterns.py",
+      "sha256": "sha256:443df01611f54a253cd2f6eef500d9d2d31f1bc6a847b1ac3d5ca32080f4f343",
+      "size": 7378
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_assets.py",
+      "sha256": "sha256:746912bad477e162909494a998486562f7e928fd32af0123af42bcffc7423994",
+      "size": 7598
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/data-format.json",
+      "sha256": "sha256:d95051ca9cb9e6919982cacf80e5c5a7e915901d03a278b317b25205124ff9e3",
+      "size": 465
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/device-api.json",
+      "sha256": "sha256:31d61c43b6cf90bc5defd8c485d28ae705f62f4786d41b852eb406b49ecec0d1",
+      "size": 620
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/identity-protocol.json",
+      "sha256": "sha256:8e7cb002b9d95fe1b5f9475919481f60c792d7ef6c20ca8698d85283d9ad404a",
+      "size": 648
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/network-protocol.json",
+      "sha256": "sha256:9010fc2ee837eb2ca6691f713696a84ab0a3b5a79143798bc2c20ab7319010b6",
+      "size": 552
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/persistent-storage.json",
+      "sha256": "sha256:aa2a58c635e8668cafe7fb8c62018fe2d7d37d9220bf15390c6a05623ac44cf1",
+      "size": 503
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/rendering-feature.json",
+      "sha256": "sha256:bc62f0c0c633582669ab57d2f502114596ba16053a9aff315355e51da20f743a",
+      "size": 380
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/review-derived-charter-governance.json",
+      "sha256": "sha256:40f188c50271abc7dfe03186b48c3818fc4db608f5d867e44c68b1b3bcf1c0ed",
+      "size": 887
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/review-derived-credential-integrity-protocol.json",
+      "sha256": "sha256:ddd71c241d172e845d8e8143cb09a732bcbfc2856ba994ff7336634ad9e5221e",
+      "size": 1330
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/review-derived-media-capability-fingerprinting.json",
+      "sha256": "sha256:ab7b2ba7629ef6dbbce8a8efccf9eef6622bf9501d23cd921c331579d74f777e",
+      "size": 1249
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/review-derived-ml-native-computation.json",
+      "sha256": "sha256:4ade85029b6a7ff3c2f9ec25fc898dd790de377a391246a620a0c797c2558472",
+      "size": 1041
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/review-derived-policy-delegated-capability.json",
+      "sha256": "sha256:59ce287bdba5847b2ee59a8829d13bdfad56392fd2ba7a257a5b991f8c76b113",
+      "size": 1214
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/review-derived-semantic-vocabulary.json",
+      "sha256": "sha256:87942b6f855bf33779adfdd880e4712719394c8891d034fb55513b568df0f562",
+      "size": 1009
+    },
+    {
+      "binary": false,
+      "path": "tests/test_pattern_selection.py",
+      "sha256": "sha256:1ed40276e616ff657d49fd5120ac4fe58f81b44e86ae96c7a74e44e28744be35",
+      "size": 9813
+    }
+  ],
+  "root_digest": "sha256:992be34c55d994e2c90d76fde8b7dbae7e9d7ab66624dcba6adc67d81784c558",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

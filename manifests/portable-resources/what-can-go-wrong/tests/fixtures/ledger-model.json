@@ -1,0 +1,180 @@
+{
+  "contract_version": 1,
+  "model_id": "model-clean-room",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "system_under_analysis": "Synthetic request-mediation capability",
+  "scenario": "A user agent mediates a bounded request to a remote service.",
+  "dfd_detail_level": "medium-detail",
+  "abstraction_level": "spec-review",
+  "scope": [
+    "request construction",
+    "user-agent mediation",
+    "remote-service delivery"
+  ],
+  "out_of_scope": [
+    "remote-service internal implementation",
+    "browser-wide architecture"
+  ],
+  "source_inventory": [
+    {
+      "id": "spec-1",
+      "source_reference": "Synthetic specification snapshot section 2"
+    }
+  ],
+  "actors_and_affected_people": [
+    {
+      "id": "person-user",
+      "role": "user",
+      "affected_by": [
+        "unexpected disclosure",
+        "service unavailability"
+      ]
+    },
+    {
+      "id": "person-non-user",
+      "role": "data subject named in the request",
+      "affected_by": [
+        "secondary disclosure"
+      ]
+    }
+  ],
+  "assets_and_properties": [
+    {
+      "asset": "request metadata",
+      "properties": [
+        "confidentiality",
+        "integrity",
+        "data minimization"
+      ]
+    },
+    {
+      "asset": "user intent",
+      "properties": [
+        "mediation",
+        "awareness",
+        "control"
+      ]
+    }
+  ],
+  "external_entities": [
+    {
+      "stable_id": "EE-01",
+      "type": "External Entity",
+      "name": "User",
+      "description": "Person initiating the request.",
+      "evidence_status": "supplied",
+      "source_reference": "Synthetic specification section 2",
+      "normative_status": "informative",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "stable_id": "EE-02",
+      "type": "External Entity",
+      "name": "Remote service",
+      "description": "Service receiving the mediated request.",
+      "evidence_status": "supplied",
+      "source_reference": "Synthetic specification section 3.1",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "processes": [
+    {
+      "stable_id": "PO-01",
+      "type": "Process",
+      "name": "User-agent mediation",
+      "description": "Checks policy, user intent, and request scope before delivery.",
+      "evidence_status": "supplied",
+      "source_reference": "Synthetic specification section 3",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "data_stores": [],
+  "data_flows": [
+    {
+      "stable_id": "DF-01",
+      "type": "Data Flow",
+      "name": "Mediated request",
+      "description": "Bounded request metadata flows to the remote service.",
+      "evidence_status": "supplied",
+      "source_reference": "Synthetic specification section 3.1",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": "",
+      "source": "PO-01",
+      "destination": "EE-02"
+    }
+  ],
+  "trust_boundaries": [
+    {
+      "stable_id": "TB-01",
+      "type": "Trust Boundary",
+      "name": "Origin and administrative boundary",
+      "description": "The remote service is outside user-agent authority.",
+      "evidence_status": "inferred",
+      "source_reference": "Synthetic specification section 3.1",
+      "normative_status": "normative",
+      "confidence": "medium",
+      "notes": "",
+      "justification": "The flow crosses origin, authority, and administrative control.",
+      "boundary_basis": [
+        "origin",
+        "authority",
+        "administrative_domain"
+      ]
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A-001",
+      "text": "The user agent enforces the policy and intent check."
+    },
+    {
+      "id": "A-002",
+      "text": "The remote service processes only the declared request purpose."
+    }
+  ],
+  "inline_safeguards": [
+    {
+      "id": "S-01",
+      "source_reference": "Synthetic specification section 3",
+      "text": "Fail-closed policy and intent check."
+    },
+    {
+      "id": "S-02",
+      "source_reference": "Synthetic specification section 3.2",
+      "text": "Request-field allowlist."
+    }
+  ],
+  "implicit_threat_model_signals": [
+    {
+      "id": "SIG-01",
+      "text": "The policy gate implies that unintended recipients and excess fields matter."
+    }
+  ],
+  "review_signals": [],
+  "unresolved_questions": [
+    {
+      "id": "Q-01",
+      "text": "Which actor owns remediation after a remote-service breach?"
+    }
+  ],
+  "section_coverage": [
+    {
+      "source_id": "spec-1",
+      "section": "2",
+      "status": "covered"
+    },
+    {
+      "source_id": "spec-1",
+      "section": "3",
+      "status": "covered"
+    }
+  ],
+  "validation_notes": []
+}

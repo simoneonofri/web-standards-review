@@ -1,0 +1,64 @@
+{
+  "contract_versions": [
+    "fact-check-result/v1"
+  ],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:8770ad8135f2e8be3e6a3e409b4163442e0f85ab0bcc532b9b96bb1560f7a0a4",
+      "size": 9884
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:73f9c179a48eb534f52f3f756e92e3485bed939d313debd0dbc81b9492e3ac67",
+      "size": 226
+    },
+    {
+      "binary": false,
+      "path": "schemas/fact-check-result-v1.schema.json",
+      "sha256": "sha256:f21b1b07db27392b8d49c7b6e8d1b141f95975c8fcfc7f6d9d9fc328facb1ea8",
+      "size": 5866
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_fact_check_result.py",
+      "sha256": "sha256:4b45eb5d8cab47be9ea25ff8aa82d2af372846e9d21dd88405531875d565f9a7",
+      "size": 13851
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/fact-check-result-valid.json",
+      "sha256": "sha256:a7bbd8d8f3a1b82805e12abd8fdbea324e56f8d1021bb979dd9d9538aae83dfc",
+      "size": 2406
+    },
+    {
+      "binary": false,
+      "path": "tests/test_fact_check_result.py",
+      "sha256": "sha256:10e4593bc4c8197bb2631becda61cf02aa18b56979486815e7a3a288ad14e1ef",
+      "size": 4394
+    }
+  ],
+  "output_digest": "sha256:6aa73b83d687bc2c57127cd04cb306b387ff8da36d6a24317460b28b7af7a40b",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "isolated-unit-tests"
+  ],
+  "rights_manifest_reference": "manifests/fact-check.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "fact-check",
+  "source_commit": "ebd93617f4167b06256a67766d878ec30194db36",
+  "source_repository": "simoneonofri/fact-check",
+  "tool_version": "reviewctl/0.2.0"
+}

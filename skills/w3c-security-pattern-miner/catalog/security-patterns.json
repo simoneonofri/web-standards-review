@@ -1,0 +1,4865 @@
+{
+  "patterns": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "html-dom",
+          "network"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no attack surface minimization behavior"
+        ],
+        "preconditions": [
+          "attack surface minimization is part of the processing model"
+        ],
+        "spec_families": [
+          "html-dom-css-rendering"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "attack-surface-minimization",
+      "conceptual_key": "attack-surface-minimization|context|boundary|failure-mode|expected-property-01",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to attack surface minimization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified attack surface minimization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "attack-surface-minimization-pattern-01",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for attack surface minimization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Attack Surface Minimization Pattern 01",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "css-rendering",
+          "storage-state"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no secure context and transport behavior"
+        ],
+        "preconditions": [
+          "secure context and transport is part of the processing model"
+        ],
+        "spec_families": [
+          "device-sensor-native-capability"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "secure-context-and-transport",
+      "conceptual_key": "secure-context-and-transport|context|boundary|failure-mode|expected-property-02",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to secure context and transport",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified secure context and transport behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "secure-context-and-transport-pattern-02",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for secure context and transport where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Secure Context And Transport Pattern 02",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "http-network-protocol",
+          "sensor-device"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no origin and site isolation behavior"
+        ],
+        "preconditions": [
+          "origin and site isolation is part of the processing model"
+        ],
+        "spec_families": [
+          "storage-cache-persistent-state"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "origin-and-site-isolation",
+      "conceptual_key": "origin-and-site-isolation|context|boundary|failure-mode|expected-property-03",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to origin and site isolation",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified origin and site isolation behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "origin-and-site-isolation-pattern-03",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for origin and site isolation where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Origin And Site Isolation Pattern 03",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "data-format-serialization",
+          "identity-credential"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no cross origin communication behavior"
+        ],
+        "preconditions": [
+          "cross origin communication is part of the processing model"
+        ],
+        "spec_families": [
+          "identity-credential-payment"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "cross-origin-communication",
+      "conceptual_key": "cross-origin-communication|context|boundary|failure-mode|expected-property-04",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to cross origin communication",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified cross origin communication behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "cross-origin-communication-pattern-04",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for cross origin communication where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Cross Origin Communication Pattern 04",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "manifest-policy",
+          "media-capture"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no authority and capability delegation behavior"
+        ],
+        "preconditions": [
+          "authority and capability delegation is part of the processing model"
+        ],
+        "spec_families": [
+          "network-fetch-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "authority-and-capability-delegation",
+      "conceptual_key": "authority-and-capability-delegation|context|boundary|failure-mode|expected-property-05",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to authority and capability delegation",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified authority and capability delegation behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "authority-and-capability-delegation-pattern-05",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for authority and capability delegation where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Authority And Capability Delegation Pattern 05",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "cryptographic-interface",
+          "cryptography"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no permission lifecycle behavior"
+        ],
+        "preconditions": [
+          "permission lifecycle is part of the processing model"
+        ],
+        "spec_families": [
+          "data-format-serialization"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "permission-lifecycle",
+      "conceptual_key": "permission-lifecycle|context|boundary|failure-mode|expected-property-06",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to permission lifecycle",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified permission lifecycle behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "permission-lifecycle-pattern-06",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for permission lifecycle where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Permission Lifecycle Pattern 06",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "computation",
+          "permission-delegation"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no user intent and trusted ui behavior"
+        ],
+        "preconditions": [
+          "user intent and trusted ui is part of the processing model"
+        ],
+        "spec_families": [
+          "media-capture-realtime"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "user-intent-and-trusted-ui",
+      "conceptual_key": "user-intent-and-trusted-ui|context|boundary|failure-mode|expected-property-07",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to user intent and trusted ui",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified user intent and trusted ui behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "user-intent-and-trusted-ui-pattern-07",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for user intent and trusted ui where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "User Intent And Trusted Ui Pattern 07",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "network",
+          "window"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no authentication behavior"
+        ],
+        "preconditions": [
+          "authentication is part of the processing model"
+        ],
+        "spec_families": [
+          "permission-policy-manifest"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "authentication",
+      "conceptual_key": "authentication|context|boundary|failure-mode|expected-property-08",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to authentication",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified authentication behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "authentication-pattern-08",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for authentication where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Authentication Pattern 08",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "storage-state",
+          "dedicated-worker"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no authorization behavior"
+        ],
+        "preconditions": [
+          "authorization is part of the processing model"
+        ],
+        "spec_families": [
+          "cryptographic-api-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "authorization",
+      "conceptual_key": "authorization|context|boundary|failure-mode|expected-property-09",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to authorization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified authorization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "authorization-pattern-09",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for authorization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Authorization Pattern 09",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "sensor-device",
+          "shared-worker"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no credential lifecycle behavior"
+        ],
+        "preconditions": [
+          "credential lifecycle is part of the processing model"
+        ],
+        "spec_families": [
+          "computational-js-webidl-api"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "credential-lifecycle",
+      "conceptual_key": "credential-lifecycle|context|boundary|failure-mode|expected-property-10",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to credential lifecycle",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified credential lifecycle behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "credential-lifecycle-pattern-10",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for credential lifecycle where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Credential Lifecycle Pattern 10",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "identity-credential",
+          "service-worker"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no confidentiality and information disclosure behavior"
+        ],
+        "preconditions": [
+          "confidentiality and information disclosure is part of the processing model"
+        ],
+        "spec_families": [
+          "html-dom-css-rendering"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "confidentiality-and-information-disclosure",
+      "conceptual_key": "confidentiality-and-information-disclosure|context|boundary|failure-mode|expected-property-11",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to confidentiality and information disclosure",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified confidentiality and information disclosure behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "confidentiality-and-information-disclosure-pattern-11",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for confidentiality and information disclosure where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Confidentiality And Information Disclosure Pattern 11",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "media-capture",
+          "top-level"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no integrity and authenticity behavior"
+        ],
+        "preconditions": [
+          "integrity and authenticity is part of the processing model"
+        ],
+        "spec_families": [
+          "device-sensor-native-capability"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "integrity-and-authenticity",
+      "conceptual_key": "integrity-and-authenticity|context|boundary|failure-mode|expected-property-12",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to integrity and authenticity",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified integrity and authenticity behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "integrity-and-authenticity-pattern-12",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for integrity and authenticity where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Integrity And Authenticity Pattern 12",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "cryptography",
+          "iframe"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no freshness and anti replay behavior"
+        ],
+        "preconditions": [
+          "freshness and anti replay is part of the processing model"
+        ],
+        "spec_families": [
+          "storage-cache-persistent-state"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "freshness-and-anti-replay",
+      "conceptual_key": "freshness-and-anti-replay|context|boundary|failure-mode|expected-property-13",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to freshness and anti replay",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified freshness and anti replay behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "freshness-and-anti-replay-pattern-13",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for freshness and anti replay where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Freshness And Anti Replay Pattern 13",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "permission-delegation",
+          "third-party"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no input validation behavior"
+        ],
+        "preconditions": [
+          "input validation is part of the processing model"
+        ],
+        "spec_families": [
+          "identity-credential-payment"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "input-validation",
+      "conceptual_key": "input-validation|context|boundary|failure-mode|expected-property-14",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to input validation",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified input validation behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "input-validation-pattern-14",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for input validation where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Input Validation Pattern 14",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "window",
+          "cross-origin"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no parsing and serialization behavior"
+        ],
+        "preconditions": [
+          "parsing and serialization is part of the processing model"
+        ],
+        "spec_families": [
+          "network-fetch-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "parsing-and-serialization",
+      "conceptual_key": "parsing-and-serialization|context|boundary|failure-mode|expected-property-15",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to parsing and serialization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified parsing and serialization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "parsing-and-serialization-pattern-15",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for parsing and serialization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Parsing And Serialization Pattern 15",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "dedicated-worker",
+          "background"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no canonicalization behavior"
+        ],
+        "preconditions": [
+          "canonicalization is part of the processing model"
+        ],
+        "spec_families": [
+          "data-format-serialization"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "canonicalization",
+      "conceptual_key": "canonicalization|context|boundary|failure-mode|expected-property-16",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to canonicalization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified canonicalization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "canonicalization-pattern-16",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for canonicalization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Canonicalization Pattern 16",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "shared-worker",
+          "bfcache"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no url fetch and redirect handling behavior"
+        ],
+        "preconditions": [
+          "url fetch and redirect handling is part of the processing model"
+        ],
+        "spec_families": [
+          "media-capture-realtime"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "url-fetch-and-redirect-handling",
+      "conceptual_key": "url-fetch-and-redirect-handling|context|boundary|failure-mode|expected-property-17",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to url fetch and redirect handling",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified url fetch and redirect handling behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "url-fetch-and-redirect-handling-pattern-17",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for url fetch and redirect handling where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Url Fetch And Redirect Handling Pattern 17",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "service-worker",
+          "native-ui"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no script and code loading behavior"
+        ],
+        "preconditions": [
+          "script and code loading is part of the processing model"
+        ],
+        "spec_families": [
+          "permission-policy-manifest"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "script-and-code-loading",
+      "conceptual_key": "script-and-code-loading|context|boundary|failure-mode|expected-property-18",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to script and code loading",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified script and code loading behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "script-and-code-loading-pattern-18",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for script and code loading where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Script And Code Loading Pattern 18",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "top-level",
+          "personal-data"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no state storage and cache behavior"
+        ],
+        "preconditions": [
+          "state storage and cache is part of the processing model"
+        ],
+        "spec_families": [
+          "cryptographic-api-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "state-storage-and-cache",
+      "conceptual_key": "state-storage-and-cache|context|boundary|failure-mode|expected-property-19",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to state storage and cache",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified state storage and cache behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "state-storage-and-cache-pattern-19",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for state storage and cache where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "State Storage And Cache Pattern 19",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "iframe",
+          "sensitive-data"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no lifecycle navigation and bfcache behavior"
+        ],
+        "preconditions": [
+          "lifecycle navigation and bfcache is part of the processing model"
+        ],
+        "spec_families": [
+          "computational-js-webidl-api"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "lifecycle-navigation-and-bfcache",
+      "conceptual_key": "lifecycle-navigation-and-bfcache|context|boundary|failure-mode|expected-property-20",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to lifecycle navigation and bfcache",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified lifecycle navigation and bfcache behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "lifecycle-navigation-and-bfcache-pattern-20",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for lifecycle navigation and bfcache where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Lifecycle Navigation And Bfcache Pattern 20",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "third-party",
+          "stable-identifier"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no concurrency races and reentrancy behavior"
+        ],
+        "preconditions": [
+          "concurrency races and reentrancy is part of the processing model"
+        ],
+        "spec_families": [
+          "html-dom-css-rendering"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "concurrency-races-and-reentrancy",
+      "conceptual_key": "concurrency-races-and-reentrancy|context|boundary|failure-mode|expected-property-21",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to concurrency races and reentrancy",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified concurrency races and reentrancy behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "concurrency-races-and-reentrancy-pattern-21",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for concurrency races and reentrancy where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Concurrency Races And Reentrancy Pattern 21",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "cross-origin",
+          "persistent-state"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no error channels and oracles behavior"
+        ],
+        "preconditions": [
+          "error channels and oracles is part of the processing model"
+        ],
+        "spec_families": [
+          "device-sensor-native-capability"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "error-channels-and-oracles",
+      "conceptual_key": "error-channels-and-oracles|context|boundary|failure-mode|expected-property-22",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to error channels and oracles",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified error channels and oracles behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "error-channels-and-oracles-pattern-22",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for error channels and oracles where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Error Channels And Oracles Pattern 22",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "background",
+          "high-entropy"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no timing and side channels behavior"
+        ],
+        "preconditions": [
+          "timing and side channels is part of the processing model"
+        ],
+        "spec_families": [
+          "storage-cache-persistent-state"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "timing-and-side-channels",
+      "conceptual_key": "timing-and-side-channels|context|boundary|failure-mode|expected-property-23",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to timing and side channels",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified timing and side channels behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "timing-and-side-channels-pattern-23",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for timing and side channels where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Timing And Side Channels Pattern 23",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "bfcache",
+          "physical-world-data"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no resource exhaustion and amplification behavior"
+        ],
+        "preconditions": [
+          "resource exhaustion and amplification is part of the processing model"
+        ],
+        "spec_families": [
+          "identity-credential-payment"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "resource-exhaustion-and-amplification",
+      "conceptual_key": "resource-exhaustion-and-amplification|context|boundary|failure-mode|expected-property-24",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to resource exhaustion and amplification",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified resource exhaustion and amplification behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "resource-exhaustion-and-amplification-pattern-24",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for resource exhaustion and amplification where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Resource Exhaustion And Amplification Pattern 24",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "native-ui",
+          "native-capability"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no cryptography and randomness behavior"
+        ],
+        "preconditions": [
+          "cryptography and randomness is part of the processing model"
+        ],
+        "spec_families": [
+          "network-fetch-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "cryptography-and-randomness",
+      "conceptual_key": "cryptography-and-randomness|context|boundary|failure-mode|expected-property-25",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to cryptography and randomness",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified cryptography and randomness behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "cryptography-and-randomness-pattern-25",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for cryptography and randomness where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Cryptography And Randomness Pattern 25",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "personal-data",
+          "trusted-ui"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no key management and algorithm agility behavior"
+        ],
+        "preconditions": [
+          "key management and algorithm agility is part of the processing model"
+        ],
+        "spec_families": [
+          "data-format-serialization"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "key-management-and-algorithm-agility",
+      "conceptual_key": "key-management-and-algorithm-agility|context|boundary|failure-mode|expected-property-26",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to key management and algorithm agility",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified key management and algorithm agility behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "key-management-and-algorithm-agility-pattern-26",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for key management and algorithm agility where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Key Management And Algorithm Agility Pattern 26",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "sensitive-data",
+          "credential-material"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no device sensor and native boundaries behavior"
+        ],
+        "preconditions": [
+          "device sensor and native boundaries is part of the processing model"
+        ],
+        "spec_families": [
+          "media-capture-realtime"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "device-sensor-and-native-boundaries",
+      "conceptual_key": "device-sensor-and-native-boundaries|context|boundary|failure-mode|expected-property-27",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to device sensor and native boundaries",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified device sensor and native boundaries behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "device-sensor-and-native-boundaries-pattern-27",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for device sensor and native boundaries where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Device Sensor And Native Boundaries Pattern 27",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "stable-identifier",
+          "cross-site-observability"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no media codecs and untrusted binary input behavior"
+        ],
+        "preconditions": [
+          "media codecs and untrusted binary input is part of the processing model"
+        ],
+        "spec_families": [
+          "permission-policy-manifest"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "media-codecs-and-untrusted-binary-input",
+      "conceptual_key": "media-codecs-and-untrusted-binary-input|context|boundary|failure-mode|expected-property-28",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to media codecs and untrusted binary input",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified media codecs and untrusted binary input behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "media-codecs-and-untrusted-binary-input-pattern-28",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for media codecs and untrusted binary input where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Media Codecs And Untrusted Binary Input Pattern 28",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "persistent-state",
+          "webidl-javascript"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no protocol negotiation versioning and downgrade behavior"
+        ],
+        "preconditions": [
+          "protocol negotiation versioning and downgrade is part of the processing model"
+        ],
+        "spec_families": [
+          "cryptographic-api-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "protocol-negotiation-versioning-and-downgrade",
+      "conceptual_key": "protocol-negotiation-versioning-and-downgrade|context|boundary|failure-mode|expected-property-29",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to protocol negotiation versioning and downgrade",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified protocol negotiation versioning and downgrade behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "protocol-negotiation-versioning-and-downgrade-pattern-29",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for protocol negotiation versioning and downgrade where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Protocol Negotiation Versioning And Downgrade Pattern 29",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "high-entropy",
+          "html-dom"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no extensibility and unknown fields behavior"
+        ],
+        "preconditions": [
+          "extensibility and unknown fields is part of the processing model"
+        ],
+        "spec_families": [
+          "computational-js-webidl-api"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "extensibility-and-unknown-fields",
+      "conceptual_key": "extensibility-and-unknown-fields|context|boundary|failure-mode|expected-property-30",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to extensibility and unknown fields",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified extensibility and unknown fields behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "extensibility-and-unknown-fields-pattern-30",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for extensibility and unknown fields where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Extensibility And Unknown Fields Pattern 30",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "physical-world-data",
+          "css-rendering"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no external dependency assumptions behavior"
+        ],
+        "preconditions": [
+          "external dependency assumptions is part of the processing model"
+        ],
+        "spec_families": [
+          "html-dom-css-rendering"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "external-dependency-assumptions",
+      "conceptual_key": "external-dependency-assumptions|context|boundary|failure-mode|expected-property-31",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to external dependency assumptions",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified external dependency assumptions behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "external-dependency-assumptions-pattern-31",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for external dependency assumptions where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "External Dependency Assumptions Pattern 31",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "native-capability",
+          "http-network-protocol"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no revocation recovery and rollback behavior"
+        ],
+        "preconditions": [
+          "revocation recovery and rollback is part of the processing model"
+        ],
+        "spec_families": [
+          "device-sensor-native-capability"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "revocation-recovery-and-rollback",
+      "conceptual_key": "revocation-recovery-and-rollback|context|boundary|failure-mode|expected-property-32",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to revocation recovery and rollback",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified revocation recovery and rollback behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "revocation-recovery-and-rollback-pattern-32",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for revocation recovery and rollback where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Revocation Recovery And Rollback Pattern 32",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "trusted-ui",
+          "data-format-serialization"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no observability audit and abuse detection behavior"
+        ],
+        "preconditions": [
+          "observability audit and abuse detection is part of the processing model"
+        ],
+        "spec_families": [
+          "storage-cache-persistent-state"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "observability-audit-and-abuse-detection",
+      "conceptual_key": "observability-audit-and-abuse-detection|context|boundary|failure-mode|expected-property-33",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to observability audit and abuse detection",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified observability audit and abuse detection behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "observability-audit-and-abuse-detection-pattern-33",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for observability audit and abuse detection where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Observability Audit And Abuse Detection Pattern 33",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "credential-material",
+          "manifest-policy"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no safe defaults and fail closed behavior behavior"
+        ],
+        "preconditions": [
+          "safe defaults and fail closed behavior is part of the processing model"
+        ],
+        "spec_families": [
+          "identity-credential-payment"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "safe-defaults-and-fail-closed-behavior",
+      "conceptual_key": "safe-defaults-and-fail-closed-behavior|context|boundary|failure-mode|expected-property-34",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to safe defaults and fail closed behavior",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified safe defaults and fail closed behavior behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "safe-defaults-and-fail-closed-behavior-pattern-34",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for safe defaults and fail closed behavior where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Safe Defaults And Fail Closed Behavior Pattern 34",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "cross-site-observability",
+          "cryptographic-interface"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no conformance and implementation variance behavior"
+        ],
+        "preconditions": [
+          "conformance and implementation variance is part of the processing model"
+        ],
+        "spec_families": [
+          "network-fetch-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "conformance-and-implementation-variance",
+      "conceptual_key": "conformance-and-implementation-variance|context|boundary|failure-mode|expected-property-35",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to conformance and implementation variance",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified conformance and implementation variance behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "conformance-and-implementation-variance-pattern-35",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for conformance and implementation variance where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Conformance And Implementation Variance Pattern 35",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "webidl-javascript",
+          "computation"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no privacy security intersections behavior"
+        ],
+        "preconditions": [
+          "privacy security intersections is part of the processing model"
+        ],
+        "spec_families": [
+          "data-format-serialization"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "privacy-security-intersections",
+      "conceptual_key": "privacy-security-intersections|context|boundary|failure-mode|expected-property-36",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to privacy security intersections",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified privacy security intersections behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "privacy-security-intersections-pattern-36",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for privacy security intersections where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Privacy Security Intersections Pattern 36",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "html-dom",
+          "network"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no attack surface minimization behavior"
+        ],
+        "preconditions": [
+          "attack surface minimization is part of the processing model"
+        ],
+        "spec_families": [
+          "media-capture-realtime"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "attack-surface-minimization",
+      "conceptual_key": "attack-surface-minimization|context|boundary|failure-mode|expected-property-37",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to attack surface minimization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified attack surface minimization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "attack-surface-minimization-pattern-37",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for attack surface minimization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Attack Surface Minimization Pattern 37",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "css-rendering",
+          "storage-state"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no secure context and transport behavior"
+        ],
+        "preconditions": [
+          "secure context and transport is part of the processing model"
+        ],
+        "spec_families": [
+          "permission-policy-manifest"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "secure-context-and-transport",
+      "conceptual_key": "secure-context-and-transport|context|boundary|failure-mode|expected-property-38",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to secure context and transport",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified secure context and transport behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "secure-context-and-transport-pattern-38",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for secure context and transport where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Secure Context And Transport Pattern 38",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "http-network-protocol",
+          "sensor-device"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no origin and site isolation behavior"
+        ],
+        "preconditions": [
+          "origin and site isolation is part of the processing model"
+        ],
+        "spec_families": [
+          "cryptographic-api-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "origin-and-site-isolation",
+      "conceptual_key": "origin-and-site-isolation|context|boundary|failure-mode|expected-property-39",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to origin and site isolation",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified origin and site isolation behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "origin-and-site-isolation-pattern-39",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for origin and site isolation where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Origin And Site Isolation Pattern 39",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "data-format-serialization",
+          "identity-credential"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no cross origin communication behavior"
+        ],
+        "preconditions": [
+          "cross origin communication is part of the processing model"
+        ],
+        "spec_families": [
+          "computational-js-webidl-api"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "cross-origin-communication",
+      "conceptual_key": "cross-origin-communication|context|boundary|failure-mode|expected-property-40",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to cross origin communication",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified cross origin communication behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "cross-origin-communication-pattern-40",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for cross origin communication where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Cross Origin Communication Pattern 40",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "manifest-policy",
+          "media-capture"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no authority and capability delegation behavior"
+        ],
+        "preconditions": [
+          "authority and capability delegation is part of the processing model"
+        ],
+        "spec_families": [
+          "html-dom-css-rendering"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "authority-and-capability-delegation",
+      "conceptual_key": "authority-and-capability-delegation|context|boundary|failure-mode|expected-property-41",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to authority and capability delegation",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified authority and capability delegation behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "authority-and-capability-delegation-pattern-41",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for authority and capability delegation where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Authority And Capability Delegation Pattern 41",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "cryptographic-interface",
+          "cryptography"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no permission lifecycle behavior"
+        ],
+        "preconditions": [
+          "permission lifecycle is part of the processing model"
+        ],
+        "spec_families": [
+          "device-sensor-native-capability"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "permission-lifecycle",
+      "conceptual_key": "permission-lifecycle|context|boundary|failure-mode|expected-property-42",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to permission lifecycle",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified permission lifecycle behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "permission-lifecycle-pattern-42",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for permission lifecycle where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Permission Lifecycle Pattern 42",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "computation",
+          "permission-delegation"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no user intent and trusted ui behavior"
+        ],
+        "preconditions": [
+          "user intent and trusted ui is part of the processing model"
+        ],
+        "spec_families": [
+          "storage-cache-persistent-state"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "user-intent-and-trusted-ui",
+      "conceptual_key": "user-intent-and-trusted-ui|context|boundary|failure-mode|expected-property-43",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to user intent and trusted ui",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified user intent and trusted ui behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "user-intent-and-trusted-ui-pattern-43",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for user intent and trusted ui where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "User Intent And Trusted Ui Pattern 43",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "network",
+          "window"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no authentication behavior"
+        ],
+        "preconditions": [
+          "authentication is part of the processing model"
+        ],
+        "spec_families": [
+          "identity-credential-payment"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "authentication",
+      "conceptual_key": "authentication|context|boundary|failure-mode|expected-property-44",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to authentication",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified authentication behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "authentication-pattern-44",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for authentication where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Authentication Pattern 44",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "storage-state",
+          "dedicated-worker"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no authorization behavior"
+        ],
+        "preconditions": [
+          "authorization is part of the processing model"
+        ],
+        "spec_families": [
+          "network-fetch-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "authorization",
+      "conceptual_key": "authorization|context|boundary|failure-mode|expected-property-45",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to authorization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified authorization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "authorization-pattern-45",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for authorization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Authorization Pattern 45",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "sensor-device",
+          "shared-worker"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no credential lifecycle behavior"
+        ],
+        "preconditions": [
+          "credential lifecycle is part of the processing model"
+        ],
+        "spec_families": [
+          "data-format-serialization"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "credential-lifecycle",
+      "conceptual_key": "credential-lifecycle|context|boundary|failure-mode|expected-property-46",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to credential lifecycle",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified credential lifecycle behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "credential-lifecycle-pattern-46",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for credential lifecycle where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Credential Lifecycle Pattern 46",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "identity-credential",
+          "service-worker"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no confidentiality and information disclosure behavior"
+        ],
+        "preconditions": [
+          "confidentiality and information disclosure is part of the processing model"
+        ],
+        "spec_families": [
+          "media-capture-realtime"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "confidentiality-and-information-disclosure",
+      "conceptual_key": "confidentiality-and-information-disclosure|context|boundary|failure-mode|expected-property-47",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to confidentiality and information disclosure",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified confidentiality and information disclosure behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "confidentiality-and-information-disclosure-pattern-47",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for confidentiality and information disclosure where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Confidentiality And Information Disclosure Pattern 47",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "media-capture",
+          "top-level"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no integrity and authenticity behavior"
+        ],
+        "preconditions": [
+          "integrity and authenticity is part of the processing model"
+        ],
+        "spec_families": [
+          "permission-policy-manifest"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "integrity-and-authenticity",
+      "conceptual_key": "integrity-and-authenticity|context|boundary|failure-mode|expected-property-48",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to integrity and authenticity",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified integrity and authenticity behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "integrity-and-authenticity-pattern-48",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for integrity and authenticity where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Integrity And Authenticity Pattern 48",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "cryptography",
+          "iframe"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no freshness and anti replay behavior"
+        ],
+        "preconditions": [
+          "freshness and anti replay is part of the processing model"
+        ],
+        "spec_families": [
+          "cryptographic-api-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "freshness-and-anti-replay",
+      "conceptual_key": "freshness-and-anti-replay|context|boundary|failure-mode|expected-property-49",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to freshness and anti replay",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified freshness and anti replay behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "freshness-and-anti-replay-pattern-49",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for freshness and anti replay where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Freshness And Anti Replay Pattern 49",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "permission-delegation",
+          "third-party"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no input validation behavior"
+        ],
+        "preconditions": [
+          "input validation is part of the processing model"
+        ],
+        "spec_families": [
+          "computational-js-webidl-api"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "input-validation",
+      "conceptual_key": "input-validation|context|boundary|failure-mode|expected-property-50",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to input validation",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified input validation behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "input-validation-pattern-50",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for input validation where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Input Validation Pattern 50",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "window",
+          "cross-origin"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no parsing and serialization behavior"
+        ],
+        "preconditions": [
+          "parsing and serialization is part of the processing model"
+        ],
+        "spec_families": [
+          "html-dom-css-rendering"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "parsing-and-serialization",
+      "conceptual_key": "parsing-and-serialization|context|boundary|failure-mode|expected-property-51",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to parsing and serialization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified parsing and serialization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "parsing-and-serialization-pattern-51",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for parsing and serialization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Parsing And Serialization Pattern 51",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "dedicated-worker",
+          "background"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no canonicalization behavior"
+        ],
+        "preconditions": [
+          "canonicalization is part of the processing model"
+        ],
+        "spec_families": [
+          "device-sensor-native-capability"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "canonicalization",
+      "conceptual_key": "canonicalization|context|boundary|failure-mode|expected-property-52",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to canonicalization",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified canonicalization behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "canonicalization-pattern-52",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for canonicalization where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Canonicalization Pattern 52",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "shared-worker",
+          "bfcache"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no url fetch and redirect handling behavior"
+        ],
+        "preconditions": [
+          "url fetch and redirect handling is part of the processing model"
+        ],
+        "spec_families": [
+          "storage-cache-persistent-state"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "url-fetch-and-redirect-handling",
+      "conceptual_key": "url-fetch-and-redirect-handling|context|boundary|failure-mode|expected-property-53",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to url fetch and redirect handling",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified url fetch and redirect handling behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "url-fetch-and-redirect-handling-pattern-53",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for url fetch and redirect handling where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Url Fetch And Redirect Handling Pattern 53",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "service-worker",
+          "native-ui"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no script and code loading behavior"
+        ],
+        "preconditions": [
+          "script and code loading is part of the processing model"
+        ],
+        "spec_families": [
+          "identity-credential-payment"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "script-and-code-loading",
+      "conceptual_key": "script-and-code-loading|context|boundary|failure-mode|expected-property-54",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to script and code loading",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified script and code loading behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "script-and-code-loading-pattern-54",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for script and code loading where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Script And Code Loading Pattern 54",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "top-level",
+          "personal-data"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no state storage and cache behavior"
+        ],
+        "preconditions": [
+          "state storage and cache is part of the processing model"
+        ],
+        "spec_families": [
+          "network-fetch-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "state-storage-and-cache",
+      "conceptual_key": "state-storage-and-cache|context|boundary|failure-mode|expected-property-55",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to state storage and cache",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified state storage and cache behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "state-storage-and-cache-pattern-55",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for state storage and cache where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "State Storage And Cache Pattern 55",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "iframe",
+          "sensitive-data"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no lifecycle navigation and bfcache behavior"
+        ],
+        "preconditions": [
+          "lifecycle navigation and bfcache is part of the processing model"
+        ],
+        "spec_families": [
+          "data-format-serialization"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "lifecycle-navigation-and-bfcache",
+      "conceptual_key": "lifecycle-navigation-and-bfcache|context|boundary|failure-mode|expected-property-56",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to lifecycle navigation and bfcache",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified lifecycle navigation and bfcache behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "lifecycle-navigation-and-bfcache-pattern-56",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for lifecycle navigation and bfcache where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Lifecycle Navigation And Bfcache Pattern 56",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "third-party",
+          "stable-identifier"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no concurrency races and reentrancy behavior"
+        ],
+        "preconditions": [
+          "concurrency races and reentrancy is part of the processing model"
+        ],
+        "spec_families": [
+          "media-capture-realtime"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "concurrency-races-and-reentrancy",
+      "conceptual_key": "concurrency-races-and-reentrancy|context|boundary|failure-mode|expected-property-57",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to concurrency races and reentrancy",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified concurrency races and reentrancy behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "concurrency-races-and-reentrancy-pattern-57",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for concurrency races and reentrancy where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Concurrency Races And Reentrancy Pattern 57",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "cross-origin",
+          "persistent-state"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no error channels and oracles behavior"
+        ],
+        "preconditions": [
+          "error channels and oracles is part of the processing model"
+        ],
+        "spec_families": [
+          "permission-policy-manifest"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "error-channels-and-oracles",
+      "conceptual_key": "error-channels-and-oracles|context|boundary|failure-mode|expected-property-58",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to error channels and oracles",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified error channels and oracles behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "error-channels-and-oracles-pattern-58",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for error channels and oracles where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Error Channels And Oracles Pattern 58",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "background",
+          "high-entropy"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no timing and side channels behavior"
+        ],
+        "preconditions": [
+          "timing and side channels is part of the processing model"
+        ],
+        "spec_families": [
+          "cryptographic-api-protocol"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "timing-and-side-channels",
+      "conceptual_key": "timing-and-side-channels|context|boundary|failure-mode|expected-property-59",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to timing and side channels",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified timing and side channels behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "timing-and-side-channels-pattern-59",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for timing and side channels where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Timing And Side Channels Pattern 59",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "bfcache",
+          "physical-world-data"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no resource exhaustion and amplification behavior"
+        ],
+        "preconditions": [
+          "resource exhaustion and amplification is part of the processing model"
+        ],
+        "spec_families": [
+          "computational-js-webidl-api"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "resource-exhaustion-and-amplification",
+      "conceptual_key": "resource-exhaustion-and-amplification|context|boundary|failure-mode|expected-property-60",
+      "confidence": 0.45,
+      "context": [
+        "a specification exposes behavior relevant to resource exhaustion and amplification",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified resource exhaustion and amplification behavior"
+      ],
+      "maturity": "seed",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [],
+      "pattern_id": "resource-exhaustion-and-amplification-pattern-60",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "seed",
+        "supporting_occurrences": 0,
+        "supporting_specifications": 0
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for resource exhaustion and amplification where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Resource Exhaustion And Amplification Pattern 60",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    }
+  ],
+  "schema_version": "0.1"
+}

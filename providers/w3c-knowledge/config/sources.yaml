@@ -1,0 +1,503 @@
+sources:
+  - name: rfc-editor
+    source_type: rfc_editor
+    url: https://www.rfc-editor.org/rfc/
+    canonical_url: https://www.rfc-editor.org/
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting]
+    artifact_types:
+      - specification
+      - specification_snapshot
+      - specification_section
+      - specification_reference
+    enabled: true
+    source_priority: 5
+    sync_strategy: incremental
+    parser: rfc_editor
+    default_labels: [rfc, rfc-editor]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public
+  - name: w3c-tr-api
+    source_type: w3c_api
+    url: https://api.w3.org/
+    canonical_url: https://api.w3.org/
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting]
+    artifact_types: [specification, specification_snapshot, specification_section]
+    enabled: true
+    source_priority: 5
+    sync_strategy: incremental
+    parser: w3c_tr
+    default_labels: [w3c-tr]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public
+  - name: tag-design-reviews
+    source_type: github_repository
+    url: https://github.com/w3ctag/design-reviews
+    canonical_url: https://github.com/w3ctag/design-reviews
+    organization: w3ctag
+    repository: design-reviews
+    branch: main
+    primary_domain: design
+    applicable_domains: [design]
+    artifact_types: [review_request, horizontal_review, review_finding, resolution]
+    enabled: true
+    source_priority: 10
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [design-review]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: web-platform-design-principles
+    source_type: html_document
+    url: https://www.w3.org/TR/design-principles/
+    canonical_url: https://www.w3.org/TR/design-principles/
+    primary_domain: design
+    applicable_domains: [design]
+    artifact_types: [principle]
+    enabled: true
+    source_priority: 20
+    sync_strategy: content_hash
+    parser: html_guidance
+    default_labels: [principle]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public
+  - name: a11y-request
+    source_type: github_repository
+    url: https://github.com/w3c/a11y-request
+    canonical_url: https://github.com/w3c/a11y-request
+    organization: w3c
+    repository: a11y-request
+    branch: main
+    primary_domain: accessibility
+    applicable_domains: [accessibility]
+    artifact_types: [review_request, horizontal_review, review_finding]
+    enabled: true
+    source_priority: 10
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [a11y]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: a11y-tracking
+    source_type: github_repository
+    url: https://github.com/w3c/a11y-tracking
+    canonical_url: https://github.com/w3c/a11y-tracking
+    organization: w3c
+    repository: a11y-tracking
+    branch: main
+    primary_domain: accessibility
+    applicable_domains: [accessibility]
+    artifact_types: [tracker_issue, review_finding, resolution]
+    enabled: true
+    source_priority: 20
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [a11y]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: fast
+    source_type: github_repository
+    url: https://github.com/w3c/fast
+    canonical_url: https://github.com/w3c/fast
+    organization: w3c
+    repository: fast
+    branch: main
+    primary_domain: accessibility
+    applicable_domains: [accessibility]
+    artifact_types: [checklist, topic_guidance]
+    enabled: true
+    source_priority: 30
+    sync_strategy: content_hash
+    parser: repository_documents
+    default_labels: [FAST]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: i18n-request
+    source_type: github_repository
+    url: https://github.com/w3c/i18n-request
+    canonical_url: https://github.com/w3c/i18n-request
+    organization: w3c
+    repository: i18n-request
+    branch: gh-pages
+    primary_domain: internationalization
+    applicable_domains: [internationalization]
+    artifact_types: [review_request, horizontal_review, review_finding]
+    enabled: true
+    source_priority: 10
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [i18n]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: i18n-activity
+    source_type: github_repository
+    url: https://github.com/w3c/i18n-activity
+    canonical_url: https://github.com/w3c/i18n-activity
+    organization: w3c
+    repository: i18n-activity
+    branch: gh-pages
+    primary_domain: internationalization
+    applicable_domains: [internationalization]
+    artifact_types: [tracker_issue, review_finding, resolution]
+    enabled: true
+    source_priority: 20
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [i18n]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: privacy-request
+    source_type: github_repository
+    url: https://github.com/w3cping/privacy-request
+    canonical_url: https://github.com/w3cping/privacy-request
+    organization: w3cping
+    repository: privacy-request
+    branch: main
+    primary_domain: privacy
+    applicable_domains: [privacy]
+    artifact_types: [review_request, horizontal_review, review_finding]
+    enabled: true
+    source_priority: 10
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [privacy]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: privacy-tracking-issues
+    source_type: github_repository
+    url: https://github.com/w3cping/tracking-issues
+    canonical_url: https://github.com/w3cping/tracking-issues
+    organization: w3cping
+    repository: tracking-issues
+    branch: main
+    primary_domain: privacy
+    applicable_domains: [privacy]
+    artifact_types: [tracker_issue, review_finding, resolution]
+    enabled: true
+    source_priority: 20
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [privacy]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: ping
+    source_type: github_repository
+    url: https://github.com/w3c/ping
+    canonical_url: https://github.com/w3c/ping
+    organization: w3c
+    repository: ping
+    branch: main
+    primary_domain: privacy
+    applicable_domains: [privacy]
+    artifact_types: [operational_guidance, review_comment]
+    enabled: true
+    source_priority: 30
+    sync_strategy: incremental
+    parser: repository_documents
+    default_labels: [privacy]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: privacy-principles
+    source_type: github_repository
+    url: https://github.com/w3ctag/privacy-principles
+    canonical_url: https://github.com/w3ctag/privacy-principles
+    organization: w3ctag
+    repository: privacy-principles
+    branch: main
+    primary_domain: privacy
+    applicable_domains: [privacy]
+    artifact_types: [principle]
+    enabled: true
+    source_priority: 10
+    sync_strategy: content_hash
+    parser: repository_documents
+    default_labels: [privacy, principle]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: fingerprinting-guidance
+    source_type: github_repository
+    url: https://github.com/w3c/fingerprinting-guidance
+    canonical_url: https://github.com/w3c/fingerprinting-guidance
+    organization: w3c
+    repository: fingerprinting-guidance
+    branch: main
+    primary_domain: privacy
+    applicable_domains: [privacy, security]
+    artifact_types: [topic_guidance]
+    enabled: true
+    source_priority: 20
+    sync_strategy: content_hash
+    parser: repository_documents
+    default_labels: [fingerprinting]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: security-request
+    source_type: github_repository
+    url: https://github.com/w3c/security-request
+    canonical_url: https://github.com/w3c/security-request
+    organization: w3c
+    repository: security-request
+    branch: main
+    primary_domain: security
+    applicable_domains: [security]
+    artifact_types: [review_request, horizontal_review, review_finding]
+    enabled: true
+    source_priority: 10
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [security]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: security-review
+    source_type: github_repository
+    url: https://github.com/w3c/security-review
+    canonical_url: https://github.com/w3c/security-review
+    organization: w3c
+    repository: security-review
+    branch: main
+    primary_domain: security
+    applicable_domains: [security]
+    artifact_types: [horizontal_review, review_finding, tracker_issue]
+    enabled: true
+    source_priority: 20
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [security]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: securityig
+    source_type: github_repository
+    url: https://github.com/w3c/securityig
+    canonical_url: https://github.com/w3c/securityig
+    organization: w3c
+    repository: securityig
+    branch: main
+    primary_domain: security
+    applicable_domains: [security]
+    artifact_types: [operational_guidance, review_comment]
+    enabled: true
+    source_priority: 30
+    sync_strategy: incremental
+    parser: repository_documents
+    default_labels: [security]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: threat-modeling
+    source_type: github_repository
+    url: https://github.com/w3c-cg/threat-modeling
+    canonical_url: https://github.com/w3c-cg/threat-modeling
+    organization: w3c-cg
+    repository: threat-modeling
+    branch: main
+    primary_domain: security
+    applicable_domains: [security, privacy]
+    artifact_types: [topic_guidance]
+    enabled: true
+    source_priority: 30
+    sync_strategy: content_hash
+    parser: repository_documents
+    default_labels: [threat-modeling]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: security-questionnaire
+    source_type: github_repository
+    url: https://github.com/w3c/security-questionnaire
+    canonical_url: https://github.com/w3c/security-questionnaire
+    organization: w3c
+    repository: security-questionnaire
+    branch: main
+    primary_domain: cross_cutting
+    applicable_domains: [privacy, security]
+    artifact_types: [questionnaire]
+    enabled: true
+    source_priority: 10
+    sync_strategy: content_hash
+    parser: repository_documents
+    default_labels: [questionnaire]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: ethical-web-principles
+    source_type: github_repository
+    url: https://github.com/w3ctag/ethical-web-principles
+    canonical_url: https://github.com/w3ctag/ethical-web-principles
+    organization: w3ctag
+    repository: ethical-web-principles
+    branch: main
+    primary_domain: cross_cutting
+    applicable_domains: [design, privacy, security, accessibility, internationalization, ethics]
+    artifact_types: [principle]
+    enabled: true
+    source_priority: 20
+    sync_strategy: content_hash
+    parser: repository_documents
+    default_labels: [ethics, principle]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: w3c-process
+    source_type: html_document
+    url: https://www.w3.org/policies/process/
+    canonical_url: https://www.w3.org/policies/process/
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting]
+    artifact_types: [process_document]
+    enabled: true
+    source_priority: 5
+    sync_strategy: content_hash
+    parser: process_document
+    default_labels: [process]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public
+  - name: w3c-process-repository
+    source_type: github_repository
+    url: https://github.com/w3c/process
+    canonical_url: https://github.com/w3c/process
+    organization: w3c
+    repository: process
+    branch: main
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting]
+    artifact_types: [process_document]
+    enabled: true
+    source_priority: 5
+    sync_strategy: content_hash
+    parser: process_document
+    default_labels: [process]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: w3c-guide-repository
+    source_type: github_repository
+    url: https://github.com/w3c/guide
+    canonical_url: https://github.com/w3c/guide
+    organization: w3c
+    repository: guide
+    branch: main
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting, design, privacy, security, accessibility, internationalization]
+    artifact_types: [operational_guidance]
+    enabled: true
+    source_priority: 15
+    sync_strategy: content_hash
+    parser: repository_documents
+    default_labels: [guide]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: w3c-transitions
+    source_type: github_repository
+    url: https://github.com/w3c/transitions
+    canonical_url: https://github.com/w3c/transitions
+    organization: w3c
+    repository: transitions
+    branch: main
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting]
+    artifact_types: [transition_request]
+    enabled: true
+    source_priority: 10
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [transition, transition-request]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: w3c-strategy
+    source_type: github_repository
+    url: https://github.com/w3c/strategy
+    canonical_url: https://github.com/w3c/strategy
+    organization: w3c
+    repository: strategy
+    branch: main
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting, design, privacy, security, accessibility, internationalization]
+    artifact_types: [tracker_issue, charter_review, horizontal_review, review_finding, resolution]
+    enabled: true
+    source_priority: 10
+    sync_strategy: incremental
+    parser: github_issue
+    default_labels: [strategy, charter]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: github_public
+  - name: w3c-guide-root
+    source_type: html_document
+    url: https://www.w3.org/guide/
+    canonical_url: https://www.w3.org/guide/
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting]
+    artifact_types: [operational_guidance]
+    enabled: true
+    source_priority: 15
+    sync_strategy: linked_collection
+    parser: guide_page
+    default_labels: [guide]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public
+  - name: w3c-guide-horizontal-groups
+    source_type: html_document
+    url: https://www.w3.org/guide/process/horizontal-groups.html
+    canonical_url: https://www.w3.org/guide/process/horizontal-groups.html
+    primary_domain: cross_cutting
+    applicable_domains: [design, privacy, security, accessibility, internationalization]
+    artifact_types: [operational_guidance]
+    enabled: true
+    source_priority: 15
+    sync_strategy: content_hash
+    parser: guide_page
+    default_labels: [guide, horizontal-review]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public
+  - name: w3c-guide-document-review
+    source_type: html_document
+    url: https://www.w3.org/guide/documentreview/
+    canonical_url: https://www.w3.org/guide/documentreview/
+    primary_domain: cross_cutting
+    applicable_domains: [design, privacy, security, accessibility, internationalization]
+    artifact_types: [operational_guidance]
+    enabled: true
+    source_priority: 15
+    sync_strategy: content_hash
+    parser: guide_page
+    default_labels: [guide, wide-review]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public
+  - name: w3c-guide-transitions
+    source_type: html_document
+    url: https://www.w3.org/guide/transitions/
+    canonical_url: https://www.w3.org/guide/transitions/
+    primary_domain: cross_cutting
+    applicable_domains: [cross_cutting]
+    artifact_types: [operational_guidance]
+    enabled: true
+    source_priority: 15
+    sync_strategy: content_hash
+    parser: guide_page
+    default_labels: [guide, transition]
+    allow_redirects: true
+    historical_versions: []
+    authentication_profile: public

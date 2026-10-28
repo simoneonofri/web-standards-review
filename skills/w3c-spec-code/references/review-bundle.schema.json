@@ -1,0 +1,547 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/simoneonofri/w3c-spec-code/references/review-bundle.schema.json",
+  "title": "W3C specification-to-code review bundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "review_id",
+    "implementation_target_status",
+    "target",
+    "implementations",
+    "controls",
+    "mappings",
+    "scan",
+    "discrepancies",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "w3c-spec-code-review/v1"
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation_target_status": {
+      "enum": [
+        "resolved",
+        "partial",
+        "unavailable",
+        "not_applicable"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "specification_url",
+        "specification_revision",
+        "section_hashes"
+      ],
+      "properties": {
+        "specification_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "specification_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "section_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "implementations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "implementation_id",
+          "repository",
+          "revision",
+          "scope",
+          "evidence_status"
+        ],
+        "properties": {
+          "implementation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "repository": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "test_revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence_status": {
+            "enum": [
+              "available",
+              "partial",
+              "non_public",
+              "unavailable"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "control_id",
+          "spec_anchor",
+          "protected_property",
+          "required_behavior"
+        ],
+        "properties": {
+          "control_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "spec_anchor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "protected_property": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_behavior": {
+            "type": "string",
+            "minLength": 1
+          },
+          "secure_default": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exceptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "failure_behavior": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expected_tests": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "mapping_id",
+          "spec_control_id",
+          "implementation_id",
+          "code_anchors",
+          "test_anchors",
+          "spec_to_code_status",
+          "code_to_spec_status",
+          "scan_evidence",
+          "counterevidence",
+          "ownership",
+          "confidence",
+          "limitations"
+        ],
+        "properties": {
+          "mapping_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "spec_control_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "implementation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "code_anchors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "test_anchors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "spec_to_code_status": {
+            "enum": [
+              "implemented",
+              "partial",
+              "divergent",
+              "absent",
+              "test_only",
+              "non_public",
+              "not_applicable",
+              "unable_to_verify"
+            ]
+          },
+          "code_to_spec_status": {
+            "enum": [
+              "required_by_spec",
+              "implementation_specific_defense_in_depth",
+              "compensating_control",
+              "platform_dependency",
+              "candidate_missing_spec_requirement",
+              "non_security_behavior",
+              "unable_to_verify"
+            ]
+          },
+          "scan_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counterevidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ownership": {
+            "enum": [
+              "specification",
+              "implementation",
+              "interoperability",
+              "test",
+              "editorial",
+              "research_hypothesis",
+              "unable_to_verify"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "scan": {
+      "type": "object",
+      "required": [
+        "status",
+        "plugin",
+        "plugin_version",
+        "skill",
+        "artifact_root",
+        "artifact_hashes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_requested",
+            "unavailable",
+            "disabled",
+            "not_authorized",
+            "completed",
+            "partial",
+            "failed"
+          ]
+        },
+        "plugin": {
+          "const": "codex-security@openai-curated"
+        },
+        "plugin_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "skill": {
+          "enum": [
+            "security-scan",
+            "security-diff-scan",
+            null
+          ]
+        },
+        "artifact_root": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "artifact_hashes": {
+          "type": "object",
+          "properties": {
+            "scan_manifest": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "coverage": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "findings": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "requested": {
+          "type": "boolean"
+        },
+        "request_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope_lock_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true,
+      "description": "Optional Codex Security evidence. Use status not_requested when the baseline review is completed without a scan."
+    },
+    "discrepancies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "discrepancy_id",
+          "kind",
+          "evidence",
+          "counterevidence",
+          "ownership",
+          "gate_status"
+        ],
+        "properties": {
+          "discrepancy_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "specification_defect",
+              "implementation_defect",
+              "implementation_divergence",
+              "specification_ambiguity",
+              "test_gap",
+              "candidate_missing_spec_requirement",
+              "non_issue",
+              "not_applicable",
+              "unable_to_verify"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counterevidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ownership": {
+            "enum": [
+              "specification",
+              "implementation",
+              "interoperability",
+              "test",
+              "editorial",
+              "research_hypothesis",
+              "unable_to_verify"
+            ]
+          },
+          "gate_status": {
+            "enum": [
+              "pending",
+              "passed",
+              "rejected",
+              "unable_to_verify"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "feature_scope": {
+      "description": "Verified feature boundary used for the baseline implementation analysis.",
+      "type": "object",
+      "required": [
+        "status",
+        "manifest",
+        "lock",
+        "file_count",
+        "total_bytes",
+        "limitations"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "resolved",
+            "partial",
+            "rejected",
+            "unavailable"
+          ]
+        },
+        "manifest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lock": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "manifest_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lock_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "file_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "total_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "baseline_analysis": {
+      "description": "Primary bidirectional specification-to-code analysis; complete independently of an optional scanner pass.",
+      "type": "object",
+      "required": [
+        "status",
+        "control_inventory",
+        "source_map",
+        "integrated_threat_model",
+        "limitations"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "completed",
+            "partial",
+            "unable_to_verify"
+          ]
+        },
+        "control_inventory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_map": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "integrated_threat_model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_views": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

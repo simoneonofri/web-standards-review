@@ -1,0 +1,122 @@
+--- a/scripts/validate_dfd.py
++++ b/scripts/validate_dfd.py
+@@ -137,2 +137,5 @@
+-        for boundary_id in row.get("boundary_membership", []):
+-            if boundary_id not in ids or not str(boundary_id).startswith("TB-"):
++        memberships = row.get("boundary_membership", [])
++        if not isinstance(memberships, list):
++            continue  # The first pass already reports the invalid array.
++        for boundary_id in memberships:
++            if not isinstance(boundary_id, str) or boundary_id not in ids or not boundary_id.startswith("TB-"):
+@@ -144,0 +148,4 @@
++    source = "\n".join(
++        line if line.lstrip().startswith("%%{") else line.split("%%", 1)[0]
++        for line in source.splitlines()
++    )
+@@ -170,0 +178,17 @@
++    expected_nodes = {
++        row.get("mermaid_node_id") for row in rows
++        if isinstance(row, dict) and row.get("type") != "Data Flow"
++    }
++    rendered_nodes = set(re.findall(r"\b(?:EE|PO|DS|TB)\d+_[A-Za-z0-9_]+\b", source))
++    extra_nodes = sorted(rendered_nodes - expected_nodes)
++    if extra_nodes:
++        errors.append(f"mermaid: renderer IDs absent from dictionary: {extra_nodes}")
++    flow_ids = re.findall(r"==>\|\s*(DF-\d{2,})<br/>", source)
++    expected_flows = {row_id for row_id in by_id if isinstance(row_id, str) and row_id.startswith("DF-")}
++    extra_flows = sorted(set(flow_ids) - expected_flows)
++    if extra_flows:
++        errors.append(f"mermaid: flow IDs absent from dictionary: {extra_flows}")
++    if len(flow_ids) != len(set(flow_ids)):
++        errors.append("mermaid: duplicate flow IDs in diagram")
++    if len(flow_ids) != source.count("==>"):
++        errors.append("mermaid: every thick arrow must have a canonical named flow")
+@@ -182,2 +206,12 @@
+-            style_pattern = rf"style\s+{re.escape(mermaid_id)}\s+[^\n]*stroke-width:4px[^\n]*stroke-dasharray:8\s+6"
+-            if not re.search(style_pattern, source):
++            style_match = re.search(rf"(?m)^\s*style\s+{re.escape(mermaid_id)}\s+([^\n]+)", source)
++            properties = {}
++            if style_match:
++                for declaration in style_match.group(1).rstrip("; ").split(","):
++                    key, separator, value = declaration.partition(":")
++                    if separator:
++                        properties[key.strip()] = value.strip()
++            if not (
++                properties.get("stroke") in {"#000", "#000000", "black"}
++                and properties.get("stroke-width") == "4px"
++                and properties.get("stroke-dasharray", "").split() == ["8", "6"]
++            ):
+--- a/tests/test_validate_dfd.py
++++ b/tests/test_validate_dfd.py
+@@ -64,0 +65,71 @@
++
++
++def validate_modified(tmp_path, *, source=None, dictionary=None):
++    import json
++    source = (FIXTURES / "valid-tmdc.mmd").read_text() if source is None else source
++    dictionary = json.loads((FIXTURES / "valid-dictionary.json").read_text()) if dictionary is None else dictionary
++    diagram_path = tmp_path / "diagram.mmd"
++    dictionary_path = tmp_path / "dictionary.json"
++    diagram_path.write_text(source)
++    dictionary_path.write_text(json.dumps(dictionary))
++    return subprocess.run([sys.executable, str(ROOT / "scripts/validate_dfd.py"), str(diagram_path), str(dictionary_path)], capture_output=True, text=True)
++
++
++def test_null_boundary_membership_reports_error_without_crashing(tmp_path):
++    import json
++    dictionary = json.loads((FIXTURES / "valid-dictionary.json").read_text())
++    dictionary["rows"][0]["boundary_membership"] = None
++    result = validate_modified(tmp_path, dictionary=dictionary)
++    assert result.returncode == 1
++    assert "must be an array" in result.stdout
++    assert "Traceback" not in result.stderr
++
++
++def test_malformed_boundary_member_reports_error_without_crashing(tmp_path):
++    import json
++    dictionary = json.loads((FIXTURES / "valid-dictionary.json").read_text())
++    dictionary["rows"][0]["boundary_membership"] = [{}]
++    result = validate_modified(tmp_path, dictionary=dictionary)
++    assert result.returncode == 1
++    assert "unknown boundary" in result.stdout
++    assert "Traceback" not in result.stderr
++
++
++def test_extra_diagram_node_requires_a_dictionary_row(tmp_path):
++    source = (FIXTURES / "valid-tmdc.mmd").read_text() + "\nEE99_Orphan[EE-99<br/>Orphan]\n"
++    result = validate_modified(tmp_path, source=source)
++    assert result.returncode == 1
++    assert "renderer IDs absent from dictionary" in result.stdout
++
++
++def test_extra_named_flow_requires_a_dictionary_row(tmp_path):
++    import re
++    source = (FIXTURES / "valid-tmdc.mmd").read_text()
++    flow_line = next(line for line in source.splitlines() if "==>" in line)
++    source += "\n" + re.sub(r"DF-\d{2,}", "DF-99", flow_line) + "\n"
++    result = validate_modified(tmp_path, source=source)
++    assert result.returncode == 1
++    assert "flow IDs absent from dictionary" in result.stdout
++
++
++def test_equivalent_boundary_style_whitespace_and_order_pass(tmp_path):
++    import re
++    source = (FIXTURES / "valid-tmdc.mmd").read_text()
++    source = re.sub(r"(style\s+TB\d+_\w+)[^\n]+", r"\1 stroke-dasharray: 8 6, stroke: #000, stroke-width: 4px, fill: transparent", source)
++    result = validate_modified(tmp_path, source=source)
++    assert result.returncode == 0, result.stdout + result.stderr
++
++
++def test_boundary_style_must_still_be_black(tmp_path):
++    import re
++    source = (FIXTURES / "valid-tmdc.mmd").read_text()
++    source = re.sub(r"(style\s+TB\d+_\w+[^\n]*stroke:)#000", r"\1red", source)
++    result = validate_modified(tmp_path, source=source)
++    assert result.returncode == 1
++    assert "dashed black 4px" in result.stdout
++
++
++def test_comment_examples_do_not_add_diagram_elements_or_thin_arrows(tmp_path):
++    source = (FIXTURES / "valid-tmdc.mmd").read_text() + "\n%% EE99_Example --> PO99_Example is not a diagram element\n"
++    result = validate_modified(tmp_path, source=source)
++    assert result.returncode == 0, result.stdout + result.stderr

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Did We Do A Good Enough Job"
+  short_description: "Assess threat-model completeness"
+  default_prompt: "Use $did-we-do-a-good-enough-job to assess whether this threat model is good enough for the current specification stage."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,24 @@
+{
+  "schema_version": "threat-modeling-flow-fixture/v1",
+  "fixture_id": "clean-room-complete-v1",
+  "expected_outcome": "complete",
+  "publication_authorized": false,
+  "artifacts": {
+    "source_corpus": "fixtures/clean-room-demo/source-corpus-manifest.json",
+    "model": "fixtures/clean-room-demo/model.json",
+    "dictionary": "fixtures/clean-room-demo/dictionary.json",
+    "diagram": "fixtures/clean-room-demo/dfd.mmd",
+    "threats": "fixtures/clean-room-demo/threats.json",
+    "responses": "fixtures/clean-room-demo/responses.json",
+    "handoff": "fixtures/clean-room-demo/handoff.json",
+    "workshop": "fixtures/clean-room-demo/workshop-output.json",
+    "quality_gate": "fixtures/clean-room-demo/quality-gate-pass.json",
+    "fact_check": "fixtures/clean-room-demo/fact-check-result.json"
+  },
+  "provider_requirements": [
+    {
+      "interface": "ReviewEvidenceProvider",
+      "available": true
+    }
+  ]
+}

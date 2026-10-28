@@ -1,0 +1,13 @@
+--- a/references/fact-check-publication-gate.md
++++ b/references/fact-check-publication-gate.md
+@@ -33,0 +34,2 @@
++
++The caller conducting the final review records `analysis-gate.json` from the actual upstream results; it is a run artifact, not a sixth shared handoff automatically produced by the five-stage flow. The extended report assembler consumes and validates this gate rather than creating it. Use `gate: analysis`, an honest aggregate `status`, and named `checks` for `source_corpus`, `model_packet`, `dfd_representation`, `baseline_elicitation`, `response_mapping`, and `independent_review`; include `additional_elicitation_reconciliation` when additional analysis is in scope. Preserve the supporting results and evidence in the run directory. A missing check or unperformed review cannot be replaced with a fabricated passing status.
+--- a/references/focused-w3c-security-reply.md
++++ b/references/focused-w3c-security-reply.md
+@@ -9 +9 @@
+-Create a private `evidence-packet.json` and a separate public `comment.md`. Do not put private notes, unused sources, uncertainty analysis, or local PoC details in `comment.md`.
++Create a private `evidence-packet.json` and a separate public `comment.md`. Do not put private notes, unused sources, uncertainty analysis, or local PoC details in `comment.md`. Keep the detailed uncertainty analysis private, while preserving every material qualification in the public comment.
+@@ -101,0 +102,2 @@
++When `finding.uncertainties` is non-empty, add an `uncertainties` entry to `public_projection_markers` with a distinct derived marker for each material uncertainty. The empty-uncertainty example above does not need that entry.
++

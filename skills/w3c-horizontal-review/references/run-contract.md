@@ -1,0 +1,15 @@
+# Horizontal run contract v1
+
+This packet records the work actually performed. It does not run an LLM, start miners, establish group consensus, validate factual claims, or authorize publication. Run the method-specific validators separately and retain their results.
+
+Pass `init` a target JSON object with `id`, `kind` (`specification`, `as_is`, `charter`), exact `snapshot_url` and lowercase SHA-256 of the captured target artifact. The initializer creates the registered layer and flow work orders. `planned` means nothing has run; `unavailable` means the evidence or capability could not be obtained. Every skipped layer needs a scope reason.
+
+Keep artifacts beside the packet or in subdirectories of its caller-selected run directory. An artifact record has `path` (relative, no traversal or symlinks) and `sha256`. For a completed flow or extractor, retain at least one actual output artifact and its hash. The packet's `evidence` array contains unique `id`, `role` (`target`, `implementation`, `precedent`, `method`, `analysis`), `locator`, and an artifact record. A target evidence artifact must match the frozen target hash. Reference evidence by ID, preserving all source roles through deduplication.
+
+Every check has unique `id`, registered `extractor`, `source_evidence_ids`, `target_evidence_ids`, `status`, and `rationale`. Status is `not_evaluated`, `pass`, `partial`, `fail`, `not_applicable` or `unable_to_verify`. Pass/fail requires target evidence. `threat_queue` items additionally carry `model_elements`, `story` and `as_is_relationship`; the pending queue blocks a complete run. A method prompt cannot serve as affirmative target evidence.
+
+Every finding has unique `id`, `ownership` (`specification`, `implementation`, `charter`, `review_request`, `context`), `disposition`, evidence IDs and rationale. An accepted finding also needs `mechanism`, `affected_property`, `impact` and target evidence for a specification/charter claim. Preserve the full proof and counterevidence in attached artifacts and apply the `spec-review` PoC and publication contracts separately. `public_projection` lists accepted, specification-owned or charter-owned finding IDs only; implementation defects do not enter it by themselves.
+
+The validator reports `complete`, `partial`, or `blocked` from actual layer/flow states, pending checks and pending queue items. An unknown or unavailable required layer makes the run partial; it is never converted into an empty successful review. `publication_authorized` remains false for every result.
+
+As-is-only and charter runs declare irrelevant flows and extractors `not_applicable` with scope reasons. A full specification run cannot skip baseline, independent elicitation, checklist verification or implementation mapping merely to pass validation; unavailable implementation evidence is an explicit partial result. Freeze independent elicitation before baseline/checklist reconciliation, and record `independent_before_reconciliation: true` only after that sequence actually occurred. This attestation is procedural, not proof that the model was unbiased.

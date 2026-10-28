@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "response_package_id": "responses-accept-bad",
+  "model_id": "model-minimal",
+  "threat_package_id": "threats-minimal",
+  "source_contract_version": 1,
+  "responses": [
+    {
+      "response_id": "R-01",
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "erta": "Accept",
+      "response": "Accept the residual disclosure.",
+      "mechanism_or_text": "Documented acceptance.",
+      "owner": "",
+      "evidence_status": "assumed",
+      "evidence": [],
+      "assumptions": [],
+      "transfer_receiver": "",
+      "acceptance_rationale": "",
+      "revisit_trigger": "",
+      "remaining_threat": "Metadata disclosure remains.",
+      "next_action": "Find owner.",
+      "status": "proposed"
+    }
+  ],
+  "unresolved_threats": [],
+  "cross_cutting_assumptions": [],
+  "skeptic_result": {},
+  "next_actions": []
+}

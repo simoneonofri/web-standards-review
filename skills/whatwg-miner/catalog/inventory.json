@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "source_sha256": "e7955dba2dd6f2a6134683c34765ffbba2be3fa30303eb4d2c08a8717e217493",
+  "source_url": "https://spec.whatwg.org/",
+  "standard_count": 22,
+  "standards": [
+    {
+      "description": "The Compatibility Standard describes a collection of non-standard (and often vendor-prefixed) CSS properties and DOM APIs that web browsers need to support for compatibility with the de facto web.",
+      "id": "compat",
+      "title": "Compatibility",
+      "url": "https://compat.spec.whatwg.org/"
+    },
+    {
+      "description": "The Compression Standard provides APIs for compressing and decompressing bytes using a set of the most common compression algorithms.",
+      "id": "compression",
+      "title": "Compression",
+      "url": "https://compression.spec.whatwg.org/"
+    },
+    {
+      "description": "The Console Standard defines APIs for console debugging facilities.",
+      "id": "console",
+      "title": "Console",
+      "url": "https://console.spec.whatwg.org/"
+    },
+    {
+      "description": "An asynchronous JavaScript cookies API for documents and service workers.",
+      "id": "cookiestore",
+      "title": "Cookie Store API",
+      "url": "https://cookiestore.spec.whatwg.org/"
+    },
+    {
+      "description": "The DOM Standard defines the core infrastructure used to define the web.",
+      "id": "dom",
+      "title": "DOM",
+      "url": "https://dom.spec.whatwg.org/"
+    },
+    {
+      "description": "The Encoding Standard defines how character encodings work on the web.",
+      "id": "encoding",
+      "title": "Encoding",
+      "url": "https://encoding.spec.whatwg.org/"
+    },
+    {
+      "description": "The Fetch Standard defines the networking model for resource retrieval on the web.",
+      "id": "fetch",
+      "title": "Fetch",
+      "url": "https://fetch.spec.whatwg.org/"
+    },
+    {
+      "description": "The File System Standard defines infrastructure and an API for file systems.",
+      "id": "fs",
+      "title": "File System",
+      "url": "https://fs.spec.whatwg.org/"
+    },
+    {
+      "description": "The Fullscreen API Standard defines how web pages can take over a user's entire screen (at the user's request), e.g., for gaming or to watch a video.",
+      "id": "fullscreen",
+      "title": "Fullscreen API",
+      "url": "https://fullscreen.spec.whatwg.org/"
+    },
+    {
+      "description": "The HTML Standard is a kitchen sink full of technologies for the web. It includes the core markup language for the web, HTML, as well as numerous APIs like Web Workers, localStorage, etc.",
+      "id": "html",
+      "title": "HTML",
+      "url": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "description": "The Infra Standard aims to define the fundamental concepts upon which standards are built.",
+      "id": "infra",
+      "title": "Infra",
+      "url": "https://infra.spec.whatwg.org/"
+    },
+    {
+      "description": "The MIME Sniffing Standard defines algorithms used to determine the type of resources.",
+      "id": "mimesniff",
+      "title": "MIME Sniffing",
+      "url": "https://mimesniff.spec.whatwg.org/"
+    },
+    {
+      "description": "The Notifications API Standard provides an API to display notifications to alert users outside the context of a web page.",
+      "id": "notifications",
+      "title": "Notifications API",
+      "url": "https://notifications.spec.whatwg.org/"
+    },
+    {
+      "description": "The Quirks Mode Standard describes behaviours in CSS and Selectors that are not yet defined in the relevant specifications but that are nonetheless widely implemented.",
+      "id": "quirks",
+      "title": "Quirks Mode",
+      "url": "https://quirks.spec.whatwg.org/"
+    },
+    {
+      "description": "The Storage Standard defines an API for persistent storage and quota estimates, as well as the platform storage architecture.",
+      "id": "storage",
+      "title": "Storage",
+      "url": "https://storage.spec.whatwg.org/"
+    },
+    {
+      "description": "The Streams Standard provides APIs for creating, composing, and consuming streams of data that map efficiently to low-level I/O primitives.",
+      "id": "streams",
+      "title": "Streams",
+      "url": "https://streams.spec.whatwg.org/"
+    },
+    {
+      "description": "The Test Utils Standard defines internal APIs for automating testing of web platform features implemented in web browsers.",
+      "id": "testutils",
+      "title": "Test Utils",
+      "url": "https://testutils.spec.whatwg.org/"
+    },
+    {
+      "description": "The URL Standard defines the infrastructure around URLs on the web.",
+      "id": "url",
+      "title": "URL",
+      "url": "https://url.spec.whatwg.org/"
+    },
+    {
+      "description": "The URL Pattern Standard provides a web platform primitive for matching URLs based on a convenient pattern syntax.",
+      "id": "urlpattern",
+      "title": "URL Pattern",
+      "url": "https://urlpattern.spec.whatwg.org/"
+    },
+    {
+      "description": "The Web IDL Standard defines an interface definition language, Web IDL, that can be used to describe interfaces that are intended to be implemented in web browsers.",
+      "id": "webidl",
+      "title": "Web IDL",
+      "url": "https://webidl.spec.whatwg.org/"
+    },
+    {
+      "description": "The WebSockets Standard provides APIs to enable web applications to maintain bidirectional communications with server-side processes.",
+      "id": "websockets",
+      "title": "WebSockets",
+      "url": "https://websockets.spec.whatwg.org/"
+    },
+    {
+      "description": "The XMLHttpRequest Standard defines the networking API exposed to scripts on the web.",
+      "id": "xhr",
+      "title": "XMLHttpRequest",
+      "url": "https://xhr.spec.whatwg.org/"
+    }
+  ]
+}

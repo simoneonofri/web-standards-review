@@ -1,0 +1,64 @@
+{
+  "contract_versions": [
+    "independent-review-gate/v1"
+  ],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:420dffc4af1679b31d4fdf586f3c8507d7a7ab64eec5c345cf7b9e2bb0df5ac1",
+      "size": 14950
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:6efa630e54bfa143ece7b1a3973764219350932466c62316efc5dc2980d17ef2",
+      "size": 297
+    },
+    {
+      "binary": false,
+      "path": "scripts/evaluate_good_enough_gate.py",
+      "sha256": "sha256:cb63ee064eb42e026dcec235bc960bffd8fd9907e784423d3990e902d1776b5c",
+      "size": 6087
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/invalid-gate-input.json",
+      "sha256": "sha256:81fa3e316c1f9bedf0ce2462391e6f2424d2c848448bb60aa0c8d083353fb777",
+      "size": 520
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/valid-gate-input.json",
+      "sha256": "sha256:a630ee5cbebd261f7c17c938c507fda79691ab76ec60cb65a69399b4002fa15c",
+      "size": 572
+    },
+    {
+      "binary": false,
+      "path": "tests/test_good_enough_gate.py",
+      "sha256": "sha256:65aa8bbd9c6145686494caad0d7008a9546435b9988bcc5f1903cc02d4def0f6",
+      "size": 4791
+    }
+  ],
+  "output_digest": "sha256:d87f0937f5ba694e86893255d927c5ec144a70da3597108da168700118b779b4",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "isolated-unit-tests"
+  ],
+  "rights_manifest_reference": "manifests/did-we-do-a-good-enough-job.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "did-we-do-a-good-enough-job",
+  "source_commit": "bfd7f53003f73ff52db642c6f506743a416499a8",
+  "source_repository": "simoneonofri/did-we-do-a-good-enough-job",
+  "tool_version": "reviewctl/0.2.0"
+}

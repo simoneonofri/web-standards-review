@@ -1,0 +1,86 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "w3c-horizontal-review",
+  "source": {
+    "repository": "simoneonofri/w3c-horizontal-review",
+    "repository_path": "w3c-horizontal-review",
+    "commit": "76a69afce7612882a01ddff480b44a95ffd51c4c"
+  },
+  "target_path": "skills/w3c-horizontal-review",
+  "include_paths": [],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/w3c-horizontal-review.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:750ed995a47b754282ba398a3ce2f4b3c190f3d16549295ac5a878a94bbd48c1",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/w3c-horizontal-review/references/extractors.json",
+      "target": "references/extractors.json",
+      "sha256": "sha256:4ea9eb23588ed2904827905924324b49190da5421c7fd9371f2681ee39a742c6",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/w3c-horizontal-review/references/run-contract.md",
+      "target": "references/run-contract.md",
+      "sha256": "sha256:6c1fbf56526b94f586ab79d3e94e9c92d71b25eed16153ff80f632eba7010764",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/w3c-horizontal-review/scripts/horizontal_packet.py",
+      "target": "scripts/horizontal_packet.py",
+      "sha256": "sha256:e18c281bab29321cf7c050fdaa466433c84c10b855197894eb49cd077425fee3",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/w3c-horizontal-review/assets/templates/security-review-non-blocking-editorial-v1.md",
+      "target": "assets/templates/security-review-non-blocking-editorial-v1.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:6ea28b9e696c4bd6aecb86e843e8addbdfd9824f98eb5f9a7fa0c0d79589ff1f"
+    },
+    {
+      "source": "portable-resources/w3c-horizontal-review/references/structured-review-comment.md",
+      "target": "references/structured-review-comment.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:080388e69a4a703b1856a517e927820a4c6159c1fc062120d41aac912c20c779"
+    }
+  ],
+  "normalizations": [],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/w3c-horizontal-review.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [],
+  "expected_output_digest": "sha256:13fa77df69f3d440f2887b8953e06c3b375178ade32a9a235f5a2f67106e4223"
+}

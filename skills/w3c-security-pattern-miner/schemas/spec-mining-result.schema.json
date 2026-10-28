@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "required": [
+    "mode",
+    "specification",
+    "observations",
+    "security_checks"
+  ],
+  "title": "spec-mining-result",
+  "type": "object"
+}

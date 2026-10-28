@@ -1,0 +1,132 @@
+{
+  "files": {
+    ".review/boundary-audit.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/projection.diff": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/provenance.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/rights.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    "PROJECT_STATUS.md": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "SKILL.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "catalog/CATALOG.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "catalog/exceptions.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "catalog/secure-defaults.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "catalog/security-controls.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/charter-deliverables.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/method.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/source-snapshots.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/charter-deliverables.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/exceptions.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/secure-defaults.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "schemas/security-controls.schema.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/extract_charter.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/query_catalog.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/render_catalog.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/validate_catalog.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/fixtures/charter-mini.html": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/test_catalog.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    }
+  },
+  "manifest_reference": "manifests/w3c-webappsec-miner.publication.json#include_paths",
+  "pending": [],
+  "schema_version": "rights-manifest/v1"
+}

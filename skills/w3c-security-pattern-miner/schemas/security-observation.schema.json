@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "required": [
+    "observation_id",
+    "spec_id",
+    "spec_version",
+    "evidence_class",
+    "confidence"
+  ],
+  "title": "security-observation",
+  "type": "object"
+}

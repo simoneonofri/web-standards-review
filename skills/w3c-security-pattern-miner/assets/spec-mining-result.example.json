@@ -1,0 +1,252 @@
+{
+  "coverage": {},
+  "derived_pattern_candidates": [
+    {
+      "derivation_chain": {
+        "alternative_interpretation": "activation may be usability gating only",
+        "conclusion": "fresh user intent is a reusable property",
+        "confidence": 0.74,
+        "inference_rule": "native capability exposure",
+        "missing_evidence": [],
+        "premises": [
+          "operation crosses web-to-native boundary",
+          "algorithm checks transient activation"
+        ]
+      },
+      "pattern_id": "candidate-active-document-user-intent"
+    }
+  ],
+  "explicit_patterns": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "anti_patterns": [
+        "ambient authority",
+        "silent fallback"
+      ],
+      "applicability": {
+        "facets_all": [],
+        "facets_any": [
+          "html-dom",
+          "network"
+        ],
+        "facets_none": [],
+        "not_applicable_when": [
+          "the feature has no authority and capability delegation behavior"
+        ],
+        "preconditions": [
+          "authority and capability delegation is part of the processing model"
+        ],
+        "spec_families": [
+          "html-dom-css-rendering"
+        ]
+      },
+      "assets": [
+        "origin authority",
+        "protected capability"
+      ],
+      "assumptions": [
+        "the supplied specification version is complete enough for this category"
+      ],
+      "attacker_capabilities": [
+        "malicious-origin"
+      ],
+      "category": "authority-and-capability-delegation",
+      "conceptual_key": "authority-and-capability-delegation|context|boundary|failure-mode|expected-property-01",
+      "confidence": 0.82,
+      "context": [
+        "a specification exposes behavior relevant to authority and capability delegation",
+        "a web actor can trigger or observe the behavior"
+      ],
+      "evidence_classes": [
+        "explicit-normative"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity"
+      ],
+      "failure_modes": [
+        "underspecified authority and capability delegation behavior"
+      ],
+      "maturity": "candidate",
+      "mechanisms": [
+        "normative check",
+        "fail-closed processing"
+      ],
+      "occurrence_ids": [
+        "occ-example"
+      ],
+      "pattern_id": "origin-bound-capability-delegation",
+      "provenance": {
+        "resolution_validated_occurrences": 0,
+        "status": "candidate",
+        "supporting_occurrences": 1,
+        "supporting_specifications": 1
+      },
+      "residual_risks": [
+        "implementation variation if conformance text is incomplete"
+      ],
+      "summary": "Reusable security relationship for authority and capability delegation where normative behavior should preserve a specific security property.",
+      "threats": [
+        "confused-deputy or information-disclosure condition"
+      ],
+      "title": "Bind delegated capability to the intended origin",
+      "trust_boundaries": [
+        "origin-boundary"
+      ],
+      "variants": [],
+      "verification_strategies": [
+        "inspect normative algorithms",
+        "inspect error handling"
+      ]
+    }
+  ],
+  "limitations": [
+    "synthetic example"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no remote code loading entry point is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent",
+        "user"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "operation invokes a native platform capability"
+        ]
+      },
+      "assets": [
+        "native-capability"
+      ],
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "artifact_id": "artifact-id",
+          "evidence_span": "If document does not have transient activation, reject.",
+          "interpretation": "The algorithm rejects calls without activation.",
+          "locator": "section 4.2 step 3",
+          "normative_strength": "must",
+          "source_id": "source-id",
+          "source_kind": "normative-algorithm"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-example-user-activation",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "user-intent-and-trusted-ui",
+      "security_properties": [
+        "authorization"
+      ],
+      "spec_id": "example-spec",
+      "spec_version": "2026-01-01",
+      "statement": "The operation requires transient user activation.",
+      "trust_boundaries": [
+        "web-to-native"
+      ]
+    }
+  ],
+  "security_checks": [
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes authority and capability delegation behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no authority and capability delegation surface"
+        ]
+      },
+      "category": "authority-and-capability-delegation",
+      "check_id": "check-origin-bound-capability-delegation",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.8,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "candidate",
+      "not_applicable_criteria": [
+        "no authority and capability delegation behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "origin-bound-capability-delegation",
+      "pattern_maturity": "candidate",
+      "question": "Does the specification define evidence-backed authority and capability delegation behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified authority and capability delegation can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify authority and capability delegation behavior 01",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    }
+  ],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "native-capability"
+    ],
+    "attacker_models": [],
+    "capabilities": [],
+    "components": [],
+    "dependencies": [],
+    "entry_points": [],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "web-to-native"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithm"
+    ],
+    "limitations": [],
+    "missing_artifacts": [
+      "review material"
+    ],
+    "score": 0.8
+  },
+  "specification": {
+    "spec_id": "example-spec",
+    "title": "Example Spec",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}

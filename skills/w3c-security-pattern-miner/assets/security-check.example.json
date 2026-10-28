@@ -1,0 +1,52 @@
+{
+  "applicability": {
+    "applies_when": [
+      "the feature includes authority and capability delegation behavior"
+    ],
+    "not_applicable_when": [
+      "the feature has no authority and capability delegation surface"
+    ]
+  },
+  "category": "authority-and-capability-delegation",
+  "check_id": "check-origin-bound-capability-delegation",
+  "common_failure_modes": [
+    "ambient authority",
+    "fail-open behavior",
+    "missing boundary check"
+  ],
+  "confidence": 0.8,
+  "evidence": [],
+  "evidence_to_collect": [
+    "normative algorithm",
+    "WebIDL or processing model",
+    "error behavior",
+    "security considerations"
+  ],
+  "fail_criteria": [
+    "affirmative normative behavior permits violation of the expected property"
+  ],
+  "maturity": "candidate",
+  "not_applicable_criteria": [
+    "no authority and capability delegation behavior is present, with evidence"
+  ],
+  "partial_criteria": [
+    "the property is stated but enforcement details are incomplete"
+  ],
+  "pass_criteria": [
+    "normative behavior defines the expected property and enforcement point"
+  ],
+  "pattern_id": "origin-bound-capability-delegation",
+  "pattern_maturity": "candidate",
+  "question": "Does the specification define evidence-backed authority and capability delegation behavior with clear authority, boundary, and failure semantics?",
+  "rationale": "Underspecified authority and capability delegation can weaken Web Platform security properties.",
+  "result": "not-evaluated",
+  "scope": "implementation-conformance",
+  "test_ideas": [
+    "exercise allowed and disallowed principals",
+    "exercise error and lifecycle transitions"
+  ],
+  "title": "Verify authority and capability delegation behavior 01",
+  "unknown_criteria": [
+    "required source material or dependency text is unavailable"
+  ]
+}

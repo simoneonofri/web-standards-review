@@ -1,0 +1,69 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:83c2d86f02d915168beaf48b3c7da47de0e01bdae00c50072d47ac2412e1f29d",
+      "size": 580
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:1c39cb042d32039aa1e248a0f0760c4b62b0604b8781b964a2a4cbe9664e2f58",
+      "size": 2121
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:ee608363293d624b7c3362d6edc48d51483665e475f3201816db48323eeecf83",
+      "size": 2290
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:420dffc4af1679b31d4fdf586f3c8507d7a7ab64eec5c345cf7b9e2bb0df5ac1",
+      "size": 14950
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:6efa630e54bfa143ece7b1a3973764219350932466c62316efc5dc2980d17ef2",
+      "size": 297
+    },
+    {
+      "binary": false,
+      "path": "scripts/evaluate_good_enough_gate.py",
+      "sha256": "sha256:cb63ee064eb42e026dcec235bc960bffd8fd9907e784423d3990e902d1776b5c",
+      "size": 6087
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/invalid-gate-input.json",
+      "sha256": "sha256:81fa3e316c1f9bedf0ce2462391e6f2424d2c848448bb60aa0c8d083353fb777",
+      "size": 520
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/valid-gate-input.json",
+      "sha256": "sha256:a630ee5cbebd261f7c17c938c507fda79691ab76ec60cb65a69399b4002fa15c",
+      "size": 572
+    },
+    {
+      "binary": false,
+      "path": "tests/test_good_enough_gate.py",
+      "sha256": "sha256:65aa8bbd9c6145686494caad0d7008a9546435b9988bcc5f1903cc02d4def0f6",
+      "size": 4791
+    }
+  ],
+  "root_digest": "sha256:3adcbe0a16817c253f4a5252f3348cbc0e7178d268f427df2060b6976f6ca3f5",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

@@ -1,0 +1,3437 @@
+{
+  "checks": [
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes attack surface minimization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no attack surface minimization surface"
+        ]
+      },
+      "category": "attack-surface-minimization",
+      "check_id": "check-attack-surface-minimization-01",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no attack surface minimization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "attack-surface-minimization-pattern-01",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed attack surface minimization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified attack surface minimization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify attack surface minimization behavior 01",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes secure context and transport behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no secure context and transport surface"
+        ]
+      },
+      "category": "secure-context-and-transport",
+      "check_id": "check-secure-context-and-transport-02",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no secure context and transport behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "secure-context-and-transport-pattern-02",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed secure context and transport behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified secure context and transport can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify secure context and transport behavior 02",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes origin and site isolation behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no origin and site isolation surface"
+        ]
+      },
+      "category": "origin-and-site-isolation",
+      "check_id": "check-origin-and-site-isolation-03",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no origin and site isolation behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "origin-and-site-isolation-pattern-03",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed origin and site isolation behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified origin and site isolation can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify origin and site isolation behavior 03",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes cross origin communication behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no cross origin communication surface"
+        ]
+      },
+      "category": "cross-origin-communication",
+      "check_id": "check-cross-origin-communication-04",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no cross origin communication behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "cross-origin-communication-pattern-04",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed cross origin communication behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified cross origin communication can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify cross origin communication behavior 04",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes authority and capability delegation behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no authority and capability delegation surface"
+        ]
+      },
+      "category": "authority-and-capability-delegation",
+      "check_id": "check-authority-and-capability-delegation-05",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no authority and capability delegation behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "authority-and-capability-delegation-pattern-05",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed authority and capability delegation behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified authority and capability delegation can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify authority and capability delegation behavior 05",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes permission lifecycle behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no permission lifecycle surface"
+        ]
+      },
+      "category": "permission-lifecycle",
+      "check_id": "check-permission-lifecycle-06",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no permission lifecycle behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "permission-lifecycle-pattern-06",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed permission lifecycle behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified permission lifecycle can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify permission lifecycle behavior 06",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes user intent and trusted ui behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no user intent and trusted ui surface"
+        ]
+      },
+      "category": "user-intent-and-trusted-ui",
+      "check_id": "check-user-intent-and-trusted-ui-07",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no user intent and trusted ui behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "user-intent-and-trusted-ui-pattern-07",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed user intent and trusted ui behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified user intent and trusted ui can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify user intent and trusted ui behavior 07",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes authentication behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no authentication surface"
+        ]
+      },
+      "category": "authentication",
+      "check_id": "check-authentication-08",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no authentication behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "authentication-pattern-08",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed authentication behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified authentication can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify authentication behavior 08",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes authorization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no authorization surface"
+        ]
+      },
+      "category": "authorization",
+      "check_id": "check-authorization-09",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no authorization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "authorization-pattern-09",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed authorization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified authorization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify authorization behavior 09",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes credential lifecycle behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no credential lifecycle surface"
+        ]
+      },
+      "category": "credential-lifecycle",
+      "check_id": "check-credential-lifecycle-10",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no credential lifecycle behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "credential-lifecycle-pattern-10",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed credential lifecycle behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified credential lifecycle can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify credential lifecycle behavior 10",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes confidentiality and information disclosure behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no confidentiality and information disclosure surface"
+        ]
+      },
+      "category": "confidentiality-and-information-disclosure",
+      "check_id": "check-confidentiality-and-information-disclosure-11",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no confidentiality and information disclosure behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "confidentiality-and-information-disclosure-pattern-11",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed confidentiality and information disclosure behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified confidentiality and information disclosure can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify confidentiality and information disclosure behavior 11",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes integrity and authenticity behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no integrity and authenticity surface"
+        ]
+      },
+      "category": "integrity-and-authenticity",
+      "check_id": "check-integrity-and-authenticity-12",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no integrity and authenticity behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "integrity-and-authenticity-pattern-12",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed integrity and authenticity behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified integrity and authenticity can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify integrity and authenticity behavior 12",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes freshness and anti replay behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no freshness and anti replay surface"
+        ]
+      },
+      "category": "freshness-and-anti-replay",
+      "check_id": "check-freshness-and-anti-replay-13",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no freshness and anti replay behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "freshness-and-anti-replay-pattern-13",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed freshness and anti replay behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified freshness and anti replay can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify freshness and anti replay behavior 13",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes input validation behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no input validation surface"
+        ]
+      },
+      "category": "input-validation",
+      "check_id": "check-input-validation-14",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no input validation behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "input-validation-pattern-14",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed input validation behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified input validation can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify input validation behavior 14",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes parsing and serialization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no parsing and serialization surface"
+        ]
+      },
+      "category": "parsing-and-serialization",
+      "check_id": "check-parsing-and-serialization-15",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no parsing and serialization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "parsing-and-serialization-pattern-15",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed parsing and serialization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified parsing and serialization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify parsing and serialization behavior 15",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes canonicalization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no canonicalization surface"
+        ]
+      },
+      "category": "canonicalization",
+      "check_id": "check-canonicalization-16",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no canonicalization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "canonicalization-pattern-16",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed canonicalization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified canonicalization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify canonicalization behavior 16",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes url fetch and redirect handling behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no url fetch and redirect handling surface"
+        ]
+      },
+      "category": "url-fetch-and-redirect-handling",
+      "check_id": "check-url-fetch-and-redirect-handling-17",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no url fetch and redirect handling behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "url-fetch-and-redirect-handling-pattern-17",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed url fetch and redirect handling behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified url fetch and redirect handling can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify url fetch and redirect handling behavior 17",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes script and code loading behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no script and code loading surface"
+        ]
+      },
+      "category": "script-and-code-loading",
+      "check_id": "check-script-and-code-loading-18",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no script and code loading behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "script-and-code-loading-pattern-18",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed script and code loading behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified script and code loading can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify script and code loading behavior 18",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes state storage and cache behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no state storage and cache surface"
+        ]
+      },
+      "category": "state-storage-and-cache",
+      "check_id": "check-state-storage-and-cache-19",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no state storage and cache behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "state-storage-and-cache-pattern-19",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed state storage and cache behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified state storage and cache can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify state storage and cache behavior 19",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes lifecycle navigation and bfcache behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no lifecycle navigation and bfcache surface"
+        ]
+      },
+      "category": "lifecycle-navigation-and-bfcache",
+      "check_id": "check-lifecycle-navigation-and-bfcache-20",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no lifecycle navigation and bfcache behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "lifecycle-navigation-and-bfcache-pattern-20",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed lifecycle navigation and bfcache behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified lifecycle navigation and bfcache can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify lifecycle navigation and bfcache behavior 20",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes concurrency races and reentrancy behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no concurrency races and reentrancy surface"
+        ]
+      },
+      "category": "concurrency-races-and-reentrancy",
+      "check_id": "check-concurrency-races-and-reentrancy-21",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no concurrency races and reentrancy behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "concurrency-races-and-reentrancy-pattern-21",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed concurrency races and reentrancy behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified concurrency races and reentrancy can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify concurrency races and reentrancy behavior 21",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes error channels and oracles behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no error channels and oracles surface"
+        ]
+      },
+      "category": "error-channels-and-oracles",
+      "check_id": "check-error-channels-and-oracles-22",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no error channels and oracles behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "error-channels-and-oracles-pattern-22",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed error channels and oracles behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified error channels and oracles can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify error channels and oracles behavior 22",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes timing and side channels behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no timing and side channels surface"
+        ]
+      },
+      "category": "timing-and-side-channels",
+      "check_id": "check-timing-and-side-channels-23",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no timing and side channels behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "timing-and-side-channels-pattern-23",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed timing and side channels behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified timing and side channels can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify timing and side channels behavior 23",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes resource exhaustion and amplification behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no resource exhaustion and amplification surface"
+        ]
+      },
+      "category": "resource-exhaustion-and-amplification",
+      "check_id": "check-resource-exhaustion-and-amplification-24",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no resource exhaustion and amplification behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "resource-exhaustion-and-amplification-pattern-24",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed resource exhaustion and amplification behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified resource exhaustion and amplification can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify resource exhaustion and amplification behavior 24",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes cryptography and randomness behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no cryptography and randomness surface"
+        ]
+      },
+      "category": "cryptography-and-randomness",
+      "check_id": "check-cryptography-and-randomness-25",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no cryptography and randomness behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "cryptography-and-randomness-pattern-25",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed cryptography and randomness behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified cryptography and randomness can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify cryptography and randomness behavior 25",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes key management and algorithm agility behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no key management and algorithm agility surface"
+        ]
+      },
+      "category": "key-management-and-algorithm-agility",
+      "check_id": "check-key-management-and-algorithm-agility-26",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no key management and algorithm agility behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "key-management-and-algorithm-agility-pattern-26",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed key management and algorithm agility behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified key management and algorithm agility can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify key management and algorithm agility behavior 26",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes device sensor and native boundaries behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no device sensor and native boundaries surface"
+        ]
+      },
+      "category": "device-sensor-and-native-boundaries",
+      "check_id": "check-device-sensor-and-native-boundaries-27",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no device sensor and native boundaries behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "device-sensor-and-native-boundaries-pattern-27",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed device sensor and native boundaries behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified device sensor and native boundaries can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify device sensor and native boundaries behavior 27",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes media codecs and untrusted binary input behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no media codecs and untrusted binary input surface"
+        ]
+      },
+      "category": "media-codecs-and-untrusted-binary-input",
+      "check_id": "check-media-codecs-and-untrusted-binary-input-28",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no media codecs and untrusted binary input behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "media-codecs-and-untrusted-binary-input-pattern-28",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed media codecs and untrusted binary input behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified media codecs and untrusted binary input can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify media codecs and untrusted binary input behavior 28",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes protocol negotiation versioning and downgrade behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no protocol negotiation versioning and downgrade surface"
+        ]
+      },
+      "category": "protocol-negotiation-versioning-and-downgrade",
+      "check_id": "check-protocol-negotiation-versioning-and-downgrade-29",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no protocol negotiation versioning and downgrade behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "protocol-negotiation-versioning-and-downgrade-pattern-29",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed protocol negotiation versioning and downgrade behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified protocol negotiation versioning and downgrade can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify protocol negotiation versioning and downgrade behavior 29",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes extensibility and unknown fields behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no extensibility and unknown fields surface"
+        ]
+      },
+      "category": "extensibility-and-unknown-fields",
+      "check_id": "check-extensibility-and-unknown-fields-30",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no extensibility and unknown fields behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "extensibility-and-unknown-fields-pattern-30",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed extensibility and unknown fields behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified extensibility and unknown fields can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify extensibility and unknown fields behavior 30",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes external dependency assumptions behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no external dependency assumptions surface"
+        ]
+      },
+      "category": "external-dependency-assumptions",
+      "check_id": "check-external-dependency-assumptions-31",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no external dependency assumptions behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "external-dependency-assumptions-pattern-31",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed external dependency assumptions behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified external dependency assumptions can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify external dependency assumptions behavior 31",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes revocation recovery and rollback behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no revocation recovery and rollback surface"
+        ]
+      },
+      "category": "revocation-recovery-and-rollback",
+      "check_id": "check-revocation-recovery-and-rollback-32",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no revocation recovery and rollback behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "revocation-recovery-and-rollback-pattern-32",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed revocation recovery and rollback behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified revocation recovery and rollback can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify revocation recovery and rollback behavior 32",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes observability audit and abuse detection behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no observability audit and abuse detection surface"
+        ]
+      },
+      "category": "observability-audit-and-abuse-detection",
+      "check_id": "check-observability-audit-and-abuse-detection-33",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no observability audit and abuse detection behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "observability-audit-and-abuse-detection-pattern-33",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed observability audit and abuse detection behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified observability audit and abuse detection can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify observability audit and abuse detection behavior 33",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes safe defaults and fail closed behavior behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no safe defaults and fail closed behavior surface"
+        ]
+      },
+      "category": "safe-defaults-and-fail-closed-behavior",
+      "check_id": "check-safe-defaults-and-fail-closed-behavior-34",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no safe defaults and fail closed behavior behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "safe-defaults-and-fail-closed-behavior-pattern-34",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed safe defaults and fail closed behavior behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified safe defaults and fail closed behavior can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify safe defaults and fail closed behavior behavior 34",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes conformance and implementation variance behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no conformance and implementation variance surface"
+        ]
+      },
+      "category": "conformance-and-implementation-variance",
+      "check_id": "check-conformance-and-implementation-variance-35",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no conformance and implementation variance behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "conformance-and-implementation-variance-pattern-35",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed conformance and implementation variance behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified conformance and implementation variance can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify conformance and implementation variance behavior 35",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes privacy security intersections behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no privacy security intersections surface"
+        ]
+      },
+      "category": "privacy-security-intersections",
+      "check_id": "check-privacy-security-intersections-36",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no privacy security intersections behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "privacy-security-intersections-pattern-36",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed privacy security intersections behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified privacy security intersections can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify privacy security intersections behavior 36",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes attack surface minimization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no attack surface minimization surface"
+        ]
+      },
+      "category": "attack-surface-minimization",
+      "check_id": "check-attack-surface-minimization-37",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no attack surface minimization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "attack-surface-minimization-pattern-37",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed attack surface minimization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified attack surface minimization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify attack surface minimization behavior 37",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes secure context and transport behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no secure context and transport surface"
+        ]
+      },
+      "category": "secure-context-and-transport",
+      "check_id": "check-secure-context-and-transport-38",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no secure context and transport behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "secure-context-and-transport-pattern-38",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed secure context and transport behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified secure context and transport can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify secure context and transport behavior 38",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes origin and site isolation behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no origin and site isolation surface"
+        ]
+      },
+      "category": "origin-and-site-isolation",
+      "check_id": "check-origin-and-site-isolation-39",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no origin and site isolation behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "origin-and-site-isolation-pattern-39",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed origin and site isolation behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified origin and site isolation can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify origin and site isolation behavior 39",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes cross origin communication behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no cross origin communication surface"
+        ]
+      },
+      "category": "cross-origin-communication",
+      "check_id": "check-cross-origin-communication-40",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no cross origin communication behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "cross-origin-communication-pattern-40",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed cross origin communication behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified cross origin communication can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify cross origin communication behavior 40",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes authority and capability delegation behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no authority and capability delegation surface"
+        ]
+      },
+      "category": "authority-and-capability-delegation",
+      "check_id": "check-authority-and-capability-delegation-41",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no authority and capability delegation behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "authority-and-capability-delegation-pattern-41",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed authority and capability delegation behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified authority and capability delegation can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify authority and capability delegation behavior 41",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes permission lifecycle behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no permission lifecycle surface"
+        ]
+      },
+      "category": "permission-lifecycle",
+      "check_id": "check-permission-lifecycle-42",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no permission lifecycle behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "permission-lifecycle-pattern-42",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed permission lifecycle behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified permission lifecycle can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify permission lifecycle behavior 42",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes user intent and trusted ui behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no user intent and trusted ui surface"
+        ]
+      },
+      "category": "user-intent-and-trusted-ui",
+      "check_id": "check-user-intent-and-trusted-ui-43",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no user intent and trusted ui behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "user-intent-and-trusted-ui-pattern-43",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed user intent and trusted ui behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified user intent and trusted ui can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify user intent and trusted ui behavior 43",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes authentication behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no authentication surface"
+        ]
+      },
+      "category": "authentication",
+      "check_id": "check-authentication-44",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no authentication behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "authentication-pattern-44",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed authentication behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified authentication can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify authentication behavior 44",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes authorization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no authorization surface"
+        ]
+      },
+      "category": "authorization",
+      "check_id": "check-authorization-45",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no authorization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "authorization-pattern-45",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed authorization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified authorization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify authorization behavior 45",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes credential lifecycle behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no credential lifecycle surface"
+        ]
+      },
+      "category": "credential-lifecycle",
+      "check_id": "check-credential-lifecycle-46",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no credential lifecycle behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "credential-lifecycle-pattern-46",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed credential lifecycle behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified credential lifecycle can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify credential lifecycle behavior 46",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes confidentiality and information disclosure behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no confidentiality and information disclosure surface"
+        ]
+      },
+      "category": "confidentiality-and-information-disclosure",
+      "check_id": "check-confidentiality-and-information-disclosure-47",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no confidentiality and information disclosure behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "confidentiality-and-information-disclosure-pattern-47",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed confidentiality and information disclosure behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified confidentiality and information disclosure can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify confidentiality and information disclosure behavior 47",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes integrity and authenticity behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no integrity and authenticity surface"
+        ]
+      },
+      "category": "integrity-and-authenticity",
+      "check_id": "check-integrity-and-authenticity-48",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no integrity and authenticity behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "integrity-and-authenticity-pattern-48",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed integrity and authenticity behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified integrity and authenticity can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify integrity and authenticity behavior 48",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes freshness and anti replay behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no freshness and anti replay surface"
+        ]
+      },
+      "category": "freshness-and-anti-replay",
+      "check_id": "check-freshness-and-anti-replay-49",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no freshness and anti replay behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "freshness-and-anti-replay-pattern-49",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed freshness and anti replay behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified freshness and anti replay can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify freshness and anti replay behavior 49",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes input validation behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no input validation surface"
+        ]
+      },
+      "category": "input-validation",
+      "check_id": "check-input-validation-50",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no input validation behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "input-validation-pattern-50",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed input validation behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified input validation can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify input validation behavior 50",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes parsing and serialization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no parsing and serialization surface"
+        ]
+      },
+      "category": "parsing-and-serialization",
+      "check_id": "check-parsing-and-serialization-51",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no parsing and serialization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "parsing-and-serialization-pattern-51",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed parsing and serialization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified parsing and serialization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify parsing and serialization behavior 51",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes canonicalization behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no canonicalization surface"
+        ]
+      },
+      "category": "canonicalization",
+      "check_id": "check-canonicalization-52",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no canonicalization behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "canonicalization-pattern-52",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed canonicalization behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified canonicalization can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify canonicalization behavior 52",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes url fetch and redirect handling behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no url fetch and redirect handling surface"
+        ]
+      },
+      "category": "url-fetch-and-redirect-handling",
+      "check_id": "check-url-fetch-and-redirect-handling-53",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no url fetch and redirect handling behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "url-fetch-and-redirect-handling-pattern-53",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed url fetch and redirect handling behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified url fetch and redirect handling can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify url fetch and redirect handling behavior 53",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes script and code loading behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no script and code loading surface"
+        ]
+      },
+      "category": "script-and-code-loading",
+      "check_id": "check-script-and-code-loading-54",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no script and code loading behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "script-and-code-loading-pattern-54",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed script and code loading behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified script and code loading can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify script and code loading behavior 54",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes state storage and cache behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no state storage and cache surface"
+        ]
+      },
+      "category": "state-storage-and-cache",
+      "check_id": "check-state-storage-and-cache-55",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no state storage and cache behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "state-storage-and-cache-pattern-55",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed state storage and cache behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified state storage and cache can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify state storage and cache behavior 55",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes lifecycle navigation and bfcache behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no lifecycle navigation and bfcache surface"
+        ]
+      },
+      "category": "lifecycle-navigation-and-bfcache",
+      "check_id": "check-lifecycle-navigation-and-bfcache-56",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no lifecycle navigation and bfcache behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "lifecycle-navigation-and-bfcache-pattern-56",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed lifecycle navigation and bfcache behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified lifecycle navigation and bfcache can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify lifecycle navigation and bfcache behavior 56",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes concurrency races and reentrancy behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no concurrency races and reentrancy surface"
+        ]
+      },
+      "category": "concurrency-races-and-reentrancy",
+      "check_id": "check-concurrency-races-and-reentrancy-57",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no concurrency races and reentrancy behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "concurrency-races-and-reentrancy-pattern-57",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed concurrency races and reentrancy behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified concurrency races and reentrancy can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify concurrency races and reentrancy behavior 57",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes error channels and oracles behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no error channels and oracles surface"
+        ]
+      },
+      "category": "error-channels-and-oracles",
+      "check_id": "check-error-channels-and-oracles-58",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no error channels and oracles behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "error-channels-and-oracles-pattern-58",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed error channels and oracles behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified error channels and oracles can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify error channels and oracles behavior 58",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes timing and side channels behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no timing and side channels surface"
+        ]
+      },
+      "category": "timing-and-side-channels",
+      "check_id": "check-timing-and-side-channels-59",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no timing and side channels behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "timing-and-side-channels-pattern-59",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed timing and side channels behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified timing and side channels can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify timing and side channels behavior 59",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes resource exhaustion and amplification behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no resource exhaustion and amplification surface"
+        ]
+      },
+      "category": "resource-exhaustion-and-amplification",
+      "check_id": "check-resource-exhaustion-and-amplification-60",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no resource exhaustion and amplification behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "resource-exhaustion-and-amplification-pattern-60",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed resource exhaustion and amplification behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified resource exhaustion and amplification can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify resource exhaustion and amplification behavior 60",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes cryptography and randomness behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no cryptography and randomness surface"
+        ]
+      },
+      "category": "cryptography-and-randomness",
+      "check_id": "check-cryptography-and-randomness-61",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no cryptography and randomness behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "attack-surface-minimization-pattern-01",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed cryptography and randomness behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified cryptography and randomness can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify cryptography and randomness behavior 61",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes key management and algorithm agility behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no key management and algorithm agility surface"
+        ]
+      },
+      "category": "key-management-and-algorithm-agility",
+      "check_id": "check-key-management-and-algorithm-agility-62",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no key management and algorithm agility behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "secure-context-and-transport-pattern-02",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed key management and algorithm agility behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified key management and algorithm agility can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify key management and algorithm agility behavior 62",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes device sensor and native boundaries behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no device sensor and native boundaries surface"
+        ]
+      },
+      "category": "device-sensor-and-native-boundaries",
+      "check_id": "check-device-sensor-and-native-boundaries-63",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no device sensor and native boundaries behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "origin-and-site-isolation-pattern-03",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed device sensor and native boundaries behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified device sensor and native boundaries can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify device sensor and native boundaries behavior 63",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes media codecs and untrusted binary input behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no media codecs and untrusted binary input surface"
+        ]
+      },
+      "category": "media-codecs-and-untrusted-binary-input",
+      "check_id": "check-media-codecs-and-untrusted-binary-input-64",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no media codecs and untrusted binary input behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "cross-origin-communication-pattern-04",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed media codecs and untrusted binary input behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified media codecs and untrusted binary input can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "implementation-conformance",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify media codecs and untrusted binary input behavior 64",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes protocol negotiation versioning and downgrade behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no protocol negotiation versioning and downgrade surface"
+        ]
+      },
+      "category": "protocol-negotiation-versioning-and-downgrade",
+      "check_id": "check-protocol-negotiation-versioning-and-downgrade-65",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no protocol negotiation versioning and downgrade behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "authority-and-capability-delegation-pattern-05",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed protocol negotiation versioning and downgrade behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified protocol negotiation versioning and downgrade can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "deployment-operation",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify protocol negotiation versioning and downgrade behavior 65",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    },
+    {
+      "applicability": {
+        "applies_when": [
+          "the feature includes extensibility and unknown fields behavior"
+        ],
+        "not_applicable_when": [
+          "the feature has no extensibility and unknown fields surface"
+        ]
+      },
+      "category": "extensibility-and-unknown-fields",
+      "check_id": "check-extensibility-and-unknown-fields-66",
+      "common_failure_modes": [
+        "ambient authority",
+        "fail-open behavior",
+        "missing boundary check"
+      ],
+      "confidence": 0.45,
+      "evidence": [],
+      "evidence_to_collect": [
+        "normative algorithm",
+        "WebIDL or processing model",
+        "error behavior",
+        "security considerations"
+      ],
+      "fail_criteria": [
+        "affirmative normative behavior permits violation of the expected property"
+      ],
+      "maturity": "seed",
+      "not_applicable_criteria": [
+        "no extensibility and unknown fields behavior is present, with evidence"
+      ],
+      "partial_criteria": [
+        "the property is stated but enforcement details are incomplete"
+      ],
+      "pass_criteria": [
+        "normative behavior defines the expected property and enforcement point"
+      ],
+      "pattern_id": "permission-lifecycle-pattern-06",
+      "pattern_maturity": "seed",
+      "question": "Does the specification define evidence-backed extensibility and unknown fields behavior with clear authority, boundary, and failure semantics?",
+      "rationale": "Underspecified extensibility and unknown fields can weaken Web Platform security properties.",
+      "result": "not-evaluated",
+      "scope": "specification-design",
+      "test_ideas": [
+        "exercise allowed and disallowed principals",
+        "exercise error and lifecycle transitions"
+      ],
+      "title": "Verify extensibility and unknown fields behavior 66",
+      "unknown_criteria": [
+        "required source material or dependency text is unavailable"
+      ]
+    }
+  ],
+  "schema_version": "0.1"
+}

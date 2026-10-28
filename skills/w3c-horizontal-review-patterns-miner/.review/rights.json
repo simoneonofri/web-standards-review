@@ -1,0 +1,172 @@
+{
+  "files": {
+    ".review/boundary-audit.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/projection.diff": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/provenance.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/rights.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    "PROJECT_STATUS.md": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "SKILL.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "assets/finding.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/review-report-template.md": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/review-result.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "assets/specification-profile.example.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "references/architecture.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/evidence-and-confidence.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/finding-model.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/review-patterns.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/specification-taxonomy.json": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/w3c-knowledge-contract.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/select_patterns.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/validate_assets.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/fixtures/data-format.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/device-api.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/identity-protocol.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/network-protocol.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/persistent-storage.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/rendering-feature.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/review-derived-charter-governance.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/review-derived-credential-integrity-protocol.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/review-derived-media-capability-fingerprinting.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/review-derived-ml-native-computation.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/review-derived-policy-delegated-capability.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/fixtures/review-derived-semantic-vocabulary.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "tests/test_pattern_selection.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    }
+  },
+  "manifest_reference": "manifests/w3c-horizontal-review-patterns-miner.publication.json#include_paths",
+  "pending": [],
+  "schema_version": "rights-manifest/v1"
+}

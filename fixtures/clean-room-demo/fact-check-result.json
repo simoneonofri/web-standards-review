@@ -1,0 +1,18 @@
+{
+  "schema_version": "fact-check-result/v1",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "status": "passed",
+  "publication_authorized": false,
+  "claims": [
+    {
+      "claim_id": "C-01",
+      "claim": "The target is a synthetic fixture.",
+      "status": "verified",
+      "source_reference": "source-corpus-manifest.json"
+    }
+  ],
+  "limitations": [
+    "This gate verifies externally checkable claims; it does not authorize publication or replace response review."
+  ]
+}

@@ -1,0 +1,15 @@
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -3 +3 @@
+-description: Extract traceable questions from W3C Strategy charter discussions and apply relevant precedents to a current charter or recharter review.
++description: Extract traceable questions from W3C Strategy charter discussions and apply relevant precedents to a current charter or recharter review. Also use for bounded author support during design and drafting.
+@@ -9,0 +10,9 @@
++
++<!-- section:author-support -->
++## Author support
++
++Use this mode when an author asks for help designing, drafting or revising a specification or charter, including before a review request exists. Start from the exact draft and the author's concrete question. Help charter authors explain scope, coordination, deliverables and success criteria using relevant precedents. Keep API implementation details in deliverable workflows.
++
++Return a compact table: target section or design decision; selected source and applicability; proposed author action; verification or test; evidence status (`evidence_supported`, `open_question`, `already_covered`, `not_applicable`, `unable_to_verify`). Keep normative requirements distinct from optional design choices and reviewer inference. Use the existing evidence rules and helper inputs below; unavailable sources stay unavailable.
++
++Keep the response proportional to the question. Preserve the draft unless editing is requested. This mode does not itself start a full horizontal review, complete threat model, scanner run, corpus refresh or publication workflow. Route a substantiated review candidate through the existing finding gate rather than treating an author suggestion as a finding.

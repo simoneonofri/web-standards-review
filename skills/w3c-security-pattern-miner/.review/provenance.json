@@ -1,0 +1,327 @@
+{
+  "contract_versions": [],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:d44ba007bbd3759129d78b2c1ea6a4b818541f247e26eb03bfd1a832b84348d2",
+      "size": 3705
+    },
+    {
+      "binary": false,
+      "path": "assets/catalog.example.json",
+      "sha256": "sha256:8627447536a1fa3303bc3623aa527ddd73398148108890c48b914ca0f01d5a94",
+      "size": 4726
+    },
+    {
+      "binary": false,
+      "path": "assets/checklist-report-template.md",
+      "sha256": "sha256:18d69ca5fad6612e0a3a63c29b11d6c859670240c07566b3615e610b5b28c59b",
+      "size": 365
+    },
+    {
+      "binary": false,
+      "path": "assets/security-check.example.json",
+      "sha256": "sha256:308a6e1365fbe48fd672da2ebb1012d316098f4803d6e4f35ac0e2221604812b",
+      "size": 1814
+    },
+    {
+      "binary": false,
+      "path": "assets/security-mining-report-template.md",
+      "sha256": "sha256:254d0e74ed3a6a29802e03bbeb38898413570264205be8d34612a82a7a6eb87c",
+      "size": 599
+    },
+    {
+      "binary": false,
+      "path": "assets/security-observation.example.json",
+      "sha256": "sha256:df8ba91edab1593f3011d0db4c3e6146e095bae3a65f0dd9a66dd0d5f1a32fe2",
+      "size": 1098
+    },
+    {
+      "binary": false,
+      "path": "assets/security-pattern.example.json",
+      "sha256": "sha256:b5dd9d96924f7e39386f8f8dc5f50bca723af4553baf5bc1131947e9be950df0",
+      "size": 2266
+    },
+    {
+      "binary": false,
+      "path": "assets/spec-mining-result.example.json",
+      "sha256": "sha256:b06c82bd687177094ed2cdca99d76147a5899cbabe4ffa3f662fe7394d362749",
+      "size": 7544
+    },
+    {
+      "binary": false,
+      "path": "catalog/occurrences.json",
+      "sha256": "sha256:af48fa7ea8cdb5d61845d45b7571b0c6a4082cbf444e61f4b8ff313c571fed8e",
+      "size": 41694
+    },
+    {
+      "binary": false,
+      "path": "catalog/processed-specifications.json",
+      "sha256": "sha256:c3d1cbaa50dedbd6cdd500565cec2f003dd3f02e7a9a9c44fec890063a3de4e4",
+      "size": 2962
+    },
+    {
+      "binary": false,
+      "path": "catalog/security-checks.json",
+      "sha256": "sha256:42174fce253c78d6f61b25b09accbff630e3e2042e0f6002cd1d52966eb24385",
+      "size": 129670
+    },
+    {
+      "binary": false,
+      "path": "catalog/security-patterns.json",
+      "sha256": "sha256:7e1ecde151f34eaf758da502801907a8ec978f8f3ddde2894803eb01d88ddf60",
+      "size": 149451
+    },
+    {
+      "binary": false,
+      "path": "evals/prompts.jsonl",
+      "sha256": "sha256:d2f1fe22053483fc4d17baca339e82a64e5517fd67547073830f45d80b29cce9",
+      "size": 7022
+    },
+    {
+      "binary": false,
+      "path": "evals/rubric.md",
+      "sha256": "sha256:c78eee5dbbf7959a5be038162fe0b87b075f7f318908a8013ef346d67687cef1",
+      "size": 460
+    },
+    {
+      "binary": false,
+      "path": "references/architecture.md",
+      "sha256": "sha256:0716875ec9cca1738a6e56d36dd554015cb552dc6c4a75c845fee8cb11b2a01d",
+      "size": 1165
+    },
+    {
+      "binary": false,
+      "path": "references/catalog-policy.md",
+      "sha256": "sha256:67e8a0cb08c8efd86e061d1f2991406d7e7381695cfd2d59971213564d674cc1",
+      "size": 807
+    },
+    {
+      "binary": false,
+      "path": "references/evaluation.md",
+      "sha256": "sha256:97cfe2d6e99e432f992cb82ffe5c80f95de7b09441dc6c2c59009c0b1f0042e4",
+      "size": 479
+    },
+    {
+      "binary": false,
+      "path": "references/evidence-and-provenance.md",
+      "sha256": "sha256:ef325ce888c98d0d3f6cb160e9c29d5d3084eafc949774e79250cfb04d1910db",
+      "size": 771
+    },
+    {
+      "binary": false,
+      "path": "references/extraction-method.md",
+      "sha256": "sha256:b50388181c370b91289c8d54da4b4c8ace7f49fef94fb490c401994990534ce2",
+      "size": 2460
+    },
+    {
+      "binary": false,
+      "path": "references/implicit-pattern-inference.md",
+      "sha256": "sha256:f36079438ac714f0a3e6c0b961126e16670ed11ef98f2efe645ac84e2c100e84",
+      "size": 2404
+    },
+    {
+      "binary": false,
+      "path": "references/review-workflows.md",
+      "sha256": "sha256:4dc23183b6fa9e9aadfa3794497bcd1c7977cb27a7400a19166cfe9338ea1902",
+      "size": 361
+    },
+    {
+      "binary": false,
+      "path": "references/security-check-model.md",
+      "sha256": "sha256:20c80509172bcf10397b9c5ff978a3e949967718095ad537ded12b4efe511b5a",
+      "size": 475
+    },
+    {
+      "binary": false,
+      "path": "references/security-observation-model.md",
+      "sha256": "sha256:3d95d1858bf8b3bceb75fe34491da231efa0c88ac077fc498b27a0e05e182649",
+      "size": 791
+    },
+    {
+      "binary": false,
+      "path": "references/security-pattern-model.md",
+      "sha256": "sha256:4e56a07f3a0695364dc5dc93b09396bb0f4e9aadecac806ddc52dc5bf0e9f5ef",
+      "size": 727
+    },
+    {
+      "binary": false,
+      "path": "references/security-taxonomy.json",
+      "sha256": "sha256:aac6a4dba652fc385d40261d25607dff13d32d913e9ea9eaa29c07813f933d8a",
+      "size": 74709
+    },
+    {
+      "binary": false,
+      "path": "references/w3c-knowledge-contract.md",
+      "sha256": "sha256:7c2d56a7a9e39d46c93a4050dbf9ee31c71f441839e6b5bc2a2802fbd9ca9676",
+      "size": 2804
+    },
+    {
+      "binary": false,
+      "path": "schemas/catalog.schema.json",
+      "sha256": "sha256:48910e4a4ebf687512d472584f8a2752cd35663fb5c2b16fb3b28df255616686",
+      "size": 156
+    },
+    {
+      "binary": false,
+      "path": "schemas/security-check.schema.json",
+      "sha256": "sha256:7298d7179f446f0f10e1aad876fde064a1c85a4b4b420cb3ffb469921daae75e",
+      "size": 258
+    },
+    {
+      "binary": false,
+      "path": "schemas/security-observation.schema.json",
+      "sha256": "sha256:f8936d4792dff86f23bd0a9213b2fdcdf8dd4f70aa1bffa7ed4451481c76e081",
+      "size": 268
+    },
+    {
+      "binary": false,
+      "path": "schemas/security-pattern.schema.json",
+      "sha256": "sha256:af8a026dfca335e3e30f042fdfadbf413ee87121a1b08a5fd5d0ed73d1f2a82c",
+      "size": 274
+    },
+    {
+      "binary": false,
+      "path": "schemas/spec-mining-result.schema.json",
+      "sha256": "sha256:3b5203af891458dd06b5423a95d0eef8327931d9de65e25895537be5e65743f7",
+      "size": 245
+    },
+    {
+      "binary": false,
+      "path": "scripts/merge_catalog.py",
+      "sha256": "sha256:f6655327132e38ff04c47d2bc4c18ebe38bb219600f0ae346ce7ac9e36456504",
+      "size": 4794
+    },
+    {
+      "binary": false,
+      "path": "scripts/normalize_result.py",
+      "sha256": "sha256:fb4c1fb1dab5da51d2ea8cad4d462f5ac20becb57b656c6b335d7d7c5f436035",
+      "size": 3157
+    },
+    {
+      "binary": false,
+      "path": "scripts/render_checklist.py",
+      "sha256": "sha256:3bbc7bf95e8bcf5952b2c3f00bb59b8102f584ec8d5b41d71cfab49956ad8084",
+      "size": 1994
+    },
+    {
+      "binary": false,
+      "path": "scripts/select_checks.py",
+      "sha256": "sha256:f5cdb65a274358b8e39a87afcb251030b77db1eb57843fea3b26069f41fe207d",
+      "size": 3333
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_assets.py",
+      "sha256": "sha256:958220e1378f267fb68f60201789d00159a6eee50b418bd2db59e3e3092593b8",
+      "size": 13214
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/device-capability-api.json",
+      "sha256": "sha256:f5d11c079099a1b74b1ad879eb86889e80aeef37dd91a8ab9860e80c901352e5",
+      "size": 5627
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/fetch-like-protocol.json",
+      "sha256": "sha256:8c573811689e137b046357435c8ca7b3ab5694f1911c8f4a6e3f035459e44b4a",
+      "size": 5414
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/identity-protocol.json",
+      "sha256": "sha256:6b7ea19dd413cf9ca7323fb8f36a11a854fedc1823620ce89f0335de02766a56",
+      "size": 5289
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/lifecycle-feature.json",
+      "sha256": "sha256:d58c8c02b2c87bd40c0c7f98943033bb6e30f082e96ebb5b2993be87cc2947ab",
+      "size": 5339
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/media-processing-api.json",
+      "sha256": "sha256:487d1003597605ad2866d76ce8b24d92f20fb77ad10a57bc7b3430d7f9b9ec25",
+      "size": 5443
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/mixed-version-invalid.json",
+      "sha256": "sha256:84ff61f0cb33aa420f362ed18fd1c4ab9721c66793f98982ea97e15fa6f318bd",
+      "size": 5627
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/persistent-storage-api.json",
+      "sha256": "sha256:71c9d50097e0fbe4e87288e75665795b39f709a592c058b22dfbf83800dd68b2",
+      "size": 5376
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/script-loading-feature.json",
+      "sha256": "sha256:3b3ddcdf40c1553b1eb3dfbc56cd66513e52c453eabe5aa0af0fe33f40936614",
+      "size": 5377
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/structured-data-format.json",
+      "sha256": "sha256:2540e292a1dd191947c02f0e6bb70042849ea818eb99b30ecb94c860f7315cba",
+      "size": 5348
+    },
+    {
+      "binary": false,
+      "path": "tests/test_assets.py",
+      "sha256": "sha256:83bf5ae43dc654d6338558f38e53ce66adb1ec2b18e0a6e9d529f51999d123b2",
+      "size": 6232
+    },
+    {
+      "binary": false,
+      "path": "tests/test_catalog_merge.py",
+      "sha256": "sha256:18d2d350a39bd38f2647fb21ef0f5331c585b72a52ff1aaa9cf551ab19cb3cbe",
+      "size": 3374
+    },
+    {
+      "binary": false,
+      "path": "tests/test_check_selection.py",
+      "sha256": "sha256:ec51f5860d7105adbebb6b75481d6dc4c3df10d383558920d44f927fe6b7acbe",
+      "size": 1843
+    },
+    {
+      "binary": false,
+      "path": "tests/test_normalization.py",
+      "sha256": "sha256:a45b4c3f624c5dd000f34afac02cc2930436964dae19a2f33cbdb19f085615ca",
+      "size": 2865
+    },
+    {
+      "binary": false,
+      "path": "tests/test_rendering.py",
+      "sha256": "sha256:ad1c251674f60db988afa5b2c72a031203517d9742864ae01310ee1504caa9e3",
+      "size": 1427
+    }
+  ],
+  "output_digest": "sha256:15c94b83324a69ac1d5bd6ddd6d70f9594098fbc2ee537e00285f52574edc602",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "rights_manifest_reference": "manifests/w3c-security-pattern-miner.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "w3c-security-pattern-miner",
+  "source_commit": "21fff82d7fb55a0ae9f8205fbbe2cd1f49eef1d7",
+  "source_repository": "simoneonofri/w3c-security-pattern-miner",
+  "tool_version": "reviewctl/0.2.0"
+}

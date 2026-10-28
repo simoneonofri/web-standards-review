@@ -1,0 +1,34 @@
+--- a/references/public-sources.json
++++ b/references/public-sources.json
+@@ -8 +8,2 @@
+-      "url": "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats"
++      "url": "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats",
++      "authority": "authoritative_guidance"
+@@ -13 +14,2 @@
+-      "url": "https://linddun.org/"
++      "url": "https://linddun.org/",
++      "authority": "authoritative_guidance"
+@@ -18 +20,2 @@
+-      "url": "https://www.rfc-editor.org/rfc/rfc3552.html"
++      "url": "https://www.rfc-editor.org/rfc/rfc3552.html",
++      "authority": "primary"
+@@ -23 +26,2 @@
+-      "url": "https://www.rfc-editor.org/rfc/rfc6973.html"
++      "url": "https://www.rfc-editor.org/rfc/rfc6973.html",
++      "authority": "primary"
+@@ -28 +32,2 @@
+-      "url": "https://www.rfc-editor.org/rfc/rfc9620.html"
++      "url": "https://www.rfc-editor.org/rfc/rfc9620.html",
++      "authority": "primary"
+@@ -33 +38,2 @@
+-      "url": "https://xsleaks.dev/"
++      "url": "https://xsleaks.dev/",
++      "authority": "authoritative_guidance"
+@@ -38 +44,2 @@
+-      "url": "https://www.w3.org/TR/fingerprinting-guidance/"
++      "url": "https://www.w3.org/TR/fingerprinting-guidance/",
++      "authority": "authoritative_guidance"
+@@ -43 +50,2 @@
+-      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/harms-modeling/"
++      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/harms-modeling/",
++      "authority": "authoritative_guidance"

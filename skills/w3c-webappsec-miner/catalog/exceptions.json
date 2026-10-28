@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "exceptions": [
+    {
+      "exception_id": "WAE-01",
+      "title": "Loopback and local origins may be potentially trustworthy",
+      "condition": "The origin matches a local or loopback case recognized by the potentially trustworthy origin algorithm.",
+      "effect": "The origin can satisfy the trustworthiness precondition without public HTTPS transport.",
+      "security_consequence": "Local development remains usable, but local service exposure and DNS or proxy assumptions still require review.",
+      "normative_strength": "algorithm-required",
+      "control_ids": ["WAM-SC-01", "WAM-SC-02"],
+      "evidence": [{"source_title": "Secure Contexts", "source_url": "https://www.w3.org/TR/2023/CRD-secure-contexts-20231110/#is-origin-trustworthy", "section": "3.1 Is origin potentially trustworthy?", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Potentially trustworthy does not prove that an application listening on loopback is correctly authenticated or isolated."]
+    },
+    {
+      "exception_id": "WAE-02",
+      "title": "User agents may designate development origins trustworthy",
+      "condition": "A user agent provides an explicit configuration for staging or development origins.",
+      "effect": "Configured origins may be treated as trustworthy even when the normal algorithm would return not trustworthy.",
+      "security_consequence": "A broad or hidden override can defeat a transport gate; review scope, user control, and deployment separation.",
+      "normative_strength": "MAY",
+      "control_ids": ["WAM-SC-01", "WAM-SC-02"],
+      "evidence": [{"source_title": "Secure Contexts", "source_url": "https://www.w3.org/TR/2023/CRD-secure-contexts-20231110/#development-environments", "section": "7.2 Development Environments", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The specification does not standardize the configuration UX or enterprise policy surface."]
+    },
+    {
+      "exception_id": "WAE-03",
+      "title": "Authenticated packaged-application schemes may be trusted",
+      "condition": "A user agent authenticates the contents of a packaged-application URL scheme.",
+      "effect": "The user agent may treat the scheme as secure despite it not being HTTPS.",
+      "security_consequence": "Trust moves to package authenticity, update, and scheme-handler guarantees.",
+      "normative_strength": "MAY",
+      "control_ids": ["WAM-SC-01", "WAM-SC-02"],
+      "evidence": [{"source_title": "Secure Contexts", "source_url": "https://www.w3.org/TR/2023/CRD-secure-contexts-20231110/#packaged-applications", "section": "7.1 Packaged Applications", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The source gives examples, not a cross-user-agent interoperable scheme registry."]
+    },
+    {
+      "exception_id": "WAE-04",
+      "title": "A powerful feature may override Permissions defaults",
+      "condition": "The feature's specification determines that the Permissions default types or algorithms are unsuitable.",
+      "effect": "The feature may define custom descriptors, state constraints, keying, result types, revocation, or a default state.",
+      "security_consequence": "Every override becomes a feature-specific security decision and must preserve user intent and composition with secure contexts and policy.",
+      "normative_strength": "MAY",
+      "control_ids": ["WAM-PERM-01", "WAM-PERM-03"],
+      "evidence": [{"source_title": "Permissions", "source_url": "https://www.w3.org/TR/2025/WD-permissions-20251006/#specifying-a-powerful-feature", "section": "4 Specifying a powerful feature", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The ability to override is not evidence that any particular weaker default is safe."]
+    },
+    {
+      "exception_id": "WAE-05",
+      "title": "Permissions Policy can default a feature to every origin",
+      "condition": "A policy-controlled feature defines `*` as its default allowlist.",
+      "effect": "The feature is enabled in top-level and child documents unless a header or container policy narrows it.",
+      "security_consequence": "Cross-origin delegation becomes ambient, so sensitive features need a strong compatibility and threat-model justification.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-PP-01"],
+      "evidence": [{"source_title": "Permissions Policy", "source_url": "https://www.w3.org/TR/2026/WD-permissions-policy-1-20260618/#default-allowlists", "section": "4.8 Default Allowlists", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The framework permits `*`; it does not classify which features can safely use it."]
+    },
+    {
+      "exception_id": "WAE-06",
+      "title": "Parent policy can explicitly delegate a feature",
+      "condition": "The inherited policy permits the feature and a header or container `allow` policy includes the child origin.",
+      "effect": "A child document can use the feature subject to its own permission and feature-specific checks.",
+      "security_consequence": "Delegation should be origin-specific and no broader than the embedded component's function.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-PP-01", "WAM-PP-02", "WAM-PP-03", "WAM-CSP-03"],
+      "evidence": [{"source_title": "Permissions Policy", "source_url": "https://www.w3.org/TR/2026/WD-permissions-policy-1-20260618/#iframe-allow-attribute", "section": "6.2 iframe allow attribute", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Delegation does not grant a user permission by itself and cannot widen a parent-level denial."]
+    },
+    {
+      "exception_id": "WAE-07",
+      "title": "CSP unsafe sources explicitly re-enable risky behavior",
+      "condition": "A policy contains an unsafe source expression such as `unsafe-inline`, `unsafe-eval`, or a related narrowly specified keyword.",
+      "effect": "The corresponding inline or string-compilation restriction is relaxed as defined by the directive algorithms.",
+      "security_consequence": "The policy may lose core injection mitigation; use requires a documented compatibility need and narrower alternatives assessment.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-CSP-01", "WAM-CSP-02"],
+      "evidence": [{"source_title": "Content Security Policy Level 3", "source_url": "https://www.w3.org/TR/2026/WD-CSP3-20260505/#framework-directive-source-list", "section": "2.3.1 Source Lists", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Different directives interpret source expressions through directive-specific checks."]
+    },
+    {
+      "exception_id": "WAE-08",
+      "title": "strict-dynamic delegates trust from a nonce or hash",
+      "condition": "A script source list includes `strict-dynamic` and a root script is authorized by a nonce or hash.",
+      "effect": "Trust propagates to scripts loaded by that root according to CSP's script checks, while some host allowlist behavior changes.",
+      "security_consequence": "The root script and its loaders become a capability delegation boundary; script gadgets can expand effective authority.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-CSP-01", "WAM-CSP-02"],
+      "evidence": [{"source_title": "Content Security Policy Level 3", "source_url": "https://www.w3.org/TR/2026/WD-CSP3-20260505/#strict-dynamic-usage", "section": "8.2 Usage of strict-dynamic", "evidence_class": "explicit-informative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["This is deliberate delegation, not a general permission to treat all dynamically created code as safe."]
+    },
+    {
+      "exception_id": "WAE-09",
+      "title": "Trusted Types default policy can convert legacy strings",
+      "condition": "A realm defines a default Trusted Type policy and enforcement encounters a string for a protected sink.",
+      "effect": "The default policy receives an opportunity to produce the required Trusted Type; rejection still fails the sink operation.",
+      "security_consequence": "A permissive default policy can centralize but also conceal unsafe conversion, so validation and failure must be reviewed.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-TT-01", "WAM-TT-02", "WAM-TT-03"],
+      "evidence": [{"source_title": "Trusted Types", "source_url": "https://www.w3.org/TR/2026/WD-trusted-types-20260623/#process-value-with-a-default-policy-algorithm", "section": "3.5 Process value with a default policy", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Policy code is application code and is not proved safe by the platform."]
+    },
+    {
+      "exception_id": "WAE-10",
+      "title": "Report-only policy observes without blocking",
+      "condition": "A policy is delivered through a report-only channel defined by CSP, Permissions Policy, Integrity Policy, Trusted Types integration, or Document Policy.",
+      "effect": "Violations are reported but the report-only policy does not authorize blocking behavior.",
+      "security_consequence": "Report-only is suitable for migration and telemetry but must not be counted as an enforced mitigation.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-PP-03", "WAM-CSP-04", "WAM-TT-02", "WAM-SRI-02", "WAM-DOC-01"],
+      "evidence": [{"source_title": "Content Security Policy Level 3", "source_url": "https://www.w3.org/TR/2026/WD-CSP3-20260505/#cspro-header", "section": "3.2 Content-Security-Policy-Report-Only", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Each policy family defines its own report format, privacy risks, and coverage."]
+    },
+    {
+      "exception_id": "WAE-11",
+      "title": "Upgrade behavior is conditional and has no insecure fallback guarantee",
+      "condition": "A request is in an upgradeable category or the client has an upgrade-insecure-requests policy; otherwise mixed-content blocking rules apply.",
+      "effect": "Eligible URLs are rewritten to secure schemes; a failed secure fetch is not an authorization to retry insecurely.",
+      "security_consequence": "Compatibility failures are preferable to silent downgrade, but failure channels and navigation distinctions remain reviewable.",
+      "normative_strength": "algorithm-required",
+      "control_ids": ["WAM-MIX-01", "WAM-UIR-01"],
+      "evidence": [{"source_title": "Mixed Content", "source_url": "https://www.w3.org/TR/2023/CRD-mixed-content-20230223/#categories", "section": "3 Content Categories", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Exact categories and navigation handling depend on current Fetch and HTML integration."]
+    },
+    {
+      "exception_id": "WAE-12",
+      "title": "Cross-origin SRI requires an eligible response",
+      "condition": "Integrity verification is requested for a cross-origin resource.",
+      "effect": "The response must satisfy the fetch and CORS eligibility conditions required for integrity verification; otherwise the resource cannot be treated as a successful integrity match.",
+      "security_consequence": "This avoids turning integrity checks into cross-origin data oracles but requires server deployment support.",
+      "normative_strength": "algorithm-required",
+      "control_ids": ["WAM-SRI-01", "WAM-SRI-02"],
+      "evidence": [{"source_title": "Subresource Integrity Level 2", "source_url": "https://www.w3.org/TR/2026/WD-sri-2-20260320/#cross-origin-data-leakage", "section": "5.3 Cross-origin data leakage", "evidence_class": "explicit-informative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The precise fetch mode and destination integration must be checked in the consuming specification."]
+    },
+    {
+      "exception_id": "WAE-13",
+      "title": "Fetch Metadata may be absent or require compatibility handling",
+      "condition": "A request comes from a client or context that does not send the expected Sec-Fetch headers, including some non-browser, extension, or legacy traffic.",
+      "effect": "The server cannot apply a header-only isolation rule without an explicit fallback path.",
+      "security_consequence": "Fail-open preserves compatibility but weakens isolation; fail-closed needs a deployment inventory and staged rollout.",
+      "normative_strength": "informative-recommendation",
+      "control_ids": ["WAM-FETCH-01"],
+      "evidence": [{"source_title": "Fetch Metadata Request Headers", "source_url": "https://www.w3.org/TR/2025/WD-fetch-metadata-20250401/#deployment-considerations", "section": "5 Deployment Considerations", "evidence_class": "explicit-informative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Compatibility populations and implementation support are deployment evidence, not specified by the header standard."]
+    },
+    {
+      "exception_id": "WAE-14",
+      "title": "Authors can select a more permissive referrer policy",
+      "condition": "A response, element, or request context supplies a policy such as `unsafe-url` or another value that discloses more information.",
+      "effect": "The referrer algorithm sends the policy-permitted origin or URL information.",
+      "security_consequence": "Capability tokens, path identifiers, or query data can leak to other origins; permissive policy needs an explicit data-flow justification.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-REF-01"],
+      "evidence": [{"source_title": "Referrer Policy", "source_url": "https://www.w3.org/TR/2017/CR-referrer-policy-20170126/#referrer-policies", "section": "3 Referrer Policies", "evidence_class": "explicit-informative", "evidence_status": "verified-local-source-packet-v1", "source_packet_evidence_ids": ["68ad066b-ea26-40f2-8dc0-aeaa0ea7c430", "c4031e88-30d6-4df2-989d-3a6ade47e8cc"]}],
+      "limitations": ["The W3C snapshot's default differs from current living-standard behavior; this exception records selectable policies, not the current default."]
+    },
+    {
+      "exception_id": "WAE-15",
+      "title": "WebCrypto keeps getRandomValues outside the secure-context gate",
+      "condition": "Code calls `crypto.getRandomValues`; unlike `crypto.subtle`, `randomUUID`, and CryptoKey, this member lacks [SecureContext] in the cited IDL.",
+      "effect": "Cryptographically strong random values remain available in non-secure contexts.",
+      "security_consequence": "Do not generalize WebCrypto's secure-context gating from `subtle` to the entire `Crypto` interface.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-SC-01", "WAM-CRYPTO-01"],
+      "evidence": [{"source_title": "Web Cryptography Level 2", "source_url": "https://www.w3.org/TR/2025/WD-webcrypto-2-20250422/#x10-crypto-interface", "section": "10 Crypto interface", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Availability of randomness does not make the surrounding non-secure context trustworthy."]
+    },
+    {
+      "exception_id": "WAE-16",
+      "title": "Clear-Site-Data wildcard is intentionally forward-compatible",
+      "condition": "A response uses the `*` clearing type.",
+      "effect": "All current and future clearing types recognized by the user agent are requested, not only the types known when the header was authored.",
+      "security_consequence": "The wildcard is appropriate for broad cleanup but can cause future destructive scope expansion if used as shorthand.",
+      "normative_strength": "informative-recommendation",
+      "control_ids": ["WAM-CLEAR-01"],
+      "evidence": [{"source_title": "Clear Site Data", "source_url": "https://www.w3.org/TR/2017/WD-clear-site-data-20171130/#header", "section": "3.1 Clear-Site-Data wildcard", "evidence_class": "explicit-informative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The 2017 draft's clearing-type inventory can differ from later implementations or integrations."]
+    },
+    {
+      "exception_id": "WAE-17",
+      "title": "Credential mediation can be silent when explicitly permitted",
+      "condition": "The request uses a mediation mode and stored state for which Credential Management allows credential return without an interactive chooser.",
+      "effect": "A credential may be returned without fresh user interaction until preventSilentAccess or another state change requires mediation.",
+      "security_consequence": "Silent access must remain origin-bound and visible enough to avoid sign-in tracking or origin confusion.",
+      "normative_strength": "framework-defined",
+      "control_ids": ["WAM-CRED-01"],
+      "evidence": [{"source_title": "Credential Management Level 1", "source_url": "https://www.w3.org/TR/2026/WD-credential-management-1-20260702/#mediation-requirements", "section": "2.3.2 Mediation Requirements", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["Credential-type specifications can refine mediation semantics."]
+    },
+    {
+      "exception_id": "WAE-18",
+      "title": "Cross-origin DBSC single sign-on is a separate tentative deliverable",
+      "condition": "A design needs DBSC behavior across origins for single sign-on.",
+      "effect": "The base DBSC control is insufficient evidence; the charter lists a separate WICG incubation proposal.",
+      "security_consequence": "Do not infer cross-origin authority or scope expansion from the base DBSC specification.",
+      "normative_strength": "informative-recommendation",
+      "control_ids": ["WAM-DBSC-01"],
+      "evidence": [{"source_title": "WebAppSec WG Charter 2026", "source_url": "https://w3c.github.io/charter-drafts/2026/charter-wg-webappsec-2026.html#dbsc-sso", "section": "Tentative deliverable: DBSC for Single Sign-On", "evidence_class": "charter-scope", "evidence_status": "inventory-only"}],
+      "limitations": ["The tentative deliverable is not mined in the initial mechanism catalog."]
+    },
+    {
+      "exception_id": "WAE-19",
+      "title": "Change-password discovery uses constrained temporary redirects",
+      "condition": "The well-known change-password resource directs the client to the actual account UI.",
+      "effect": "Servers should use 302, 303, or 307 and clients must handle those redirects; an HTML refresh fallback is also described.",
+      "security_consequence": "Redirect targets become security-sensitive and need origin, navigation, and UI review even though discovery starts at a trustworthy origin.",
+      "normative_strength": "SHOULD",
+      "control_ids": ["WAM-WELL-01"],
+      "evidence": [{"source_title": "A Well-Known URL for Changing Passwords", "source_url": "https://www.w3.org/TR/2024/WD-change-password-url-20240603/#semantics", "section": "3 Change Password URLs", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The specification allows an HTML refresh fallback and requires clients to handle OK responses, so redirect-only assumptions are unsafe."]
+    },
+    {
+      "exception_id": "WAE-20",
+      "title": "Passkey endpoint discovery may return an empty object but never redirect",
+      "condition": "An RP wants to signal passkey support without advertising enroll, manage, or PRF-information URLs.",
+      "effect": "A 200 application/json response containing `{}` is allowed; a redirect remains forbidden.",
+      "security_consequence": "Clients must distinguish supported-without-links from malformed, redirected, or untrusted discovery responses.",
+      "normative_strength": "MAY",
+      "control_ids": ["WAM-WELL-02"],
+      "evidence": [{"source_title": "A Well-Known URL for Relying Party Passkey Endpoints", "source_url": "https://www.w3.org/TR/2026/WD-passkey-endpoints-1-20260114/#response", "section": "3.1 Server Response", "evidence_class": "explicit-normative", "evidence_status": "verified-official-w3c-tr"}],
+      "limitations": ["The empty object signals support only; it does not expose a management capability."]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "threat-prompt-source-registry/v1",
+  "full_text_included": false,
+  "sources": [
+    {
+      "id": "stride",
+      "role": "security_prompt",
+      "url": "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats",
+      "authority": "authoritative_guidance"
+    },
+    {
+      "id": "linddun",
+      "role": "privacy_prompt",
+      "url": "https://linddun.org/",
+      "authority": "authoritative_guidance"
+    },
+    {
+      "id": "rfc3552",
+      "role": "protocol_security_prompt",
+      "url": "https://www.rfc-editor.org/rfc/rfc3552.html",
+      "authority": "primary"
+    },
+    {
+      "id": "rfc6973",
+      "role": "protocol_privacy_prompt",
+      "url": "https://www.rfc-editor.org/rfc/rfc6973.html",
+      "authority": "primary"
+    },
+    {
+      "id": "rfc9620",
+      "role": "human_rights_prompt",
+      "url": "https://www.rfc-editor.org/rfc/rfc9620.html",
+      "authority": "primary"
+    },
+    {
+      "id": "xsleaks",
+      "role": "cross_origin_observability_prompt",
+      "url": "https://xsleaks.dev/",
+      "authority": "authoritative_guidance"
+    },
+    {
+      "id": "fingerprinting",
+      "role": "linkability_prompt",
+      "url": "https://www.w3.org/TR/fingerprinting-guidance/",
+      "authority": "authoritative_guidance"
+    },
+    {
+      "id": "harms",
+      "role": "harms_and_stakeholder_prompt",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/harms-modeling/",
+      "authority": "authoritative_guidance"
+    }
+  ]
+}

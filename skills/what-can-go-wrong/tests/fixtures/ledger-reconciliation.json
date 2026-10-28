@@ -1,0 +1,177 @@
+{
+  "schema_version": "candidate-ledger/v1",
+  "run_id": "run-clean-room-v1",
+  "stage": "reconciliation",
+  "model_sha256": "560b3f4a8fdee96b919ebf6c171d207d5d24d181be0102a19abb4c2ba11aeb3f",
+  "candidates": [
+    {
+      "candidate_id": "C-walk-01",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-01",
+      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
+      "affected_model_elements": [
+        "DF-01",
+        "PO-01"
+      ],
+      "disposition": "retained_unique",
+      "rationale": "Concrete event supported by the accepted model.",
+      "counterevidence": [],
+      "retained_threat_id": "T-01",
+      "concrete_bad_event": {
+        "actor_or_condition": "An implementation",
+        "action_or_failure": "sends fields outside the declared allowlist",
+        "violated_property_or_interest": "data minimization",
+        "consequence": "the remote service receives unnecessary personal data"
+      },
+      "evidence_basis": {
+        "review_basis": "model_inference",
+        "source_references": [
+          "Synthetic specification and model walk"
+        ],
+        "inference_rationale": "The described flow and actor support this bounded bad event."
+      }
+    },
+    {
+      "candidate_id": "C-walk-02",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-02",
+      "observation": "A malicious remote service retains request metadata after the stated purpose ends, violating confidentiality and causing the user and a named non-user remain observable over time.",
+      "affected_model_elements": [
+        "DF-01",
+        "EE-02"
+      ],
+      "disposition": "retained_unique",
+      "rationale": "Concrete event supported by the accepted model.",
+      "counterevidence": [],
+      "retained_threat_id": "T-02",
+      "concrete_bad_event": {
+        "actor_or_condition": "A malicious remote service",
+        "action_or_failure": "retains request metadata after the stated purpose ends",
+        "violated_property_or_interest": "confidentiality",
+        "consequence": "the user and a named non-user remain observable over time"
+      },
+      "evidence_basis": {
+        "review_basis": "model_inference",
+        "source_references": [
+          "Synthetic specification and model walk"
+        ],
+        "inference_rationale": "The described flow and actor support this bounded bad event."
+      }
+    },
+    {
+      "candidate_id": "C-walk-03",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-03",
+      "observation": "A user-agent failure bypasses the policy and intent check, violating user control and causing a request is sent without the user's current intent.",
+      "affected_model_elements": [
+        "PO-01",
+        "DF-01"
+      ],
+      "disposition": "retained_unique",
+      "rationale": "Concrete event supported by the accepted model.",
+      "counterevidence": [],
+      "retained_threat_id": "T-03",
+      "concrete_bad_event": {
+        "actor_or_condition": "A user-agent failure",
+        "action_or_failure": "bypasses the policy and intent check",
+        "violated_property_or_interest": "user control",
+        "consequence": "a request is sent without the user's current intent"
+      },
+      "evidence_basis": {
+        "review_basis": "model_inference",
+        "source_references": [
+          "Synthetic specification and model walk"
+        ],
+        "inference_rationale": "The described flow and actor support this bounded bad event."
+      }
+    },
+    {
+      "candidate_id": "C-walk-04",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-04",
+      "observation": "A deployment operator logs full request payloads for debugging, violating confidentiality and causing operators gain a secondary copy outside the protocol purpose.",
+      "affected_model_elements": [
+        "DF-01",
+        "TB-01"
+      ],
+      "disposition": "retained_unique",
+      "rationale": "Concrete event supported by the accepted model.",
+      "counterevidence": [],
+      "retained_threat_id": "T-04",
+      "concrete_bad_event": {
+        "actor_or_condition": "A deployment operator",
+        "action_or_failure": "logs full request payloads for debugging",
+        "violated_property_or_interest": "confidentiality",
+        "consequence": "operators gain a secondary copy outside the protocol purpose"
+      },
+      "evidence_basis": {
+        "review_basis": "model_inference",
+        "source_references": [
+          "Synthetic specification and model walk"
+        ],
+        "inference_rationale": "The described flow and actor support this bounded bad event."
+      }
+    },
+    {
+      "candidate_id": "C-walk-05",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-05",
+      "observation": "An unresolved service outage prevents the remote service from completing requests, violating availability and causing the user cannot complete the mediated action or obtain recovery.",
+      "affected_model_elements": [
+        "EE-02",
+        "DF-01"
+      ],
+      "disposition": "retained_unique",
+      "rationale": "Concrete event supported by the accepted model.",
+      "counterevidence": [],
+      "retained_threat_id": "T-05",
+      "concrete_bad_event": {
+        "actor_or_condition": "An unresolved service outage",
+        "action_or_failure": "prevents the remote service from completing requests",
+        "violated_property_or_interest": "availability",
+        "consequence": "the user cannot complete the mediated action or obtain recovery"
+      },
+      "evidence_basis": {
+        "review_basis": "model_inference",
+        "source_references": [
+          "Synthetic specification and model walk"
+        ],
+        "inference_rationale": "The described flow and actor support this bounded bad event."
+      }
+    },
+    {
+      "candidate_id": "C-independent-01",
+      "origin_method": "independent-prompts",
+      "source_artifact": "independent-trace.json#Q-01",
+      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
+      "affected_model_elements": [
+        "DF-01",
+        "PO-01"
+      ],
+      "disposition": "duplicate",
+      "rationale": "Same actor, failure, affected elements, property and consequence as the retained event; independent provenance is preserved.",
+      "counterevidence": [],
+      "retained_threat_id": "T-01",
+      "evidence_basis": {
+        "review_basis": "model_inference",
+        "source_references": [
+          "Synthetic specification and model walk"
+        ],
+        "inference_rationale": "The described flow and actor support this bounded bad event."
+      }
+    },
+    {
+      "candidate_id": "C-gap-01",
+      "origin_method": "model-walk",
+      "source_artifact": "trace.json#Q-gap",
+      "observation": "An unspecified actor might reveal unspecified information.",
+      "affected_model_elements": [],
+      "disposition": "not_concrete",
+      "rationale": "No concrete actor, failure or model attachment supports retention; keep this non-producing candidate.",
+      "counterevidence": []
+    }
+  ],
+  "elicitation_sha256": "17ea7d3b76d5658d4b9c146cb5beaefe357038238e9ad378112be892467e4dcc",
+  "threat_package_sha256": "e9257ec1acd572d91aaa2e668ccd3767ef8d273707b08da52a6fd23e8fc068e3",
+  "baseline_threat_ids": []
+}

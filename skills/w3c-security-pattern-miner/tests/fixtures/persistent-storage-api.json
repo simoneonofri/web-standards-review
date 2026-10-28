@@ -1,0 +1,203 @@
+{
+  "coverage": {
+    "concurrency-races-and-reentrancy": "supported",
+    "origin-and-site-isolation": "supported",
+    "resource-exhaustion-and-amplification": "supported",
+    "state-storage-and-cache": "supported"
+  },
+  "derived_pattern_candidates": [],
+  "explicit_patterns": [],
+  "limitations": [
+    "synthetic fixture, not W3C evidence"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no script loading behavior is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "artifact_id": "art-persistent-storage-api",
+          "evidence_span": "The user agent MUST key storage by origin.",
+          "interpretation": "Storage is keyed by origin.",
+          "locator": "section 1",
+          "normative_strength": "must",
+          "source_id": "src-persistent-storage-api",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-persistent-storage-api-01",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "origin-and-site-isolation",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "persistent-storage-api",
+      "spec_version": "2026-01-01",
+      "statement": "Storage is keyed by origin.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "artifact_id": "art-persistent-storage-api",
+          "evidence_span": "The user agent MUST reject writes above quota.",
+          "interpretation": "Quota limits stored bytes.",
+          "locator": "section 2",
+          "normative_strength": "must",
+          "source_id": "src-persistent-storage-api",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-persistent-storage-api-02",
+      "observation_type": "security-mechanism",
+      "open_questions": [],
+      "security_category": "resource-exhaustion-and-amplification",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "persistent-storage-api",
+      "spec_version": "2026-01-01",
+      "statement": "Quota limits stored bytes.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "artifact_id": "art-persistent-storage-api",
+          "evidence_span": "Acquire the storage lock before running the write steps.",
+          "interpretation": "Concurrent writes acquire a storage lock.",
+          "locator": "section 3",
+          "normative_strength": "must",
+          "source_id": "src-persistent-storage-api",
+          "source_kind": "normative-algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-persistent-storage-api-03",
+      "observation_type": "testable-behavior",
+      "open_questions": [],
+      "security_category": "concurrency-races-and-reentrancy",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "persistent-storage-api",
+      "spec_version": "2026-01-01",
+      "statement": "Concurrent writes acquire a storage lock.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    }
+  ],
+  "optional_spec_profile": {
+    "facets": [
+      "storage-state",
+      "persistent-state",
+      "cross-origin",
+      "service-worker"
+    ],
+    "primary_family": null,
+    "secondary_families": []
+  },
+  "security_checks": [],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "protected capability"
+    ],
+    "attacker_models": [
+      "malicious-origin"
+    ],
+    "capabilities": [],
+    "components": [
+      "browser"
+    ],
+    "dependencies": [],
+    "entry_points": [
+      "invoke"
+    ],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "origin-boundary"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithms",
+      "webidl"
+    ],
+    "limitations": [
+      "synthetic fixture"
+    ],
+    "missing_artifacts": [
+      "full dependency text"
+    ],
+    "score": 0.75
+  },
+  "specification": {
+    "spec_id": "persistent-storage-api",
+    "title": "Persistent Storage Api",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}

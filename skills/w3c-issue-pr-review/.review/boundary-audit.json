@@ -1,0 +1,57 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:99946850584727d3e5741f1cfe7027b5a0bd8b8e4c283c737d70b703791c934f",
+      "size": 385
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:57fe16274b07317b7a0507813a9c22d406145adeea9652340161b19296fa3d14",
+      "size": 1716
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:e0cb1d39f9a8f2c1a23105de430d0d748baef27f5d68813bf48c3f991b93c25b",
+      "size": 1853
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:b6c482b9087bc71013da2091067ca2744442a675058ebc2b60cd395171e90026",
+      "size": 9442
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:30532ee2820247e7d299ecc7836e90cb4f722d9a962826701536e06a01828a86",
+      "size": 272
+    },
+    {
+      "binary": false,
+      "path": "references/marketplace-integration.md",
+      "sha256": "sha256:5daa9cc4d209bac4cff4163decb953ad0821aecbefbdc8e0952fb1664ceda4b9",
+      "size": 4331
+    },
+    {
+      "binary": false,
+      "path": "references/response-patterns.md",
+      "sha256": "sha256:29ab752d03b5a8d70c9d58d11d861d8bc321a75107d7adb33693e4512e0e8fab",
+      "size": 3547
+    }
+  ],
+  "root_digest": "sha256:3a42986eba660c74e7c3004366dc09223ae40a5819c9d280d0a7ce345454840c",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

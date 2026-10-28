@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/threat-model-contract-v1/dfd-dictionary.schema.json",
+  "title": "Threat Model DFD Dictionary v1",
+  "type": "object",
+  "required": ["contract_version", "model_id", "rows"],
+  "properties": {
+    "contract_version": {"const": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "rows": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/row"}
+    }
+  },
+  "$defs": {
+    "row": {
+      "type": "object",
+      "required": [
+        "canonical_id",
+        "mermaid_node_id",
+        "type",
+        "visible_label",
+        "name",
+        "description",
+        "source_id",
+        "assurance_level",
+        "specification_reference",
+        "source_locator",
+        "coverage_status",
+        "evidence_status",
+        "assumptions",
+        "boundary_membership",
+        "flow_source",
+        "flow_destination"
+      ],
+      "properties": {
+        "canonical_id": {
+          "type": "string",
+          "pattern": "^(EE|PO|DS|DF|TB)-[0-9]{2,}$"
+        },
+        "mermaid_node_id": {
+          "type": "string",
+          "pattern": "^(EE|PO|DS|DF|TB)[0-9]+_[A-Za-z0-9_]+$"
+        },
+        "type": {
+          "enum": ["External Entity", "Process", "Data Store", "Data Flow", "Trust Boundary"]
+        },
+        "visible_label": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "assurance_level": {"enum": ["L1", "L2", "L3", "context", "unavailable"]},
+        "specification_reference": {"type": "string", "minLength": 1},
+        "source_locator": {"type": "string"},
+        "coverage_status": {
+          "enum": ["covered", "partially-covered", "not-covered", "out-of-scope", "unavailable", "context"]
+        },
+        "evidence_status": {
+          "enum": ["supplied", "verified", "inferred", "assumed", "untested", "unavailable"]
+        },
+        "assumptions": {"type": "array", "items": {"type": "string"}},
+        "boundary_membership": {"type": "array", "items": {"type": "string"}},
+        "flow_source": {"type": "string"},
+        "flow_destination": {"type": "string"}
+      }
+    }
+  }
+}

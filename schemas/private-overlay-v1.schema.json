@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/web-standards-review/private-overlay-v1.schema.json",
+  "title": "Web Standards Review private overlay v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "extends", "overlay_version", "protected_sections", "patches"],
+  "properties": {
+    "schema_version": {"const": "private-overlay/v1"},
+    "extends": {
+      "type": "object",
+      "required": ["skill", "version", "commit", "digest"],
+      "properties": {
+        "skill": {"type": "string"},
+        "version": {"type": "string"},
+        "commit": {"type": "string"},
+        "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      }
+    },
+    "overlay_version": {"type": ["string", "integer"]},
+    "protected_sections": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "public_optional_sections": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["operation"],
+        "properties": {
+          "operation": {"enum": ["insert_before", "insert_after", "replace", "append", "remove_public_optional_section", "register_private_provider", "set_private_default"]},
+          "section_id": {"type": "string"},
+          "content": {"type": "string"},
+          "source": {"type": "string"},
+          "provider_id": {"type": "string"},
+          "interface": {"type": "string"},
+          "key": {"type": "string"},
+          "value": {}
+        },
+        "not": {"anyOf": [{"required": ["line"]}, {"required": ["line_number"]}]}
+      }
+    }
+  }
+}

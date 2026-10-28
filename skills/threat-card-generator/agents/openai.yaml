@@ -1,0 +1,4 @@
+interface:
+  display_name: "Threat Card Generator"
+  short_description: "Create threat-modeling card decks"
+  default_prompt: "Use $threat-card-generator to create a threat-modeling card deck from this scenario."

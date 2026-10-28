@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "response_package_id": "responses-reduce-bad",
+  "model_id": "model-minimal",
+  "threat_package_id": "threats-minimal",
+  "source_contract_version": 1,
+  "responses": [
+    {
+      "response_id": "R-01",
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "erta": "Reduce",
+      "response": "Add a policy check.",
+      "mechanism_or_text": "Policy check before sending metadata.",
+      "owner": "User agent",
+      "evidence_status": "inferred",
+      "evidence": [],
+      "assumptions": [],
+      "transfer_receiver": "",
+      "acceptance_rationale": "",
+      "revisit_trigger": "",
+      "remaining_threat": "",
+      "next_action": "Draft text.",
+      "status": "proposed"
+    }
+  ],
+  "unresolved_threats": [],
+  "cross_cutting_assumptions": [],
+  "skeptic_result": {},
+  "next_actions": []
+}

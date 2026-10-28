@@ -1,0 +1,29 @@
+{
+  "schema_version": "fact-check-result/v1",
+  "fact_check_id": "FC-SYNTHETIC-INVALID",
+  "artifact": {
+    "artifact_id": "review-report",
+    "artifact_type": "report",
+    "reference": "review.md",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "checked_at": "2026-08-06T08:30:00+02:00",
+  "review_status": "draft",
+  "sources": [],
+  "claims": [
+    {
+      "claim_id": "CLAIM-001",
+      "claim": "The source is part of this synthetic fixture.",
+      "checkability": "not_checkable",
+      "status": "not_checkable",
+      "importance": "minor",
+      "source_ids": [],
+      "evidence_note": "Synthetic negative fixture.",
+      "recommended_edit": "",
+      "disposition": "manual_review"
+    }
+  ],
+  "unresolved_claim_ids": [],
+  "limitations": [],
+  "publication_status": "pass"
+}

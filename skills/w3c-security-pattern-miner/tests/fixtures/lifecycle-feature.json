@@ -1,0 +1,201 @@
+{
+  "coverage": {
+    "concurrency-races-and-reentrancy": "supported",
+    "lifecycle-navigation-and-bfcache": "supported",
+    "permission-lifecycle": "supported"
+  },
+  "derived_pattern_candidates": [],
+  "explicit_patterns": [],
+  "limitations": [
+    "synthetic fixture, not W3C evidence"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no script loading behavior is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "artifact_id": "art-lifecycle-feature",
+          "evidence_span": "On BFCache restore, re-run active document checks.",
+          "interpretation": "Restored documents revalidate active state.",
+          "locator": "section 1",
+          "normative_strength": "must",
+          "source_id": "src-lifecycle-feature",
+          "source_kind": "normative-algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-lifecycle-feature-01",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "lifecycle-navigation-and-bfcache",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "lifecycle-feature",
+      "spec_version": "2026-01-01",
+      "statement": "Restored documents revalidate active state.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "artifact_id": "art-lifecycle-feature",
+          "evidence_span": "Disconnecting a context MUST cancel pending operations.",
+          "interpretation": "Pending operations are canceled during disconnection.",
+          "locator": "section 2",
+          "normative_strength": "must",
+          "source_id": "src-lifecycle-feature",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-lifecycle-feature-02",
+      "observation_type": "failure-mode",
+      "open_questions": [],
+      "security_category": "concurrency-races-and-reentrancy",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "lifecycle-feature",
+      "spec_version": "2026-01-01",
+      "statement": "Pending operations are canceled during disconnection.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.67,
+      "evidence": [
+        {
+          "artifact_id": "art-lifecycle-feature",
+          "evidence_span": "The algorithm references the HTML active document checks.",
+          "interpretation": "Permission state is inherited from the active document model.",
+          "locator": "section 3",
+          "normative_strength": null,
+          "source_id": "src-lifecycle-feature",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "derived-from-cross-reference",
+      "observation_id": "obs-lifecycle-feature-03",
+      "observation_type": "assumption",
+      "open_questions": [],
+      "security_category": "permission-lifecycle",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "lifecycle-feature",
+      "spec_version": "2026-01-01",
+      "statement": "Permission state is inherited from the active document model.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    }
+  ],
+  "optional_spec_profile": {
+    "facets": [
+      "bfcache",
+      "background",
+      "window"
+    ],
+    "primary_family": null,
+    "secondary_families": []
+  },
+  "security_checks": [],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "protected capability"
+    ],
+    "attacker_models": [
+      "malicious-origin"
+    ],
+    "capabilities": [],
+    "components": [
+      "browser"
+    ],
+    "dependencies": [],
+    "entry_points": [
+      "invoke"
+    ],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "origin-boundary"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithms",
+      "webidl"
+    ],
+    "limitations": [
+      "synthetic fixture"
+    ],
+    "missing_artifacts": [
+      "full dependency text"
+    ],
+    "score": 0.75
+  },
+  "specification": {
+    "spec_id": "lifecycle-feature",
+    "title": "Lifecycle Feature",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}

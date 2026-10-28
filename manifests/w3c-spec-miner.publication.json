@@ -1,0 +1,112 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "w3c-spec-miner",
+  "source": {
+    "repository": "simoneonofri/w3c-spec-miner",
+    "repository_path": "w3c-spec-miner",
+    "commit": "7203303b9db8048b3d07ca90ccdf845fee4068ec"
+  },
+  "target_path": "skills/w3c-spec-miner",
+  "include_paths": [
+    {
+      "source": "references/method.md",
+      "target": "references/method.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/pattern-definitions.json",
+      "target": "references/pattern-definitions.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "references/schema.md",
+      "target": "references/schema.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/mine.py",
+      "target": "scripts/mine.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/render_catalog.py",
+      "target": "scripts/render_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/validate.py",
+      "target": "scripts/validate.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_mine.py",
+      "target": "tests/test_mine.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/w3c-spec-miner.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:e5996d5aca6cb80aa0550cdb25b4114615df207846d245a640b023d822c9e9b0",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "portable-resources/w3c-spec-miner/scripts/refresh.py",
+      "target": "scripts/refresh.py",
+      "sha256": "sha256:2800165cd0076efd021b3d8baf0d94a1daa8a3ce69e528b414223caf96f64811",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/w3c-spec-miner.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:213e62efb6cf49f66454dd320bb178e46ffca5b35c39728788a660d61b30460c"
+}

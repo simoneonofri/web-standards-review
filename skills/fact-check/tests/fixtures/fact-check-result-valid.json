@@ -1,0 +1,71 @@
+{
+  "schema_version": "fact-check-result/v1",
+  "fact_check_id": "FC-REVIEW-001",
+  "artifact": {
+    "artifact_id": "review-report",
+    "artifact_type": "report",
+    "reference": "review-report.md",
+    "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "checked_at": "2026-08-06T08:30:00+02:00",
+  "review_status": "draft",
+  "sources": [
+    {
+      "source_id": "SRC-SNAPSHOT",
+      "source_type": "specification",
+      "title": "Exact reviewed specification snapshot",
+      "reference": "https://www.w3.org/TR/2026/WD-example-20260806/",
+      "authority": "primary",
+      "version_or_date": "2026-08-06",
+      "retrieved_at": "2026-08-06T08:10:00+02:00",
+      "access_status": "checked",
+      "content_sha256": null,
+      "limitations": []
+    },
+    {
+      "source_id": "SRC-ISSUE",
+      "source_type": "issue_or_pull_request",
+      "title": "Public review issue",
+      "reference": "https://github.com/example/spec/issues/10",
+      "authority": "primary",
+      "version_or_date": "checked 2026-08-06",
+      "retrieved_at": "2026-08-06T08:15:00+02:00",
+      "access_status": "checked",
+      "content_sha256": null,
+      "limitations": []
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-001",
+      "locator": "Introduction, paragraph 1",
+      "claim": "The reviewed specification snapshot is dated 6 August 2026.",
+      "checkability": "externally_checkable",
+      "status": "verified",
+      "importance": "material",
+      "source_ids": [
+        "SRC-SNAPSHOT"
+      ],
+      "evidence_note": "The exact reviewed snapshot identifies 6 August 2026 as its publication date.",
+      "recommended_edit": "",
+      "disposition": "keep"
+    },
+    {
+      "claim_id": "CLAIM-002",
+      "locator": "Findings, paragraph 2",
+      "claim": "The current issue discussion suggests that the responsibility remains unresolved.",
+      "checkability": "analysis_or_judgment",
+      "status": "inference",
+      "importance": "material",
+      "source_ids": [
+        "SRC-ISSUE"
+      ],
+      "evidence_note": "The issue records several proposals but no verified final owner or resolution.",
+      "recommended_edit": "Keep the wording explicitly framed as an inference from the current public issue state.",
+      "disposition": "label_inference"
+    }
+  ],
+  "unresolved_claim_ids": [],
+  "limitations": [],
+  "publication_status": "pass"
+}

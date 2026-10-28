@@ -1,0 +1,799 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "w3c-security-pattern-miner",
+  "source": {
+    "repository": "simoneonofri/w3c-security-pattern-miner",
+    "repository_path": "w3c-security-pattern-miner",
+    "commit": "21fff82d7fb55a0ae9f8205fbbe2cd1f49eef1d7"
+  },
+  "target_path": "skills/w3c-security-pattern-miner",
+  "include_paths": [
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/assets/catalog.example.json",
+      "target": "assets/catalog.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/assets/checklist-report-template.md",
+      "target": "assets/checklist-report-template.md",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/assets/security-check.example.json",
+      "target": "assets/security-check.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/assets/security-mining-report-template.md",
+      "target": "assets/security-mining-report-template.md",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/assets/security-observation.example.json",
+      "target": "assets/security-observation.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/assets/security-pattern.example.json",
+      "target": "assets/security-pattern.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/assets/spec-mining-result.example.json",
+      "target": "assets/spec-mining-result.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/architecture.md",
+      "target": "references/architecture.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/catalog-policy.md",
+      "target": "references/catalog-policy.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/evaluation.md",
+      "target": "references/evaluation.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/evidence-and-provenance.md",
+      "target": "references/evidence-and-provenance.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/extraction-method.md",
+      "target": "references/extraction-method.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/implicit-pattern-inference.md",
+      "target": "references/implicit-pattern-inference.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/review-workflows.md",
+      "target": "references/review-workflows.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/security-check-model.md",
+      "target": "references/security-check-model.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/security-observation-model.md",
+      "target": "references/security-observation-model.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/security-pattern-model.md",
+      "target": "references/security-pattern-model.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/security-taxonomy.json",
+      "target": "references/security-taxonomy.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/references/w3c-knowledge-contract.md",
+      "target": "references/w3c-knowledge-contract.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/scripts/merge_catalog.py",
+      "target": "scripts/merge_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/scripts/normalize_result.py",
+      "target": "scripts/normalize_result.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/scripts/render_checklist.py",
+      "target": "scripts/render_checklist.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/scripts/select_checks.py",
+      "target": "scripts/select_checks.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-security-pattern-miner/scripts/validate_assets.py",
+      "target": "scripts/validate_assets.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/occurrences.json",
+      "target": "catalog/occurrences.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/processed-specifications.json",
+      "target": "catalog/processed-specifications.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/security-checks.json",
+      "target": "catalog/security-checks.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "catalog/security-patterns.json",
+      "target": "catalog/security-patterns.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "evals/prompts.jsonl",
+      "target": "evals/prompts.jsonl",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "evals/rubric.md",
+      "target": "evals/rubric.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/catalog.schema.json",
+      "target": "schemas/catalog.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/security-check.schema.json",
+      "target": "schemas/security-check.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/security-observation.schema.json",
+      "target": "schemas/security-observation.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/security-pattern.schema.json",
+      "target": "schemas/security-pattern.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "schemas/spec-mining-result.schema.json",
+      "target": "schemas/spec-mining-result.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/device-capability-api.json",
+      "target": "tests/fixtures/device-capability-api.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/fetch-like-protocol.json",
+      "target": "tests/fixtures/fetch-like-protocol.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/identity-protocol.json",
+      "target": "tests/fixtures/identity-protocol.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/lifecycle-feature.json",
+      "target": "tests/fixtures/lifecycle-feature.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/media-processing-api.json",
+      "target": "tests/fixtures/media-processing-api.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/mixed-version-invalid.json",
+      "target": "tests/fixtures/mixed-version-invalid.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/persistent-storage-api.json",
+      "target": "tests/fixtures/persistent-storage-api.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/script-loading-feature.json",
+      "target": "tests/fixtures/script-loading-feature.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/structured-data-format.json",
+      "target": "tests/fixtures/structured-data-format.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_assets.py",
+      "target": "tests/test_assets.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_catalog_merge.py",
+      "target": "tests/test_catalog_merge.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_check_selection.py",
+      "target": "tests/test_check_selection.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_normalization.py",
+      "target": "tests/test_normalization.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_rendering.py",
+      "target": "tests/test_rendering.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/w3c-security-pattern-miner.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:d44ba007bbd3759129d78b2c1ea6a4b818541f247e26eb03bfd1a832b84348d2",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "references/architecture.md",
+      "find": "`w3c-security-pattern-miner` consumes normalized W3C material and produces security mining\nresults for one specification version at a time.",
+      "replace": "`w3c-security-pattern-miner` consumes normalized W3C material and produces security mining results for one specification version at a time.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "`w3c-knowledge` owns retrieval, parsing, normalization, links, source metadata, and evidence spans.\n`w3c-horizontal-review-patterns-miner` owns specification family and horizontal-review pattern selection.\nThis skill owns security-surface modeling, explicit and derived security observations, reusable\nsecurity patterns, security checks, catalog merge policy, and provenance.",
+      "replace": "`w3c-knowledge` owns retrieval, parsing, normalization, links, source metadata, and evidence spans. `w3c-horizontal-review-patterns-miner` owns specification family and horizontal-review pattern selection. This skill owns security-surface modeling, explicit and derived security observations, reusable security patterns, security checks, catalog merge policy, and provenance.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "The local `w3c-knowledge` repository is available at `simoneonofri/w3c-knowledge`. Its documented\nconsumer contract is the versioned `/api/v1/` API, especially\n`GET /api/v1/specifications/{id}/source-packet`, which returns\n`source_packet_contract_version: 1`. A local `w3c-horizontal-review-patterns-miner` repository is\nalso available at `simoneonofri/w3c-horizontal-review-patterns-miner`, so this skill reuses\ncompatible family and facet identifiers without importing it or requiring it at runtime.",
+      "replace": "The local `w3c-knowledge` repository is available at `simoneonofri/w3c-knowledge`. Its documented consumer contract is the versioned `/api/v1/` API, especially `GET /api/v1/specifications/{id}/source-packet`, which returns `source_packet_contract_version: 1`. A local `w3c-horizontal-review-patterns-miner` repository is also available at `simoneonofri/w3c-horizontal-review-patterns-miner`, so this skill reuses compatible family and facet identifiers without importing it or requiring it at runtime.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "No live network calls, GitHub ingestion, W3C crawling, vector search, or replacement knowledge\nstore belongs in this repository.\n",
+      "replace": "No live network calls, GitHub ingestion, W3C crawling, vector search, or replacement knowledge store belongs in this repository.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/catalog-policy.md",
+      "find": "Catalog files are `security-patterns.json`, `security-checks.json`, `occurrences.json`, and\n`processed-specifications.json`.",
+      "replace": "Catalog files are `security-patterns.json`, `security-checks.json`, `occurrences.json`, and `processed-specifications.json`.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/catalog-policy.md",
+      "find": "Never silently promote to `validated`. Reject duplicate processing unless replacement is explicit.\nKeep occurrence evidence immutable and make catalog changes reviewable as diffs.\n",
+      "replace": "Never silently promote to `validated`. Reject duplicate processing unless replacement is explicit. Keep occurrence evidence immutable and make catalog changes reviewable as diffs.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/evaluation.md",
+      "find": "Eval prompts in `evals/prompts.jsonl` cover explicit and implicit invocation, non-trigger cases,\nmixed-version rejection, normative algorithm extraction, derived-pattern reasoning, catalog update,\ncheck application, and incomplete dependency handling.",
+      "replace": "Eval prompts in `evals/prompts.jsonl` cover explicit and implicit invocation, non-trigger cases, mixed-version rejection, normative algorithm extraction, derived-pattern reasoning, catalog update, check application, and incomplete dependency handling.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/evaluation.md",
+      "find": "The rubric scores invocation correctness, traceability, source-versus-inference separation,\none-spec scoping, security relevance, pattern quality, check actionability, uncertainty handling,\nand catalog integrity.\n",
+      "replace": "The rubric scores invocation correctness, traceability, source-versus-inference separation, one-spec scoping, security relevance, pattern quality, check actionability, uncertainty handling, and catalog integrity.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/evidence-and-provenance.md",
+      "find": "Evidence classes are exactly: `explicit-normative`, `explicit-informative`,\n`derived-from-normative-behavior`, `derived-from-algorithm`, `derived-from-cross-reference`,\n`review-observed`, `resolution-validated`, `implementation-observed`, and `hypothesis`.",
+      "replace": "Evidence classes are exactly: `explicit-normative`, `explicit-informative`, `derived-from-normative-behavior`, `derived-from-algorithm`, `derived-from-cross-reference`, `review-observed`, `resolution-validated`, `implementation-observed`, and `hypothesis`.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/evidence-and-provenance.md",
+      "find": "Preserve source ID, artifact ID, locator, exact span, interpretation, and normative strength.\nDo not represent reviewer comments as consensus. Do not call a mitigation validated without\nresolution or specification-change evidence. Keep inherited dependency behavior separate from\ncurrent-spec evidence.",
+      "replace": "Preserve source ID, artifact ID, locator, exact span, interpretation, and normative strength. Do not represent reviewer comments as consensus. Do not call a mitigation validated without resolution or specification-change evidence. Keep inherited dependency behavior separate from current-spec evidence.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/evidence-and-provenance.md",
+      "find": "Confidence above 0.9 requires direct evidence. Derived items without dependency text should stay\nbelow 0.75. Hypotheses should stay below 0.6 and must not enter the accepted catalog.\n",
+      "replace": "Confidence above 0.9 requires direct evidence. Derived items without dependency text should stay below 0.75. Hypotheses should stay below 0.6 and must not enter the accepted catalog.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Verify `spec_id`, title, and exact version. Inventory specification text, normative sections,\nalgorithms, WebIDL, conformance requirements, Security Considerations, Privacy Considerations,\nexplainer, dependencies, self-review, review material, linked issues, and resolutions. Score\ncompleteness without treating it as security quality.",
+      "replace": "Verify `spec_id`, title, and exact version. Inventory specification text, normative sections, algorithms, WebIDL, conformance requirements, Security Considerations, Privacy Considerations, explainer, dependencies, self-review, review material, linked issues, and resolutions. Score completeness without treating it as security quality.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Extract actors, components, entry points, exposed interfaces, inputs, outputs, assets,\ncapabilities, state, identity, external systems, protocol peers, trusted and untrusted inputs,\ntrust boundaries, origin and site boundaries, browsing contexts, native-platform boundaries,\nlifecycle transitions, error channels, negotiation, implementation-defined behavior, and\nreferenced security mechanisms. Mark unevidenced elements as modeling hypotheses.",
+      "replace": "Extract actors, components, entry points, exposed interfaces, inputs, outputs, assets, capabilities, state, identity, external systems, protocol peers, trusted and untrusted inputs, trust boundaries, origin and site boundaries, browsing contexts, native-platform boundaries, lifecycle transitions, error channels, negotiation, implementation-defined behavior, and referenced security mechanisms. Mark unevidenced elements as modeling hypotheses.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Inspect the whole specification: scope, terminology, architecture, processing models, algorithms,\nWebIDL, permissions, origin/site rules, state, lifecycle, worker behavior, errors, network\ninteraction, URL handling, parsing, serialization, extensibility, versioning, cryptography,\nimplementation guidance, security/privacy considerations, examples, dependencies, and review\nmaterial. Extract atomic observations before catalog alignment.",
+      "replace": "Inspect the whole specification: scope, terminology, architecture, processing models, algorithms, WebIDL, permissions, origin/site rules, state, lifecycle, worker behavior, errors, network interaction, URL handling, parsing, serialization, extensibility, versioning, cryptography, implementation guidance, security/privacy considerations, examples, dependencies, and review material. Extract atomic observations before catalog alignment.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Use `security-taxonomy.json`. For each lens decide: supported by evidence, apparently applicable\nbut unanswered, not applicable with reason, or unknown because evidence is missing.",
+      "replace": "Use `security-taxonomy.json`. For each lens decide: supported by evidence, apparently applicable but unanswered, not applicable with reason, or unknown because evidence is missing.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Require premises, inference rule, conclusion, alternative interpretation, missing evidence,\nconfidence, and output classification. Do not convert unanswered lenses into defects.",
+      "replace": "Require premises, inference rule, conclusion, alternative interpretation, missing evidence, confidence, and output classification. Do not convert unanswered lenses into defects.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Ask whether the evidence supports the claim, whether the text is normative, whether inherited\nmechanisms apply, whether another section contradicts the interpretation, whether privacy is being\nmislabeled as security, and whether absence of text is being mistaken for unsafe behavior.",
+      "replace": "Ask whether the evidence supports the claim, whether the text is normative, whether inherited mechanisms apply, whether another section contradicts the interpretation, whether privacy is being mislabeled as security, and whether absence of text is being mistaken for unsafe behavior.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Preserve occurrence-level evidence, reusable core pattern, variants, exact evidence, derivation\nstatus, uncertainty, and source version.",
+      "replace": "Preserve occurrence-level evidence, reusable core pattern, variants, exact evidence, derivation status, uncertainty, and source version.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/extraction-method.md",
+      "find": "Generate checks only when applicability, review action, evidence, expected property, result\nsemantics, and not-applicable conditions can be stated.\n",
+      "replace": "Generate checks only when applicability, review action, evidence, expected property, result semantics, and not-applicable conditions can be stated.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/implicit-pattern-inference.md",
+      "find": "Derived patterns require a derivation chain. Each chain must include necessary premises, optional\nsignals, prohibited shortcuts, alternative explanations, output classification, and maximum\nconfidence without direct evidence.",
+      "replace": "Derived patterns require a derivation chain. Each chain must include necessary premises, optional signals, prohibited shortcuts, alternative explanations, output classification, and maximum confidence without direct evidence.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/implicit-pattern-inference.md",
+      "find": "Do not treat missing Security Considerations as proof of insecurity; missing validation text as\nproof validation never occurs; every persistent identifier as a vulnerability; every cross-origin\nfeature as a same-origin-policy bypass; cryptography as proof of confidentiality; user consent as\nauthorization; authentication as authorization; HTTPS as sufficient against all attackers; reviewer\ncomments as consensus; informative examples as requirements; referenced protocols as secure without\ntheir assumptions; incompatible attacker capabilities as valid; severity as implicit; or hypotheses\nas accepted catalog checks.\n",
+      "replace": "Do not treat missing Security Considerations as proof of insecurity; missing validation text as proof validation never occurs; every persistent identifier as a vulnerability; every cross-origin feature as a same-origin-policy bypass; cryptography as proof of confidentiality; user consent as authorization; authentication as authorization; HTTPS as sufficient against all attackers; reviewer comments as consensus; informative examples as requirements; referenced protocols as secure without their assumptions; incompatible attacker capabilities as valid; severity as implicit; or hypotheses as accepted catalog checks.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/review-workflows.md",
+      "find": "Use `mine-spec` for source-first extraction. Use `derive-checks` only after observations or\npatterns are validated. Use `apply-checks` to evaluate a catalog against one spec version. Use\n`update-catalog` to merge one normalized result. Use `explain-pattern` when a user asks why a\npattern or check exists or whether it should be generalized.\n",
+      "replace": "Use `mine-spec` for source-first extraction. Use `derive-checks` only after observations or patterns are validated. Use `apply-checks` to evaluate a catalog against one spec version. Use `update-catalog` to merge one normalized result. Use `explain-pattern` when a user asks why a pattern or check exists or whether it should be generalized.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/security-check-model.md",
+      "find": "A check must be independently actionable. It needs a precise question, applicability,\nevidence to collect, pass, partial, fail, unknown, and not-applicable criteria, common failure\nmodes, suggested tests, source pattern, provenance, confidence, and maturity.",
+      "replace": "A check must be independently actionable. It needs a precise question, applicability, evidence to collect, pass, partial, fail, unknown, and not-applicable criteria, common failure modes, suggested tests, source pattern, provenance, confidence, and maturity.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/security-check-model.md",
+      "find": "Scopes are `specification-design`, `implementation-conformance`, and `deployment-operation`.\nA `fail` requires affirmative contradictory evidence. Missing text is usually `unknown`, not fail.\n",
+      "replace": "Scopes are `specification-design`, `implementation-conformance`, and `deployment-operation`. A `fail` requires affirmative contradictory evidence. Missing text is usually `unknown`, not fail.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/security-observation-model.md",
+      "find": "An observation is atomic and evidence-oriented. Supported `observation_type` values are `asset`,\n`actor`, `component`, `entry-point`, `trust-boundary`, `attacker-capability`,\n`security-requirement`, `security-guarantee`, `security-mechanism`, `prohibition`, `assumption`,\n`threat`, `failure-mode`, `attack-surface`, `residual-risk`, `implementation-obligation`,\n`operational-obligation`, `testable-behavior`, and `unresolved-question`.",
+      "replace": "An observation is atomic and evidence-oriented. Supported `observation_type` values are `asset`, `actor`, `component`, `entry-point`, `trust-boundary`, `attacker-capability`, `security-requirement`, `security-guarantee`, `security-mechanism`, `prohibition`, `assumption`, `threat`, `failure-mode`, `attack-surface`, `residual-risk`, `implementation-obligation`, `operational-obligation`, `testable-behavior`, and `unresolved-question`.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/security-observation-model.md",
+      "find": "Required fields include `observation_id`, `spec_id`, `spec_version`, `observation_type`,\n`statement`, `security_category`, `security_properties`, `actors`, `assets`, `trust_boundaries`,\n`applicability`, `evidence_class`, `evidence`, `confidence`, and `open_questions`.\nConfirmed non-hypothesis observations require evidence.\n",
+      "replace": "Required fields include `observation_id`, `spec_id`, `spec_version`, `observation_type`, `statement`, `security_category`, `security_properties`, `actors`, `assets`, `trust_boundaries`, `applicability`, `evidence_class`, `evidence`, `confidence`, and `open_questions`. Confirmed non-hypothesis observations require evidence.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/security-pattern-model.md",
+      "find": "A pattern relates context, actors, components, assets, trust boundaries, attacker capabilities,\nthreats, expected properties, mechanisms, verification strategies, assumptions, residual risks,\nvariants, occurrences, evidence classes, provenance, confidence, and maturity.",
+      "replace": "A pattern relates context, actors, components, assets, trust boundaries, attacker capabilities, threats, expected properties, mechanisms, verification strategies, assumptions, residual risks, variants, occurrences, evidence classes, provenance, confidence, and maturity.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/security-pattern-model.md",
+      "find": "Maturity values are `seed`, `candidate`, `observed`, `recurring`, `validated`, and `deprecated`.\nThe conceptual key is based on category, triggering context, trust-boundary type, threat or failure\nmode, and expected security property. Do not include specification-specific names in the reusable\nkey. Preserve variants when mechanisms, attacker models, boundaries, lifecycle conditions, or\nverification criteria differ materially.\n",
+      "replace": "Maturity values are `seed`, `candidate`, `observed`, `recurring`, `validated`, and `deprecated`. The conceptual key is based on category, triggering context, trust-boundary type, threat or failure mode, and expected security property. Do not include specification-specific names in the reusable key. Preserve variants when mechanisms, attacker models, boundaries, lifecycle conditions, or verification criteria differ materially.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/w3c-knowledge-contract.md",
+      "find": "Prefer the local `w3c-knowledge` Source Packet v1 contract. The repository is available at\n`simoneonofri/w3c-knowledge`, and its consumer rules require callers to use the versioned\n`/api/v1/` API rather than importing ORM models or reading the database.",
+      "replace": "Prefer the local `w3c-knowledge` Source Packet v1 contract. The repository is available at `simoneonofri/w3c-knowledge`, and its consumer rules require callers to use the versioned `/api/v1/` API rather than importing ORM models or reading the database.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/w3c-knowledge-contract.md",
+      "find": "Source packets are evidence inputs only. They do not contain inferred controls, threats, ERTA\nclassifications, or review conclusions.",
+      "replace": "Source packets are evidence inputs only. They do not contain inferred controls, threats, ERTA classifications, or review conclusions.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/w3c-knowledge-contract.md",
+      "find": "Use `section_limit`, `section_offset`, and `include_evidence_ids=false` for large specifications.\nUse `GET /api/v1/specifications/{id}/sections`, `/considerations`, `/webidl`, and `/references`\nwhen a narrower packet is sufficient.",
+      "replace": "Use `section_limit`, `section_offset`, and `include_evidence_ids=false` for large specifications. Use `GET /api/v1/specifications/{id}/sections`, `/considerations`, `/webidl`, and `/references` when a narrower packet is sufficient.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/w3c-knowledge-contract.md",
+      "find": "Use this implementation-neutral v0.1 shape only as a fallback adapter when a source packet has\nalready been exported or transformed. Optional fields may be missing. Missing material is evidence\nquality information, not a security finding.",
+      "replace": "Use this implementation-neutral v0.1 shape only as a fallback adapter when a source packet has already been exported or transformed. Optional fields may be missing. Missing material is evidence quality information, not a security finding.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/w3c-knowledge-contract.md",
+      "find": "Reject or split bundles containing multiple versions. When a normative dependency is unavailable,\nrecord inherited behavior as `unknown` or `derived-from-cross-reference` with reduced confidence.\n",
+      "replace": "Reject or split bundles containing multiple versions. When a normative dependency is unavailable, record inherited behavior as `unknown` or `derived-from-cross-reference` with reduced confidence.",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/merge_catalog.py",
+      "find": "Path(__file__).resolve().parents[4]",
+      "replace": "Path(__file__).resolve().parents[1]",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/select_checks.py",
+      "find": "Path(__file__).resolve().parents[4]",
+      "replace": "Path(__file__).resolve().parents[1]",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/select_checks.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-security-pattern-miner\"",
+      "replace": "ROOT",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "Path(__file__).resolve().parents[4]",
+      "replace": "Path(__file__).resolve().parents[1]",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-security-pattern-miner\"",
+      "replace": "ROOT",
+      "expected_count": 1
+    },
+    {
+      "path": "evals/rubric.md",
+      "find": "Score 0-2 for each dimension: invocation correctness, evidence traceability,\nsource-versus-inference separation, one-specification scoping, security relevance,\npattern quality, check actionability, uncertainty handling, and catalog integrity.",
+      "replace": "Score 0-2 for each dimension: invocation correctness, evidence traceability, source-versus-inference separation, one-specification scoping, security relevance, pattern quality, check actionability, uncertainty handling, and catalog integrity.",
+      "expected_count": 1
+    },
+    {
+      "path": "evals/rubric.md",
+      "find": "Reject outputs that fabricate W3C consensus, mix specification versions, use another\nspecification's evidence as evidence for the current one, or turn missing text into a\nconfirmed vulnerability.\n",
+      "replace": "Reject outputs that fabricate W3C consensus, mix specification versions, use another specification's evidence as evidence for the current one, or turn missing text into a confirmed vulnerability.",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_assets.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-security-pattern-miner\"",
+      "replace": "ROOT",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_catalog_merge.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-security-pattern-miner\"",
+      "replace": "ROOT",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_check_selection.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-security-pattern-miner\"",
+      "replace": "ROOT",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_normalization.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-security-pattern-miner\"",
+      "replace": "ROOT",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_rendering.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-security-pattern-miner\"",
+      "replace": "ROOT",
+      "expected_count": 2
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "        errors.append(f\"{where}: fail requires affirmative evidence\")\n\n\ndef validate_result(result: dict[str, Any], where: str, categories: set[str], errors: list[str]) -> None:\n    spec = result.get(\"specification\", {})\n    spec_id = spec.get(\"spec_id\")\n    version = spec.get(\"version\")\n",
+      "replace": "        errors.append(f\"{where}: fail requires affirmative evidence\")\n\n\ndef validate_result(result: dict[str, Any], where: str, categories: set[str], errors: list[str], pattern_ids: set[str] | None = None) -> None:\n    spec = result.get(\"specification\", {})\n    spec_id = spec.get(\"spec_id\")\n    version = spec.get(\"version\")\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "    for item in result.get(\"not_applicable_categories\", []):\n        if not item.get(\"reason\"):\n            errors.append(f\"{where}: not-applicable category missing reason\")\n\n\ndef main() -> int:\n",
+      "replace": "    for item in result.get(\"not_applicable_categories\", []):\n        if not item.get(\"reason\"):\n            errors.append(f\"{where}: not-applicable category missing reason\")\n    known_patterns = set(pattern_ids or ())\n    for collection in (\"explicit_patterns\", \"derived_pattern_candidates\"):\n        for item in result.get(collection, []):\n            if isinstance(item, dict) and isinstance(item.get(\"pattern_id\"), str):\n                known_patterns.add(item[\"pattern_id\"])\n    checks = result.get(\"security_checks\", [])\n    if not isinstance(checks, list):\n        errors.append(f\"{where}: security_checks must be an array\")\n    else:\n        for index, check in enumerate(checks):\n            if not isinstance(check, dict):\n                errors.append(f\"{where}: security_checks[{index}] must be an object\")\n                continue\n            validate_check(check, f\"{where}:security_checks[{index}]\", known_patterns, categories, errors)\n\n\ndef main() -> int:\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "        if len({ev.get(\"spec_version\") for ev in item.get(\"evidence\", []) if ev.get(\"spec_version\")}) > 1:\n            errors.append(f\"occurrence {item.get('occurrence_id')}: mixed versions\")\n\n    for path in sorted(ASSETS.glob(\"*.json\")):\n        obj = load(path)\n        if \"observation_id\" in obj:\n            validate_observation(obj, f\"asset:{path.name}\", categories, errors)\n        if \"pattern_id\" in obj and \"conceptual_key\" in obj:\n            validate_pattern(obj, f\"asset:{path.name}\", categories, errors)\n        if \"check_id\" in obj:\n            validate_check(obj, f\"asset:{path.name}\", pattern_ids | {obj.get(\"pattern_id\")}, categories, errors)\n        if obj.get(\"mode\") == \"mine-spec\":\n            validate_result(obj, f\"asset:{path.name}\", categories, errors)\n\n    for path in sorted(FIXTURES.glob(\"*.json\")):\n        if path.name == \"mixed-version-invalid.json\":\n            continue\n        validate_result(load(path), f\"fixture:{path.name}\", categories, errors)\n\n    for path in sorted(SCHEMAS.glob(\"*.json\")):\n        obj = load(path)\n",
+      "replace": "        if len({ev.get(\"spec_version\") for ev in item.get(\"evidence\", []) if ev.get(\"spec_version\")}) > 1:\n            errors.append(f\"occurrence {item.get('occurrence_id')}: mixed versions\")\n\n    asset_objects = [(path, load(path)) for path in sorted(ASSETS.glob(\"*.json\"))]\n    asset_pattern_ids = {\n        obj[\"pattern_id\"] for _, obj in asset_objects\n        if \"conceptual_key\" in obj and isinstance(obj.get(\"pattern_id\"), str)\n    }\n    known_patterns = pattern_ids | asset_pattern_ids\n    for path, obj in asset_objects:\n        if \"observation_id\" in obj:\n            validate_observation(obj, f\"asset:{path.name}\", categories, errors)\n        if \"pattern_id\" in obj and \"conceptual_key\" in obj:\n            validate_pattern(obj, f\"asset:{path.name}\", categories, errors)\n        if \"check_id\" in obj:\n            validate_check(obj, f\"asset:{path.name}\", known_patterns, categories, errors)\n        if obj.get(\"mode\") == \"mine-spec\":\n            validate_result(obj, f\"asset:{path.name}\", categories, errors, known_patterns)\n\n    for path in sorted(FIXTURES.glob(\"*.json\")):\n        if path.name == \"mixed-version-invalid.json\":\n            continue\n        validate_result(load(path), f\"fixture:{path.name}\", categories, errors, known_patterns)\n\n    for path in sorted(SCHEMAS.glob(\"*.json\")):\n        obj = load(path)\n",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_assets.py",
+      "find": "from __future__ import annotations\n\nimport subprocess\nimport sys\nimport unittest\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parents[1]\nVALIDATOR = ROOT / \"scripts\" / \"validate_assets.py\"\n\n\nclass AssetTests(unittest.TestCase):\n    def test_assets_validate(self) -> None:\n        result = subprocess.run([sys.executable, str(VALIDATOR)], cwd=ROOT, check=True, capture_output=True, text=True)\n        self.assertIn(\"Asset validation passed.\", result.stdout)\n        self.assertIn(\"categories: 36\", result.stdout)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "replace": "from __future__ import annotations\n\nimport subprocess\nimport contextlib\nimport importlib.util\nimport io\nimport json\nimport shutil\nimport sys\nimport tempfile\nimport unittest\nfrom pathlib import Path\nfrom unittest import mock\n\nROOT = Path(__file__).resolve().parents[1]\nVALIDATOR = ROOT / \"scripts\" / \"validate_assets.py\"\n\n\nclass AssetTests(unittest.TestCase):\n    def _validator(self):\n        spec = importlib.util.spec_from_file_location(\"security_asset_validator\", VALIDATOR)\n        module = importlib.util.module_from_spec(spec)\n        spec.loader.exec_module(module)\n        return module\n\n    def _result_and_categories(self):\n        result = json.loads((ROOT / \"assets/spec-mining-result.example.json\").read_text())\n        taxonomy = json.loads((ROOT / \"references/security-taxonomy.json\").read_text())\n        return result, {row[\"category_id\"] for row in taxonomy[\"categories\"]}\n\n    def test_assets_validate(self) -> None:\n        result = subprocess.run([sys.executable, str(VALIDATOR)], cwd=ROOT, check=True, capture_output=True, text=True)\n        self.assertIn(\"Asset validation passed.\", result.stdout)\n        self.assertIn(\"categories: 36\", result.stdout)\n\n    def test_asset_check_cannot_whitelist_its_own_unknown_pattern(self) -> None:\n        validator = self._validator()\n        with tempfile.TemporaryDirectory() as temporary:\n            assets = Path(temporary) / \"assets\"\n            shutil.copytree(ROOT / \"assets\", assets)\n            path = assets / \"security-check.example.json\"\n            check = json.loads(path.read_text())\n            check[\"pattern_id\"] = \"unknown-pattern-not-declared-anywhere\"\n            path.write_text(json.dumps(check))\n            output = io.StringIO()\n            with mock.patch.object(validator, \"ASSETS\", assets), contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):\n                self.assertNotEqual(validator.main(), 0)\n            self.assertIn(\"unknown pattern_id\", output.getvalue())\n\n    def test_result_checks_reject_fail_without_evidence(self) -> None:\n        result, categories = self._result_and_categories()\n        check = json.loads((ROOT / \"assets/security-check.example.json\").read_text())\n        check.update(result=\"fail\", evidence=[])\n        result[\"security_checks\"] = [check]\n        errors = []\n        self._validator().validate_result(result, \"result\", categories, errors)\n        self.assertTrue(any(\"fail requires affirmative evidence\" in error for error in errors))\n\n    def test_result_checks_reject_unknown_pattern_and_malformed_rows(self) -> None:\n        result, categories = self._result_and_categories()\n        check = json.loads((ROOT / \"assets/security-check.example.json\").read_text())\n        check[\"pattern_id\"] = \"unknown-pattern-not-declared-anywhere\"\n        result[\"security_checks\"] = [check, None]\n        errors = []\n        self._validator().validate_result(result, \"result\", categories, errors)\n        self.assertTrue(any(\"unknown pattern_id\" in error for error in errors))\n        self.assertTrue(any(\"must be an object\" in error for error in errors))\n\n    def test_result_checks_accept_declared_external_catalog_patterns(self) -> None:\n        result, categories = self._result_and_categories()\n        check = json.loads((ROOT / \"assets/security-check.example.json\").read_text())\n        result.update(explicit_patterns=[], derived_pattern_candidates=[], security_checks=[check])\n        errors = []\n        self._validator().validate_result(result, \"result\", categories, errors, {check[\"pattern_id\"]})\n        self.assertEqual(errors, [])\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "        errors.append(f\"{where}: confidence out of range\")\n    if obs[\"evidence_class\"] != \"hypothesis\" and not obs.get(\"evidence\"):\n        errors.append(f\"{where}: non-hypothesis observation requires evidence\")\n    for ev in obs.get(\"evidence\", []):\n        for key in (\"source_id\", \"artifact_id\", \"locator\", \"evidence_span\", \"interpretation\"):\n            if key not in ev:\n                errors.append(f\"{where}: evidence missing {key}\")\n",
+      "replace": "        errors.append(f\"{where}: confidence out of range\")\n    if obs[\"evidence_class\"] != \"hypothesis\" and not obs.get(\"evidence\"):\n        errors.append(f\"{where}: non-hypothesis observation requires evidence\")\n    evidence = obs.get(\"evidence\")\n    if not isinstance(evidence, list):\n        errors.append(f\"{where}: evidence must be an array\")\n        return\n    for ev in evidence:\n        if not isinstance(ev, dict):\n            errors.append(f\"{where}: evidence item must be an object\")\n            continue\n        for key in (\"source_id\", \"artifact_id\", \"locator\", \"evidence_span\", \"interpretation\"):\n            if key not in ev:\n                errors.append(f\"{where}: evidence missing {key}\")\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "\n\ndef validate_result(result: dict[str, Any], where: str, categories: set[str], errors: list[str], pattern_ids: set[str] | None = None) -> None:\n    spec = result.get(\"specification\", {})\n    spec_id = spec.get(\"spec_id\")\n    version = spec.get(\"version\")\n    if not spec_id or not version:\n        errors.append(f\"{where}: specification requires spec_id and version\")\n    for obs in result.get(\"observations\", []):\n        validate_observation(obs, f\"{where}:{obs.get('observation_id')}\", categories, errors)\n        if obs.get(\"spec_id\") != spec_id or obs.get(\"spec_version\") != version:\n            errors.append(f\"{where}: mixed specification or version in {obs.get('observation_id')}\")\n    for item in result.get(\"derived_pattern_candidates\", []):\n        chain = item.get(\"derivation_chain\")\n        if not chain:\n            errors.append(f\"{where}: derived candidate missing derivation_chain\")\n        else:\n            for key in (\"premises\", \"inference_rule\", \"conclusion\", \"alternative_interpretation\", \"missing_evidence\", \"confidence\"):\n                if key not in chain:\n                    errors.append(f\"{where}: derivation_chain missing {key}\")\n            if \"confidence\" in chain and not confidence(chain[\"confidence\"]):\n                errors.append(f\"{where}: derivation confidence out of range\")\n    for item in result.get(\"not_applicable_categories\", []):\n        if not item.get(\"reason\"):\n            errors.append(f\"{where}: not-applicable category missing reason\")\n    known_patterns = set(pattern_ids or ())\n    for collection in (\"explicit_patterns\", \"derived_pattern_candidates\"):\n        for item in result.get(collection, []):\n            if isinstance(item, dict) and isinstance(item.get(\"pattern_id\"), str):\n                known_patterns.add(item[\"pattern_id\"])\n    checks = result.get(\"security_checks\", [])\n    if not isinstance(checks, list):\n        errors.append(f\"{where}: security_checks must be an array\")\n    else:\n        for index, check in enumerate(checks):\n            if not isinstance(check, dict):\n                errors.append(f\"{where}: security_checks[{index}] must be an object\")\n                continue\n            validate_check(check, f\"{where}:security_checks[{index}]\", known_patterns, categories, errors)\n\n\ndef main() -> int:\n",
+      "replace": "\n\ndef validate_result(result: dict[str, Any], where: str, categories: set[str], errors: list[str], pattern_ids: set[str] | None = None) -> None:\n    if not isinstance(result, dict):\n        errors.append(f\"{where}: result must be an object\")\n        return\n    missing = {\"mode\", \"specification\", \"observations\", \"security_checks\"} - result.keys()\n    if missing:\n        errors.append(f\"{where}: result missing {sorted(missing)}\")\n    if result.get(\"mode\") != \"mine-spec\":\n        errors.append(f\"{where}: missing or invalid mode; expected mine-spec\")\n    spec = result.get(\"specification\")\n    if not isinstance(spec, dict):\n        errors.append(f\"{where}: specification must be an object\")\n        spec = {}\n    spec_id = spec.get(\"spec_id\")\n    version = spec.get(\"version\")\n    if not spec_id or not version:\n        errors.append(f\"{where}: specification requires spec_id and version\")\n\n    def objects(key: str) -> list[tuple[int, dict[str, Any]]]:\n        values = result.get(key, [])\n        if not isinstance(values, list):\n            errors.append(f\"{where}: {key} must be an array\")\n            return []\n        valid = []\n        for index, item in enumerate(values):\n            if not isinstance(item, dict):\n                errors.append(f\"{where}: {key}[{index}] must be an object\")\n            else:\n                valid.append((index, item))\n        return valid\n\n    for _, obs in objects(\"observations\"):\n        validate_observation(obs, f\"{where}:{obs.get('observation_id')}\", categories, errors)\n        if spec_id and version and (obs.get(\"spec_id\") != spec_id or obs.get(\"spec_version\") != version):\n            errors.append(f\"{where}: mixed specification or version in {obs.get('observation_id')}\")\n    derived = objects(\"derived_pattern_candidates\")\n    for _, item in derived:\n        chain = item.get(\"derivation_chain\")\n        if not isinstance(chain, dict) or not chain:\n            errors.append(f\"{where}: derived candidate missing derivation_chain object\")\n        else:\n            for key in (\"premises\", \"inference_rule\", \"conclusion\", \"alternative_interpretation\", \"missing_evidence\", \"confidence\"):\n                if key not in chain:\n                    errors.append(f\"{where}: derivation_chain missing {key}\")\n            if \"confidence\" in chain and not confidence(chain[\"confidence\"]):\n                errors.append(f\"{where}: derivation confidence out of range\")\n    for _, item in objects(\"not_applicable_categories\"):\n        if not item.get(\"reason\"):\n            errors.append(f\"{where}: not-applicable category missing reason\")\n    known_patterns = set(pattern_ids or ())\n    for _, item in objects(\"explicit_patterns\") + derived:\n        if isinstance(item.get(\"pattern_id\"), str):\n            known_patterns.add(item[\"pattern_id\"])\n    for index, check in objects(\"security_checks\"):\n        validate_check(check, f\"{where}:security_checks[{index}]\", known_patterns, categories, errors)\n\n\ndef main() -> int:\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_assets.py",
+      "find": "            validate_pattern(obj, f\"asset:{path.name}\", categories, errors)\n        if \"check_id\" in obj:\n            validate_check(obj, f\"asset:{path.name}\", known_patterns, categories, errors)\n        if obj.get(\"mode\") == \"mine-spec\":\n            validate_result(obj, f\"asset:{path.name}\", categories, errors, known_patterns)\n\n    for path in sorted(FIXTURES.glob(\"*.json\")):\n",
+      "replace": "            validate_pattern(obj, f\"asset:{path.name}\", categories, errors)\n        if \"check_id\" in obj:\n            validate_check(obj, f\"asset:{path.name}\", known_patterns, categories, errors)\n        if obj.get(\"mode\") == \"mine-spec\" or \"observations\" in obj:\n            validate_result(obj, f\"asset:{path.name}\", categories, errors, known_patterns)\n\n    for path in sorted(FIXTURES.glob(\"*.json\")):\n",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_assets.py",
+      "find": "        self.assertEqual(errors, [])\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "replace": "        self.assertEqual(errors, [])\n\n\n    def test_hypothesis_evidence_requires_an_array_of_objects(self) -> None:\n        for evidence in (None, [None]):\n            with self.subTest(evidence=evidence):\n                result, categories = self._result_and_categories()\n                result[\"observations\"][0].update(evidence_class=\"hypothesis\", evidence=evidence)\n                errors = []\n                self._validator().validate_result(result, \"result\", categories, errors)\n                self.assertTrue(any(\"evidence\" in error and \"must be\" in error for error in errors))\n\n    def test_malformed_result_collections_and_header_report_errors(self) -> None:\n        for field, value in ((\"observations\", None), (\"observations\", [None]), (\"specification\", None), (\"derived_pattern_candidates\", [None])):\n            with self.subTest(field=field, value=value):\n                result, categories = self._result_and_categories()\n                result[field] = value\n                errors = []\n                self._validator().validate_result(result, \"result\", categories, errors)\n                self.assertTrue(any(\"must be\" in error for error in errors))\n\n    def test_result_mode_is_required(self) -> None:\n        result, categories = self._result_and_categories()\n        result.pop(\"mode\")\n        errors = []\n        self._validator().validate_result(result, \"result\", categories, errors)\n        self.assertTrue(any(\"missing or invalid mode\" in error for error in errors))\n\n    def test_asset_result_without_mode_is_still_validated(self) -> None:\n        validator = self._validator()\n        with tempfile.TemporaryDirectory() as temporary:\n            assets = Path(temporary) / \"assets\"\n            shutil.copytree(ROOT / \"assets\", assets)\n            path = assets / \"spec-mining-result.example.json\"\n            result = json.loads(path.read_text())\n            result.pop(\"mode\")\n            path.write_text(json.dumps(result))\n            output = io.StringIO()\n            with mock.patch.object(validator, \"ASSETS\", assets), contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):\n                self.assertNotEqual(validator.main(), 0)\n            self.assertIn(\"missing or invalid mode\", output.getvalue())\n\n    def test_required_security_checks_field_cannot_be_omitted(self) -> None:\n        result, categories = self._result_and_categories()\n        result.pop(\"security_checks\")\n        errors = []\n        self._validator().validate_result(result, \"result\", categories, errors)\n        self.assertTrue(any(\"result missing\" in error and \"security_checks\" in error for error in errors))\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "expected_count": 1
+    }
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/w3c-security-pattern-miner.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:15c94b83324a69ac1d5bd6ddd6d70f9594098fbc2ee537e00285f52574edc602"
+}

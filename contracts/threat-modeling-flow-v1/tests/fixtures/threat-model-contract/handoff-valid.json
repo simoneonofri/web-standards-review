@@ -1,0 +1,26 @@
+{
+  "contract_version": 1,
+  "handoff_id": "H-01",
+  "run_id": "run-demo",
+  "producer_agent": "reconciler",
+  "producer_role": "threat reconciliation",
+  "consumer_role": "response reconciliation",
+  "artifact_kind": "threat_package",
+  "artifact_path": "artifacts/threat-package.json",
+  "input_artifacts": ["artifacts/candidate-ledger.json"],
+  "exclusive_write_scope": ["artifacts/reconciled"],
+  "source_corpus_manifest": "source-corpus/manifests/source-corpus-manifest.json",
+  "id_authority": "threat_reconciliation",
+  "status": "ready",
+  "validation": {
+    "result": "pass",
+    "checks": ["concrete-threat gate", "deduplication"],
+    "evidence_paths": ["artifacts/validation/threat-gate.json"]
+  },
+  "provenance": {
+    "created_at": "2026-07-21T00:00:00Z",
+    "source_inputs_hash": "sha256:demo",
+    "tool_or_runner": "codex"
+  },
+  "blocking_issues": []
+}

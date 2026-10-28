@@ -1,0 +1,25 @@
+# Portable horizontal review
+
+When the task starts from an issue, PR, reviewer comment, or request to close a review, use `w3c-issue-pr-review` for the thread context and response. It passes only the required analysis to the specialist workflows below, then reconciles the returned evidence with the thread. See the [integration guide](../skills/w3c-issue-pr-review/references/marketplace-integration.md) for target identity, coverage limits, and handoff contents. An ordinary editorial thread does not require the full horizontal workflow.
+
+`w3c-horizontal-review` coordinates the shared workflow while the existing `spec-review` remains the entrypoint for a focused finding reply or complete threat-modeling run. An as-is-only request does not become a full independent audit. For a full specification review, build the documentary baseline, perform independent elicitation before reading checklist or baseline dispositions, verify target-specific control checks, and map implementation controls and tests bidirectionally. Reconcile those outputs and prior feedback only afterward.
+
+The extraction registry is in `skills/w3c-horizontal-review/references/extractors.json`. Every layer retains a state and rationale. A missing database, source, model, implementation or requested repertoire becomes explicit unavailable coverage; it does not become an empty passing review. Strategy questions apply to charters. Online vulnerability-intelligence refresh depends on relevance and available local evidence. Optional security-scanner use requires an explicit user request and a bounded feature scope.
+
+The portable source selection retains generic methods, curated catalogs, schemas, helpers and synthetic fixtures at recorded source commits. It excludes personal writing rules, library accounts, private corpus exports, hosted personal documents and database dumps. Catalogs are prompts and observations requiring primary-source checks, not proof of current applicability. The W3C corpus miner and Strategy question extractor generate colleague-owned output from their selected evidence; their maintainer histories are not bundled. The horizontal pattern layer includes selection and validation of reviewed patterns; bulk historical enrichment remains outside this beta.
+
+The sharing review made two evidence-integrity changes. The W3C corpus refresh now validates complete primary packets and filters attached sections to their exact version. The specification-to-code entrypoint now checks copied bytes against raw Git blobs at a full commit ID, rejecting dirty or untracked source masquerading as that revision. Personal automatic severity rules were replaced by an explicit team policy and consequence-based judgment. Shape validators remain separate from factual verification and publication approval.
+
+Initialize a packet with an exact target manifest and inspect its work orders:
+
+```sh
+python3 skills/w3c-horizontal-review/scripts/horizontal_packet.py init --target /path/to/target.json --output /path/to/run/review.json
+```
+
+`target.json` supplies `id`, `kind` (`specification`, `charter`, `as_is`), an exact `snapshot_url`, and `sha256` of the captured target artifact. Follow `references/run-contract.md` in that skill to attach real outputs, source roles, locators and hashes, then validate the populated packet. Initialization runs no analysis; a complete integrity check establishes bookkeeping and workflow coverage, not the quality of a model's reasoning. Keep all run artifacts outside the installed package.
+
+For evidence discovery, use W3C Knowledge's lexical, vector or hybrid retrieval with the exact version filter when reviewing one snapshot. Read the returned coverage and source version, then inspect the full relevant source. Retrieval similarity is not normative force, confidence or proof of an absent control. Reindex after source changes; modified sources are suppressed until their embeddings are regenerated.
+
+After review, contribute a shared core change through an exact commit or PR and use the private-overlay migration workflow to receive accepted improvements. A writing preference belongs in a personal overlay; a generic applicability correction belongs in the shared layer with provenance and a regression fixture. No generated review result is automatically promoted into either a knowledge catalog or a public comment.
+
+For a structured comment containing one supported non-blocking Security editorial suggestion, the horizontal skill supplies a [comment template](../skills/w3c-horizontal-review/assets/templates/security-review-non-blocking-editorial-v1.md) and [slot guidance](../skills/w3c-horizontal-review/references/structured-review-comment.md): reviewed version and request, finding title, Description, evidence, Impact, Suggestion and Affected sections. Use it only when its classification and current Working Draft assertions are supported. Caller-supplied venue formats take precedence; concise thread replies and full threat-model reports retain their own formats. No personal routing or writing profile is needed.

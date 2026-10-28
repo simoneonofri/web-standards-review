@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "response_package_id": "responses-best-practice",
+  "model_id": "model-minimal",
+  "threat_package_id": "threats-minimal",
+  "source_contract_version": 1,
+  "responses": [
+    {
+      "response_id": "R-01",
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "erta": "Reduce",
+      "response": "Use best practices.",
+      "mechanism_or_text": "Use security best practices.",
+      "owner": "Implementer",
+      "evidence_status": "assumed",
+      "evidence": [],
+      "assumptions": [],
+      "transfer_receiver": "",
+      "acceptance_rationale": "",
+      "revisit_trigger": "",
+      "remaining_threat": "Unclear.",
+      "next_action": "Replace vague response.",
+      "status": "proposed"
+    }
+  ],
+  "unresolved_threats": [],
+  "cross_cutting_assumptions": [],
+  "skeptic_result": {},
+  "next_actions": []
+}

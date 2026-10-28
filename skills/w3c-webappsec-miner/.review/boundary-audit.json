@@ -1,0 +1,141 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:5a4dc6f6f23a96fc1b4c9210c934e7263da7e40c0c0b68336c56ba056c40b19f",
+      "size": 141056
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:e9eb1ac6d77698d438db44bce30c6e6aba18c5cb8028f5146d27d95e20e75616",
+      "size": 4384
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:c9bb85928536a2046220142f4c9802728a43ac45af9ea6b7adeb309cb8015649",
+      "size": 4082
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:c6e20f2ce48639ce3ddc5f38e098d66ca76ddb73e470f254abaa39b745c7633f",
+      "size": 3274
+    },
+    {
+      "binary": false,
+      "path": "catalog/CATALOG.md",
+      "sha256": "sha256:bfddb4e923e12a3ae2d088d3a70be83feb1f9592e50e51748605001f10a21f75",
+      "size": 19091
+    },
+    {
+      "binary": false,
+      "path": "catalog/exceptions.json",
+      "sha256": "sha256:2aec81c6165b6eaa80a7ef6038436fbbbb59320b49351d5408c5d7a3da5877d9",
+      "size": 20662
+    },
+    {
+      "binary": false,
+      "path": "catalog/secure-defaults.json",
+      "sha256": "sha256:8995d81bdef1881e47f57fa58c0c40b621ab49d6b21f6af0ec985c022d5e4f07",
+      "size": 14362
+    },
+    {
+      "binary": false,
+      "path": "catalog/security-controls.json",
+      "sha256": "sha256:68493bb8f2aefc1df52beb35bc939f9a7e5d65ba63dffa8b3f1ff4c3ea5b56cc",
+      "size": 38113
+    },
+    {
+      "binary": false,
+      "path": "references/charter-deliverables.json",
+      "sha256": "sha256:92ebc7e8578701fe5d60703219b0a310a21c007ce86629d864e9cced428ce96a",
+      "size": 5914
+    },
+    {
+      "binary": false,
+      "path": "references/method.md",
+      "sha256": "sha256:c3b3307c5a3666b9869ee110af836a9f1db64051a3fc9d5e55bd13bb7df9795d",
+      "size": 2217
+    },
+    {
+      "binary": false,
+      "path": "references/source-snapshots.json",
+      "sha256": "sha256:b5b0411f9b589d6b1af628b0ab3c1ba053524b2e6acae4a7f3d7cbb8cb36a94d",
+      "size": 1041
+    },
+    {
+      "binary": false,
+      "path": "schemas/charter-deliverables.schema.json",
+      "sha256": "sha256:6f09584b20251d19eea9cc4ff60bc1ab278438945b4c42d0dec62fddd43ff96f",
+      "size": 1516
+    },
+    {
+      "binary": false,
+      "path": "schemas/exceptions.schema.json",
+      "sha256": "sha256:c440c707eda6aee12f8f8db06406f6bac621c7a85ed27ad7620d8c5fab6b5dec",
+      "size": 1471
+    },
+    {
+      "binary": false,
+      "path": "schemas/secure-defaults.schema.json",
+      "sha256": "sha256:28a18bcdddd315e62a0562a41348bed62bf5ccf2d508d1230523b73714016986",
+      "size": 1727
+    },
+    {
+      "binary": false,
+      "path": "schemas/security-controls.schema.json",
+      "sha256": "sha256:5ef6b58f63764e5f22167e4f9287e5a05c7af78ac340dc6363c7ee1e21184aa6",
+      "size": 2757
+    },
+    {
+      "binary": false,
+      "path": "scripts/extract_charter.py",
+      "sha256": "sha256:e4ab0c5d962dfee22d4e3b2310262a1c7840de83a7ee4a617d8757dec06caec3",
+      "size": 4957
+    },
+    {
+      "binary": false,
+      "path": "scripts/query_catalog.py",
+      "sha256": "sha256:2874dc663ee71427fb160789c45ac7f76bea0db1bef3e6d8ae1ba1e7d9b4fd0c",
+      "size": 1966
+    },
+    {
+      "binary": false,
+      "path": "scripts/render_catalog.py",
+      "sha256": "sha256:e8175ccc06e5e92e09ce8d321ea2cc80aa3925109eaae61e3a1ba475e4ad7b02",
+      "size": 4379
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_catalog.py",
+      "sha256": "sha256:d875b34fb632e44bca285261f2ffa5cc6f7cd7f1bc61a489b66e06e2516ef9a6",
+      "size": 8026
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/charter-mini.html",
+      "sha256": "sha256:0de386cfb358806a6c790a4bb399c09622db7758f9e751c126410840f2509781",
+      "size": 556
+    },
+    {
+      "binary": false,
+      "path": "tests/test_catalog.py",
+      "sha256": "sha256:0b6fb1d5e445202a91deaef923a0381ca2968753e7d83c335ae79c84673a435b",
+      "size": 5294
+    }
+  ],
+  "root_digest": "sha256:4f069a0d2ee0f299f96e59ab8c05a8a869ba7838062f3b242022320c14d41173",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

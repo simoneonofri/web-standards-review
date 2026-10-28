@@ -1,0 +1,43 @@
+{
+  "schema_version": "fact-check-result/v1",
+  "fact_check_id": "FC-SYNTHETIC-001",
+  "artifact": {
+    "artifact_id": "review-report",
+    "artifact_type": "report",
+    "reference": "review.md",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "checked_at": "2026-08-06T08:30:00+02:00",
+  "review_status": "draft",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "source_type": "supplied_source",
+      "title": "Synthetic review source",
+      "reference": "source.txt",
+      "authority": "supplied",
+      "version_or_date": "2026-08-06",
+      "retrieved_at": "2026-08-06T08:00:00+02:00",
+      "access_status": "checked",
+      "content_sha256": null,
+      "limitations": []
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-001",
+      "locator": "Review, paragraph 1",
+      "claim": "The source is part of this synthetic fixture.",
+      "checkability": "externally_checkable",
+      "status": "verified",
+      "importance": "material",
+      "source_ids": ["SRC-001"],
+      "evidence_note": "The supplied source is present in the fixture.",
+      "recommended_edit": "",
+      "disposition": "keep"
+    }
+  ],
+  "unresolved_claim_ids": [],
+  "limitations": [],
+  "publication_status": "pass"
+}

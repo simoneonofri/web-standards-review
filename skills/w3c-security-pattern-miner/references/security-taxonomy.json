@@ -1,0 +1,2741 @@
+{
+  "categories": [
+    {
+      "category_id": "attack-surface-minimization",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Minimize newly reachable operations, inputs, and authority.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "attack surface minimization",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-attack-surface-minimization-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "secure-context-and-transport",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Require trustworthy transport and secure execution context where security depends on origin integrity.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "secure context and transport",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-secure-context-and-transport-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "origin-and-site-isolation",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Preserve origin and site boundaries for authority, storage, and observability.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "origin",
+        "site",
+        "partition",
+        "same-origin"
+      ],
+      "possible_reusable_checks": [
+        "check-origin-and-site-isolation-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "cross-origin-communication",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Constrain cross-origin messages, requests, redirects, and observable side effects.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "cross origin communication",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-cross-origin-communication-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "authority-and-capability-delegation",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Bind delegated or brokered authority to the intended principal and scope.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "authority and capability delegation",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-authority-and-capability-delegation-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "permission-lifecycle",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define permission request, persistence, revocation, and revalidation behavior.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "permission",
+        "grant",
+        "revocation",
+        "policy"
+      ],
+      "possible_reusable_checks": [
+        "check-permission-lifecycle-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "user-intent-and-trusted-ui",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Require clear user intent and trusted UI for sensitive actions.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "user activation",
+        "trusted UI",
+        "chooser",
+        "prompt"
+      ],
+      "possible_reusable_checks": [
+        "check-user-intent-and-trusted-ui-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "authentication",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Identify parties and bind authentication results to the right context.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "authentication",
+        "issuer",
+        "verifier",
+        "credential"
+      ],
+      "possible_reusable_checks": [
+        "check-authentication-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "authorization",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define who is allowed to exercise authority and when.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "authorization",
+        "authority",
+        "grant",
+        "allowed principal"
+      ],
+      "possible_reusable_checks": [
+        "check-authorization-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "credential-lifecycle",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Manage credentials from creation through use, recovery, revocation, and deletion.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "credential",
+        "revocation",
+        "recovery",
+        "rotation"
+      ],
+      "possible_reusable_checks": [
+        "check-credential-lifecycle-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "confidentiality-and-information-disclosure",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Prevent unintended disclosure through data, metadata, errors, and side channels.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "confidentiality and information disclosure",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-confidentiality-and-information-disclosure-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "integrity-and-authenticity",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Protect content, messages, state, and code from unauthorized modification or substitution.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "integrity",
+        "signature",
+        "authenticity",
+        "digest"
+      ],
+      "possible_reusable_checks": [
+        "check-integrity-and-authenticity-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "freshness-and-anti-replay",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Prevent stale messages, assertions, and operations from being reused.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "nonce",
+        "freshness",
+        "challenge",
+        "replay"
+      ],
+      "possible_reusable_checks": [
+        "check-freshness-and-anti-replay-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "input-validation",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Validate untrusted inputs before processing or crossing privilege boundaries.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "validation",
+        "reject",
+        "malformed",
+        "untrusted input"
+      ],
+      "possible_reusable_checks": [
+        "check-input-validation-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "parsing-and-serialization",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define parsing and serialization behavior so implementations interpret inputs consistently.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "parse",
+        "serialization",
+        "duplicate field",
+        "grammar"
+      ],
+      "possible_reusable_checks": [
+        "check-parsing-and-serialization-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "canonicalization",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define canonical representations for comparison, signatures, and policy decisions.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "canonical",
+        "digest",
+        "signature coverage",
+        "normalization"
+      ],
+      "possible_reusable_checks": [
+        "check-canonicalization-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "url-fetch-and-redirect-handling",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Constrain URL parsing, Fetch integration, redirects, and credentials.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "URL",
+        "Fetch",
+        "redirect",
+        "credentials"
+      ],
+      "possible_reusable_checks": [
+        "check-url-fetch-and-redirect-handling-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "script-and-code-loading",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Protect remote code loading, integrity metadata, content type, and execution context.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "script",
+        "content type",
+        "execution context",
+        "integrity"
+      ],
+      "possible_reusable_checks": [
+        "check-script-and-code-loading-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "state-storage-and-cache",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Constrain persistent state, cache keys, expiry, deletion, and quota.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "storage",
+        "cache",
+        "quota",
+        "persistent state"
+      ],
+      "possible_reusable_checks": [
+        "check-state-storage-and-cache-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "lifecycle-navigation-and-bfcache",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define behavior across navigation, BFCache, suspension, restore, and cleanup.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "BFCache",
+        "navigation",
+        "active document",
+        "restore"
+      ],
+      "possible_reusable_checks": [
+        "check-lifecycle-navigation-and-bfcache-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "concurrency-races-and-reentrancy",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Avoid stale authority and inconsistent state under concurrent or reentrant operations.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "concurrent",
+        "lock",
+        "race",
+        "reentrant"
+      ],
+      "possible_reusable_checks": [
+        "check-concurrency-races-and-reentrancy-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "error-channels-and-oracles",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Prevent errors and status differences from revealing protected state.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "distinct error",
+        "status code",
+        "exception",
+        "oracle"
+      ],
+      "possible_reusable_checks": [
+        "check-error-channels-and-oracles-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "timing-and-side-channels",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Limit timing and side channels that reveal secrets or cross-origin state.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "timing and side channels",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-timing-and-side-channels-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "resource-exhaustion-and-amplification",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Bound CPU, memory, storage, network, and prompt amplification.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "quota",
+        "limit",
+        "large input",
+        "resource"
+      ],
+      "possible_reusable_checks": [
+        "check-resource-exhaustion-and-amplification-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "cryptography-and-randomness",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Use appropriate cryptographic operations and randomness assumptions.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "cryptography and randomness",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-cryptography-and-randomness-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "key-management-and-algorithm-agility",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define key lifecycle, algorithm selection, and migration behavior.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "key management and algorithm agility",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-key-management-and-algorithm-agility-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "device-sensor-and-native-boundaries",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Treat device, sensor, file, OS, and native UI boundaries as privileged.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "native capability",
+        "sensor",
+        "device",
+        "OS service"
+      ],
+      "possible_reusable_checks": [
+        "check-device-sensor-and-native-boundaries-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "media-codecs-and-untrusted-binary-input",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Handle codecs and binary media as adversarial input.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "codec",
+        "decoder",
+        "binary input",
+        "media"
+      ],
+      "possible_reusable_checks": [
+        "check-media-codecs-and-untrusted-binary-input-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "protocol-negotiation-versioning-and-downgrade",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Prevent unsafe fallback during version or algorithm negotiation.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "version",
+        "negotiation",
+        "fallback",
+        "downgrade"
+      ],
+      "possible_reusable_checks": [
+        "check-protocol-negotiation-versioning-and-downgrade-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "extensibility-and-unknown-fields",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define safe handling of extensions, unknown fields, and registries.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "unknown field",
+        "extension",
+        "critical",
+        "registry"
+      ],
+      "possible_reusable_checks": [
+        "check-extensibility-and-unknown-fields-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "external-dependency-assumptions",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Identify inherited guarantees and missing dependency text.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "external dependency assumptions",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-external-dependency-assumptions-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "revocation-recovery-and-rollback",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Define revocation, recovery, rollback, and state invalidation behavior.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "revocation recovery and rollback",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-revocation-recovery-and-rollback-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "observability-audit-and-abuse-detection",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Expose enough observability for abuse detection without leaking sensitive data.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "observability audit and abuse detection",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-observability-audit-and-abuse-detection-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "safe-defaults-and-fail-closed-behavior",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Make default and failure behavior least-privilege and fail-closed.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "safe defaults and fail closed behavior",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-safe-defaults-and-fail-closed-behavior-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "conformance-and-implementation-variance",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Constrain implementation-defined behavior that affects security.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "conformance and implementation variance",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-conformance-and-implementation-variance-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    },
+    {
+      "category_id": "privacy-security-intersections",
+      "common_actors": [
+        "requesting-origin",
+        "user-agent",
+        "user",
+        "embedded-origin",
+        "network-attacker"
+      ],
+      "common_anti_patterns": [
+        "ambient authority",
+        "fail-open fallback",
+        "underspecified parser",
+        "unbounded resource use"
+      ],
+      "common_assets": [
+        "origin authority",
+        "user data",
+        "credentials",
+        "persistent state",
+        "native capability"
+      ],
+      "common_trust_boundaries": [
+        "origin-boundary",
+        "site-boundary",
+        "web-to-native",
+        "network-boundary"
+      ],
+      "confusion_risks": [
+        "do not confuse missing text with unsafe behavior",
+        "separate privacy-only concerns from security properties"
+      ],
+      "definition": "Track places where privacy mechanisms also protect security properties.",
+      "evidence_locations_to_inspect": [
+        "normative algorithms",
+        "WebIDL",
+        "conformance requirements",
+        "Security Considerations",
+        "error handling"
+      ],
+      "exclusion_signals": [
+        "purely editorial text",
+        "privacy-only concern with no security property",
+        "unsupported hypothesis"
+      ],
+      "expected_security_properties": [
+        "authorization",
+        "integrity",
+        "confidentiality",
+        "availability",
+        "origin-binding"
+      ],
+      "frequent_threats": [
+        "confused deputy",
+        "information disclosure",
+        "replay",
+        "downgrade",
+        "resource exhaustion"
+      ],
+      "positive_signals": [
+        "privacy security intersections",
+        "normative requirement",
+        "processing rule"
+      ],
+      "possible_reusable_checks": [
+        "check-privacy-security-intersections-baseline"
+      ],
+      "typical_mechanisms": [
+        "normative validation step",
+        "permission check",
+        "origin check",
+        "fail-closed processing"
+      ]
+    }
+  ],
+  "compatible_specification_facets": [
+    "webidl-javascript",
+    "html-dom",
+    "css-rendering",
+    "http-network-protocol",
+    "data-format-serialization",
+    "manifest-policy",
+    "cryptographic-interface",
+    "computation",
+    "network",
+    "storage-state",
+    "sensor-device",
+    "identity-credential",
+    "media-capture",
+    "cryptography",
+    "permission-delegation",
+    "window",
+    "dedicated-worker",
+    "shared-worker",
+    "service-worker",
+    "top-level",
+    "iframe",
+    "third-party",
+    "cross-origin",
+    "background",
+    "bfcache",
+    "native-ui",
+    "personal-data",
+    "sensitive-data",
+    "stable-identifier",
+    "persistent-state",
+    "high-entropy",
+    "physical-world-data",
+    "native-capability",
+    "trusted-ui",
+    "credential-material",
+    "cross-site-observability"
+  ],
+  "compatible_specification_families": [
+    "computational-js-webidl-api",
+    "html-dom-css-rendering",
+    "device-sensor-native-capability",
+    "storage-cache-persistent-state",
+    "identity-credential-payment",
+    "network-fetch-protocol",
+    "data-format-serialization",
+    "media-capture-realtime",
+    "permission-policy-manifest",
+    "cryptographic-api-protocol"
+  ],
+  "schema_version": "0.1"
+}

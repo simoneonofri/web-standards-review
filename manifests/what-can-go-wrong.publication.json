@@ -1,0 +1,302 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "what-can-go-wrong",
+  "source": {
+    "repository": "simoneonofri/what-can-go-wrong",
+    "repository_path": "what-can-go-wrong",
+    "commit": "11e28d7d8b45a21b68c31156b1dc7e9b37042e3b"
+  },
+  "target_path": "skills/what-can-go-wrong",
+  "host_projection": "portable",
+  "include_paths": [
+    {
+      "source": "SKILL.public.md",
+      "target": "SKILL.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "contracts/threat-elicitation-v1.md",
+      "target": "contracts/threat-elicitation-v1.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "scripts/validate_threat_package.py",
+      "target": "scripts/validate_threat_package.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/invalid-workshop-legacy-shape.json",
+      "target": "tests/fixtures/invalid-workshop-legacy-shape.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_workshop_contract.py",
+      "target": "tests/test_workshop_contract.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "exclude_paths": [
+    "SKILL.md",
+    "agents",
+    "knowledge-adapters",
+    "references",
+    "evals",
+    "scripts/run_evals.py",
+    "tests/test_threat_package_validator.py"
+  ],
+  "normalizations": [
+    {
+      "path": "SKILL.md",
+      "find": "## Status",
+      "replace": "<!-- section:status -->\n## Status",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "## Contract\n",
+      "replace": "<!-- section:contract protected -->\n## Contract\n",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "accepted `model-packet/v1` and produce `threat-package/v1` plus complete trace\nartifacts.",
+      "replace": "accepted `model-packet/v1` and produce `threat-package/v1` plus complete trace\nartifacts. Workshop mode additionally consumes `threat-card-deck/v1` and produces\n`card-workshop-output/v1`.",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "## Boundary",
+      "replace": "<!-- section:boundary -->\n## Boundary",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "## Contract Resolution",
+      "replace": "<!-- section:contract-resolution protected -->\n## Contract Resolution",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "3. sibling `web-standards-review-contracts` package;",
+      "replace": "3. the `contracts/` tree in the `web-standards-review` package;",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "## Source Boundary",
+      "replace": "<!-- section:source-boundary -->\n## Source Boundary",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "## Prompt Selection",
+      "replace": "<!-- section:prompt-selection -->\n## Prompt Selection",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "## Remote-Write Boundary",
+      "replace": "<!-- section:remote-write-boundary -->\n## Remote-Write Boundary",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_threat_package.py",
+      "action": "portable_contract_resolution_v1",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "2. repository-local `schemas/threat-model-contract-v1/`;",
+      "replace": "2. package-local `contracts/shared-contract-v1.json`, which identifies the canonical schemas and validator;",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "3. the `contracts/` tree in the `web-standards-review` package;",
+      "replace": "3. the bundled `contracts/threat-modeling-flow-v1/` tree;",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "4. a caller-supplied contract path.",
+      "replace": "4. a caller-supplied contract path.\n\nResolve package-local paths from the physical installed skill path, following any host symlink, rather than from the caller workspace.",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "accepted `model-packet/v1` and produce `threat-package/v1` plus complete trace\nartifacts. Workshop mode additionally consumes `threat-card-deck/v1` and produces\n`card-workshop-output/v1`.\n\nThe public skill consumes typed method, prompt-seed, review-evidence,\nartifact-store, and optional card-deck providers. It must operate from supplied\n",
+      "replace": "accepted `model-packet/v1` and produce `threat-package/v1` plus complete trace\nartifacts. Workshop mode additionally consumes `threat-card-deck/v1` and produces\n`card-workshop-output/v1`.\n\nThe registered five-stage bundle also requires an accepted `dfd-dictionary/v1`. For standalone elicitation without a dictionary, retain the missing representation as a coverage limitation and do not claim a complete bundle handoff.\n\nThe public skill consumes typed method, prompt-seed, review-evidence,\nartifact-store, and optional card-deck providers. It must operate from supplied\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_threat_package.py",
+      "find": "                str(threat.get(field, \"\")).strip().lower()\n                for field in REQUIRED_BAD_EVENT_FIELDS\n            ]\n            if story_lower in GENERIC_BAD_EVENT_VALUES or story_lower in component_values[:1]:\n                errors.append(f\"{label}.threat_story is not a complete concrete bad-event story\")\n\n    errors.extend(\n",
+      "replace": "                str(threat.get(field, \"\")).strip().lower()\n                for field in REQUIRED_BAD_EVENT_FIELDS\n            ]\n            if story_lower in GENERIC_BAD_EVENT_VALUES or story_lower in component_values:\n                errors.append(f\"{label}.threat_story is not a complete concrete bad-event story\")\n\n    errors.extend(\n",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_workshop_contract.py",
+      "find": "\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "replace": "\nif __name__ == \"__main__\":\n    unittest.main()\n\n\ndef test_threat_story_cannot_be_only_one_event_component():\n    for field in MODULE.REQUIRED_BAD_EVENT_FIELDS:\n        package = base_package()\n        package[\"threats\"][0][\"threat_story\"] = package[\"threats\"][0][field]\n        assert any(\"not a complete concrete bad-event story\" in error for error in validate_local(package)), field\n",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "\n## Candidate Reconciliation\n\nAssign final threat IDs only after candidate reconciliation.\n\nClassify each candidate as:\n",
+      "replace": "\n## Candidate Reconciliation\n\nRead `contracts/candidate-ledger-v1.md` and use the additive `candidate-ledger/v1` sidecar for full runs or a claimed candidate reconciliation. Freeze the elicitation ledger before assigning final IDs; preserve producing and rejected candidates, provenance, model attachments and counterevidence. The reconciliation helper checks exact model, frozen-ledger and final-package hashes. It does not replace evidence review or the canonical threat-package validator.\n\nAssign final threat IDs only after candidate reconciliation.\n\nClassify each candidate as:\n",
+      "expected_count": 1
+    },
+    {
+      "path": "SKILL.md",
+      "find": "\n## Validation And Handoff\n\nRun the repository or shared threat-package validator and record the exact\ncommand, version, inputs, digests, result, and unavailable checks.\n\n",
+      "replace": "\n## Validation And Handoff\n\nFor complete candidate reconciliation, use `python3 scripts/validate_threat_package.py /path/to/threats.json --model /path/to/model.json --candidate-ledger /path/to/reconciliation.json --elicitation-ledger /path/to/elicitation.json`. The integrated gate rejects partial reconciliation, dropped candidates, premature final IDs and untraced final threats. Legacy wire validation without a ledger does not attest this additional coverage.\n\nRun the repository or shared threat-package validator and record the exact\ncommand, version, inputs, digests, result, and unavailable checks.\n\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_threat_package.py",
+      "find": "    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"threat_package\", type=Path)\n    parser.add_argument(\"--model\", type=Path)\n    parser.add_argument(\n        \"--handoff\", type=Path, help=\"Validate the multi-agent producer/consumer handoff\"\n    )\n    args = parser.parse_args()\n\n    try:\n        package = json.loads(args.threat_package.read_text(encoding=\"utf-8\"))\n",
+      "replace": "    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"threat_package\", type=Path)\n    parser.add_argument(\"--model\", type=Path)\n    parser.add_argument(\"--candidate-ledger\", type=Path, help=\"Require complete candidate reconciliation\")\n    parser.add_argument(\"--elicitation-ledger\", type=Path, help=\"Frozen elicitation input for reconciliation\")\n    parser.add_argument(\n        \"--handoff\", type=Path, help=\"Validate the multi-agent producer/consumer handoff\"\n    )\n    args = parser.parse_args()\n    if bool(args.candidate_ledger) != bool(args.elicitation_ledger) or (args.candidate_ledger and not args.model):\n        parser.error(\"candidate reconciliation requires --model, --candidate-ledger and --elicitation-ledger together\")\n\n    try:\n        package = json.loads(args.threat_package.read_text(encoding=\"utf-8\"))\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/validate_threat_package.py",
+      "find": "        for error in local_errors:\n            print(f\"ERROR: {error}\")\n        return 1\n\n    contract_root = resolve_contract_root()\n    with tempfile.TemporaryDirectory(prefix=\"standards-review-threat-\") as temp_dir:\n",
+      "replace": "        for error in local_errors:\n            print(f\"ERROR: {error}\")\n        return 1\n\n    if args.candidate_ledger:\n        from validate_candidate_ledger import OPEN, load, validate\n\n        try:\n            ledger, _ = load(args.candidate_ledger)\n            frozen, frozen_digest = load(args.elicitation_ledger)\n            _model, model_digest = load(args.model)\n            _package, package_digest = load(args.threat_package)\n            ledger_errors = validate(ledger, model, model_digest=model_digest, threats=package, threats_digest=package_digest, elicitation=frozen, elicitation_digest=frozen_digest)\n        except (OSError, ValueError) as error:\n            print(f\"ERROR: could not load candidate reconciliation: {error}\")\n            return 1\n        if not ledger_errors and (ledger.get(\"stage\") != \"reconciliation\" or any(row[\"disposition\"] in OPEN for row in ledger[\"candidates\"])):\n            ledger_errors.append(\"candidate reconciliation is not complete\")\n        if ledger_errors:\n            for error in ledger_errors:\n                print(f\"ERROR: {error}\")\n            return 1\n\n    contract_root = resolve_contract_root()\n    with tempfile.TemporaryDirectory(prefix=\"standards-review-threat-\") as temp_dir:\n",
+      "expected_count": 1
+    }
+  ],
+  "private_dependency_replacements": [],
+  "provider_interfaces": [
+    "ReviewEvidenceProvider",
+    "PromptSeedProvider",
+    "MethodKnowledgeProvider",
+    "ArtifactStore",
+    "CardDeckProvider"
+  ],
+  "generated_file_rules": [
+    "Generated private SKILL.md files must carry public and overlay digests and must not be edited directly."
+  ],
+  "human_review_decision": "publication_review_required",
+  "rights_manifest_reference": "manifests/what-can-go-wrong.publication.json#include_paths",
+  "rights_pending": [
+    "Public specifications, standards, and RFCs are cited or linked by consumers; their full text is not vendored by this projection.",
+    "The shared model/threat/response schema extraction remains a bounded follow-up; the public slice fails closed when that required contract validator is unavailable."
+  ],
+  "expected_public_contracts": [
+    "model-packet/v1",
+    "threat-package/v1",
+    "threat-card-deck/v1",
+    "card-workshop-output/v1",
+    "candidate-ledger/v1"
+  ],
+  "required_tests": [
+    "boundary-audit",
+    "contract-declarations",
+    "isolated-unit-tests",
+    "candidate-ledger-round-trip"
+  ],
+  "expected_output_digest": "sha256:bc7359dade593483bcbe6a60c2c7989abfd5c209bbb6c454d4b2cd9900a59450",
+  "maintainer_files": [
+    {
+      "source": "portable-resources/what-can-go-wrong/contracts/candidate-ledger-v1.md",
+      "target": "contracts/candidate-ledger-v1.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:d57c127f1354d7053af012d3a4a40e658bee6f6e621ecb5240836be63f6e3957"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/schemas/candidate-ledger-v1.schema.json",
+      "target": "schemas/candidate-ledger-v1.schema.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:3758c3bb069dc72e3d5f1b6aa6eb3c7c17503371478cabc7c375508596b07f35"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/scripts/validate_candidate_ledger.py",
+      "target": "scripts/validate_candidate_ledger.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:4739f5363b7888f8f4dc130ba9493532f76a2da9e8a169b8759679184018bc7e"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/tests/fixtures/ledger-elicitation.json",
+      "target": "tests/fixtures/ledger-elicitation.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:17ea7d3b76d5658d4b9c146cb5beaefe357038238e9ad378112be892467e4dcc"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/tests/fixtures/ledger-model.json",
+      "target": "tests/fixtures/ledger-model.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:560b3f4a8fdee96b919ebf6c171d207d5d24d181be0102a19abb4c2ba11aeb3f"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/tests/fixtures/ledger-reconciliation.json",
+      "target": "tests/fixtures/ledger-reconciliation.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:3094b748028d6c2942a9eb0ac8feba61e346052b4b8ad2417276d99ba047fa70"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/tests/fixtures/ledger-threats.json",
+      "target": "tests/fixtures/ledger-threats.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:e9257ec1acd572d91aaa2e668ccd3767ef8d273707b08da52a6fd23e8fc068e3"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/tests/test_candidate_ledger.py",
+      "target": "tests/test_candidate_ledger.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:fcfa7bb9a9975f9b5c24745f4e6d4910333593d7fb3af4bb712f31f7048aa43d"
+    }
+  ]
+}

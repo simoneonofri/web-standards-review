@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "response_package_id": "responses-transfer-bad",
+  "model_id": "model-minimal",
+  "threat_package_id": "threats-minimal",
+  "source_contract_version": 1,
+  "responses": [
+    {
+      "response_id": "R-01",
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "erta": "Transfer",
+      "response": "Transfer enforcement to another layer.",
+      "mechanism_or_text": "Another layer handles it.",
+      "owner": "Specification editor",
+      "evidence_status": "assumed",
+      "evidence": [],
+      "assumptions": [],
+      "transfer_receiver": "",
+      "acceptance_rationale": "",
+      "revisit_trigger": "",
+      "remaining_threat": "Receiver may not enforce it.",
+      "next_action": "Identify receiver.",
+      "status": "proposed"
+    }
+  ],
+  "unresolved_threats": [],
+  "cross_cutting_assumptions": [],
+  "skeptic_result": {},
+  "next_actions": []
+}

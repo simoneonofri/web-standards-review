@@ -1,0 +1,74 @@
+{
+  "contract_version": 1,
+  "model_id": "model-minimal",
+  "system_under_analysis": "Minimal API",
+  "scenario": "A user agent sends a request to a service.",
+  "dfd_detail_level": "medium-detail",
+  "abstraction_level": "spec-review",
+  "scope": ["request mediation"],
+  "out_of_scope": ["server internals"],
+  "source_inventory": [{"id": "spec", "source_reference": "Spec section 1"}],
+  "external_entities": [
+    {
+      "stable_id": "EE-01",
+      "type": "External Entity",
+      "name": "Service",
+      "description": "Remote service receiving the request.",
+      "evidence_status": "supplied",
+      "source_reference": "Spec section 1",
+      "normative_status": "informative",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "processes": [
+    {
+      "stable_id": "PO-01",
+      "type": "Process",
+      "name": "User agent",
+      "description": "Mediates the request.",
+      "evidence_status": "supplied",
+      "source_reference": "Spec section 2",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "data_stores": [],
+  "data_flows": [
+    {
+      "stable_id": "DF-01",
+      "type": "Data Flow",
+      "name": "Request",
+      "description": "Request metadata sent to the service.",
+      "source": "PO-01",
+      "destination": "EE-01",
+      "evidence_status": "supplied",
+      "source_reference": "Spec section 2",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "trust_boundaries": [
+    {
+      "stable_id": "TB-01",
+      "type": "Trust Boundary",
+      "name": "Origin boundary",
+      "description": "The request crosses origin control.",
+      "evidence_status": "inferred",
+      "source_reference": "Spec section 2",
+      "normative_status": "normative",
+      "confidence": "medium",
+      "notes": "",
+      "justification": "The service is outside the user agent origin and administrative control.",
+      "boundary_basis": ["origin", "administrative_domain"]
+    }
+  ],
+  "assumptions": [],
+  "inline_safeguards": [],
+  "implicit_threat_model_signals": [],
+  "review_signals": [],
+  "unresolved_questions": [],
+  "validation_notes": []
+}

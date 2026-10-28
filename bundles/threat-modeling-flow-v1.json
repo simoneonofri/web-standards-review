@@ -1,0 +1,340 @@
+{
+  "schema_version": "threat-modeling-bundle/v1",
+  "bundle_id": "threat-modeling-flow-v1",
+  "publication_status": "publication_review_required",
+  "entrypoints": [
+    {
+      "skill_id": "spec-review",
+      "source_commit": "2c020c62c04911fe1c121b937f944f936e2372f0",
+      "routes": [
+        "focused_w3c_reply",
+        "full_threat_model"
+      ],
+      "required_paths": [
+        "skills/spec-review/SKILL.md",
+        "tools/reviewctl/evidence.py"
+      ],
+      "optional_evidence_service": "providers/w3c-knowledge"
+    },
+    {
+      "skill_id": "w3c-horizontal-review",
+      "source_commit": "76a69afce7612882a01ddff480b44a95ffd51c4c",
+      "routes": [
+        "specification",
+        "as_is",
+        "charter"
+      ],
+      "required_paths": [
+        "skills/w3c-horizontal-review/SKILL.md",
+        "skills/w3c-horizontal-review/scripts/horizontal_packet.py",
+        "skills/w3c-horizontal-review/references/extractors.json",
+        "skills/w3c-horizontal-review/references/structured-review-comment.md",
+        "skills/w3c-horizontal-review/assets/templates/security-review-non-blocking-editorial-v1.md"
+      ],
+      "optional_evidence_service": "providers/w3c-knowledge"
+    },
+    {
+      "integration_note": "Thread-facing entrypoint; invokes specialist review only within the requested scope and receives results back for a concise response. Does not add a stage to the five-stage modeling flow.",
+      "optional_evidence_service": "providers/w3c-knowledge",
+      "required_paths": [
+        "skills/w3c-issue-pr-review/SKILL.md",
+        "skills/w3c-issue-pr-review/agents/openai.yaml",
+        "skills/w3c-issue-pr-review/references/response-patterns.md",
+        "skills/w3c-issue-pr-review/references/marketplace-integration.md"
+      ],
+      "routes": [
+        "thread_triage",
+        "focused_reply",
+        "pr_review",
+        "charter_thread",
+        "resolution_check"
+      ],
+      "skill_id": "w3c-issue-pr-review",
+      "source_commit": "b5510892575b7cc5e2cf251c38c340cb9ec052f5"
+    }
+  ],
+  "shared_contract": {
+    "version": 1,
+    "root": "contracts/threat-modeling-flow-v1",
+    "validator": "contracts/threat-modeling-flow-v1/scripts/validate_threat_model_contract.py",
+    "alias_policy": {
+      "model-packet/v1": [
+        "model-packet/v1"
+      ],
+      "dfd-dictionary/v1": [
+        "dfd-dictionary/v1"
+      ],
+      "threat-package/v1": [
+        "threat-package/v1"
+      ],
+      "response-package/v1": [
+        "response-package/v1"
+      ],
+      "independent-review-gate/v1": [
+        "independent-review-gate/v1"
+      ]
+    }
+  },
+  "ordered_stages": [
+    {
+      "skill_id": "what-are-we-building",
+      "source_commit": "38b2d6fa8a81d8a08db3c8fb1f1bf40679729cab",
+      "input_contracts": [
+        "source-corpus/v1"
+      ],
+      "output_contracts": [
+        "model-packet/v1",
+        "webidl-api-surface-inventory/v1",
+        "algorithm-analysis/v1"
+      ],
+      "required_paths": [
+        "skills/what-are-we-building/SKILL.md",
+        "skills/what-are-we-building/scripts/validate_model_packet.py",
+        "contracts/model-abstraction-ladder-v1.json",
+        "docs/what-are-we-building-l0-l1-l2.md"
+      ],
+      "integration_note": "The component projection remains pinned; the bundle-level abstraction contract adds explicit L0/L1/L2 entry, exit, identity, and implementation-mapping rules without silently changing the component source."
+    },
+    {
+      "skill_id": "dfd-mermaid",
+      "source_commit": "e365c0b9a32537926c96c7ae0c6a2e540420e20c",
+      "input_contracts": [
+        "model-packet/v1"
+      ],
+      "output_contracts": [
+        "dfd-dictionary/v1",
+        "mermaid-dfd/v1"
+      ],
+      "required_paths": [
+        "skills/dfd-mermaid/SKILL.md",
+        "skills/dfd-mermaid/scripts/validate_dfd.py"
+      ]
+    },
+    {
+      "skill_id": "what-can-go-wrong",
+      "source_commit": "11e28d7d8b45a21b68c31156b1dc7e9b37042e3b",
+      "input_contracts": [
+        "model-packet/v1",
+        "dfd-dictionary/v1"
+      ],
+      "output_contracts": [
+        "threat-package/v1"
+      ],
+      "required_paths": [
+        "skills/what-can-go-wrong/SKILL.md",
+        "skills/what-can-go-wrong/scripts/validate_threat_package.py"
+      ],
+      "optional_input_contracts": [
+        "threat-card-deck/v1"
+      ]
+    },
+    {
+      "skill_id": "what-are-we-going-to-do-about-it",
+      "source_commit": "46a10e58ae09e3450c9a16a3026dca8f8a01ae14",
+      "input_contracts": [
+        "model-packet/v1",
+        "threat-package/v1"
+      ],
+      "output_contracts": [
+        "response-package/v1"
+      ],
+      "required_paths": [
+        "skills/what-are-we-going-to-do-about-it/SKILL.md",
+        "skills/what-are-we-going-to-do-about-it/scripts/validate_response_package.py"
+      ]
+    },
+    {
+      "skill_id": "did-we-do-a-good-enough-job",
+      "source_commit": "bfd7f53003f73ff52db642c6f506743a416499a8",
+      "input_contracts": [
+        "model-packet/v1",
+        "dfd-dictionary/v1",
+        "mermaid-dfd/v1",
+        "threat-package/v1",
+        "response-package/v1"
+      ],
+      "output_contracts": [
+        "independent-review-gate/v1"
+      ],
+      "required_paths": [
+        "skills/did-we-do-a-good-enough-job/SKILL.md",
+        "skills/did-we-do-a-good-enough-job/scripts/evaluate_good_enough_gate.py"
+      ]
+    }
+  ],
+  "handoffs": [
+    {
+      "from": "what-are-we-building",
+      "to": "dfd-mermaid",
+      "contracts": [
+        "model-packet/v1"
+      ]
+    },
+    {
+      "from": "dfd-mermaid",
+      "to": "what-can-go-wrong",
+      "contracts": [
+        "model-packet/v1",
+        "dfd-dictionary/v1",
+        "mermaid-dfd/v1"
+      ]
+    },
+    {
+      "from": "what-can-go-wrong",
+      "to": "what-are-we-going-to-do-about-it",
+      "contracts": [
+        "model-packet/v1",
+        "dfd-dictionary/v1",
+        "mermaid-dfd/v1",
+        "threat-package/v1"
+      ]
+    },
+    {
+      "from": "what-are-we-going-to-do-about-it",
+      "to": "did-we-do-a-good-enough-job",
+      "contracts": [
+        "model-packet/v1",
+        "dfd-dictionary/v1",
+        "mermaid-dfd/v1",
+        "threat-package/v1",
+        "response-package/v1"
+      ]
+    }
+  ],
+  "optional_extensions": [
+    {
+      "skill_id": "threat-card-generator",
+      "source_commit": "c80d983703e69b6855e4c21d1482ea8541e79f2a",
+      "produces": [
+        "threat-card-deck/v1"
+      ],
+      "consumed_by": "what-can-go-wrong",
+      "required": false
+    },
+    {
+      "skill_id": "fact-check",
+      "source_commit": "ebd93617f4167b06256a67766d878ec30194db36",
+      "produces": [
+        "fact-check-result/v1"
+      ],
+      "role": "independent evidence/readiness gate; does not authorize publication",
+      "required_for_complete_fixture": true
+    }
+  ],
+  "providers": [
+    {
+      "interface": "ReviewEvidenceProvider",
+      "public_default": "caller-supplied",
+      "private_required": false
+    },
+    {
+      "interface": "MethodKnowledgeProvider",
+      "public_default": "none",
+      "private_required": false
+    },
+    {
+      "interface": "ArtifactStore",
+      "public_default": "offline",
+      "private_required": false
+    },
+    {
+      "interface": "CardDeckProvider",
+      "public_default": "none",
+      "private_required": false
+    }
+  ],
+  "artifact_root": {
+    "caller_supplied": true,
+    "temporary_only_for_disposable_work": true,
+    "publication_authorized": false
+  },
+  "host_projections": [
+    "codex",
+    "claude"
+  ],
+  "required_tests": [
+    "strict-contract",
+    "producer-consumer-conformance",
+    "complete-partial-blocked",
+    "missing-contract",
+    "missing-provider",
+    "identity-mismatch",
+    "unknown-model-id",
+    "orphan-response",
+    "response-coverage",
+    "boundary-and-rights",
+    "host-core-equivalence"
+  ],
+  "default_fixture": "fixtures/clean-room-demo/fixture-complete.json",
+  "fixtures": {
+    "complete": "fixtures/clean-room-demo/fixture-complete.json",
+    "partial": "fixtures/clean-room-demo/fixture-partial.json",
+    "blocked": "fixtures/clean-room-demo/fixture-blocked.json"
+  },
+  "horizontal_layers": [
+    {
+      "skill_id": "w3c-webappsec-miner",
+      "source_commit": "ccc851a4933f75ac562d628252af67bf9e7d8aea",
+      "required_paths": [
+        "skills/w3c-webappsec-miner/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "whatwg-miner",
+      "source_commit": "85ca56bb804da7196a3104b5f1720cb5723b8422",
+      "required_paths": [
+        "skills/whatwg-miner/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "w3c-spec-miner",
+      "source_commit": "7203303b9db8048b3d07ca90ccdf845fee4068ec",
+      "required_paths": [
+        "skills/w3c-spec-miner/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "w3c-security-pattern-miner",
+      "source_commit": "21fff82d7fb55a0ae9f8205fbbe2cd1f49eef1d7",
+      "required_paths": [
+        "skills/w3c-security-pattern-miner/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "w3c-horizontal-review-patterns-miner",
+      "source_commit": "32c84b936a87829cbcf333519b335f07d878ec85",
+      "required_paths": [
+        "skills/w3c-horizontal-review-patterns-miner/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "standards-vulnerability-intel-miner",
+      "source_commit": "a38aace7ef5dc47cfe1a1559b149c7957231de46",
+      "required_paths": [
+        "skills/standards-vulnerability-intel-miner/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "strategy-charter-miner",
+      "source_commit": "ef1c7239bdb65fe6a76a347deac0292fb45d48be",
+      "required_paths": [
+        "skills/strategy-charter-miner/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "threat-knowledge",
+      "source_commit": "778eeb22e2815ea4ad4a58d2dc78e25329e09083",
+      "required_paths": [
+        "skills/threat-knowledge/SKILL.md"
+      ]
+    },
+    {
+      "skill_id": "w3c-spec-code",
+      "source_commit": "7af3a8ca3c19be73252d386cd21a630d3d7c5ddb",
+      "required_paths": [
+        "skills/w3c-spec-code/SKILL.md"
+      ]
+    }
+  ],
+  "handoff_semantics": "Handoffs carry accumulated run artifacts, including retained upstream artifacts; carrying an artifact does not transfer its producer identity."
+}

@@ -1,0 +1,35 @@
+{
+  "contract": "threat-card-generator-portable-core-v1",
+  "files": [
+    "SKILL.md",
+    "portable-core.json",
+    "agents/openai.yaml",
+    "references/card-schema.md",
+    "references/deck-generation-modes.md",
+    "references/portable-card-method.md",
+    "references/wehf-card-session-method.md",
+    "schemas/threat-card-deck-v1.schema.json",
+    "scripts/export_portable_core.py",
+    "scripts/render_markdown.py",
+    "scripts/validate_deck.py",
+    "tests/fixtures/invalid_assumption_evidence_status.json",
+    "tests/fixtures/valid_source_to_cards.json",
+    "tests/test_contract.py"
+  ],
+  "excluded_roots": [
+    "references/source-decks",
+    "references/corpus",
+    "references/lit-research-reports"
+  ],
+  "excluded_research_guides": [
+    "references/deck-design-literature.md",
+    "references/eop-style-method.md",
+    "references/microsoft-harms-modeling.md",
+    "references/shostack-card-design.md"
+  ],
+  "rules": [
+    "Portable operation must not require an excluded root or research guide.",
+    "Source-conditioned generation reads only sources explicitly supplied or selected for the current run.",
+    "Downloaded source text, art, layouts, binaries, and private corpora are not distributable runtime assets."
+  ]
+}

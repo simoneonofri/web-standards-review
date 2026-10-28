@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fact Check"
+  short_description: "Evidence-first fact checks for drafted text"
+  default_prompt: "Use $fact-check to fact-check this draft and separate sourced claims from unsupported assumptions."

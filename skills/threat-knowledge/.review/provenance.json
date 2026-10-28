@@ -1,0 +1,51 @@
+{
+  "contract_versions": [],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:b38759260a23a0616ac1e1514bed32b7240e0c8edc200c37367a486af9f32ed1",
+      "size": 2251
+    },
+    {
+      "binary": false,
+      "path": "references/concept-boundaries.md",
+      "sha256": "sha256:51e24093c941d45068a93d49092d57c1c47f76cc6ffbd55f656e50963e9f5339",
+      "size": 1478
+    },
+    {
+      "binary": false,
+      "path": "references/public-sources.json",
+      "sha256": "sha256:c3ab4fb0e7e6b1eb9b9122219ff9db40fbade640af64a86f5ca4af912824975f",
+      "size": 1559
+    },
+    {
+      "binary": false,
+      "path": "references/source-authority.md",
+      "sha256": "sha256:56782c6f3360f906e66ead159fd3f46ebc7f66b74fb227f3e109d7db0681bf29",
+      "size": 2114
+    }
+  ],
+  "output_digest": "sha256:8b2b16f085d34ceeef4253d54e9de95ec9a38699e0ed19025c97ec68c1e5e004",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "rights_manifest_reference": "manifests/threat-knowledge.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "threat-knowledge",
+  "source_commit": "778eeb22e2815ea4ad4a58d2dc78e25329e09083",
+  "source_repository": "simoneonofri/threat-knowledge",
+  "tool_version": "reviewctl/0.2.0"
+}

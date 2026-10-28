@@ -1,0 +1,6 @@
+flowchart LR
+  EE1_Service[EE-01 Service]
+  subgraph TB1_UserAgentBoundary["TB-01 User Agent Boundary"]
+    PO1_UserAgent(PO-01 User Agent)
+  end
+  PO1_UserAgent -->|DF-01 Request| EE1_Service

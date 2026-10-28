@@ -1,0 +1,255 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/simoneonofri/fact-check/schemas/fact-check-result-v1.schema.json",
+  "title": "Fact Check Result Contract v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "fact_check_id",
+    "artifact",
+    "checked_at",
+    "review_status",
+    "sources",
+    "claims",
+    "unresolved_claim_ids",
+    "limitations",
+    "publication_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "fact-check-result/v1"
+    },
+    "fact_check_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact": {
+      "$ref": "#/$defs/artifact"
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "human_reviewed"]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "unresolved_claim_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "publication_status": {
+      "type": "string",
+      "enum": ["pass", "needs_revision", "blocked"]
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": ["artifact_id", "artifact_type", "reference", "sha256"],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_type": {
+          "type": "string",
+          "enum": [
+            "markdown",
+            "text",
+            "html",
+            "json",
+            "issue_draft",
+            "pull_request_draft",
+            "review_comment",
+            "report",
+            "specification_text",
+            "other"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_type",
+        "title",
+        "reference",
+        "authority",
+        "version_or_date",
+        "retrieved_at",
+        "access_status"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "specification",
+            "standard",
+            "source_repository",
+            "test_result",
+            "issue_or_pull_request",
+            "minutes",
+            "official_documentation",
+            "official_organization_page",
+            "academic_paper",
+            "regulator_or_court",
+            "reputable_secondary_source",
+            "supplied_source",
+            "other"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "type": "string",
+          "enum": ["primary", "authoritative", "secondary", "supplied", "unclear"]
+        },
+        "version_or_date": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "access_status": {
+          "type": "string",
+          "enum": ["checked", "partial", "unavailable"]
+        },
+        "content_sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "locator",
+        "claim",
+        "checkability",
+        "status",
+        "importance",
+        "source_ids",
+        "evidence_note",
+        "recommended_edit",
+        "disposition"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checkability": {
+          "type": "string",
+          "enum": ["externally_checkable", "analysis_or_judgment", "not_checkable"]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "partially_supported",
+            "inference",
+            "unsupported",
+            "contradicted",
+            "not_checkable"
+          ]
+        },
+        "importance": {
+          "type": "string",
+          "enum": ["load_bearing", "material", "minor"]
+        },
+        "source_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommended_edit": {
+          "type": "string"
+        },
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "keep",
+            "qualify",
+            "label_inference",
+            "remove",
+            "replace",
+            "open_question",
+            "manual_review"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

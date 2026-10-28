@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/web-standards-review/publication-manifest-v1.schema.json",
+  "title": "Web Standards Review publication manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "anyOf": [
+    {"properties": {"include_paths": {"minItems": 1}}},
+    {"required": ["maintainer_files"], "properties": {"maintainer_files": {"minItems": 1}}}
+  ],
+  "required": ["schema_version", "project", "skill_id", "source", "target_path", "include_paths", "human_review_decision", "rights_manifest_reference", "expected_public_contracts", "required_tests"],
+  "properties": {
+    "schema_version": {"const": "publication-manifest/v1"},
+    "project": {"const": "web-standards-review"},
+    "skill_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "repository_path", "commit"],
+      "properties": {
+        "repository": {"type": "string"},
+        "repository_path": {"type": "string"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"}
+      }
+    },
+    "target_path": {"type": "string"},
+    "host_projection": {"enum": ["portable", "all", "codex", "claude"]},
+    "include_paths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "rights"],
+        "properties": {
+          "source": {"type": "string"},
+          "target": {"type": "string"},
+          "rights": {
+            "type": "object",
+            "required": ["source_class", "rights_status", "include_decision"],
+            "properties": {
+              "source_class": {"enum": ["original", "public-standard", "open-licensed-framework", "paper-or-article", "book-or-paid-training", "private-or-internal", "cache-or-database", "synthetic-fixture"]},
+              "rights_status": {"type": "string"},
+              "include_decision": {"const": "include"},
+              "source_reference": {"type": "string"},
+              "attribution": {"type": "string"},
+              "modification_status": {"type": "string"},
+              "license": {"type": "string"},
+              "redistribution_approved": {"type": "boolean"},
+              "binary_allowed": {"type": "boolean"},
+              "max_bytes": {"type": "integer", "minimum": 1}
+            }
+          }
+        }
+      }
+    },
+    "maintainer_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "target", "sha256", "rights"],
+        "properties": {
+          "source": {"type": "string"},
+          "target": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "rights": {"const": {"source_class": "original", "rights_status": "maintainer-owned", "include_decision": "include"}}
+        }
+      }
+    },
+    "exclude_paths": {"type": "array", "items": {"type": "string"}},
+    "normalizations": {"$ref": "#/$defs/replacements"},
+    "private_dependency_replacements": {
+      "type": "array",
+      "items": {"oneOf": [
+        {"$ref": "#/$defs/replacements/items"},
+        {"type": "object", "additionalProperties": false, "required": ["dependency", "replacement"], "properties": {"dependency": {"type": "string"}, "replacement": {"type": "string"}}, "description": "Reviewed dependency mapping note; does not perform a text replacement."}
+      ]}
+    },
+    "provider_interfaces": {"type": "array", "items": {"type": "string"}},
+    "generated_file_rules": {"type": "array", "items": {"type": "string"}},
+    "human_review_decision": {"enum": ["approved", "publication_review_required"]},
+    "rights_manifest_reference": {"type": "string"},
+    "rights_pending": {"type": "array", "items": {"type": "string"}},
+    "expected_public_contracts": {"type": "array", "items": {"type": "string"}},
+    "required_tests": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "expected_output_digest": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "replacements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "expected_count"],
+        "oneOf": [
+          {"required": ["find", "replace"]},
+          {"required": ["action"]}
+        ],
+        "properties": {
+          "path": {"type": "string"},
+          "find": {"type": "string"},
+          "replace": {"type": "string"},
+          "action": {"enum": ["portable_contract_resolution_v1", "portable_response_contract_resolution_v1"]},
+          "expected_count": {"type": "integer", "minimum": 1}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "run_scope": "baseline",
+  "gates": [
+    {"name": "source_corpus", "status": "pass"},
+    {"name": "model_packet", "status": "pass"},
+    {"name": "dfd_representation", "status": "pass"},
+    {"name": "baseline_elicitation", "status": "pass"}
+  ],
+  "coverage": {
+    "model_ids": ["EE-01", "PO-01", "DF-01"],
+    "dictionary_ids": ["EE-01", "PO-01", "DF-01"],
+    "baseline_threat_ids": ["T-01"],
+    "actual_response_threat_ids": ["T-01"],
+    "additional_threat_ids": [],
+    "new_response_threat_ids": []
+  }
+}

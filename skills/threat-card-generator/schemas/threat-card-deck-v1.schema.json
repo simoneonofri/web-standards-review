@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Threat Card Deck Contract v1",
+  "type": "object",
+  "required": [
+    "deck_id",
+    "title",
+    "version",
+    "status",
+    "description",
+    "method_notes",
+    "suits",
+    "cards",
+    "playtest_log"
+  ],
+  "properties": {
+    "deck_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "status": {
+      "type": "string",
+      "enum": ["draft", "playtest", "stable", "retired"]
+    },
+    "description": {"type": "string", "minLength": 1},
+    "generation_mode": {
+      "type": "string",
+      "enum": [
+        "new-deck",
+        "deck-refinement",
+        "source-to-cards",
+        "credential-flow-deck",
+        "playtest-repair"
+      ]
+    },
+    "play_mode": {
+      "type": "string",
+      "enum": ["competitive", "collaborative", "hybrid"]
+    },
+    "license": {"type": "string", "minLength": 1},
+    "attribution": {"type": "string", "minLength": 1},
+    "source_references": {
+      "type": "array",
+      "items": {}
+    },
+    "method_notes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "playtest_log": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "suits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/suit"}
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/card"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"generation_mode": {"const": "source-to-cards"}},
+        "required": ["generation_mode"]
+      },
+      "then": {
+        "properties": {
+          "cards": {
+            "items": {"required": ["source_trace"]}
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonEmptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "suit": {
+      "type": "object",
+      "required": ["id", "name", "description"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceTrace": {
+      "type": "object",
+      "required": ["source_kind", "source_reference"],
+      "properties": {
+        "source_kind": {
+          "type": "string",
+          "enum": [
+            "primary_source",
+            "local_snapshot",
+            "extracted_table",
+            "user_notes",
+            "assumption",
+            "existing_deck",
+            "review_material",
+            "other"
+          ]
+        },
+        "source_reference": {"type": "string", "minLength": 1},
+        "source_item_id": {"type": "string", "minLength": 1},
+        "source_locator": {"type": "string", "minLength": 1},
+        "derivation_notes": {"type": "string", "minLength": 1},
+        "evidence_status": {
+          "type": "string",
+          "enum": ["verified", "inferred", "assumed", "unavailable"]
+        },
+        "license": {"type": "string", "minLength": 1},
+        "attribution": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"source_kind": {"const": "assumption"}},
+            "required": ["source_kind"]
+          },
+          "then": {
+            "required": ["evidence_status"],
+            "properties": {"evidence_status": {"const": "assumed"}}
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "card": {
+      "type": "object",
+      "required": [
+        "id",
+        "suit",
+        "rank",
+        "title",
+        "prompt",
+        "look_for",
+        "outputs"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "suit": {"type": "string", "minLength": 1},
+        "rank": {"type": "integer", "minimum": 1},
+        "title": {"type": "string", "minLength": 1},
+        "prompt": {"type": "string", "minLength": 2, "pattern": "\\?$"},
+        "look_for": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "outputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "applies_to": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "example": {"type": "string", "minLength": 1},
+        "anti_patterns": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "framework_prompts": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "source_trace": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sourceTrace"}
+        },
+        "prompt_template_id": {"type": "string", "minLength": 1},
+        "prompt_family": {"type": "string", "minLength": 1},
+        "source_item_id": {"type": "string", "minLength": 1},
+        "applicability_rule_id": {"type": "string", "minLength": 1},
+        "expected_bad_event_shape": {"type": "string", "minLength": 1},
+        "card_status": {
+          "type": "string",
+          "enum": ["new", "keep", "rewrite", "split", "merge", "retire"]
+        },
+        "change_notes": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "privacy_threat": {"type": "string", "minLength": 1},
+        "hotspots": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "threat_source": {"type": "string", "minLength": 1},
+        "elicitation_questions": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "consequences": {"$ref": "#/$defs/nonEmptyStringArray"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              {"required": ["prompt_template_id"]},
+              {"required": ["prompt_family"]},
+              {"required": ["source_item_id"]},
+              {"required": ["applicability_rule_id"]},
+              {"required": ["expected_bad_event_shape"]}
+            ]
+          },
+          "then": {
+            "required": [
+              "prompt_template_id",
+              "prompt_family",
+              "source_item_id",
+              "applicability_rule_id",
+              "expected_bad_event_shape"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "card_status": {
+                "enum": ["rewrite", "split", "merge", "retire"]
+              }
+            },
+            "required": ["card_status"]
+          },
+          "then": {"required": ["change_notes"]}
+        }
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

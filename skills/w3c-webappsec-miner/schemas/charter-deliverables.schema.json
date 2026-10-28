@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/simoneonofri/w3c-webappsec-miner/schemas/charter-deliverables.schema.json",
+  "title": "WebAppSec 2026 charter deliverables inventory",
+  "type": "object",
+  "required": ["schema_version", "charter_url", "categories", "deliverables"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "charter_url": {"const": "https://w3c.github.io/charter-drafts/2026/charter-wg-webappsec-2026.html"},
+    "categories": {
+      "type": "object",
+      "required": ["normative", "tentative", "other"],
+      "properties": {"normative": {"type": "integer", "minimum": 0}, "tentative": {"type": "integer", "minimum": 0}, "other": {"type": "integer", "minimum": 0}},
+      "additionalProperties": false
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["deliverable_id", "title", "category", "source_url", "draft_state", "mining_status"],
+        "properties": {
+          "deliverable_id": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "category": {"enum": ["normative", "tentative", "other"]},
+          "source_url": {"type": ["string", "null"]},
+          "draft_state": {"type": ["string", "null"]},
+          "mining_status": {"enum": ["control-mined", "editor-draft-control-mined", "inventory-only"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

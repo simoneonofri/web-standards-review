@@ -1,0 +1,6 @@
+interface:
+  display_name: "What Are We Going To Do"
+  short_description: "Map threat stories to ERTA responses"
+  default_prompt: "Use $what-are-we-going-to-do-about-it to map this threat package to ERTA responses, assumptions, remaining threats, and next actions."
+policy:
+  allow_implicit_invocation: true

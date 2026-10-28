@@ -1,0 +1,69 @@
+{
+  "schema_version": "model-abstraction-ladder/v1",
+  "publication_status": "publication_review_required",
+  "applies_to": "what-are-we-building",
+  "identity_rule": "Lower levels may add detail but must preserve the parent identity and must not silently redefine an accepted higher-level element.",
+  "levels": [
+    {
+      "level": "L0",
+      "name": "generic context model",
+      "entry": [
+        "pinned architecture, explainer, scenario, or system description",
+        "defined target, user goal, scope, and intended review decision"
+      ],
+      "work": [
+        "keep the capability as a black box where useful",
+        "identify users, affected people, principals, main external entities, minimum directional flows, and first authority or trust boundaries",
+        "record detail deliberately deferred to L1, L2, or implementation mapping"
+      ],
+      "exit": [
+        "high-level model-packet/v1",
+        "authoritative DFD and dfd-dictionary/v1",
+        "source coverage, assumptions, and unresolved questions"
+      ]
+    },
+    {
+      "level": "L1",
+      "name": "specification and API-surface model",
+      "entry": [
+        "accepted L0 model",
+        "pinned WebIDL or equivalent public API and normative state definitions"
+      ],
+      "work": [
+        "inventory interfaces, operations, attributes, dictionaries, callbacks, enums, typedefs, relevant return types, exposure gates, normative state, and lifecycle relationships",
+        "map behaviorally meaningful methods to stable logical processes",
+        "keep dictionaries as typed data contracts rather than drawing every dictionary as a process"
+      ],
+      "exit": [
+        "webidl-api-surface-inventory/v1 or an equivalent API-surface artifact",
+        "L1 model and DFD refinement with stable L0 parent links",
+        "explicit gates, state, directional flows, assumptions, and deferred algorithm detail"
+      ]
+    },
+    {
+      "level": "L2",
+      "name": "normative algorithm child analysis",
+      "entry": [
+        "one selected L1 operation with a stable parent process identifier",
+        "pinned WebIDL and complete numbered normative procedure"
+      ],
+      "work": [
+        "begin with Phase 0 WebIDL exposure and argument conversion before the first numbered step",
+        "preserve conversion order, getters, proxies, iterators, string conversion, callback validation, promise behavior, and conversion failures or side effects",
+        "group numbered steps into ordered review-useful subprocesses without dropping or reordering behavior",
+        "record executor, input and state, state transition, delegated algorithm, security property, precondition, exception, failure behavior, residual or non-guarantee, DFD mapping, and test decision"
+      ],
+      "exit": [
+        "algorithm-analysis/v1 and child DFD",
+        "stable link to the L1 parent and child-only process identifiers",
+        "separate evidence, implementation mapping, review judgment, open questions, and test decisions"
+      ]
+    }
+  ],
+  "implementation_mapping": {
+    "status": "separate-child-view",
+    "may_redefine_specification_ids": false,
+    "rule": "Renderer state, browser-side registries, IPC, dispatch, feature flags, and implementation stores may be mapped only after the specification model is stable."
+  },
+  "completion_rule": "A schema-valid artifact is not methodologically complete by itself; the selected level must be sufficient for the current review decision and threat traceability."
+}

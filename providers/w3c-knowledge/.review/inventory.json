@@ -1,0 +1,238 @@
+{
+  "data_included": false,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "size": 36,
+      "sha256": "sha256:429ba88d3cdd6f283e9a32b564ca9b4b11d255f7d9befc530326706fba74efdb"
+    },
+    {
+      "path": ".gitignore",
+      "size": 24,
+      "sha256": "sha256:d8f97d7d9d0c727b9b92aa9559b0a693beaa51ac33fa58e09ff136127ee72c9e"
+    },
+    {
+      "path": ".review/provenance.json",
+      "size": 10475,
+      "sha256": "sha256:d3e174321ff2228134ceaec13d539b75b50a9765763ee1629b3fec87b9a17aea"
+    },
+    {
+      "path": "Dockerfile",
+      "size": 416,
+      "sha256": "sha256:818f16fd8f32a27e6ef8fa5331d21e71f52c57e5527dbbca4a6bc51fb9269cb1"
+    },
+    {
+      "path": "README.md",
+      "size": 6735,
+      "sha256": "sha256:286bc59bd59556f9c2db9474e5807acd574480250bc273a256a89eb9954663ec"
+    },
+    {
+      "path": "alembic.ini",
+      "size": 599,
+      "sha256": "sha256:88c5b6522c01065a8d4b3aea88ce0329e6d7400104ed1517b325e76e0189e6eb"
+    },
+    {
+      "path": "compose.yaml",
+      "size": 933,
+      "sha256": "sha256:907647699df4c0e703f5886ecc9009a96fe318addd288025ce940233568a6a4d"
+    },
+    {
+      "path": "config/sources.yaml",
+      "size": 16880,
+      "sha256": "sha256:2e0cc6fb0b931626093429c6b94296a633d662e5c984210666f4b6fa84450679"
+    },
+    {
+      "path": "migrations/env.py",
+      "size": 1290,
+      "sha256": "sha256:5dc358ad56a98f17bbc3b3a53ee3bc492d9af6345eb7411ef0ef8faf289beaf4"
+    },
+    {
+      "path": "migrations/versions/0001_initial.py",
+      "size": 492,
+      "sha256": "sha256:985f6ab2e9ced329c5e2c2c112d3a2f08e24c742d9ac97294df840e78b2cdea6"
+    },
+    {
+      "path": "migrations/versions/0002_expand_artifact_link_object_id.py",
+      "size": 888,
+      "sha256": "sha256:a30d3b4a99cb08d9658afd7a03ede72af8edf5574457f609138fbf18d108fb6c"
+    },
+    {
+      "path": "migrations/versions/0003_tr_bootstrap_lite.py",
+      "size": 7199,
+      "sha256": "sha256:44412c7163442e8bfb0f02c95a1c856d4ef9dea6cfd429e1efa8406ee2b1b7ac"
+    },
+    {
+      "path": "migrations/versions/0004_local_vectors.py",
+      "size": 827,
+      "sha256": "sha256:d514e4e3a00f06bd314bfb7d250ed996a18aa2ddef629aeffa6206e5f3e00e2f"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 1510,
+      "sha256": "sha256:15bb0d568918aaded7185990222d7b45a484d8665cbe9bb145d6aa43ef863fec"
+    },
+    {
+      "path": "setup_local.py",
+      "size": 838,
+      "sha256": "sha256:51ff9c89719143624b78d1b1adeb1483ad09fba1d4634f2aa204dcd9cb94a6fb"
+    },
+    {
+      "path": "tests/smoke_local_vectors.py",
+      "size": 3205,
+      "sha256": "sha256:60f41ebeb01ec312b9a12beb9fa163a49dc221ac8b60c476124bb8e511655d63"
+    },
+    {
+      "path": "tests/test_vectors.py",
+      "size": 7850,
+      "sha256": "sha256:8492784c3724f60f50a9047340acca0f33ec84416cca04366a36051082b405bf"
+    },
+    {
+      "path": "w3c_knowledge/__init__.py",
+      "size": 60,
+      "sha256": "sha256:1944f80898e80aa59ccd932ccecd6fbc6f0f5821b1f4e8f5cf7f01e6db3db597"
+    },
+    {
+      "path": "w3c_knowledge/adapters/github.py",
+      "size": 8187,
+      "sha256": "sha256:0ed4bd3aac71e722b0ad04f43c48f52cc36969ff98029e106ecc829da78133e0"
+    },
+    {
+      "path": "w3c_knowledge/adapters/html.py",
+      "size": 583,
+      "sha256": "sha256:56f7e3f3497bcb3e2b124599df346ba1c4db3732b0992aa78469b759180557f9"
+    },
+    {
+      "path": "w3c_knowledge/adapters/ietf_datatracker.py",
+      "size": 13578,
+      "sha256": "sha256:f58cd67f79cac363aa0f8f6233ac8c902e7d847f584a4f30862479c2b9666f95"
+    },
+    {
+      "path": "w3c_knowledge/adapters/rfc_editor.py",
+      "size": 16575,
+      "sha256": "sha256:d925bd1e5ad2bccf94cbd0ffeaa5f625fe359c04de651edc186fad7aab954fb7"
+    },
+    {
+      "path": "w3c_knowledge/adapters/w3c.py",
+      "size": 15171,
+      "sha256": "sha256:c0204540d57b6e08109dcc155ed0aa4f3d3de8ab55d62ff16d71a2c793784bed"
+    },
+    {
+      "path": "w3c_knowledge/analysis/analyzers.py",
+      "size": 2113,
+      "sha256": "sha256:5440daf741ce7f2cef430cc6b7eb8cd8f6fcfcd7f87d75478c3d289212d74692"
+    },
+    {
+      "path": "w3c_knowledge/api/v1/routes.py",
+      "size": 32701,
+      "sha256": "sha256:5c97b1994ecdb5dfa8d12d475f57ccd2522074c251ad662aa520208a75217708"
+    },
+    {
+      "path": "w3c_knowledge/cli.py",
+      "size": 21136,
+      "sha256": "sha256:53cde25b6aab8349e98043fbc86de3f9ff1e3451a32e64a36f7679c5f89ee9f1"
+    },
+    {
+      "path": "w3c_knowledge/config.py",
+      "size": 1916,
+      "sha256": "sha256:8649daab1554aa34017a25220e8790c9c1fac50190446017309c4847801c1321"
+    },
+    {
+      "path": "w3c_knowledge/db.py",
+      "size": 781,
+      "sha256": "sha256:703d7bda1e41b2ff44a235ef6de40fde913344c81b83d40214d0ee681f16ee18"
+    },
+    {
+      "path": "w3c_knowledge/graph.py",
+      "size": 13394,
+      "sha256": "sha256:5f1998084396c5fc67865d5b6b56085eb0dbfaaab81b328c21c96526b03d4957"
+    },
+    {
+      "path": "w3c_knowledge/ingestion/service.py",
+      "size": 216064,
+      "sha256": "sha256:18e6056960f98802c314449862d3cd746c51fb51ac8b0d3d9cc374575cd8c018"
+    },
+    {
+      "path": "w3c_knowledge/ingestion/source_config.py",
+      "size": 1250,
+      "sha256": "sha256:22ec8cfa316b928162157013a0d05bd74dac9a5fda3e09c580da4b45d6141a63"
+    },
+    {
+      "path": "w3c_knowledge/main.py",
+      "size": 467,
+      "sha256": "sha256:6586e25f57bb14b758e339fd55dd20a48ecc1fb7f3299399446bc9b9cde03778"
+    },
+    {
+      "path": "w3c_knowledge/models.py",
+      "size": 26249,
+      "sha256": "sha256:3a74e8bdc3855251a826e29f46f43dc73f8e1af59f4f2653ec861b14842aeea4"
+    },
+    {
+      "path": "w3c_knowledge/openapi/__init__.py",
+      "size": 32,
+      "sha256": "sha256:83127ecd9fec966d760fde507d2aff0f26a46ea3653965746b112c669e3d4987"
+    },
+    {
+      "path": "w3c_knowledge/openapi/export.py",
+      "size": 225,
+      "sha256": "sha256:e999fcb0d5c7532851eca802e3edd7418d1f69185654c7674657b8600ab8b06d"
+    },
+    {
+      "path": "w3c_knowledge/parsing/diff.py",
+      "size": 1602,
+      "sha256": "sha256:ddde3ba13d632b61de566b97d56e3798f86a44475a7e662986b487bf8c250110"
+    },
+    {
+      "path": "w3c_knowledge/parsing/rfc.py",
+      "size": 19190,
+      "sha256": "sha256:d367ff313ebf9c083e91013f083d930ed421be1596b355bc016cdf5ab2525850"
+    },
+    {
+      "path": "w3c_knowledge/parsing/specification.py",
+      "size": 17702,
+      "sha256": "sha256:aec6a5abfc944121188b8b4335f4148dc3605c58a50ff9037381e91709efeb0b"
+    },
+    {
+      "path": "w3c_knowledge/parsing/urls.py",
+      "size": 1263,
+      "sha256": "sha256:47f01420c4fe4df37a712e05589ec97cd5f5a37fece14e8ad184b9b9b37df378"
+    },
+    {
+      "path": "w3c_knowledge/process_context.py",
+      "size": 4839,
+      "sha256": "sha256:aafe1d031b1ebf6691c8c4167b6948680335c0e3a7a84c6ded75486cc2fdc5c1"
+    },
+    {
+      "path": "w3c_knowledge/schemas.py",
+      "size": 12041,
+      "sha256": "sha256:97bc7f506efa8828d6bdfc6d1ec2748319389e8fb15253447162ca35f725d955"
+    },
+    {
+      "path": "w3c_knowledge/search/embeddings.py",
+      "size": 5382,
+      "sha256": "sha256:60414424c1e6363a0bad1a268a443cc4580b7bf37b1e840bebe7738de2b7a826"
+    },
+    {
+      "path": "w3c_knowledge/search/service.py",
+      "size": 2744,
+      "sha256": "sha256:9444d5998cd44b9337846c78907a001817964a231ad336da6e7edd7b01cdc577"
+    },
+    {
+      "path": "w3c_knowledge/search/vector_store.py",
+      "size": 1552,
+      "sha256": "sha256:9551e73ab75c3911d4a4dc07c0e4b7337c3c58e5629222db1867d94894865622"
+    },
+    {
+      "path": "w3c_knowledge/search/vectors.py",
+      "size": 11736,
+      "sha256": "sha256:38205fe3c2de56e93d40d863b254ee91a562472341cce6823eeb832f9555ffc2"
+    },
+    {
+      "path": "w3c_knowledge/security.py",
+      "size": 1079,
+      "sha256": "sha256:986cfdf8301b86b2631b4e152c2a5720173b8943b39f64694e72d11914408d99"
+    }
+  ],
+  "publication_status": "publication_review_required",
+  "rights_status": "maintainer-source-restricted-beta",
+  "schema_version": "reviewed-component-inventory/v1"
+}

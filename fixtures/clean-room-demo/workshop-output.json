@@ -1,0 +1,25 @@
+{
+  "schema_version": "card-workshop-output/v1",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "model_id": "model-clean-room",
+  "plays": [
+    {
+      "play_id": "PLAY-01",
+      "card_id": "CARD-MINIMIZATION-01",
+      "model_element_id": "DF-01",
+      "answer_status": "generated_threat",
+      "derived_threat_ids": [
+        "T-01"
+      ]
+    },
+    {
+      "play_id": "PLAY-02",
+      "card_id": "CARD-DEVICE-01",
+      "model_element_id": "EE-02",
+      "answer_status": "no_applicable_threat",
+      "derived_threat_ids": [],
+      "non_producing_reason": "The synthetic target has no device boundary."
+    }
+  ]
+}

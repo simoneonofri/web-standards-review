@@ -1,0 +1,212 @@
+{
+  "counts_by_category": {
+    "authority-and-permission": 4,
+    "content-and-type-safety": 6,
+    "input-validation-and-failure": 2,
+    "interface-exposure": 4,
+    "network-and-request-policy": 8,
+    "origin-and-isolation": 10,
+    "resource-and-abuse-control": 1,
+    "storage-and-state": 5,
+    "user-intent-and-visibility": 3
+  },
+  "counts_by_standard": {
+    "cookiestore": 4,
+    "dom": 1,
+    "encoding": 2,
+    "fetch": 6,
+    "fs": 3,
+    "fullscreen": 3,
+    "html": 7,
+    "mimesniff": 2,
+    "notifications": 1,
+    "storage": 2,
+    "url": 2,
+    "urlpattern": 1,
+    "webidl": 4,
+    "websockets": 2,
+    "xhr": 3
+  },
+  "finding_count": 43,
+  "schema_version": "1.0",
+  "standard_count": 22,
+  "standards": [
+    {
+      "coverage_state": "assessed-no-reusable-control",
+      "finding_count": 0,
+      "residual_gap": "Compatibility surfaces are legacy/non-standard behavior; no explicit reusable security control was curated in the bounded pass.",
+      "standard_id": "compat",
+      "title": "Compatibility",
+      "url": "https://compat.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "assessed-no-reusable-control",
+      "finding_count": 0,
+      "residual_gap": "Malformed streams fail, but decompression-bomb and resource-amplification limits are not explicitly defined as reusable security controls.",
+      "standard_id": "compression",
+      "title": "Compression",
+      "url": "https://compression.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "assessed-no-reusable-control",
+      "finding_count": 0,
+      "residual_gap": "Console formatting and debugging behavior were assessed; privacy or diagnostic leakage concerns do not yield an explicit reusable access control.",
+      "standard_id": "console",
+      "title": "Console",
+      "url": "https://console.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 4,
+      "residual_gap": "RFC 6265bis supplies much of the normative cookie security model; follow that dependency for SameSite, Domain, Path, and prefix details.",
+      "standard_id": "cookiestore",
+      "title": "Cookie Store API",
+      "url": "https://cookiestore.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "partial",
+      "finding_count": 1,
+      "residual_gap": "Trusted Types attribute integration is cataloged; DOM is cross-cutting and downstream HTML sinks and mutation consumers remain dependency-heavy.",
+      "standard_id": "dom",
+      "title": "DOM",
+      "url": "https://dom.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 2,
+      "residual_gap": "Decoder-specific malformed-sequence behavior remains distributed across individual encoding algorithms.",
+      "standard_id": "encoding",
+      "title": "Encoding",
+      "url": "https://encoding.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "partial",
+      "finding_count": 6,
+      "residual_gap": "CORS, filtering, headers, redirects, and CORP are covered initially; mixed content, CSP, SRI, PNA, ORB, cache partitioning, and authentication dependencies require separate standards review.",
+      "standard_id": "fetch",
+      "title": "Fetch",
+      "url": "https://fetch.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 3,
+      "residual_gap": "User-selected file permission lifetime and revocation are supplied by integrating specifications and user-agent policy.",
+      "standard_id": "fs",
+      "title": "File System",
+      "url": "https://fs.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 3,
+      "residual_gap": "Keyboard lock integration and platform UI details are not fully enumerated in this initial catalog.",
+      "standard_id": "fullscreen",
+      "title": "Fullscreen API",
+      "url": "https://fullscreen.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "partial",
+      "finding_count": 7,
+      "residual_gap": "HTML is very large; origin, sandbox, COOP/COEP, canvas, activation, and meta CSP are covered, while navigation, messaging, workers, storage, embeds, forms, and many feature-specific guards need targeted follow-up.",
+      "standard_id": "html",
+      "title": "HTML",
+      "url": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "coverage_state": "assessed-no-reusable-control",
+      "finding_count": 0,
+      "residual_gap": "Infra defines generic data structures and algorithms; none were promoted without an explicit security-boundary consequence.",
+      "standard_id": "infra",
+      "title": "Infra",
+      "url": "https://infra.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 2,
+      "residual_gap": "Context-specific sniffing tables and Fetch's X-Content-Type-Options integration need joint review for a concrete API.",
+      "standard_id": "mimesniff",
+      "title": "MIME Sniffing",
+      "url": "https://mimesniff.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 1,
+      "residual_gap": "Permission is cataloged; frequency, deceptive content, and platform anti-abuse policy are largely user-agent concerns rather than explicit reusable controls here.",
+      "standard_id": "notifications",
+      "title": "Notifications API",
+      "url": "https://notifications.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "assessed-no-reusable-control",
+      "finding_count": 0,
+      "residual_gap": "Legacy CSS/selector compatibility behavior did not expose an explicit reusable security mechanism.",
+      "standard_id": "quirks",
+      "title": "Quirks Mode",
+      "url": "https://quirks.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 2,
+      "residual_gap": "Quota and clearing are implementation-defined; storage partitioning can evolve beyond the current origin tuple.",
+      "standard_id": "storage",
+      "title": "Storage",
+      "url": "https://storage.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "assessed-no-reusable-control",
+      "finding_count": 0,
+      "residual_gap": "Backpressure, cancellation, and error propagation are generic resource-management primitives unless an integrating API establishes a security boundary.",
+      "standard_id": "streams",
+      "title": "Streams",
+      "url": "https://streams.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "assessed-no-reusable-control",
+      "finding_count": 0,
+      "residual_gap": "The standard is an internal testing surface and was classified testing-only, not a production API security-control source.",
+      "standard_id": "testutils",
+      "title": "Test Utils",
+      "url": "https://testutils.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 2,
+      "residual_gap": "Most validation errors are non-fatal; each integrating API must decide which URL conditions are security-fatal.",
+      "standard_id": "url",
+      "title": "URL",
+      "url": "https://url.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 1,
+      "residual_gap": "Regexp-group restriction is informative integration guidance, not a built-in complexity bound or policy language.",
+      "standard_id": "urlpattern",
+      "title": "URL Pattern",
+      "url": "https://urlpattern.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "partial",
+      "finding_count": 4,
+      "residual_gap": "Exposure and exception redaction are covered; type conversion and binding exceptions remain generic unless tied to a concrete API boundary.",
+      "standard_id": "webidl",
+      "title": "Web IDL",
+      "url": "https://webidl.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 2,
+      "residual_gap": "Server-side Origin validation, authentication, TLS, extensions, and protocol message authorization require RFC and application review.",
+      "standard_id": "websockets",
+      "title": "WebSockets",
+      "url": "https://websockets.spec.whatwg.org/"
+    },
+    {
+      "coverage_state": "cataloged",
+      "finding_count": 3,
+      "residual_gap": "XHR delegates most network security semantics to Fetch; use the Fetch catalog for complete CORS and response-filtering behavior.",
+      "standard_id": "xhr",
+      "title": "XMLHttpRequest",
+      "url": "https://xhr.spec.whatwg.org/"
+    }
+  ],
+  "verified_on": "2026-08-04"
+}

@@ -1,0 +1,105 @@
+{
+  "contract_versions": [],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:5cb567eefb07442f7fdcaf10c28f939f7ca45801754711190d0c505631735c82",
+      "size": 3016
+    },
+    {
+      "binary": false,
+      "path": "references/artifact-contract.md",
+      "sha256": "sha256:d06e6b4c5fc702728c182954876e4635fbc3d8642f5b0532ed27d054c9cb23bc",
+      "size": 1791
+    },
+    {
+      "binary": false,
+      "path": "references/feature-scope.md",
+      "sha256": "sha256:e7ef0428bedb242ac37bc0a65abf4dfc0964432814727fca1e54a9b1d0660f95",
+      "size": 1979
+    },
+    {
+      "binary": false,
+      "path": "references/feature-scope.schema.json",
+      "sha256": "sha256:2fffb238e695886b0d94e4fa34a7ced982de46b5052296d9bd635563143bcc7d",
+      "size": 4548
+    },
+    {
+      "binary": false,
+      "path": "references/integrated-threat-model.md",
+      "sha256": "sha256:784815487bc7efe077b6333b3d01df3a106bf75da4b8f6b39c267b3cb47974e5",
+      "size": 2932
+    },
+    {
+      "binary": false,
+      "path": "references/method.md",
+      "sha256": "sha256:eccbee41263fbe5a6b0cc9672d31c4c245dcbe59efd919bbc931095b500a796b",
+      "size": 4685
+    },
+    {
+      "binary": false,
+      "path": "references/review-bundle.schema.json",
+      "sha256": "sha256:0b6d24e8b0ab58751b2c6ad9dfac068f144b3ff60bd99114890f5677f820e222",
+      "size": 12446
+    },
+    {
+      "binary": false,
+      "path": "scripts/__init__.py",
+      "sha256": "sha256:feb4c2869471a772096905a63504520db31e51bff579cb313185a5168e5de8e8",
+      "size": 57
+    },
+    {
+      "binary": false,
+      "path": "scripts/materialize_feature_scope.py",
+      "sha256": "sha256:c61ada7063685f55e3538645317c1a0d7d42502c639c11df6b48d98e4f9bd636",
+      "size": 14244
+    },
+    {
+      "binary": false,
+      "path": "scripts/materialize_pinned_scope.py",
+      "sha256": "sha256:0481b9467d1ca93c636b92a81432da3fe47358cd0c95111c9e37bfbf8eda46ec",
+      "size": 3058
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_review_bundle.py",
+      "sha256": "sha256:d22316b30c6085fb6552cbf04deed28ed1c13c361630d402ecce4a4ca2488a66",
+      "size": 9614
+    },
+    {
+      "binary": false,
+      "path": "tests/test_materialize_feature_scope.py",
+      "sha256": "sha256:096f1887c129e1915b9627568af9eec0b53c08288fef26caf1a61b87d52a04e7",
+      "size": 8276
+    },
+    {
+      "binary": false,
+      "path": "tests/test_validate_review_bundle.py",
+      "sha256": "sha256:bb5803c0f5a09dc83417e7da5195e9b741df673a0e26515a744a420b384cc677",
+      "size": 5748
+    }
+  ],
+  "output_digest": "sha256:4ef7dbea8bb9b235974c320270a63bce2a3a91d2089cef62b539096e39293d1e",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "rights_manifest_reference": "manifests/w3c-spec-code.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "w3c-spec-code",
+  "source_commit": "7af3a8ca3c19be73252d386cd21a630d3d7c5ddb",
+  "source_repository": "simoneonofri/w3c-spec-code",
+  "tool_version": "reviewctl/0.2.0"
+}

@@ -1,0 +1,355 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "w3c-horizontal-review-patterns-miner",
+  "source": {
+    "repository": "simoneonofri/w3c-horizontal-review-patterns-miner",
+    "repository_path": "w3c-horizontal-review-patterns-miner",
+    "commit": "32c84b936a87829cbcf333519b335f07d878ec85"
+  },
+  "target_path": "skills/w3c-horizontal-review-patterns-miner",
+  "include_paths": [
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/assets/finding.example.json",
+      "target": "assets/finding.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/assets/review-report-template.md",
+      "target": "assets/review-report-template.md",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/assets/review-result.example.json",
+      "target": "assets/review-result.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/assets/specification-profile.example.json",
+      "target": "assets/specification-profile.example.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/references/architecture.md",
+      "target": "references/architecture.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/references/evidence-and-confidence.md",
+      "target": "references/evidence-and-confidence.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/references/finding-model.md",
+      "target": "references/finding-model.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/references/review-patterns.json",
+      "target": "references/review-patterns.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/references/specification-taxonomy.json",
+      "target": "references/specification-taxonomy.json",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/references/w3c-knowledge-contract.md",
+      "target": "references/w3c-knowledge-contract.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/scripts/select_patterns.py",
+      "target": "scripts/select_patterns.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": ".agents/skills/w3c-horizontal-review-patterns-miner/scripts/validate_assets.py",
+      "target": "scripts/validate_assets.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/data-format.json",
+      "target": "tests/fixtures/data-format.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/device-api.json",
+      "target": "tests/fixtures/device-api.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/identity-protocol.json",
+      "target": "tests/fixtures/identity-protocol.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/network-protocol.json",
+      "target": "tests/fixtures/network-protocol.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/persistent-storage.json",
+      "target": "tests/fixtures/persistent-storage.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/rendering-feature.json",
+      "target": "tests/fixtures/rendering-feature.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/review-derived-charter-governance.json",
+      "target": "tests/fixtures/review-derived-charter-governance.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/review-derived-credential-integrity-protocol.json",
+      "target": "tests/fixtures/review-derived-credential-integrity-protocol.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/review-derived-media-capability-fingerprinting.json",
+      "target": "tests/fixtures/review-derived-media-capability-fingerprinting.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/review-derived-ml-native-computation.json",
+      "target": "tests/fixtures/review-derived-ml-native-computation.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/review-derived-policy-delegated-capability.json",
+      "target": "tests/fixtures/review-derived-policy-delegated-capability.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/fixtures/review-derived-semantic-vocabulary.json",
+      "target": "tests/fixtures/review-derived-semantic-vocabulary.json",
+      "rights": {
+        "source_class": "synthetic-fixture",
+        "rights_status": "synthetic-approved",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_pattern_selection.py",
+      "target": "tests/test_pattern_selection.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/w3c-horizontal-review-patterns-miner.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:8a720864c6f733044c942b76680b561d1a97b326018b9a8a47a6abcfef73cbc8",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "references/architecture.md",
+      "find": "`w3c-horizontal-review-patterns` is a repository-local Codex Agent Skill. It\ncontains reusable review reasoning assets and deterministic local scripts.",
+      "replace": "`w3c-horizontal-review-patterns` is a repository-local Codex Agent Skill. It contains reusable review reasoning assets and deterministic local scripts.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "`w3c-knowledge` owns source discovery, retrieval, normalization, relationships,\nraw evidence spans, and source metadata.",
+      "replace": "`w3c-knowledge` owns source discovery, retrieval, normalization, relationships, raw evidence spans, and source metadata.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "This skill owns specification profiling, pattern applicability, finding shape,\ncoverage assessment, and human-readable review output.",
+      "replace": "This skill owns specification profiling, pattern applicability, finding shape, coverage assessment, and human-readable review output.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "The skill must not import implementation modules from `w3c-knowledge`, connect\nto its database, call live APIs, or create an alternative store.",
+      "replace": "The skill must not import implementation modules from `w3c-knowledge`, connect to its database, call live APIs, or create an alternative store.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "No sibling `w3c-knowledge` repository was present when this skill was created.\nA sibling `w3c-horizontal-review` repository documented an API-only dependency\non `w3c-knowledge /api/v1/`. This skill therefore documents an\nimplementation-neutral JSON bundle contract and treats all source retrieval as\nexternal.",
+      "replace": "No sibling `w3c-knowledge` repository was present when this skill was created. A sibling `w3c-horizontal-review` repository documented an API-only dependency on `w3c-knowledge /api/v1/`. This skill therefore documents an implementation-neutral JSON bundle contract and treats all source retrieval as external.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/architecture.md",
+      "find": "Codex performs semantic interpretation: reading a specification, assigning\nfamilies/facets, and interpreting evidence. The scripts perform deterministic\nvalidation and pattern selection only.\n",
+      "replace": "Codex performs semantic interpretation: reading a specification, assigning families/facets, and interpreting evidence. The scripts perform deterministic validation and pattern selection only.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/evidence-and-confidence.md",
+      "find": "Do not fabricate source URLs, issue IDs, consensus, or resolutions. Seed\npatterns remain `seed` until normalized evidence supports an upgrade.",
+      "replace": "Do not fabricate source URLs, issue IDs, consensus, or resolutions. Seed patterns remain `seed` until normalized evidence supports an upgrade.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/finding-model.md",
+      "find": "A finding is atomic: one concern, one triggering condition, one relevant\nproperty or harm, and optionally one mitigation.",
+      "replace": "A finding is atomic: one concern, one triggering condition, one relevant property or harm, and optionally one mitigation.",
+      "expected_count": 1
+    },
+    {
+      "path": "references/w3c-knowledge-contract.md",
+      "find": "Use this v0.1 JSON shape when consuming normalized W3C knowledge. Fields may be\nmissing or null. Missing data must be reported as missing evidence rather than\nsilently inferred.",
+      "replace": "Use this v0.1 JSON shape when consuming normalized W3C knowledge. Fields may be missing or null. Missing data must be reported as missing evidence rather than silently inferred.",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_pattern_selection.py",
+      "find": "ROOT / \".agents\" / \"skills\" / \"w3c-horizontal-review-patterns-miner\"",
+      "replace": "ROOT",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/select_patterns.py",
+      "find": "\n\ndef profile_from_input(obj: dict[str, Any]) -> dict[str, Any]:\n    if \"spec_profile\" in obj:\n        return obj[\"spec_profile\"]\n    return obj\n\n\ndef normalize_facets(raw_facets: Any) -> list[str]:\n    facets: list[str] = []\n    for item in raw_facets or []:\n        if isinstance(item, str):\n            facets.append(item)\n        elif isinstance(item, dict) and \"facet_id\" in item:\n            facets.append(item[\"facet_id\"])\n    return sorted(set(facets))\n\n\n",
+      "replace": "\n\ndef profile_from_input(obj: dict[str, Any]) -> dict[str, Any]:\n    if not isinstance(obj, dict):\n        raise ValueError(\"profile input must be an object\")\n    profile = obj.get(\"spec_profile\", obj)\n    if not isinstance(profile, dict):\n        raise ValueError(\"spec_profile must be an object\")\n    return profile\n\n\ndef normalize_facets(raw_facets: Any) -> list[str]:\n    facets: list[str] = []\n    if raw_facets is None:\n        return facets\n    if not isinstance(raw_facets, list):\n        raise ValueError(\"facets must be an array\")\n    for item in raw_facets:\n        if isinstance(item, str):\n            facets.append(item)\n        elif isinstance(item, dict) and isinstance(item.get(\"facet_id\"), str):\n            facets.append(item[\"facet_id\"])\n        else:\n            raise ValueError(\"facets must contain strings or objects with a string facet_id\")\n    return sorted(set(facets))\n\n\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/select_patterns.py",
+      "find": "        profile = profile_from_input(json.load(sys.stdin))\n    else:\n        profile = {\"primary_family\": None, \"secondary_families\": [], \"facets\": []}\n    return {\n        \"primary_family\": profile.get(\"primary_family\"),\n        \"secondary_families\": sorted(set(profile.get(\"secondary_families\", []))),\n        \"facets\": normalize_facets(profile.get(\"facets\", [])),\n    }\n\n",
+      "replace": "        profile = profile_from_input(json.load(sys.stdin))\n    else:\n        profile = {\"primary_family\": None, \"secondary_families\": [], \"facets\": []}\n    secondary = profile.get(\"secondary_families\")\n    if secondary is None:\n        secondary = []\n    if not isinstance(secondary, list) or any(not isinstance(item, str) for item in secondary):\n        raise ValueError(\"secondary_families must be an array of strings\")\n    return {\n        \"primary_family\": profile.get(\"primary_family\"),\n        \"secondary_families\": sorted(set(secondary)),\n        \"facets\": normalize_facets(profile.get(\"facets\", [])),\n    }\n\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/select_patterns.py",
+      "find": "def validate_profile(profile: dict[str, Any], review_kind: str | None) -> list[str]:\n    families, facets = known_ids()\n    errors: list[str] = []\n    if profile[\"primary_family\"] not in families:\n        errors.append(f\"invalid primary family: {profile['primary_family']!r}\")\n    for family in profile[\"secondary_families\"]:\n        if family not in families:\n",
+      "replace": "def validate_profile(profile: dict[str, Any], review_kind: str | None) -> list[str]:\n    families, facets = known_ids()\n    errors: list[str] = []\n    if not isinstance(profile[\"primary_family\"], str) or profile[\"primary_family\"] not in families:\n        errors.append(f\"invalid primary family: {profile['primary_family']!r}\")\n    for family in profile[\"secondary_families\"]:\n        if family not in families:\n",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/select_patterns.py",
+      "find": "\ndef main() -> int:\n    args = parse_args()\n    profile = build_profile(args)\n    errors = validate_profile(profile, args.review_kind)\n    if errors:\n        for error in errors:\n            print(f\"ERROR: {error}\", file=sys.stderr)\n",
+      "replace": "\ndef main() -> int:\n    args = parse_args()\n    try:\n        profile = build_profile(args)\n        errors = validate_profile(profile, args.review_kind)\n    except (OSError, ValueError) as exc:\n        print(f\"ERROR: invalid profile input: {exc}\", file=sys.stderr)\n        return 2\n    if errors:\n        for error in errors:\n            print(f\"ERROR: {error}\", file=sys.stderr)\n",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_pattern_selection.py",
+      "find": "        self.assertIn(\"invalid primary family\", result.stderr)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "replace": "        self.assertIn(\"invalid primary family\", result.stderr)\n\n\n    def test_null_secondary_families_match_omitted_optional_list(self) -> None:\n        import copy\n        import tempfile\n        original = json.loads((ROOT / \"tests/fixtures/device-api.json\").read_text())\n        outputs = []\n        with tempfile.TemporaryDirectory() as temporary:\n            path = Path(temporary) / \"profile.json\"\n            for explicit_null in (False, True):\n                payload = copy.deepcopy(original)\n                profile = payload.get(\"spec_profile\", payload)\n                profile.pop(\"secondary_families\", None)\n                if explicit_null:\n                    profile[\"secondary_families\"] = None\n                path.write_text(json.dumps(payload))\n                result = subprocess.run([sys.executable, str(SELECTOR), \"--input\", str(path)], capture_output=True, text=True)\n                self.assertEqual(result.returncode, 0, result.stderr)\n                outputs.append(json.loads(result.stdout))\n        self.assertEqual(outputs[0], outputs[1])\n\n    def test_empty_stdin_reports_input_error_without_traceback(self) -> None:\n        result = subprocess.run([sys.executable, str(SELECTOR)], input=\"\", capture_output=True, text=True)\n        self.assertEqual(result.returncode, 2)\n        self.assertIn(\"ERROR: invalid profile input\", result.stderr)\n        self.assertNotIn(\"Traceback\", result.stderr)\n\n    def test_malformed_profiles_report_errors_without_tracebacks(self) -> None:\n        payloads = [[], {\"spec_profile\": None}, {\"primary_family\": []}, {\"secondary_families\": [{}]}, {\"facets\": [{\"facet_id\": []}]}]\n        for payload in payloads:\n            with self.subTest(payload=payload):\n                result = subprocess.run([sys.executable, str(SELECTOR)], input=json.dumps(payload), capture_output=True, text=True)\n                self.assertEqual(result.returncode, 2)\n                self.assertIn(\"ERROR:\", result.stderr)\n                self.assertNotIn(\"Traceback\", result.stderr)\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+      "expected_count": 1
+    }
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/w3c-horizontal-review-patterns-miner.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:9b4115aff0d013226fe07e38505e260dc4546eb02a875098d9fde120952583d0"
+}

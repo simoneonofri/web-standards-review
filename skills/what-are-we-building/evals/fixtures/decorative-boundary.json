@@ -1,0 +1,35 @@
+{
+  "contract_version": 1,
+  "model_id": "model-decorative-boundary",
+  "system_under_analysis": "Minimal API",
+  "scenario": "A user agent sends a request.",
+  "dfd_detail_level": "high-level",
+  "abstraction_level": "spec-review",
+  "scope": [],
+  "out_of_scope": [],
+  "source_inventory": [],
+  "external_entities": [],
+  "processes": [],
+  "data_stores": [],
+  "data_flows": [],
+  "trust_boundaries": [
+    {
+      "stable_id": "TB-01",
+      "type": "Trust Boundary",
+      "name": "Pretty grouping",
+      "description": "A visual grouping.",
+      "evidence_status": "inferred",
+      "source_reference": "Spec section 1",
+      "confidence": "low",
+      "notes": "",
+      "justification": "",
+      "boundary_basis": []
+    }
+  ],
+  "assumptions": [],
+  "inline_safeguards": [],
+  "implicit_threat_model_signals": [],
+  "review_signals": [],
+  "unresolved_questions": [],
+  "validation_notes": []
+}

@@ -1,0 +1,35 @@
+{
+  "specification": {
+    "spec_id": "review-derived-semantic-vocabulary",
+    "title": "Review-Derived Semantic Vocabulary and Data Model",
+    "version": "2026-06-23",
+    "derivation": {
+      "source": "local w3c-knowledge findings",
+      "finding_count": 2133,
+      "observed_review_themes": [
+        "RDF and JSON-LD family reviews",
+        "abstract data model clarity",
+        "technical terminology in introductions",
+        "identifier and linkability concerns",
+        "parser and canonicalization concerns"
+      ]
+    }
+  },
+  "spec_profile": {
+    "primary_family": "semantic-vocabulary-data-model",
+    "secondary_families": [
+      "data-format-serialization",
+      "identity-credential-payment",
+      "cryptographic-api-protocol"
+    ],
+    "facets": [
+      "semantic-vocabulary",
+      "semantic-data-model",
+      "data-format-serialization",
+      "stable-identifier",
+      "credential-material",
+      "cryptographic-interface",
+      "public-governance-metadata"
+    ]
+  }
+}

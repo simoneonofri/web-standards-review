@@ -1,0 +1,16 @@
+{
+  "schema_version": "threat-modeling-flow-fixture/v1",
+  "fixture_id": "clean-room-partial-v1",
+  "expected_outcome": "partial",
+  "publication_authorized": false,
+  "artifacts": {
+    "source_corpus": "fixtures/clean-room-demo/source-corpus-manifest.json",
+    "model": "fixtures/clean-room-demo/model.json",
+    "dictionary": "fixtures/clean-room-demo/dictionary.json",
+    "diagram": "fixtures/clean-room-demo/dfd.mmd",
+    "threats": "fixtures/clean-room-demo/threats.json",
+    "handoff": "fixtures/clean-room-demo/handoff.json",
+    "quality_gate": "fixtures/clean-room-demo/quality-gate-partial.json"
+  },
+  "provider_requirements": []
+}

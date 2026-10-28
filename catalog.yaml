@@ -1,0 +1,576 @@
+{
+  "schema_version": "web-standards-review-catalog/v1",
+  "catalog_version": 4,
+  "project": "web-standards-review",
+  "display_name": "Web Standards Review",
+  "status": "private-beta",
+  "publication_review_required": true,
+  "official_w3c_deliverable": false,
+  "independent_maintenance": "Simone Onofri",
+  "supported_hosts": [
+    "codex",
+    "claude"
+  ],
+  "skills": [
+    {
+      "id": "what-are-we-building",
+      "kind": "core",
+      "path": "skills/what-are-we-building",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus/v1"
+        ],
+        "produces": [
+          "model-packet/v1",
+          "webidl-api-surface-inventory/v1",
+          "algorithm-analysis/v1"
+        ]
+      },
+      "source": {
+        "commit": "38b2d6fa8a81d8a08db3c8fb1f1bf40679729cab",
+        "publication_manifest": "manifests/what-are-we-building.publication.json",
+        "projection_manifest": "skills/what-are-we-building/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "dfd-mermaid",
+      "kind": "core",
+      "path": "skills/dfd-mermaid",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "model-packet/v1"
+        ],
+        "produces": [
+          "dfd-dictionary/v1",
+          "mermaid-dfd/v1"
+        ]
+      },
+      "source": {
+        "commit": "e365c0b9a32537926c96c7ae0c6a2e540420e20c",
+        "publication_manifest": "manifests/dfd-mermaid.publication.json",
+        "projection_manifest": "skills/dfd-mermaid/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "what-can-go-wrong",
+      "kind": "core",
+      "path": "skills/what-can-go-wrong",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "model-packet/v1",
+          "dfd-dictionary/v1"
+        ],
+        "produces": [
+          "threat-package/v1",
+          "card-workshop-output/v1"
+        ],
+        "optional_consumes": [
+          "threat-card-deck/v1"
+        ],
+        "optional_produces": [
+          "candidate-ledger/v1"
+        ]
+      },
+      "source": {
+        "commit": "11e28d7d8b45a21b68c31156b1dc7e9b37042e3b",
+        "publication_manifest": "manifests/what-can-go-wrong.publication.json",
+        "projection_manifest": "skills/what-can-go-wrong/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "what-are-we-going-to-do-about-it",
+      "kind": "core",
+      "path": "skills/what-are-we-going-to-do-about-it",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "model-packet/v1",
+          "threat-package/v1"
+        ],
+        "produces": [
+          "response-package/v1"
+        ]
+      },
+      "source": {
+        "commit": "46a10e58ae09e3450c9a16a3026dca8f8a01ae14",
+        "publication_manifest": "manifests/what-are-we-going-to-do-about-it.publication.json",
+        "projection_manifest": "skills/what-are-we-going-to-do-about-it/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "did-we-do-a-good-enough-job",
+      "kind": "core",
+      "path": "skills/did-we-do-a-good-enough-job",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "model-packet/v1",
+          "dfd-dictionary/v1",
+          "mermaid-dfd/v1",
+          "threat-package/v1",
+          "response-package/v1"
+        ],
+        "produces": [
+          "independent-review-gate/v1"
+        ]
+      },
+      "source": {
+        "commit": "bfd7f53003f73ff52db642c6f506743a416499a8",
+        "publication_manifest": "manifests/did-we-do-a-good-enough-job.publication.json",
+        "projection_manifest": "skills/did-we-do-a-good-enough-job/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "threat-card-generator",
+      "kind": "extension",
+      "path": "skills/threat-card-generator",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus/v1"
+        ],
+        "produces": [
+          "threat-card-deck/v1"
+        ]
+      },
+      "source": {
+        "commit": "c80d983703e69b6855e4c21d1482ea8541e79f2a",
+        "publication_manifest": "manifests/threat-card-generator.publication.json",
+        "projection_manifest": "skills/threat-card-generator/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "fact-check",
+      "kind": "extension",
+      "path": "skills/fact-check",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus/v1"
+        ],
+        "produces": [
+          "fact-check-result/v1"
+        ]
+      },
+      "source": {
+        "commit": "ebd93617f4167b06256a67766d878ec30194db36",
+        "publication_manifest": "manifests/fact-check.publication.json",
+        "projection_manifest": "skills/fact-check/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "spec-review",
+      "kind": "orchestrator",
+      "path": "skills/spec-review",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "focused_w3c_security_reply_evidence",
+          "review-publication-gate/v1"
+        ]
+      },
+      "source": {
+        "commit": "2c020c62c04911fe1c121b937f944f936e2372f0",
+        "publication_manifest": "manifests/spec-review.publication.json",
+        "projection_manifest": "skills/spec-review/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "w3c-webappsec-miner",
+      "kind": "extension",
+      "path": "skills/w3c-webappsec-miner",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "ccc851a4933f75ac562d628252af67bf9e7d8aea",
+        "publication_manifest": "manifests/w3c-webappsec-miner.publication.json",
+        "projection_manifest": "skills/w3c-webappsec-miner/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "whatwg-miner",
+      "kind": "extension",
+      "path": "skills/whatwg-miner",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "85ca56bb804da7196a3104b5f1720cb5723b8422",
+        "publication_manifest": "manifests/whatwg-miner.publication.json",
+        "projection_manifest": "skills/whatwg-miner/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "w3c-spec-miner",
+      "kind": "extension",
+      "path": "skills/w3c-spec-miner",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "7203303b9db8048b3d07ca90ccdf845fee4068ec",
+        "publication_manifest": "manifests/w3c-spec-miner.publication.json",
+        "projection_manifest": "skills/w3c-spec-miner/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "w3c-security-pattern-miner",
+      "kind": "extension",
+      "path": "skills/w3c-security-pattern-miner",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "21fff82d7fb55a0ae9f8205fbbe2cd1f49eef1d7",
+        "publication_manifest": "manifests/w3c-security-pattern-miner.publication.json",
+        "projection_manifest": "skills/w3c-security-pattern-miner/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "w3c-horizontal-review-patterns-miner",
+      "kind": "extension",
+      "path": "skills/w3c-horizontal-review-patterns-miner",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "32c84b936a87829cbcf333519b335f07d878ec85",
+        "publication_manifest": "manifests/w3c-horizontal-review-patterns-miner.publication.json",
+        "projection_manifest": "skills/w3c-horizontal-review-patterns-miner/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "standards-vulnerability-intel-miner",
+      "kind": "extension",
+      "path": "skills/standards-vulnerability-intel-miner",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "a38aace7ef5dc47cfe1a1559b149c7957231de46",
+        "publication_manifest": "manifests/standards-vulnerability-intel-miner.publication.json",
+        "projection_manifest": "skills/standards-vulnerability-intel-miner/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "strategy-charter-miner",
+      "kind": "extension",
+      "path": "skills/strategy-charter-miner",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "ef1c7239bdb65fe6a76a347deac0292fb45d48be",
+        "publication_manifest": "manifests/strategy-charter-miner.publication.json",
+        "projection_manifest": "skills/strategy-charter-miner/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "threat-knowledge",
+      "kind": "extension",
+      "path": "skills/threat-knowledge",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "778eeb22e2815ea4ad4a58d2dc78e25329e09083",
+        "publication_manifest": "manifests/threat-knowledge.publication.json",
+        "projection_manifest": "skills/threat-knowledge/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "w3c-spec-code",
+      "kind": "extension",
+      "path": "skills/w3c-spec-code",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "target-evidence-candidates"
+        ]
+      },
+      "source": {
+        "commit": "7af3a8ca3c19be73252d386cd21a630d3d7c5ddb",
+        "publication_manifest": "manifests/w3c-spec-code.publication.json",
+        "projection_manifest": "skills/w3c-spec-code/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "w3c-horizontal-review",
+      "kind": "orchestrator",
+      "path": "skills/w3c-horizontal-review",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1"
+        ],
+        "produces": [
+          "horizontal-review-run/v1"
+        ]
+      },
+      "source": {
+        "commit": "76a69afce7612882a01ddff480b44a95ffd51c4c",
+        "publication_manifest": "manifests/w3c-horizontal-review.publication.json",
+        "projection_manifest": "skills/w3c-horizontal-review/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "contracts": {
+        "consumes": [],
+        "produces": []
+      },
+      "id": "w3c-issue-pr-review",
+      "kind": "orchestrator",
+      "maturity": "reviewed-private-beta",
+      "path": "skills/w3c-issue-pr-review",
+      "review_state": "publication_review_required",
+      "source": {
+        "commit": "b5510892575b7cc5e2cf251c38c340cb9ec052f5",
+        "projection_manifest": "skills/w3c-issue-pr-review/.review/provenance.json",
+        "publication_manifest": "manifests/w3c-issue-pr-review.publication.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    }
+  ],
+  "bundles": [
+    {
+      "id": "threat-modeling-flow-v1",
+      "version": 4,
+      "path": "bundles/threat-modeling-flow-v1.json",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "skills": [
+        "what-are-we-building",
+        "dfd-mermaid",
+        "what-can-go-wrong",
+        "what-are-we-going-to-do-about-it",
+        "did-we-do-a-good-enough-job",
+        "threat-card-generator",
+        "fact-check",
+        "spec-review",
+        "w3c-webappsec-miner",
+        "whatwg-miner",
+        "w3c-spec-miner",
+        "w3c-security-pattern-miner",
+        "w3c-horizontal-review-patterns-miner",
+        "standards-vulnerability-intel-miner",
+        "strategy-charter-miner",
+        "threat-knowledge",
+        "w3c-spec-code",
+        "w3c-horizontal-review",
+        "w3c-issue-pr-review"
+      ],
+      "contracts": {
+        "version": 1,
+        "manifest": "contracts/shared-contract-v1.json",
+        "root": "contracts/threat-modeling-flow-v1"
+      },
+      "source_pins_and_digests": "bundles/threat-modeling-flow-v1.json",
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
+    }
+  ],
+  "export": {
+    "publication_status": "publication_review_required",
+    "include_roots": [
+      "bundles",
+      "check-packs",
+      "contracts",
+      "docs",
+      "fixtures",
+      "manifests",
+      "prompt-packs",
+      "providers",
+      "schemas",
+      "scripts",
+      "skills",
+      "tests",
+      "tools"
+    ],
+    "include_files": [
+      "README.md",
+      "PROJECT_STATUS.md",
+      "catalog.yaml",
+      "w3c.json",
+      "requirements-dev.txt",
+      "LICENSE.md"
+    ],
+    "exclude_paths": [
+      ".github",
+      "bootstrap-manifest.json",
+      "docs/private-beta.md"
+    ],
+    "remote_write": false
+  },
+  "boundary": {
+    "statement": "Independently maintained; informed by Web standards and W3C work, but not an official W3C deliverable.",
+    "generated_outputs_are_group_conclusions": false,
+    "technical_validation_is_publication_approval": false,
+    "generated_outputs_require_human_review": true
+  },
+  "tools": {
+    "reviewctl": "tools/reviewctl/reviewctl"
+  },
+  "components": [
+    {
+      "id": "w3c-knowledge",
+      "path": "providers/w3c-knowledge",
+      "provenance": "providers/w3c-knowledge/.review/provenance.json",
+      "optional": true,
+      "data_included": false,
+      "retrieval_mode": "lexical-and-local-vector-hybrid"
+    }
+  ]
+}

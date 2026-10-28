@@ -1,0 +1,4 @@
+interface:
+  display_name: "DFD Mermaid"
+  short_description: "Produce TMDC-style Shostack Mermaid DFDs with spec-section and artifact rules."
+  default_prompt: "Use DFD Mermaid to create a Shostack-style Mermaid data-flow diagram."

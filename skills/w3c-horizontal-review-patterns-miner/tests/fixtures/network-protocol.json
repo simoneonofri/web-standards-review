@@ -1,0 +1,21 @@
+{
+  "specification": {
+    "spec_id": "synthetic-network-protocol",
+    "title": "Synthetic Fetch Redirect Metadata Protocol",
+    "version": "2026-01-01"
+  },
+  "spec_profile": {
+    "primary_family": "network-fetch-protocol",
+    "secondary_families": ["storage-cache-persistent-state", "identity-credential-payment"],
+    "facets": [
+      "http-network-protocol",
+      "network",
+      "cross-origin",
+      "third-party",
+      "service-worker",
+      "cross-site-observability",
+      "persistent-state",
+      "credential-material"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "contract_version": 1,
+  "threat_package_id": "threats-two",
+  "model_id": "model-minimal",
+  "source_contract_version": 1,
+  "threats": [
+    {
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "actor_or_condition": "A malicious service",
+      "action_or_failure": "receives request metadata after a user-agent policy bypass",
+      "violated_property_or_interest": "confidentiality",
+      "consequence": "the service learns data the user did not expect to disclose",
+      "threat_story": "A malicious service receives request metadata after a user-agent policy bypass, violating confidentiality and exposing data the user did not expect to disclose.",
+      "evidence_status": "inferred",
+      "evidence": [{"source_reference": "Spec section 2"}],
+      "assumptions": ["A-001"],
+      "lens": ["shostack"],
+      "weakness": "",
+      "harm": "Unexpected disclosure.",
+      "response_hint": "",
+      "responsibility_or_transfer_hint": "",
+      "remaining_question": ""
+    },
+    {
+      "threat_id": "T-02",
+      "affected_model_elements": ["DF-01"],
+      "actor_or_condition": "A service or intermediary",
+      "action_or_failure": "correlates repeated request metadata across interactions",
+      "violated_property_or_interest": "unlinkability",
+      "consequence": "separate user interactions become linkable",
+      "threat_story": "A service or intermediary correlates repeated request metadata across interactions, violating unlinkability and making separate user activity linkable.",
+      "evidence_status": "inferred",
+      "evidence": [{"source_reference": "Spec section 2"}],
+      "assumptions": ["A-002"],
+      "lens": ["shostack", "rfc6973"],
+      "weakness": "",
+      "harm": "Cross-context tracking.",
+      "response_hint": "",
+      "responsibility_or_transfer_hint": "",
+      "remaining_question": ""
+    }
+  ],
+  "coverage_notes": [],
+  "blocked_elements": [],
+  "unresolved_model_gaps": [],
+  "skeptic_result": {"status": "ready-for-response-mapping"}
+}

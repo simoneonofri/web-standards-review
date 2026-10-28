@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "threat_package_id": "threats-demo",
+  "model_id": "model-demo",
+  "source_contract_version": 1,
+  "threats": [
+    {
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01", "PO-01"],
+      "actor_or_condition": "A malicious service",
+      "action_or_failure": "receives request metadata after a policy bypass",
+      "violated_property_or_interest": "confidentiality",
+      "consequence": "the service learns data the user did not expect to disclose",
+      "threat_story": "A malicious service receives request metadata after a policy bypass, violating confidentiality and exposing data the user did not expect to disclose.",
+      "evidence_status": "inferred",
+      "evidence": [{"source_reference": "Spec section 3.1"}],
+      "assumptions": ["A-001"],
+      "lens": ["shostack", "stride"],
+      "weakness": "",
+      "harm": "Unexpected disclosure to a third party.",
+      "response_hint": "Preserve the policy check and error path.",
+      "responsibility_or_transfer_hint": "User agent enforces the check.",
+      "remaining_question": "",
+      "prompt_seed": "What if the recipient receives metadata despite the policy gate?"
+    }
+  ],
+  "coverage_notes": [],
+  "blocked_elements": [],
+  "unresolved_model_gaps": [],
+  "skeptic_result": {"status": "ready-for-response-mapping"}
+}

@@ -1,0 +1,88 @@
+{
+  "contract_versions": [
+    "dfd-dictionary/v1"
+  ],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:8633b342bc0f8242367dfa23908786ee7d35ecb4740cdadf0d8d71cdc652ad3b",
+      "size": 10029
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:53bff7e424e09a3aa0cf8d71f83e6434060546ede4cc89121aacab07944d9cd3",
+      "size": 233
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/custom-renderer.mmd",
+      "sha256": "sha256:de0d3a6bd52bbca595ad8509d825c83bf918ddabfba3399f25339196c029f9ce",
+      "size": 193
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/stripped-ids-dictionary.json",
+      "sha256": "sha256:0b8ff7184cdf261c14e9b8198280b9f4efdd5cd1e3d6a295e3de2cf85473b993",
+      "size": 663
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/truncated-dictionary.json",
+      "sha256": "sha256:f07c3fdc06ade100ec5661eb3689be13b144baf4310e93c8f2007e74a67698bf",
+      "size": 533
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/valid-dictionary.json",
+      "sha256": "sha256:3ca6070cfa6ede546334fa84acc607139bac58cd1f59ebbb705137671640e060",
+      "size": 2492
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/valid-tmdc.mmd",
+      "sha256": "sha256:b3ae50d9f329d1ff03eb6375e289d7b1186e6a5b20b80da3a461b038ecec139c",
+      "size": 1032
+    },
+    {
+      "binary": false,
+      "path": "scripts/render_dictionary.py",
+      "sha256": "sha256:cba2c65a98255903aaf051ac46cf9e63b4eff9fb33912426692ba231acb97301",
+      "size": 2162
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_dfd.py",
+      "sha256": "sha256:8f6f5ca98b3bff6ada41ea42c7aa23af85d9bb859c93378de775499ecfc62e73",
+      "size": 12225
+    },
+    {
+      "binary": false,
+      "path": "tests/test_validate_dfd.py",
+      "sha256": "sha256:4fd44fdd814764aea9b9bf28dab825fc90ba5700d44e43214124f0c1b2ef8539",
+      "size": 5292
+    }
+  ],
+  "output_digest": "sha256:d4b0e241874f133e22dd74986d8a1bbc0c699769d0d69f7303cdf5de95ce52b1",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "isolated-unit-tests"
+  ],
+  "rights_manifest_reference": "manifests/dfd-mermaid.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "dfd-mermaid",
+  "source_commit": "e365c0b9a32537926c96c7ae0c6a2e540420e20c",
+  "source_repository": "simoneonofri/dfd-mermaid",
+  "tool_version": "reviewctl/0.2.0"
+}

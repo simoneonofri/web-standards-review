@@ -1,0 +1,31 @@
+{
+  "contract_version": 1,
+  "response_package_id": "responses-eliminate",
+  "model_id": "model-minimal",
+  "threat_package_id": "threats-minimal",
+  "source_contract_version": 1,
+  "responses": [
+    {
+      "response_id": "R-01",
+      "threat_id": "T-01",
+      "affected_model_elements": ["DF-01"],
+      "erta": "Eliminate",
+      "response": "Remove the cross-origin metadata transfer from the feature.",
+      "mechanism_or_text": "The data flow DF-01 no longer sends request metadata to the service.",
+      "owner": "Specification editor",
+      "evidence_status": "inferred",
+      "evidence": [{"source_reference": "Proposed change"}],
+      "assumptions": [],
+      "transfer_receiver": "",
+      "acceptance_rationale": "",
+      "revisit_trigger": "",
+      "remaining_threat": "",
+      "next_action": "Confirm the feature can work without this flow.",
+      "status": "proposed"
+    }
+  ],
+  "unresolved_threats": [],
+  "cross_cutting_assumptions": [],
+  "skeptic_result": {"status": "ready-for-skeptic-check"},
+  "next_actions": []
+}

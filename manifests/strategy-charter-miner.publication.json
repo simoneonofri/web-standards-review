@@ -1,0 +1,94 @@
+{
+  "schema_version": "publication-manifest/v1",
+  "project": "web-standards-review",
+  "skill_id": "strategy-charter-miner",
+  "source": {
+    "repository": "simoneonofri/w3c-strategy-miner",
+    "repository_path": "w3c-strategy-miner",
+    "commit": "ef1c7239bdb65fe6a76a347deac0292fb45d48be"
+  },
+  "target_path": "skills/strategy-charter-miner",
+  "include_paths": [
+    {
+      "source": "strategy-charter-miner/scripts/update_catalog.py",
+      "target": "scripts/update_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    },
+    {
+      "source": "tests/test_update_catalog.py",
+      "target": "tests/test_update_catalog.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/strategy-charter-miner.md",
+      "target": "SKILL.md",
+      "sha256": "sha256:44dcb556081b231c5300848b4667b3e2b28d600578cb7dd40df6c847fb5ace6b",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      }
+    }
+  ],
+  "normalizations": [
+    {
+      "path": "scripts/update_catalog.py",
+      "find": "type=Path, default=skill_root / \"references\" / \"charter-question-catalog.json\"",
+      "replace": "type=Path, required=True",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/update_catalog.py",
+      "find": "type=Path, default=skill_root / \"references\" / \"charter-question-catalog.md\"",
+      "replace": "type=Path, required=True",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/update_catalog.py",
+      "find": "    if shutil.which(\"rtk\"):\n        command.insert(0, \"rtk\")\n",
+      "replace": "",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_update_catalog.py",
+      "find": "Path(__file__).parents[1] / \"strategy-charter-miner\" / \"scripts\"",
+      "replace": "Path(__file__).parents[1] / \"scripts\"",
+      "expected_count": 1
+    },
+    {
+      "path": "scripts/update_catalog.py",
+      "find": "def extract_questions(markdown: str) -> list[str]:\n    found: list[str] = []\n    without_code = re.sub(r\"```.*?```\", \" \", markdown, flags=re.S)\n    for raw_line in without_code.splitlines():\n        text = flatten_text(raw_line)\n        if not text:\n            continue\n        for match in QUESTION.finditer(text):\n",
+      "replace": "def extract_questions(markdown: str) -> list[str]:\n    found: list[str] = []\n    without_code = re.sub(r\"```.*?```\", \" \", markdown, flags=re.S)\n    blocks: list[str] = []\n    pending: list[str] = []\n\n    def flush() -> None:\n        if pending:\n            blocks.append(\"\\n\".join(pending))\n            pending.clear()\n\n    for raw_line in without_code.splitlines():\n        heading = re.match(r\"^\\s*#{1,6}\\s+\", raw_line)\n        new_item = re.match(r\"^\\s*(?:[-*+]\\s+|\\d+[.)]\\s+)\", raw_line)\n        if not raw_line.strip() or heading or new_item:\n            flush()\n        if raw_line.strip():\n            pending.append(raw_line)\n        if heading:\n            flush()\n    flush()\n    for block in blocks:\n        text = flatten_text(block)\n        if not text:\n            continue\n        for match in QUESTION.finditer(text):\n",
+      "expected_count": 1
+    },
+    {
+      "path": "tests/test_update_catalog.py",
+      "find": "        \"## Traceable source questions\"\n    )\n    assert \"Data flows and disclosure\" in markdown\n",
+      "replace": "        \"## Traceable source questions\"\n    )\n    assert \"Data flows and disclosure\" in markdown\n\n\ndef test_extract_questions_preserves_soft_wrapped_sentence():\n    assert MODULE.extract_questions(\"Is the deliverable timeline\\nrealistic for the milestone?\") == [\"Is the deliverable timeline realistic for the milestone?\"]\n\n\ndef test_extract_questions_preserves_heading_and_list_boundaries():\n    body = \"# Security\\n- Scope notes without a question\\n- Is the deliverable timeline\\n  realistic for the milestone?\\n- Is the review plan\\n  clear for implementers?\"\n    assert MODULE.extract_questions(body) == [\"Is the deliverable timeline realistic for the milestone?\", \"Is the review plan clear for implementers?\"]\n",
+      "expected_count": 1
+    }
+  ],
+  "private_dependency_replacements": [],
+  "human_review_decision": "publication_review_required",
+  "expected_public_contracts": [],
+  "rights_manifest_reference": "manifests/strategy-charter-miner.publication.json#include_paths",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "exclude_paths": [
+    "SKILL.md"
+  ],
+  "expected_output_digest": "sha256:f622fc90fff00c71a0d6df6591844886e1aab5fd1185442c948816cb2720c2ea"
+}

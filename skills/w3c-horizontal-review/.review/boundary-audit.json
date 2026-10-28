@@ -1,0 +1,69 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:079edd0bc54689ee00cff8d615cc8d6f6498de04be33b36972dd02732fb81625",
+      "size": 27451
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:f3f2c8d4bc40f4ec796943ec91be9774ae9af55fdfba8432ccfa4e99d1851765",
+      "size": 2115
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:66e3e204f8e08b4fb58081426ea54e89b92d3a0772089cb6bab24678eb6408d7",
+      "size": 2209
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:750ed995a47b754282ba398a3ce2f4b3c190f3d16549295ac5a878a94bbd48c1",
+      "size": 7768
+    },
+    {
+      "binary": false,
+      "path": "assets/templates/security-review-non-blocking-editorial-v1.md",
+      "sha256": "sha256:6ea28b9e696c4bd6aecb86e843e8addbdfd9824f98eb5f9a7fa0c0d79589ff1f",
+      "size": 541
+    },
+    {
+      "binary": false,
+      "path": "references/extractors.json",
+      "sha256": "sha256:4ea9eb23588ed2904827905924324b49190da5421c7fd9371f2681ee39a742c6",
+      "size": 1396
+    },
+    {
+      "binary": false,
+      "path": "references/run-contract.md",
+      "sha256": "sha256:6c1fbf56526b94f586ab79d3e94e9c92d71b25eed16153ff80f632eba7010764",
+      "size": 3103
+    },
+    {
+      "binary": false,
+      "path": "references/structured-review-comment.md",
+      "sha256": "sha256:080388e69a4a703b1856a517e927820a4c6159c1fc062120d41aac912c20c779",
+      "size": 3259
+    },
+    {
+      "binary": false,
+      "path": "scripts/horizontal_packet.py",
+      "sha256": "sha256:e18c281bab29321cf7c050fdaa466433c84c10b855197894eb49cd077425fee3",
+      "size": 10055
+    }
+  ],
+  "root_digest": "sha256:509ff6d85c943d2470518b2ea6ba74146925bb728b17eb11f23770911e2c50d1",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

@@ -1,0 +1,18 @@
+{
+  "specification": {
+    "spec_id": "synthetic-rendering-feature",
+    "title": "Synthetic CSS Adaptive Rendering Feature",
+    "version": "2026-01-01"
+  },
+  "spec_profile": {
+    "primary_family": "html-dom-css-rendering",
+    "secondary_families": [],
+    "facets": [
+      "html-dom",
+      "css-rendering",
+      "window",
+      "bfcache",
+      "high-entropy"
+    ]
+  }
+}

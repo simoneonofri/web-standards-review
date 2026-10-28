@@ -1,0 +1,51 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:999c572a97d98dbb553912add77c1e0e4e9a06481957460b56db9a7176f9060e",
+      "size": 36093
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:d3002739d815c2b3e2ca8fb3f78441a30a7c29b64924b1be744276c79c6dd4ad",
+      "size": 1496
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:d4848dd5842c3f77a7f85800709c5176bbb74c13511b8506f0960d586d5c4e68",
+      "size": 1693
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:44dcb556081b231c5300848b4667b3e2b28d600578cb7dd40df6c847fb5ace6b",
+      "size": 3617
+    },
+    {
+      "binary": false,
+      "path": "scripts/update_catalog.py",
+      "sha256": "sha256:ba0a7d1887f5cc8342dc5c6cf5288af72bd25dc4af86cc5fe26b509bf5e69aa2",
+      "size": 27386
+    },
+    {
+      "binary": false,
+      "path": "tests/test_update_catalog.py",
+      "sha256": "sha256:dd99f1af66f048a0501fc392c95209da39ed0f457c9c401b5c9bb7f00fd41b3d",
+      "size": 3718
+    }
+  ],
+  "root_digest": "sha256:b17271bc6882f829f59c993b492849b0cd3a26c8cf4e1e83769ee7269ed17750",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

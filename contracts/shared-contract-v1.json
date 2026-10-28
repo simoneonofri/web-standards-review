@@ -1,0 +1,44 @@
+{
+  "schema_version": "shared-threat-model-contract-manifest/v1",
+  "contract_version": 1,
+  "canonical_root": "contracts/threat-modeling-flow-v1",
+  "canonical_validator": "contracts/threat-modeling-flow-v1/scripts/validate_threat_model_contract.py",
+  "compatibility_entrypoints": [
+    "contracts/scripts/validate_threat_model_contract.py",
+    "scripts/validate_threat_model_contract.py"
+  ],
+  "schemas": {
+    "model": "contracts/threat-modeling-flow-v1/schemas/model-packet.schema.json",
+    "dictionary": "contracts/threat-modeling-flow-v1/schemas/dfd-dictionary.schema.json",
+    "threats": "contracts/threat-modeling-flow-v1/schemas/threat-package.schema.json",
+    "responses": "contracts/threat-modeling-flow-v1/schemas/response-package.schema.json",
+    "handoff": "contracts/threat-modeling-flow-v1/schemas/multi-agent-handoff.schema.json"
+  },
+  "shared_invariants": [
+    "contract-version-compatibility",
+    "model-and-dictionary-identity",
+    "canonical-model-element-references",
+    "canonical-assumption-references",
+    "model-threat-response-identity",
+    "orphan-response-rejection",
+    "complete-threat-response-coverage",
+    "handoff-id-authority"
+  ],
+  "producer_specific_validation": {
+    "model": "skills/what-are-we-building/scripts/validate_model_packet.py",
+    "threats": "skills/what-can-go-wrong/scripts/validate_threat_package.py",
+    "responses": "skills/what-are-we-going-to-do-about-it/scripts/validate_response_package.py"
+  },
+  "provenance": {
+    "kind": "maintainer-owned-portable-contract",
+    "source_commit": "5e0ab09556b35a32df9f15c61005e3b21b14a3fd",
+    "source_validator_blob": "39119ac60c2dcd1fca9b4333713c180c872bd0eb",
+    "verification_report": "contracts/threat-modeling-flow-v1/tests/test_threat_model_contract_strict.py",
+    "note": "The validator, schemas, tests, and synthetic fixtures are pinned portable artifacts. Compatibility entry points contain no independent contract semantics.",
+    "reviewed_validator_blob": "44ffea0f8c4d39c4f580a90f3eda32b9f302c0de",
+    "portable_adaptations": [
+      "Align non-empty response fields in the shared validator and schema with producer validation."
+    ]
+  },
+  "human_review_decision": "publication_review_required"
+}

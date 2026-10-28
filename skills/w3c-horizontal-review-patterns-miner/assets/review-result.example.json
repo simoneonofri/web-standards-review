@@ -1,0 +1,68 @@
+{
+  "mode": "prepare-review",
+  "specification": {
+    "spec_id": "example-geolocation-like-api",
+    "title": "Example Location Sensor API",
+    "shortname": "example-location-sensor",
+    "version": "2026-01-01",
+    "status": "synthetic-example",
+    "source_url": null
+  },
+  "spec_profile": {
+    "primary_family": "device-sensor-native-capability",
+    "secondary_families": ["computational-js-webidl-api", "permission-policy-manifest"],
+    "facets": [
+      {
+        "facet_id": "sensor-device",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "source_id": "example-spec",
+            "source_kind": "spec-section",
+            "locator": "section-3",
+            "evidence_span": "The user agent obtains location readings from the device.",
+            "interpretation": "The feature depends on a device sensor."
+          }
+        ]
+      }
+    ]
+  },
+  "expected_patterns": [
+    {
+      "pattern_id": "tag-user-activation-intent",
+      "review_kind": "tag-design",
+      "status": "unknown"
+    },
+    {
+      "pattern_id": "privacy-sensitive-physical-world-data",
+      "review_kind": "privacy",
+      "status": "unknown"
+    },
+    {
+      "pattern_id": "security-secure-context-gating",
+      "review_kind": "security",
+      "status": "unknown"
+    }
+  ],
+  "findings": [],
+  "coverage": {
+    "tag-design": {
+      "unknown": 1
+    },
+    "privacy": {
+      "unknown": 1
+    },
+    "security": {
+      "unknown": 1
+    }
+  },
+  "missing_evidence": [
+    "No permission revocation model was supplied in the normalized bundle."
+  ],
+  "review_questions": [
+    "What user action expresses intent before location readings are exposed?"
+  ],
+  "limitations": [
+    "Synthetic example; not historical W3C evidence."
+  ]
+}

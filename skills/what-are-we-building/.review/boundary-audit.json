@@ -1,0 +1,93 @@
+{
+  "findings": [],
+  "inventory": [
+    {
+      "binary": false,
+      "path": ".review/projection.diff",
+      "sha256": "sha256:4e611a56ea54e4066ea52415988279b094c5a8932b4cc79514c38162e2f0ffd6",
+      "size": 2444
+    },
+    {
+      "binary": false,
+      "path": ".review/provenance.json",
+      "sha256": "sha256:e488c8db647579aec7a8296386b2396fab0f30ac7eba590c66c6ec4598626285",
+      "size": 2930
+    },
+    {
+      "binary": false,
+      "path": ".review/rights.json",
+      "sha256": "sha256:ce7d9ddadcf5f9b98bad555ef87fd5e0b67bfa538a812f1946e3cc9417264ec0",
+      "size": 3033
+    },
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:7c4dc33e17eae7dc5ee3f03873c566220189359527da25e829ca0746310db068",
+      "size": 12996
+    },
+    {
+      "binary": false,
+      "path": "agents/openai.yaml",
+      "sha256": "sha256:7a216fdac7f9c4dff5647a2a797b5ed757cee9cc1a69bf4ef84635a25f3ab147",
+      "size": 273
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/decorative-boundary.json",
+      "sha256": "sha256:a7ac973832c2eed3efab6df85aadbb4c1802bef86496d4dd1581871c99bb0550",
+      "size": 909
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/missing-source-reference.json",
+      "sha256": "sha256:ac8c96f05e99d2d7438ca96220fb4cb8adb04cb00b2e6c073fa2217b04effc5f",
+      "size": 826
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/stripped-canonical-id-dictionary.json",
+      "sha256": "sha256:741c721769fc3cf450f239498d81667099fd6bbc68d7d3e79fd23d43598a55ac",
+      "size": 653
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/truncated-dictionary.json",
+      "sha256": "sha256:083d4d1b536fef814cccbb4f0a8459a5d6015089fa4a41c4e3c0a297c2c1091a",
+      "size": 519
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/valid-minimal-dictionary.json",
+      "sha256": "sha256:8fe87ffc86acda998c11f47f3042d81602cc4179b89fa01552a02e4676b1fce4",
+      "size": 2417
+    },
+    {
+      "binary": false,
+      "path": "evals/fixtures/valid-minimal-model.json",
+      "sha256": "sha256:85bf15ba27ed787a059ea1e89162a63a58864a34a66e2033af03ea04c7bd0faa",
+      "size": 2183
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_model_packet.py",
+      "sha256": "sha256:b6a3e5abe8a94643c99914430f8d62b29244259859460defada81017db39317d",
+      "size": 11469
+    },
+    {
+      "binary": false,
+      "path": "tests/test_model_packet_validator.py",
+      "sha256": "sha256:eba6019392283b6f44d8ffbb2bc45a232a713f16209376a7523f7f620990b0b7",
+      "size": 2755
+    }
+  ],
+  "root_digest": "sha256:954875d54b51a0964e5602f96786e7ff1acaed77931f5b433acff3a9c16f12d9",
+  "schema_version": "boundary-audit/v1",
+  "status": "pass",
+  "tool_version": "reviewctl/0.2.0"
+}

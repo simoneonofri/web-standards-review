@@ -1,0 +1,94 @@
+{
+  "files": {
+    ".review/boundary-audit.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/projection.diff": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/provenance.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/rights.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    "PROJECT_STATUS.md": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "SKILL.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "agents/openai.yaml": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "evals/fixtures/decorative-boundary.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "evals/fixtures/missing-source-reference.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "evals/fixtures/stripped-canonical-id-dictionary.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "evals/fixtures/truncated-dictionary.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "evals/fixtures/valid-minimal-dictionary.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "evals/fixtures/valid-minimal-model.json": {
+      "include_decision": "include",
+      "rights_status": "synthetic-approved",
+      "source_class": "synthetic-fixture"
+    },
+    "scripts/validate_model_packet.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_model_packet_validator.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    }
+  },
+  "manifest_reference": "manifests/what-are-we-building.publication.json#include_paths",
+  "pending": [
+    "Human rights and allowlist review is required before publication."
+  ],
+  "schema_version": "rights-manifest/v1"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "W3C Issue/PR Review"
+  short_description: "Review standards threads and draft supported replies"
+  default_prompt: "Use $w3c-issue-pr-review to review this issue or pull request and draft a concise response grounded in the available evidence."

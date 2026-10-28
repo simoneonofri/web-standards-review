@@ -1,0 +1,1513 @@
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -284,0 +285,2 @@
++Read `contracts/candidate-ledger-v1.md` and use the additive `candidate-ledger/v1` sidecar for full runs or a claimed candidate reconciliation. Freeze the elicitation ledger before assigning final IDs; preserve producing and rejected candidates, provenance, model attachments and counterevidence. The reconciliation helper checks exact model, frozen-ledger and final-package hashes. It does not replace evidence review or the canonical threat-package validator.
++
+@@ -349,0 +352,2 @@
++For complete candidate reconciliation, use `python3 scripts/validate_threat_package.py /path/to/threats.json --model /path/to/model.json --candidate-ledger /path/to/reconciliation.json --elicitation-ledger /path/to/elicitation.json`. The integrated gate rejects partial reconciliation, dropped candidates, premature final IDs and untraced final threats. Legacy wire validation without a ledger does not attest this additional coverage.
++
+--- a/contracts/candidate-ledger-v1.md
++++ b/contracts/candidate-ledger-v1.md
+@@ -0,0 +1,38 @@
++# Candidate ledger v1
++
++This additive sidecar records how raw candidates become, support or fail to become retained threats. It does not change model-packet/v1 or threat-package/v1. Use it for full runs and whenever candidate reconciliation is claimed. Baseline, additional, comparison and workshop runs can each keep their own frozen ledger; do not expose baseline dispositions to a deliberately independent elicitation pass.
++
++The schema is `../schemas/candidate-ledger-v1.schema.json`. All JSON files remain caller-owned run artifacts. The helper reads only the explicitly selected ledger, model, frozen elicitation and threat package; it never fetches a source_artifact reference, accesses a service, launches agents or writes the inputs.
++
++## Elicitation
++
++Record schema_version `candidate-ledger/v1`, run_id, stage `elicitation`, model_sha256 (lowercase SHA-256 of exact model file bytes), and candidates. Candidate IDs use the separate `C-` namespace. Preserve origin_method, source_artifact, observation, affected_model_elements, disposition, rationale and counterevidence, including non-producing observations and an explicit empty counterevidence array when nothing was recorded. A model gap may have no affected elements yet. A candidate is not a final threat.
++
++The elicitation stage cannot assign retained_threat_id, promotion/relatedness dispositions or reconciliation artifact hashes. Freeze this file before reconciliation; later discovered candidates belong in a new frozen elicitation generation, never silently appended to a reconciled ledger. In multi-producer work, freeze the combined candidate input first and preserve every producer's candidate and trace reference. Parallel execution remains optional and requires the caller's authorization.
++
++## Reconciliation
++
++Use the same run and model identity. Add elicitation_sha256, threat_package_sha256 and explicit baseline_threat_ids; baseline IDs name already accepted threats present in the selected final package. An empty baseline array is valid. Do not use it to disguise newly promoted candidates. The baseline package's own acceptance and provenance remain separate prerequisites; this sidecar does not prove them.
++
++Keep exactly the frozen candidate IDs, original observations, methods, trace references, model attachments and recorded counterevidence. Preserve previously recorded evidence references and assumption IDs when adding new evidence. Use these dispositions:
++
++- `retained_unique`: a new threat, requiring a concrete actor/condition, action/failure, violated property/interest, consequence, model attachment, evidence basis and final retained_threat_id.
++- `confirmed_existing`, `refined_existing`, `duplicate`: map to a retained threat and explain the specific relation, preserving their independent provenance without increasing the unique count.
++- `not_concrete`, `not_applicable`, `insufficient_evidence`, `out_of_scope`: keep the rejected candidate and reason.
++- `pending`, `blocked`, `deferred`, `needs_manual_review`: keep the unresolved work explicit; reconciliation remains partial.
++
++Each retained_unique event and its affected model elements must match the selected canonical threat. All final threat IDs must be either explicit baseline IDs or uniquely promoted IDs. Evidence bases distinguish source_checked, model_inference and assumption_based; source checks need references, inference needs rationale, and assumptions need IDs from the accepted model. These checks establish structure and traceability, not whether a source really supports the claim or a deduplication judgment is correct.
++
++## Commands
++
++Run from the installed skill directory, using absolute run-artifact paths:
++
++```sh
++python3 scripts/validate_candidate_ledger.py /path/to/elicitation.json --model /path/to/model.json
++python3 scripts/validate_candidate_ledger.py /path/to/reconciliation.json --model /path/to/model.json --elicitation /path/to/elicitation.json --threats /path/to/threats.json
++python3 scripts/validate_threat_package.py /path/to/threats.json --model /path/to/model.json --candidate-ledger /path/to/reconciliation.json --elicitation-ledger /path/to/elicitation.json
++```
++
++The standalone command exits nonzero on invalid artifacts; a valid ledger reports reconciliation_status `not_started`, `partial` or `complete`. Exit zero alone is not a complete-reconciliation claim. The integrated threat-package command requires complete reconciliation and runs the existing shared threat-package checks. Legacy wire validation without the new flags still works but does not attest to candidate reconciliation. Do not claim full-run readiness when a required ledger or frozen input is unavailable.
++
++The four `tests/fixtures/ledger-*.json` files are synthetic examples of model, final package, frozen elicitation and reconciliation. Copy the complete set for a local demonstration: the hashes depend on exact bytes. No personal corpus, real review history or source deck is included.
+--- a/schemas/candidate-ledger-v1.schema.json
++++ b/schemas/candidate-ledger-v1.schema.json
+@@ -0,0 +1,374 @@
++{
++  "$schema": "https://json-schema.org/draft/2020-12/schema",
++  "$id": "urn:web-standards-review:candidate-ledger:v1",
++  "title": "Candidate ledger v1",
++  "type": "object",
++  "additionalProperties": false,
++  "required": [
++    "schema_version",
++    "run_id",
++    "stage",
++    "model_sha256",
++    "candidates"
++  ],
++  "properties": {
++    "schema_version": {
++      "const": "candidate-ledger/v1"
++    },
++    "run_id": {
++      "type": "string",
++      "pattern": "\\S"
++    },
++    "stage": {
++      "enum": [
++        "elicitation",
++        "reconciliation"
++      ]
++    },
++    "model_sha256": {
++      "type": "string",
++      "pattern": "^[0-9a-f]{64}$"
++    },
++    "candidates": {
++      "type": "array",
++      "items": {
++        "$ref": "#/$defs/candidate"
++      }
++    },
++    "elicitation_sha256": {
++      "type": "string",
++      "pattern": "^[0-9a-f]{64}$"
++    },
++    "threat_package_sha256": {
++      "type": "string",
++      "pattern": "^[0-9a-f]{64}$"
++    },
++    "baseline_threat_ids": {
++      "type": "array",
++      "items": {
++        "type": "string",
++        "pattern": "\\S"
++      },
++      "uniqueItems": true
++    }
++  },
++  "$defs": {
++    "candidate": {
++      "type": "object",
++      "additionalProperties": false,
++      "required": [
++        "candidate_id",
++        "origin_method",
++        "source_artifact",
++        "observation",
++        "affected_model_elements",
++        "disposition",
++        "rationale",
++        "counterevidence"
++      ],
++      "properties": {
++        "candidate_id": {
++          "type": "string",
++          "pattern": "^C-[A-Za-z0-9_.-]+$"
++        },
++        "origin_method": {
++          "type": "string",
++          "pattern": "\\S"
++        },
++        "source_artifact": {
++          "type": "string",
++          "pattern": "\\S"
++        },
++        "observation": {
++          "type": "string",
++          "pattern": "\\S"
++        },
++        "affected_model_elements": {
++          "type": "array",
++          "items": {
++            "type": "string",
++            "pattern": "\\S"
++          },
++          "uniqueItems": true
++        },
++        "disposition": {
++          "enum": [
++            "pending",
++            "retained_unique",
++            "confirmed_existing",
++            "refined_existing",
++            "duplicate",
++            "not_concrete",
++            "not_applicable",
++            "insufficient_evidence",
++            "out_of_scope",
++            "blocked",
++            "deferred",
++            "needs_manual_review"
++          ]
++        },
++        "rationale": {
++          "type": "string",
++          "pattern": "\\S"
++        },
++        "counterevidence": {
++          "type": "array",
++          "items": {
++            "type": "string",
++            "pattern": "\\S"
++          }
++        },
++        "retained_threat_id": {
++          "type": "string",
++          "pattern": "^T-\\d{2,}$"
++        },
++        "evidence_basis": {
++          "type": "object",
++          "additionalProperties": false,
++          "required": [
++            "review_basis",
++            "source_references"
++          ],
++          "properties": {
++            "review_basis": {
++              "enum": [
++                "source_checked",
++                "model_inference",
++                "assumption_based"
++              ]
++            },
++            "source_references": {
++              "type": "array",
++              "items": {
++                "type": "string",
++                "pattern": "\\S"
++              }
++            },
++            "inference_rationale": {
++              "type": "string",
++              "pattern": "\\S"
++            },
++            "assumption_ids": {
++              "type": "array",
++              "items": {
++                "type": "string",
++                "pattern": "\\S"
++              }
++            }
++          },
++          "allOf": [
++            {
++              "if": {
++                "properties": {
++                  "review_basis": {
++                    "const": "source_checked"
++                  }
++                }
++              },
++              "then": {
++                "properties": {
++                  "source_references": {
++                    "type": "array",
++                    "items": {
++                      "type": "string",
++                      "pattern": "\\S"
++                    },
++                    "minItems": 1
++                  }
++                }
++              }
++            },
++            {
++              "if": {
++                "properties": {
++                  "review_basis": {
++                    "enum": [
++                      "model_inference",
++                      "assumption_based"
++                    ]
++                  }
++                }
++              },
++              "then": {
++                "required": [
++                  "inference_rationale"
++                ]
++              }
++            },
++            {
++              "if": {
++                "properties": {
++                  "review_basis": {
++                    "const": "assumption_based"
++                  }
++                }
++              },
++              "then": {
++                "required": [
++                  "assumption_ids"
++                ],
++                "properties": {
++                  "assumption_ids": {
++                    "type": "array",
++                    "items": {
++                      "type": "string",
++                      "pattern": "\\S"
++                    },
++                    "minItems": 1
++                  }
++                }
++              }
++            }
++          ]
++        },
++        "concrete_bad_event": {
++          "type": "object",
++          "additionalProperties": false,
++          "required": [
++            "actor_or_condition",
++            "action_or_failure",
++            "violated_property_or_interest",
++            "consequence"
++          ],
++          "properties": {
++            "actor_or_condition": {
++              "type": "string",
++              "pattern": "\\S"
++            },
++            "action_or_failure": {
++              "type": "string",
++              "pattern": "\\S"
++            },
++            "violated_property_or_interest": {
++              "type": "string",
++              "pattern": "\\S"
++            },
++            "consequence": {
++              "type": "string",
++              "pattern": "\\S"
++            }
++          }
++        }
++      },
++      "allOf": [
++        {
++          "if": {
++            "properties": {
++              "disposition": {
++                "const": "retained_unique"
++              }
++            }
++          },
++          "then": {
++            "required": [
++              "concrete_bad_event"
++            ],
++            "properties": {
++              "affected_model_elements": {
++                "type": "array",
++                "items": {
++                  "type": "string",
++                  "pattern": "\\S"
++                },
++                "minItems": 1,
++                "uniqueItems": true
++              }
++            }
++          }
++        },
++        {
++          "if": {
++            "properties": {
++              "disposition": {
++                "enum": [
++                  "retained_unique",
++                  "confirmed_existing",
++                  "refined_existing",
++                  "duplicate"
++                ]
++              }
++            }
++          },
++          "then": {
++            "required": [
++              "retained_threat_id",
++              "evidence_basis"
++            ]
++          },
++          "else": {
++            "not": {
++              "required": [
++                "retained_threat_id"
++              ]
++            }
++          }
++        }
++      ]
++    }
++  },
++  "allOf": [
++    {
++      "if": {
++        "properties": {
++          "stage": {
++            "const": "reconciliation"
++          }
++        }
++      },
++      "then": {
++        "required": [
++          "elicitation_sha256",
++          "threat_package_sha256",
++          "baseline_threat_ids"
++        ]
++      },
++      "else": {
++        "not": {
++          "anyOf": [
++            {
++              "required": [
++                "elicitation_sha256"
++              ]
++            },
++            {
++              "required": [
++                "threat_package_sha256"
++              ]
++            },
++            {
++              "required": [
++                "baseline_threat_ids"
++              ]
++            }
++          ]
++        },
++        "properties": {
++          "candidates": {
++            "type": "array",
++            "items": {
++              "properties": {
++                "disposition": {
++                  "enum": [
++                    "pending",
++                    "not_concrete",
++                    "not_applicable",
++                    "insufficient_evidence",
++                    "out_of_scope",
++                    "blocked",
++                    "deferred",
++                    "needs_manual_review"
++                  ]
++                }
++              },
++              "not": {
++                "required": [
++                  "retained_threat_id"
++                ]
++              }
++            }
++          }
++        }
++      }
++    }
++  ]
++}
+--- a/scripts/validate_candidate_ledger.py
++++ b/scripts/validate_candidate_ledger.py
+@@ -0,0 +1,254 @@
++"""Validate candidate provenance and reconciliation against frozen caller artifacts."""
++from __future__ import annotations
++
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import re
++from typing import Any
++
++SCHEMA = "candidate-ledger/v1"
++DISPOSITIONS = {"pending", "retained_unique", "confirmed_existing", "refined_existing", "duplicate", "not_concrete", "not_applicable", "insufficient_evidence", "out_of_scope", "blocked", "deferred", "needs_manual_review"}
++RELATED = {"retained_unique", "confirmed_existing", "refined_existing", "duplicate"}
++OPEN = {"pending", "blocked", "deferred", "needs_manual_review"}
++EVENT_FIELDS = ("actor_or_condition", "action_or_failure", "violated_property_or_interest", "consequence")
++ROOT_FIELDS = {"schema_version", "run_id", "stage", "model_sha256", "candidates", "elicitation_sha256", "threat_package_sha256", "baseline_threat_ids"}
++ROW_FIELDS = {"candidate_id", "origin_method", "source_artifact", "observation", "affected_model_elements", "disposition", "rationale", "counterevidence", "concrete_bad_event", "evidence_basis", "retained_threat_id"}
++
++
++def text(value: Any) -> bool:
++    return isinstance(value, str) and bool(value.strip())
++
++
++def strings(value: Any) -> bool:
++    return isinstance(value, list) and all(text(item) for item in value)
++
++
++def identifier(value: Any, pattern: str) -> bool:
++    return isinstance(value, str) and re.fullmatch(pattern, value) is not None
++
++
++def model_ids(model: Any) -> tuple[set[str], set[str], list[str]]:
++    if not isinstance(model, dict):
++        return set(), set(), ["model must be an object"]
++    ids, assumptions, errors = set(), set(), []
++    for collection in ("external_entities", "processes", "data_stores", "data_flows", "trust_boundaries", "assumptions"):
++        rows = model.get(collection, [])
++        if not isinstance(rows, list):
++            errors.append(f"model.{collection} must be an array")
++            continue
++        for row in rows:
++            value = (row.get("canonical_id") or row.get("stable_id") or row.get("id")) if isinstance(row, dict) else None
++            if not text(value):
++                errors.append(f"model.{collection} rows require string IDs")
++                continue
++            (assumptions if collection == "assumptions" else ids).add(value)
++    if not ids:
++        errors.append("model has no pointable elements")
++    return ids, assumptions, errors
++
++
++def evidence_errors(value: Any, where: str, assumptions: set[str]) -> list[str]:
++    if not isinstance(value, dict):
++        return [f"{where}.evidence_basis is required for promotion or relatedness"]
++    errors = []
++    if set(value) - {"review_basis", "source_references", "inference_rationale", "assumption_ids"}:
++        errors.append(f"{where}.evidence_basis has unknown fields")
++    basis = value.get("review_basis")
++    if not isinstance(basis, str) or basis not in {"source_checked", "model_inference", "assumption_based"}:
++        errors.append(f"{where}.evidence_basis has invalid review_basis")
++    references = value.get("source_references")
++    if not strings(references):
++        errors.append(f"{where}.source_references must be a string array")
++    if basis == "source_checked" and not (strings(references) and references):
++        errors.append(f"{where}: source_checked requires source references")
++    if "inference_rationale" in value and not text(value["inference_rationale"]):
++        errors.append(f"{where}.inference_rationale must be non-empty")
++    if basis in ("model_inference", "assumption_based") and not text(value.get("inference_rationale")):
++        errors.append(f"{where}: inferred or assumed evidence needs an explicit rationale")
++    selected = value.get("assumption_ids", [])
++    if not strings(selected) or any(item not in assumptions for item in selected):
++        errors.append(f"{where}.assumption_ids must reference model assumptions")
++    if basis == "assumption_based" and not selected:
++        errors.append(f"{where}: assumption_based requires assumption IDs")
++    return errors
++
++
++def validate(ledger: Any, model: Any, *, model_digest: str, threats: Any = None,
++             threats_digest: str | None = None, elicitation: Any = None,
++             elicitation_digest: str | None = None) -> list[str]:
++    errors = []
++    if not isinstance(ledger, dict):
++        return ["candidate ledger must be an object"]
++    if set(ledger) - ROOT_FIELDS:
++        errors.append("ledger has unknown fields")
++    if ledger.get("schema_version") != SCHEMA:
++        errors.append(f"schema_version must be {SCHEMA}")
++    if not text(ledger.get("run_id")):
++        errors.append("run_id is required")
++    stage = ledger.get("stage")
++    if stage not in ("elicitation", "reconciliation"):
++        errors.append("stage must be elicitation or reconciliation")
++    if not identifier(ledger.get("model_sha256"), r"[0-9a-f]{64}") or ledger.get("model_sha256") != model_digest:
++        errors.append("model hash differs from the selected model bytes")
++    ids, assumptions, model_errors = model_ids(model)
++    errors.extend(model_errors)
++    if isinstance(model, dict) and text(model.get("run_id")) and ledger.get("run_id") != model["run_id"]:
++        errors.append("ledger run differs from the model run")
++    candidates = ledger.get("candidates")
++    if not isinstance(candidates, list):
++        return errors + ["candidates must be an array"]
++    threat_rows = threats.get("threats") if isinstance(threats, dict) else None
++    final = {}
++    frozen = {}
++    baseline = ledger.get("baseline_threat_ids", [])
++    if stage == "elicitation":
++        if any(field in ledger for field in ("elicitation_sha256", "threat_package_sha256", "baseline_threat_ids")):
++            errors.append("elicitation cannot declare reconciliation artifacts or final threat IDs")
++    if stage == "reconciliation":
++        if "baseline_threat_ids" not in ledger:
++            errors.append("reconciliation must explicitly declare baseline_threat_ids")
++        if isinstance(threats, dict):
++            if "run_id" in threats and threats["run_id"] != ledger.get("run_id"):
++                errors.append("threat package run differs from the ledger run")
++            if isinstance(model, dict) and "model_id" in model and threats.get("model_id") != model["model_id"]:
++                errors.append("threat package model differs from the selected model")
++        if not identifier(ledger.get("threat_package_sha256"), r"[0-9a-f]{64}") or ledger.get("threat_package_sha256") != threats_digest:
++            errors.append("reconciliation requires the exact threat package hash")
++        if not identifier(ledger.get("elicitation_sha256"), r"[0-9a-f]{64}") or ledger.get("elicitation_sha256") != elicitation_digest:
++            errors.append("reconciliation requires the frozen elicitation hash")
++        if not isinstance(threat_rows, list):
++            errors.append("reconciliation requires a threat package")
++        else:
++            for row in threat_rows:
++                if not isinstance(row, dict) or not identifier(row.get("threat_id"), r"T-\d{2,}"):
++                    errors.append("threat package rows require canonical threat IDs")
++                elif row["threat_id"] in final:
++                    errors.append("threat package repeats an ID")
++                else:
++                    final[row["threat_id"]] = row
++        if not isinstance(elicitation, dict) or elicitation.get("stage") != "elicitation":
++            errors.append("reconciliation requires an elicitation-stage ledger")
++        else:
++            errors.extend("frozen elicitation: " + error for error in validate(elicitation, model, model_digest=model_digest))
++            if elicitation.get("run_id") != ledger.get("run_id"):
++                errors.append("reconciliation run differs from frozen elicitation")
++            for row in elicitation.get("candidates", []) if isinstance(elicitation.get("candidates"), list) else []:
++                if isinstance(row, dict) and text(row.get("candidate_id")):
++                    frozen[row["candidate_id"]] = row
++        if not strings(baseline) or len(baseline) != len(set(baseline)) or not set(baseline).issubset(final):
++            errors.append("baseline_threat_ids must be unique IDs from the final threat package")
++            baseline = []
++    seen, promoted = set(), set()
++    for index, row in enumerate(candidates):
++        where = f"candidates[{index}]"
++        if not isinstance(row, dict):
++            errors.append(f"{where} must be an object")
++            continue
++        if set(row) - ROW_FIELDS:
++            errors.append(f"{where} has unknown fields")
++        cid = row.get("candidate_id")
++        if not identifier(cid, r"C-[A-Za-z0-9_.-]+"):
++            errors.append(f"{where}.candidate_id must use the C- namespace")
++        elif cid in seen:
++            errors.append(f"duplicate candidate_id: {cid}")
++        else:
++            seen.add(cid)
++        for field in ("origin_method", "source_artifact", "observation", "rationale"):
++            if not text(row.get(field)):
++                errors.append(f"{where}.{field} must be non-empty")
++        elements = row.get("affected_model_elements")
++        if not strings(elements) or not set(elements).issubset(ids):
++            errors.append(f"{where}.affected_model_elements must reference model IDs")
++        elif len(elements) != len(set(elements)):
++            errors.append(f"{where}.affected_model_elements must be unique")
++        if not strings(row.get("counterevidence")):
++            errors.append(f"{where}.counterevidence must be a string array, including when empty")
++        disposition = row.get("disposition")
++        if not isinstance(disposition, str) or disposition not in DISPOSITIONS:
++            errors.append(f"{where} has invalid disposition")
++            continue
++        linked = row.get("retained_threat_id")
++        if stage != "reconciliation" and ("retained_threat_id" in row or disposition in RELATED):
++            errors.append(f"{where}: only reconciliation may assign final threat IDs or promotion dispositions")
++        if stage == "reconciliation":
++            previous = frozen.get(cid) if isinstance(cid, str) else None
++            if previous:
++                for field in ("origin_method", "source_artifact", "observation", "affected_model_elements"):
++                    if row.get(field) != previous.get(field):
++                        errors.append(f"{where}: frozen provenance changed: {field}")
++                if strings(previous.get("counterevidence")) and strings(row.get("counterevidence")) and not set(previous["counterevidence"]).issubset(row["counterevidence"]):
++                    errors.append(f"{where}: frozen counterevidence was dropped")
++                previous_basis, current_basis = previous.get("evidence_basis"), row.get("evidence_basis")
++                if isinstance(previous_basis, dict):
++                    for field in ("source_references", "assumption_ids"):
++                        old = previous_basis.get(field, [])
++                        new = current_basis.get(field, []) if isinstance(current_basis, dict) else []
++                        if strings(old) and strings(new) and not set(old).issubset(new):
++                            errors.append(f"{where}: frozen evidence provenance was dropped: {field}")
++            if disposition in RELATED:
++                if not identifier(linked, r"T-\d{2,}") or linked not in final:
++                    errors.append(f"{where}: relatedness must reference a retained threat")
++                errors.extend(evidence_errors(row.get("evidence_basis"), where, assumptions))
++            elif "retained_threat_id" in row:
++                errors.append(f"{where}: a non-promoted candidate cannot assign a threat ID")
++        if "evidence_basis" in row and not (stage == "reconciliation" and disposition in RELATED):
++            errors.extend(evidence_errors(row["evidence_basis"], where, assumptions))
++        event = row.get("concrete_bad_event")
++        if disposition == "retained_unique" or "concrete_bad_event" in row:
++            if not isinstance(event, dict) or set(event) != set(EVENT_FIELDS):
++                errors.append(f"{where}.concrete_bad_event must contain the four bad-event fields")
++            else:
++                for field in EVENT_FIELDS:
++                    if not text(event[field]):
++                        errors.append(f"{where}.concrete_bad_event.{field} must be non-empty")
++                if disposition == "retained_unique" and isinstance(linked, str) and linked in final:
++                    if any(event[field] != final[linked].get(field) for field in EVENT_FIELDS) or elements != final[linked].get("affected_model_elements"):
++                        errors.append(f"{where}: promoted event differs from the canonical threat")
++            if disposition == "retained_unique":
++                if not (strings(elements) and elements):
++                    errors.append(f"{where}: promotion requires model attachment")
++                if isinstance(linked, str):
++                    if linked in promoted or linked in baseline:
++                        errors.append(f"{where}: final threat ID is assigned more than once")
++                    promoted.add(linked)
++    if stage == "reconciliation":
++        if seen != set(frozen):
++            errors.append("reconciliation dropped or invented frozen candidates")
++        if set(final) != set(baseline) | promoted:
++            errors.append("final threat package includes untraced threats or lacks promoted threats")
++    return errors
++
++
++def load(path: Path) -> tuple[Any, str]:
++    raw = path.read_bytes()
++    return json.loads(raw), hashlib.sha256(raw).hexdigest()
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("candidate_ledger", type=Path)
++    parser.add_argument("--model", type=Path, required=True)
++    parser.add_argument("--threats", type=Path)
++    parser.add_argument("--elicitation", type=Path)
++    args = parser.parse_args()
++    try:
++        ledger, _ = load(args.candidate_ledger)
++        model, model_digest = load(args.model)
++        threats, threats_digest = load(args.threats) if args.threats else (None, None)
++        elicitation, elicitation_digest = load(args.elicitation) if args.elicitation else (None, None)
++        errors = validate(ledger, model, model_digest=model_digest, threats=threats, threats_digest=threats_digest, elicitation=elicitation, elicitation_digest=elicitation_digest)
++    except (OSError, ValueError) as exc:
++        print(json.dumps({"valid": False, "errors": [str(exc)]}))
++        return 1
++    if errors:
++        print(json.dumps({"valid": False, "errors": errors}))
++        return 1
++    status = "not_started" if ledger["stage"] == "elicitation" else "partial" if any(row["disposition"] in OPEN for row in ledger["candidates"]) else "complete"
++    print(json.dumps({"valid": True, "reconciliation_status": status, "candidates": len(ledger["candidates"]), "promoted": sum(row["disposition"] == "retained_unique" for row in ledger["candidates"])}))
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+--- a/scripts/validate_threat_package.py
++++ b/scripts/validate_threat_package.py
+@@ -447,0 +448,2 @@
++    parser.add_argument("--candidate-ledger", type=Path, help="Require complete candidate reconciliation")
++    parser.add_argument("--elicitation-ledger", type=Path, help="Frozen elicitation input for reconciliation")
+@@ -451,0 +454,2 @@
++    if bool(args.candidate_ledger) != bool(args.elicitation_ledger) or (args.candidate_ledger and not args.model):
++        parser.error("candidate reconciliation requires --model, --candidate-ledger and --elicitation-ledger together")
+@@ -466,0 +471,19 @@
++
++    if args.candidate_ledger:
++        from validate_candidate_ledger import OPEN, load, validate
++
++        try:
++            ledger, _ = load(args.candidate_ledger)
++            frozen, frozen_digest = load(args.elicitation_ledger)
++            _model, model_digest = load(args.model)
++            _package, package_digest = load(args.threat_package)
++            ledger_errors = validate(ledger, model, model_digest=model_digest, threats=package, threats_digest=package_digest, elicitation=frozen, elicitation_digest=frozen_digest)
++        except (OSError, ValueError) as error:
++            print(f"ERROR: could not load candidate reconciliation: {error}")
++            return 1
++        if not ledger_errors and (ledger.get("stage") != "reconciliation" or any(row["disposition"] in OPEN for row in ledger["candidates"])):
++            ledger_errors.append("candidate reconciliation is not complete")
++        if ledger_errors:
++            for error in ledger_errors:
++                print(f"ERROR: {error}")
++            return 1
+--- a/tests/fixtures/ledger-elicitation.json
++++ b/tests/fixtures/ledger-elicitation.json
+@@ -0,0 +1,96 @@
++{
++  "schema_version": "candidate-ledger/v1",
++  "run_id": "run-clean-room-v1",
++  "stage": "elicitation",
++  "model_sha256": "560b3f4a8fdee96b919ebf6c171d207d5d24d181be0102a19abb4c2ba11aeb3f",
++  "candidates": [
++    {
++      "candidate_id": "C-walk-01",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-01",
++      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
++      "affected_model_elements": [
++        "DF-01",
++        "PO-01"
++      ],
++      "disposition": "pending",
++      "rationale": "Awaiting independent reconciliation.",
++      "counterevidence": []
++    },
++    {
++      "candidate_id": "C-walk-02",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-02",
++      "observation": "A malicious remote service retains request metadata after the stated purpose ends, violating confidentiality and causing the user and a named non-user remain observable over time.",
++      "affected_model_elements": [
++        "DF-01",
++        "EE-02"
++      ],
++      "disposition": "pending",
++      "rationale": "Awaiting independent reconciliation.",
++      "counterevidence": []
++    },
++    {
++      "candidate_id": "C-walk-03",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-03",
++      "observation": "A user-agent failure bypasses the policy and intent check, violating user control and causing a request is sent without the user's current intent.",
++      "affected_model_elements": [
++        "PO-01",
++        "DF-01"
++      ],
++      "disposition": "pending",
++      "rationale": "Awaiting independent reconciliation.",
++      "counterevidence": []
++    },
++    {
++      "candidate_id": "C-walk-04",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-04",
++      "observation": "A deployment operator logs full request payloads for debugging, violating confidentiality and causing operators gain a secondary copy outside the protocol purpose.",
++      "affected_model_elements": [
++        "DF-01",
++        "TB-01"
++      ],
++      "disposition": "pending",
++      "rationale": "Awaiting independent reconciliation.",
++      "counterevidence": []
++    },
++    {
++      "candidate_id": "C-walk-05",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-05",
++      "observation": "An unresolved service outage prevents the remote service from completing requests, violating availability and causing the user cannot complete the mediated action or obtain recovery.",
++      "affected_model_elements": [
++        "EE-02",
++        "DF-01"
++      ],
++      "disposition": "pending",
++      "rationale": "Awaiting independent reconciliation.",
++      "counterevidence": []
++    },
++    {
++      "candidate_id": "C-independent-01",
++      "origin_method": "independent-prompts",
++      "source_artifact": "independent-trace.json#Q-01",
++      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
++      "affected_model_elements": [
++        "DF-01",
++        "PO-01"
++      ],
++      "disposition": "pending",
++      "rationale": "Awaiting independent reconciliation.",
++      "counterevidence": []
++    },
++    {
++      "candidate_id": "C-gap-01",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-gap",
++      "observation": "An unspecified actor might reveal unspecified information.",
++      "affected_model_elements": [],
++      "disposition": "pending",
++      "rationale": "Candidate needs reconciliation.",
++      "counterevidence": []
++    }
++  ]
++}
+--- a/tests/fixtures/ledger-model.json
++++ b/tests/fixtures/ledger-model.json
+@@ -0,0 +1,180 @@
++{
++  "contract_version": 1,
++  "model_id": "model-clean-room",
++  "run_id": "run-clean-room-v1",
++  "target_id": "target-mediation-demo-v1",
++  "system_under_analysis": "Synthetic request-mediation capability",
++  "scenario": "A user agent mediates a bounded request to a remote service.",
++  "dfd_detail_level": "medium-detail",
++  "abstraction_level": "spec-review",
++  "scope": [
++    "request construction",
++    "user-agent mediation",
++    "remote-service delivery"
++  ],
++  "out_of_scope": [
++    "remote-service internal implementation",
++    "browser-wide architecture"
++  ],
++  "source_inventory": [
++    {
++      "id": "spec-1",
++      "source_reference": "Synthetic specification snapshot section 2"
++    }
++  ],
++  "actors_and_affected_people": [
++    {
++      "id": "person-user",
++      "role": "user",
++      "affected_by": [
++        "unexpected disclosure",
++        "service unavailability"
++      ]
++    },
++    {
++      "id": "person-non-user",
++      "role": "data subject named in the request",
++      "affected_by": [
++        "secondary disclosure"
++      ]
++    }
++  ],
++  "assets_and_properties": [
++    {
++      "asset": "request metadata",
++      "properties": [
++        "confidentiality",
++        "integrity",
++        "data minimization"
++      ]
++    },
++    {
++      "asset": "user intent",
++      "properties": [
++        "mediation",
++        "awareness",
++        "control"
++      ]
++    }
++  ],
++  "external_entities": [
++    {
++      "stable_id": "EE-01",
++      "type": "External Entity",
++      "name": "User",
++      "description": "Person initiating the request.",
++      "evidence_status": "supplied",
++      "source_reference": "Synthetic specification section 2",
++      "normative_status": "informative",
++      "confidence": "high",
++      "notes": ""
++    },
++    {
++      "stable_id": "EE-02",
++      "type": "External Entity",
++      "name": "Remote service",
++      "description": "Service receiving the mediated request.",
++      "evidence_status": "supplied",
++      "source_reference": "Synthetic specification section 3.1",
++      "normative_status": "normative",
++      "confidence": "high",
++      "notes": ""
++    }
++  ],
++  "processes": [
++    {
++      "stable_id": "PO-01",
++      "type": "Process",
++      "name": "User-agent mediation",
++      "description": "Checks policy, user intent, and request scope before delivery.",
++      "evidence_status": "supplied",
++      "source_reference": "Synthetic specification section 3",
++      "normative_status": "normative",
++      "confidence": "high",
++      "notes": ""
++    }
++  ],
++  "data_stores": [],
++  "data_flows": [
++    {
++      "stable_id": "DF-01",
++      "type": "Data Flow",
++      "name": "Mediated request",
++      "description": "Bounded request metadata flows to the remote service.",
++      "evidence_status": "supplied",
++      "source_reference": "Synthetic specification section 3.1",
++      "normative_status": "normative",
++      "confidence": "high",
++      "notes": "",
++      "source": "PO-01",
++      "destination": "EE-02"
++    }
++  ],
++  "trust_boundaries": [
++    {
++      "stable_id": "TB-01",
++      "type": "Trust Boundary",
++      "name": "Origin and administrative boundary",
++      "description": "The remote service is outside user-agent authority.",
++      "evidence_status": "inferred",
++      "source_reference": "Synthetic specification section 3.1",
++      "normative_status": "normative",
++      "confidence": "medium",
++      "notes": "",
++      "justification": "The flow crosses origin, authority, and administrative control.",
++      "boundary_basis": [
++        "origin",
++        "authority",
++        "administrative_domain"
++      ]
++    }
++  ],
++  "assumptions": [
++    {
++      "id": "A-001",
++      "text": "The user agent enforces the policy and intent check."
++    },
++    {
++      "id": "A-002",
++      "text": "The remote service processes only the declared request purpose."
++    }
++  ],
++  "inline_safeguards": [
++    {
++      "id": "S-01",
++      "source_reference": "Synthetic specification section 3",
++      "text": "Fail-closed policy and intent check."
++    },
++    {
++      "id": "S-02",
++      "source_reference": "Synthetic specification section 3.2",
++      "text": "Request-field allowlist."
++    }
++  ],
++  "implicit_threat_model_signals": [
++    {
++      "id": "SIG-01",
++      "text": "The policy gate implies that unintended recipients and excess fields matter."
++    }
++  ],
++  "review_signals": [],
++  "unresolved_questions": [
++    {
++      "id": "Q-01",
++      "text": "Which actor owns remediation after a remote-service breach?"
++    }
++  ],
++  "section_coverage": [
++    {
++      "source_id": "spec-1",
++      "section": "2",
++      "status": "covered"
++    },
++    {
++      "source_id": "spec-1",
++      "section": "3",
++      "status": "covered"
++    }
++  ],
++  "validation_notes": []
++}--- a/tests/fixtures/ledger-reconciliation.json
++++ b/tests/fixtures/ledger-reconciliation.json
+@@ -0,0 +1,177 @@
++{
++  "schema_version": "candidate-ledger/v1",
++  "run_id": "run-clean-room-v1",
++  "stage": "reconciliation",
++  "model_sha256": "560b3f4a8fdee96b919ebf6c171d207d5d24d181be0102a19abb4c2ba11aeb3f",
++  "candidates": [
++    {
++      "candidate_id": "C-walk-01",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-01",
++      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
++      "affected_model_elements": [
++        "DF-01",
++        "PO-01"
++      ],
++      "disposition": "retained_unique",
++      "rationale": "Concrete event supported by the accepted model.",
++      "counterevidence": [],
++      "retained_threat_id": "T-01",
++      "concrete_bad_event": {
++        "actor_or_condition": "An implementation",
++        "action_or_failure": "sends fields outside the declared allowlist",
++        "violated_property_or_interest": "data minimization",
++        "consequence": "the remote service receives unnecessary personal data"
++      },
++      "evidence_basis": {
++        "review_basis": "model_inference",
++        "source_references": [
++          "Synthetic specification and model walk"
++        ],
++        "inference_rationale": "The described flow and actor support this bounded bad event."
++      }
++    },
++    {
++      "candidate_id": "C-walk-02",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-02",
++      "observation": "A malicious remote service retains request metadata after the stated purpose ends, violating confidentiality and causing the user and a named non-user remain observable over time.",
++      "affected_model_elements": [
++        "DF-01",
++        "EE-02"
++      ],
++      "disposition": "retained_unique",
++      "rationale": "Concrete event supported by the accepted model.",
++      "counterevidence": [],
++      "retained_threat_id": "T-02",
++      "concrete_bad_event": {
++        "actor_or_condition": "A malicious remote service",
++        "action_or_failure": "retains request metadata after the stated purpose ends",
++        "violated_property_or_interest": "confidentiality",
++        "consequence": "the user and a named non-user remain observable over time"
++      },
++      "evidence_basis": {
++        "review_basis": "model_inference",
++        "source_references": [
++          "Synthetic specification and model walk"
++        ],
++        "inference_rationale": "The described flow and actor support this bounded bad event."
++      }
++    },
++    {
++      "candidate_id": "C-walk-03",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-03",
++      "observation": "A user-agent failure bypasses the policy and intent check, violating user control and causing a request is sent without the user's current intent.",
++      "affected_model_elements": [
++        "PO-01",
++        "DF-01"
++      ],
++      "disposition": "retained_unique",
++      "rationale": "Concrete event supported by the accepted model.",
++      "counterevidence": [],
++      "retained_threat_id": "T-03",
++      "concrete_bad_event": {
++        "actor_or_condition": "A user-agent failure",
++        "action_or_failure": "bypasses the policy and intent check",
++        "violated_property_or_interest": "user control",
++        "consequence": "a request is sent without the user's current intent"
++      },
++      "evidence_basis": {
++        "review_basis": "model_inference",
++        "source_references": [
++          "Synthetic specification and model walk"
++        ],
++        "inference_rationale": "The described flow and actor support this bounded bad event."
++      }
++    },
++    {
++      "candidate_id": "C-walk-04",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-04",
++      "observation": "A deployment operator logs full request payloads for debugging, violating confidentiality and causing operators gain a secondary copy outside the protocol purpose.",
++      "affected_model_elements": [
++        "DF-01",
++        "TB-01"
++      ],
++      "disposition": "retained_unique",
++      "rationale": "Concrete event supported by the accepted model.",
++      "counterevidence": [],
++      "retained_threat_id": "T-04",
++      "concrete_bad_event": {
++        "actor_or_condition": "A deployment operator",
++        "action_or_failure": "logs full request payloads for debugging",
++        "violated_property_or_interest": "confidentiality",
++        "consequence": "operators gain a secondary copy outside the protocol purpose"
++      },
++      "evidence_basis": {
++        "review_basis": "model_inference",
++        "source_references": [
++          "Synthetic specification and model walk"
++        ],
++        "inference_rationale": "The described flow and actor support this bounded bad event."
++      }
++    },
++    {
++      "candidate_id": "C-walk-05",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-05",
++      "observation": "An unresolved service outage prevents the remote service from completing requests, violating availability and causing the user cannot complete the mediated action or obtain recovery.",
++      "affected_model_elements": [
++        "EE-02",
++        "DF-01"
++      ],
++      "disposition": "retained_unique",
++      "rationale": "Concrete event supported by the accepted model.",
++      "counterevidence": [],
++      "retained_threat_id": "T-05",
++      "concrete_bad_event": {
++        "actor_or_condition": "An unresolved service outage",
++        "action_or_failure": "prevents the remote service from completing requests",
++        "violated_property_or_interest": "availability",
++        "consequence": "the user cannot complete the mediated action or obtain recovery"
++      },
++      "evidence_basis": {
++        "review_basis": "model_inference",
++        "source_references": [
++          "Synthetic specification and model walk"
++        ],
++        "inference_rationale": "The described flow and actor support this bounded bad event."
++      }
++    },
++    {
++      "candidate_id": "C-independent-01",
++      "origin_method": "independent-prompts",
++      "source_artifact": "independent-trace.json#Q-01",
++      "observation": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
++      "affected_model_elements": [
++        "DF-01",
++        "PO-01"
++      ],
++      "disposition": "duplicate",
++      "rationale": "Same actor, failure, affected elements, property and consequence as the retained event; independent provenance is preserved.",
++      "counterevidence": [],
++      "retained_threat_id": "T-01",
++      "evidence_basis": {
++        "review_basis": "model_inference",
++        "source_references": [
++          "Synthetic specification and model walk"
++        ],
++        "inference_rationale": "The described flow and actor support this bounded bad event."
++      }
++    },
++    {
++      "candidate_id": "C-gap-01",
++      "origin_method": "model-walk",
++      "source_artifact": "trace.json#Q-gap",
++      "observation": "An unspecified actor might reveal unspecified information.",
++      "affected_model_elements": [],
++      "disposition": "not_concrete",
++      "rationale": "No concrete actor, failure or model attachment supports retention; keep this non-producing candidate.",
++      "counterevidence": []
++    }
++  ],
++  "elicitation_sha256": "17ea7d3b76d5658d4b9c146cb5beaefe357038238e9ad378112be892467e4dcc",
++  "threat_package_sha256": "e9257ec1acd572d91aaa2e668ccd3767ef8d273707b08da52a6fd23e8fc068e3",
++  "baseline_threat_ids": []
++}
+--- a/tests/fixtures/ledger-threats.json
++++ b/tests/fixtures/ledger-threats.json
+@@ -0,0 +1,166 @@
++{
++  "contract_version": 1,
++  "threat_package_id": "threats-clean-room",
++  "model_id": "model-clean-room",
++  "run_id": "run-clean-room-v1",
++  "target_id": "target-mediation-demo-v1",
++  "source_contract_version": 1,
++  "threats": [
++    {
++      "threat_id": "T-01",
++      "affected_model_elements": [
++        "DF-01",
++        "PO-01"
++      ],
++      "actor_or_condition": "An implementation",
++      "action_or_failure": "sends fields outside the declared allowlist",
++      "violated_property_or_interest": "data minimization",
++      "consequence": "the remote service receives unnecessary personal data",
++      "threat_story": "An implementation sends fields outside the declared allowlist, violating data minimization and causing the remote service receives unnecessary personal data.",
++      "evidence_status": "inferred",
++      "evidence": [
++        {
++          "source_reference": "Synthetic specification and model walk"
++        }
++      ],
++      "assumptions": [
++        "A-001"
++      ],
++      "lens": [
++        "model-walk"
++      ],
++      "weakness": "",
++      "harm": "the remote service receives unnecessary personal data",
++      "response_hint": "Remove undeclared fields from the protocol surface.",
++      "responsibility_or_transfer_hint": "Specification and user agent",
++      "remaining_question": "",
++      "prompt_seed": "What if an implementation sends fields outside the declared allowlist?"
++    },
++    {
++      "threat_id": "T-02",
++      "affected_model_elements": [
++        "DF-01",
++        "EE-02"
++      ],
++      "actor_or_condition": "A malicious remote service",
++      "action_or_failure": "retains request metadata after the stated purpose ends",
++      "violated_property_or_interest": "confidentiality",
++      "consequence": "the user and a named non-user remain observable over time",
++      "threat_story": "A malicious remote service retains request metadata after the stated purpose ends, violating confidentiality and causing the user and a named non-user remain observable over time.",
++      "evidence_status": "inferred",
++      "evidence": [
++        {
++          "source_reference": "Synthetic specification and model walk"
++        }
++      ],
++      "assumptions": [
++        "A-002"
++      ],
++      "lens": [
++        "model-walk"
++      ],
++      "weakness": "",
++      "harm": "the user and a named non-user remain observable over time",
++      "response_hint": "Bound retention and expose a deletion signal.",
++      "responsibility_or_transfer_hint": "Remote service with deployer evidence",
++      "remaining_question": "",
++      "prompt_seed": "What if a malicious remote service retains request metadata after the stated purpose ends?"
++    },
++    {
++      "threat_id": "T-03",
++      "affected_model_elements": [
++        "PO-01",
++        "DF-01"
++      ],
++      "actor_or_condition": "A user-agent failure",
++      "action_or_failure": "bypasses the policy and intent check",
++      "violated_property_or_interest": "user control",
++      "consequence": "a request is sent without the user's current intent",
++      "threat_story": "A user-agent failure bypasses the policy and intent check, violating user control and causing a request is sent without the user's current intent.",
++      "evidence_status": "inferred",
++      "evidence": [
++        {
++          "source_reference": "Synthetic specification and model walk"
++        }
++      ],
++      "assumptions": [
++        "A-001"
++      ],
++      "lens": [
++        "model-walk"
++      ],
++      "weakness": "",
++      "harm": "a request is sent without the user's current intent",
++      "response_hint": "Fail closed and test the denied path.",
++      "responsibility_or_transfer_hint": "User agent",
++      "remaining_question": "",
++      "prompt_seed": "What if a user-agent failure bypasses the policy and intent check?"
++    },
++    {
++      "threat_id": "T-04",
++      "affected_model_elements": [
++        "DF-01",
++        "TB-01"
++      ],
++      "actor_or_condition": "A deployment operator",
++      "action_or_failure": "logs full request payloads for debugging",
++      "violated_property_or_interest": "confidentiality",
++      "consequence": "operators gain a secondary copy outside the protocol purpose",
++      "threat_story": "A deployment operator logs full request payloads for debugging, violating confidentiality and causing operators gain a secondary copy outside the protocol purpose.",
++      "evidence_status": "inferred",
++      "evidence": [
++        {
++          "source_reference": "Synthetic specification and model walk"
++        }
++      ],
++      "assumptions": [
++        "A-002"
++      ],
++      "lens": [
++        "model-walk"
++      ],
++      "weakness": "",
++      "harm": "operators gain a secondary copy outside the protocol purpose",
++      "response_hint": "Document and test a minimized logging profile.",
++      "responsibility_or_transfer_hint": "Deployment operator",
++      "remaining_question": "",
++      "prompt_seed": "What if a deployment operator logs full request payloads for debugging?"
++    },
++    {
++      "threat_id": "T-05",
++      "affected_model_elements": [
++        "EE-02",
++        "DF-01"
++      ],
++      "actor_or_condition": "An unresolved service outage",
++      "action_or_failure": "prevents the remote service from completing requests",
++      "violated_property_or_interest": "availability",
++      "consequence": "the user cannot complete the mediated action or obtain recovery",
++      "threat_story": "An unresolved service outage prevents the remote service from completing requests, violating availability and causing the user cannot complete the mediated action or obtain recovery.",
++      "evidence_status": "inferred",
++      "evidence": [
++        {
++          "source_reference": "Synthetic specification and model walk"
++        }
++      ],
++      "assumptions": [],
++      "lens": [
++        "model-walk"
++      ],
++      "weakness": "",
++      "harm": "the user cannot complete the mediated action or obtain recovery",
++      "response_hint": "Define an owner and recovery requirement.",
++      "responsibility_or_transfer_hint": "Specification editor and deployer",
++      "remaining_question": "The current source does not define a recovery contract.",
++      "prompt_seed": "What if an unresolved service outage prevents the remote service from completing requests?"
++    }
++  ],
++  "coverage_notes": [
++    "Every accepted model element is walked; the fixture is method evidence, not methodological completeness."
++  ],
++  "blocked_elements": [],
++  "unresolved_model_gaps": [],
++  "skeptic_result": {
++    "status": "ready-for-response-mapping"
++  }
++}--- a/tests/test_candidate_ledger.py
++++ b/tests/test_candidate_ledger.py
+@@ -0,0 +1,170 @@
++from __future__ import annotations
++
++import copy
++import importlib.util
++import json
++from pathlib import Path
++import subprocess
++import sys
++
++import jsonschema
++import pytest
++
++ROOT = Path(__file__).resolve().parents[1]
++FIXTURES = ROOT / "tests/fixtures"
++SPEC = importlib.util.spec_from_file_location("portable_candidate_ledger", ROOT / "scripts/validate_candidate_ledger.py")
++LEDGER = importlib.util.module_from_spec(SPEC)
++SPEC.loader.exec_module(LEDGER)
++
++
++def fixture():
++    model, model_digest = LEDGER.load(FIXTURES / "ledger-model.json")
++    threats, threats_digest = LEDGER.load(FIXTURES / "ledger-threats.json")
++    elicitation, elicitation_digest = LEDGER.load(FIXTURES / "ledger-elicitation.json")
++    ledger, _ = LEDGER.load(FIXTURES / "ledger-reconciliation.json")
++    return ledger, model, dict(model_digest=model_digest, threats=threats, threats_digest=threats_digest, elicitation=elicitation, elicitation_digest=elicitation_digest)
++
++
++def test_valid_frozen_pair_matches_schema_and_preserves_duplicate_provenance():
++    ledger, model, context = fixture()
++    schema = json.loads((ROOT / "schemas/candidate-ledger-v1.schema.json").read_text())
++    jsonschema.Draft202012Validator.check_schema(schema)
++    for value in (ledger, context["elicitation"]):
++        jsonschema.validate(value, schema)
++    assert LEDGER.validate(ledger, model, **context) == []
++    assert LEDGER.validate(context["elicitation"], model, model_digest=context["model_digest"]) == []
++    assert len(ledger["candidates"]) == len(context["threats"]["threats"]) + 2
++    assert ledger["candidates"][-2]["disposition"] == "duplicate"
++    assert ledger["candidates"][-1]["disposition"] == "not_concrete"
++
++
++@pytest.mark.parametrize("field", ["model_sha256", "threat_package_sha256", "elicitation_sha256"])
++def test_exact_input_hashes_are_required(field):
++    ledger, model, context = fixture()
++    ledger[field] = "0" * 64
++    assert LEDGER.validate(ledger, model, **context)
++
++
++@pytest.mark.parametrize("mutation", ["drop", "invent", "observation", "origin_method", "source_artifact", "affected_model_elements"])
++def test_reconciliation_cannot_drop_or_rewrite_frozen_candidates(mutation):
++    ledger, model, context = fixture()
++    if mutation == "drop":
++        ledger["candidates"].pop()
++    elif mutation == "invent":
++        row = copy.deepcopy(ledger["candidates"][-1])
++        row["candidate_id"] = "C-invented"
++        ledger["candidates"].append(row)
++    else:
++        ledger["candidates"][0][mutation] = [] if mutation == "affected_model_elements" else "Changed frozen provenance"
++    assert LEDGER.validate(ledger, model, **context)
++
++
++@pytest.mark.parametrize("mutation", ["id", "promotion", "alias", "hash", "baseline"])
++def test_elicitation_cannot_assign_final_threat_identity(mutation):
++    _, model, context = fixture()
++    early = context["elicitation"]
++    if mutation == "id":
++        early["candidates"][0]["retained_threat_id"] = "T-01"
++    elif mutation == "promotion":
++        early["candidates"][0]["disposition"] = "retained_unique"
++    elif mutation == "alias":
++        early["candidates"][0]["threat_id"] = "T-01"
++    elif mutation == "hash":
++        early["threat_package_sha256"] = context["threats_digest"]
++    else:
++        early["baseline_threat_ids"] = ["T-01"]
++    assert LEDGER.validate(early, model, model_digest=context["model_digest"])
++
++
++@pytest.mark.parametrize("mutation", ["unknown_model", "duplicate_candidate", "unknown_disposition", "bad_event", "wrong_event", "unknown_threat", "promote_twice", "untraced_threat", "drop_baseline_declaration", "missing_evidence", "wrong_model", "wrong_run"])
++def test_invalid_promotion_and_context_fail_closed(mutation):
++    ledger, model, context = fixture()
++    row = ledger["candidates"][0]
++    if mutation == "unknown_model":
++        row["affected_model_elements"] = ["PO-99"]
++    elif mutation == "duplicate_candidate":
++        ledger["candidates"][1]["candidate_id"] = row["candidate_id"]
++    elif mutation == "unknown_disposition":
++        row["disposition"] = "probably_ok"
++    elif mutation == "bad_event":
++        del row["concrete_bad_event"]
++    elif mutation == "wrong_event":
++        row["concrete_bad_event"]["consequence"] = "A different consequence"
++    elif mutation == "unknown_threat":
++        row["retained_threat_id"] = "T-99"
++    elif mutation == "promote_twice":
++        duplicate = ledger["candidates"][-2]
++        duplicate.update(disposition="retained_unique", concrete_bad_event=copy.deepcopy(row["concrete_bad_event"]))
++    elif mutation == "untraced_threat":
++        extra = copy.deepcopy(context["threats"]["threats"][0])
++        extra["threat_id"] = "T-99"
++        context["threats"]["threats"].append(extra)
++    elif mutation == "drop_baseline_declaration":
++        del ledger["baseline_threat_ids"]
++    elif mutation == "missing_evidence":
++        del row["evidence_basis"]
++    elif mutation == "wrong_model":
++        context["threats"]["model_id"] = "different-model"
++    else:
++        context["threats"]["run_id"] = "different-run"
++    assert LEDGER.validate(ledger, model, **context)
++
++
++@pytest.mark.parametrize("field", ["counterevidence", "source_references", "assumption_ids"])
++def test_frozen_counterevidence_and_source_provenance_cannot_be_erased(field):
++    ledger, model, context = fixture()
++    previous = context["elicitation"]["candidates"][0]
++    if field == "counterevidence":
++        previous[field] = ["A recorded limiting condition"]
++    else:
++        previous["evidence_basis"] = copy.deepcopy(ledger["candidates"][0]["evidence_basis"])
++        previous["evidence_basis"][field] = ["A-001" if field == "assumption_ids" else "Additional source"]
++    assert LEDGER.validate(ledger, model, **context)
++
++
++@pytest.mark.parametrize("value", [None, [], {}, 42, ""])
++@pytest.mark.parametrize("field", ["candidate_id", "disposition", "affected_model_elements", "evidence_basis", "concrete_bad_event"])
++def test_malformed_retained_candidate_reports_errors_without_crashing(field, value):
++    ledger, model, context = fixture()
++    ledger["candidates"][0][field] = value
++    assert LEDGER.validate(ledger, model, **context)
++
++
++def command(path, *, integrated=False):
++    script = ROOT / "scripts" / ("validate_threat_package.py" if integrated else "validate_candidate_ledger.py")
++    args = [sys.executable, str(script), str(FIXTURES / "ledger-threats.json") if integrated else str(path), "--model", str(FIXTURES / "ledger-model.json")]
++    if integrated:
++        args += ["--candidate-ledger", str(path), "--elicitation-ledger", str(FIXTURES / "ledger-elicitation.json")]
++    else:
++        args += ["--threats", str(FIXTURES / "ledger-threats.json"), "--elicitation", str(FIXTURES / "ledger-elicitation.json")]
++    return args
++
++
++def test_integrated_gate_runs_from_an_unrelated_caller_directory(tmp_path):
++    result = subprocess.run(command(FIXTURES / "ledger-reconciliation.json", integrated=True), cwd=tmp_path, capture_output=True, text=True)
++    assert result.returncode == 0, result.stdout + result.stderr
++
++
++def test_shape_valid_partial_ledger_cannot_pass_complete_handoff(tmp_path):
++    ledger, _, _ = fixture()
++    ledger["candidates"][-1]["disposition"] = "deferred"
++    path = tmp_path / "partial.json"
++    path.write_text(json.dumps(ledger))
++    standalone = subprocess.run(command(path), cwd=tmp_path, capture_output=True, text=True)
++    assert standalone.returncode == 0, standalone.stdout + standalone.stderr
++    assert json.loads(standalone.stdout)["reconciliation_status"] == "partial"
++    result = subprocess.run(command(path, integrated=True), cwd=tmp_path, capture_output=True, text=True)
++    assert result.returncode != 0
++    assert "not complete" in result.stdout
++
++
++def test_cli_rejects_modified_frozen_bytes_and_does_not_rewrite_inputs(tmp_path):
++    early = tmp_path / "early.json"
++    early.write_bytes((FIXTURES / "ledger-elicitation.json").read_bytes() + b"\n")
++    args = command(FIXTURES / "ledger-reconciliation.json")
++    args[-1] = str(early)
++    before = early.read_bytes()
++    result = subprocess.run(args, cwd=tmp_path, capture_output=True, text=True)
++    assert result.returncode != 0
++    assert "frozen elicitation hash" in result.stdout
++    assert early.read_bytes() == before

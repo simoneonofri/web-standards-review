@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "required": [
+    "check_id",
+    "pattern_id",
+    "category",
+    "scope",
+    "question",
+    "result"
+  ],
+  "title": "security-check",
+  "type": "object"
+}

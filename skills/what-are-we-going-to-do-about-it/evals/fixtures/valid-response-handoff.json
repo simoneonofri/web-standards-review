@@ -1,0 +1,27 @@
+{
+  "contract_version": 1,
+  "handoff_id": "HANDOFF-RESP-001",
+  "run_id": "pointer-events-repair-v2",
+  "producer_agent": "response-reconciler",
+  "producer_role": "response-reconciliation",
+  "consumer_role": "report-assembler",
+  "artifact_kind": "response_package",
+  "artifact_path": "baseline-response-package.json",
+  "input_artifacts": ["baseline-threat-package.json", "remediation-handoff.json"],
+  "exclusive_write_scope": ["artifacts/repair-v2/responses"],
+  "source_corpus_manifest": "source-corpus/manifest.json",
+  "id_authority": "response_reconciliation",
+  "status": "ready",
+  "validation": {
+    "result": "pass",
+    "checks": ["response-package", "complete-threat-coverage", "specific-response"],
+    "evidence_paths": ["baseline-response-package.validation.json"]
+  },
+  "provenance": {
+    "created_at": "2026-07-21T16:00:00Z",
+    "source_inputs_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "tool_or_runner": "Codex multi-agent",
+    "notes": "Response reconciliation assigned final R IDs."
+  },
+  "blocking_issues": []
+}

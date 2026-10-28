@@ -1,0 +1,177 @@
+{
+  "schema_version": "0.1",
+  "facet_dimensions": {
+    "surface": [
+      "webidl-javascript",
+      "html-dom",
+      "css-rendering",
+      "http-network-protocol",
+      "data-format-serialization",
+      "semantic-vocabulary",
+      "manifest-policy",
+      "cryptographic-interface",
+      "charter-governance-document",
+      "review-request-package"
+    ],
+    "capability": [
+      "computation",
+      "network",
+      "storage-state",
+      "sensor-device",
+      "identity-credential",
+      "media-capture",
+      "cryptography",
+      "permission-delegation",
+      "semantic-data-model",
+      "standardization-scope"
+    ],
+    "execution-embedding-context": [
+      "window",
+      "dedicated-worker",
+      "shared-worker",
+      "service-worker",
+      "top-level",
+      "iframe",
+      "third-party",
+      "cross-origin",
+      "background",
+      "bfcache",
+      "native-ui"
+    ],
+    "data-authority": [
+      "personal-data",
+      "sensitive-data",
+      "stable-identifier",
+      "persistent-state",
+      "high-entropy",
+      "physical-world-data",
+      "native-capability",
+      "trusted-ui",
+      "credential-material",
+      "cross-site-observability",
+      "public-governance-metadata"
+    ]
+  },
+  "families": [
+    {
+      "family_id": "computational-js-webidl-api",
+      "definition": "A JavaScript or WebIDL API that exposes computation, object models, events, or methods to web content.",
+      "positive_signals": ["WebIDL interfaces", "JavaScript methods", "events", "Promise-returning operations"],
+      "exclusion_signals": ["wire protocol only", "standalone file format", "pure CSS syntax"],
+      "typical_facets": ["webidl-javascript", "computation", "window", "dedicated-worker"],
+      "common_overlaps": ["device-sensor-native-capability", "storage-cache-persistent-state", "cryptographic-api-protocol"],
+      "representative_synthetic_examples": ["Shape Detection API", "Task Scheduling API"],
+      "likely_review_dimensions": ["tag-design", "privacy", "security"]
+    },
+    {
+      "family_id": "html-dom-css-rendering",
+      "definition": "A feature that changes HTML, DOM behavior, CSS syntax, rendering, layout, accessibility tree, or user preference integration.",
+      "positive_signals": ["HTML elements or attributes", "DOM algorithms", "CSS properties", "rendering behavior"],
+      "exclusion_signals": ["network-only protocol", "credential exchange without UI integration"],
+      "typical_facets": ["html-dom", "css-rendering", "window", "bfcache"],
+      "common_overlaps": ["permission-policy-manifest", "data-format-serialization"],
+      "representative_synthetic_examples": ["CSS View Transitions", "Declarative Shadow DOM extension"],
+      "likely_review_dimensions": ["tag-design", "privacy"]
+    },
+    {
+      "family_id": "device-sensor-native-capability",
+      "definition": "An API that exposes sensors, device state, local peripherals, native platform capability, or physical-world data.",
+      "positive_signals": ["device enumeration", "sensor readings", "native chooser", "hardware access", "permission prompt"],
+      "exclusion_signals": ["server-side protocol only", "format with no active capability"],
+      "typical_facets": ["webidl-javascript", "sensor-device", "permission-delegation", "physical-world-data", "native-capability", "high-entropy"],
+      "common_overlaps": ["media-capture-realtime", "permission-policy-manifest", "computational-js-webidl-api"],
+      "representative_synthetic_examples": ["Geolocation-like API", "Local device pairing API"],
+      "likely_review_dimensions": ["tag-design", "privacy", "security"]
+    },
+    {
+      "family_id": "storage-cache-persistent-state",
+      "definition": "A storage, cache, quota, or persistence mechanism that retains state across navigations or browser sessions.",
+      "positive_signals": ["storage bucket", "cache", "quota", "persistence", "clear site data"],
+      "exclusion_signals": ["ephemeral algorithm with no state", "pure media stream"],
+      "typical_facets": ["webidl-javascript", "storage-state", "persistent-state", "service-worker", "third-party"],
+      "common_overlaps": ["network-fetch-protocol", "permission-policy-manifest"],
+      "representative_synthetic_examples": ["Persistent Resource Store", "Partitioned Cache API"],
+      "likely_review_dimensions": ["privacy", "security", "tag-design"]
+    },
+    {
+      "family_id": "identity-credential-payment",
+      "definition": "A protocol or API that handles identity assertions, credentials, account selection, authentication, authorization, or payments.",
+      "positive_signals": ["credential", "account", "assertion", "payment instrument", "identity provider", "trusted UI"],
+      "exclusion_signals": ["anonymous data format", "rendering-only feature"],
+      "typical_facets": ["identity-credential", "credential-material", "trusted-ui", "stable-identifier", "cross-origin", "native-ui"],
+      "common_overlaps": ["cryptographic-api-protocol", "network-fetch-protocol", "permission-policy-manifest"],
+      "representative_synthetic_examples": ["Federated Credential Flow", "Payment authorization API"],
+      "likely_review_dimensions": ["privacy", "security", "tag-design"]
+    },
+    {
+      "family_id": "network-fetch-protocol",
+      "definition": "A Fetch, HTTP, WebSocket, transport, caching, redirect, or network metadata feature.",
+      "positive_signals": ["HTTP header", "Fetch integration", "redirect handling", "cache semantics", "network request"],
+      "exclusion_signals": ["local-only JS object model", "standalone parser format"],
+      "typical_facets": ["http-network-protocol", "network", "cross-origin", "cross-site-observability", "service-worker"],
+      "common_overlaps": ["storage-cache-persistent-state", "identity-credential-payment", "data-format-serialization"],
+      "representative_synthetic_examples": ["Fetch redirect metadata", "Structured cache validation header"],
+      "likely_review_dimensions": ["security", "privacy", "tag-design"]
+    },
+    {
+      "family_id": "data-format-serialization",
+      "definition": "A file format, serialization, grammar, canonicalization scheme, or structured data vocabulary.",
+      "positive_signals": ["ABNF", "JSON grammar", "canonical form", "parser", "serialization algorithm"],
+      "exclusion_signals": ["active browser capability", "permission-gated device API"],
+      "typical_facets": ["data-format-serialization", "computation", "sensitive-data"],
+      "common_overlaps": ["network-fetch-protocol", "cryptographic-api-protocol"],
+      "representative_synthetic_examples": ["Versioned Manifest Format", "Canonical Widget Data"],
+      "likely_review_dimensions": ["tag-design", "security", "privacy"]
+    },
+    {
+      "family_id": "semantic-vocabulary-data-model",
+      "definition": "A semantic vocabulary, ontology, abstract data model, identifier namespace, or linked-data model that defines concepts and relationships rather than only a concrete wire syntax.",
+      "positive_signals": ["RDF", "JSON-LD", "ontology", "vocabulary", "abstract data model", "IRI", "DID method", "dataset metadata"],
+      "exclusion_signals": ["active browser capability", "pure transport protocol", "rendering-only feature"],
+      "typical_facets": ["semantic-vocabulary", "semantic-data-model", "data-format-serialization", "stable-identifier", "public-governance-metadata"],
+      "common_overlaps": ["data-format-serialization", "identity-credential-payment", "cryptographic-api-protocol"],
+      "representative_synthetic_examples": ["RDF concept model", "DID resolution vocabulary"],
+      "likely_review_dimensions": ["tag-design", "privacy", "security"]
+    },
+    {
+      "family_id": "media-capture-realtime",
+      "definition": "A real-time audio, video, screen, sensor stream, or media capture/control feature.",
+      "positive_signals": ["camera", "microphone", "screen capture", "media stream", "track"],
+      "exclusion_signals": ["offline media file format only", "network header only"],
+      "typical_facets": ["media-capture", "sensor-device", "personal-data", "sensitive-data", "physical-world-data", "background"],
+      "common_overlaps": ["device-sensor-native-capability", "permission-policy-manifest"],
+      "representative_synthetic_examples": ["Window Region Capture", "Ambient Audio Stream"],
+      "likely_review_dimensions": ["privacy", "security", "tag-design"]
+    },
+    {
+      "family_id": "permission-policy-manifest",
+      "definition": "A policy, manifest, permission delegation, install, or declarative capability-control mechanism.",
+      "positive_signals": ["permission policy", "manifest member", "delegation", "allow attribute", "policy-controlled feature"],
+      "exclusion_signals": ["format with no processing policy", "standalone rendering primitive"],
+      "typical_facets": ["manifest-policy", "permission-delegation", "iframe", "third-party", "trusted-ui"],
+      "common_overlaps": ["device-sensor-native-capability", "identity-credential-payment", "storage-cache-persistent-state"],
+      "representative_synthetic_examples": ["Capability Manifest", "Delegated Permission Policy"],
+      "likely_review_dimensions": ["security", "privacy", "tag-design"]
+    },
+    {
+      "family_id": "cryptographic-api-protocol",
+      "definition": "A cryptographic JavaScript API, key-management feature, signing/encryption protocol, randomness interface, or proof mechanism.",
+      "positive_signals": ["key material", "signature", "encryption", "randomness", "hash", "attestation"],
+      "exclusion_signals": ["identity UI without cryptographic processing", "plain data format"],
+      "typical_facets": ["cryptographic-interface", "cryptography", "credential-material", "sensitive-data", "cross-origin"],
+      "common_overlaps": ["identity-credential-payment", "data-format-serialization"],
+      "representative_synthetic_examples": ["Hardware-bound key API", "Signed exchange proof format"],
+      "likely_review_dimensions": ["security", "privacy", "tag-design"]
+    },
+    {
+      "family_id": "charter-governance-review",
+      "definition": "A Working Group, Interest Group, Community Group, or standards-program charter/recharter review target whose main review object is scope, deliverables, coordination, review readiness, and risk rather than a single technical API.",
+      "positive_signals": ["charter", "recharter", "Working Group", "Interest Group", "deliverables", "scope", "AC review", "Strategy Funnel"],
+      "exclusion_signals": ["single concrete technical specification", "standalone API without group-scope material"],
+      "typical_facets": ["charter-governance-document", "review-request-package", "standardization-scope", "public-governance-metadata"],
+      "common_overlaps": ["semantic-vocabulary-data-model", "identity-credential-payment", "data-format-serialization"],
+      "representative_synthetic_examples": ["Working Group recharter review", "Strategy Funnel charter review"],
+      "likely_review_dimensions": ["tag-design", "privacy", "security"]
+    }
+  ]
+}

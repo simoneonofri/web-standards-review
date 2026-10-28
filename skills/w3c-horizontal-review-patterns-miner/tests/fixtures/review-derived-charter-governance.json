@@ -1,0 +1,32 @@
+{
+  "specification": {
+    "spec_id": "review-derived-charter-governance",
+    "title": "Review-Derived Charter Governance Target",
+    "version": "2026-06-23",
+    "derivation": {
+      "source": "local w3c-knowledge findings",
+      "finding_count": 2133,
+      "observed_review_themes": [
+        "charter and recharter review",
+        "scope and deliverables",
+        "coordination and risk factors",
+        "privacy and security review readiness",
+        "review request package completeness"
+      ]
+    }
+  },
+  "spec_profile": {
+    "primary_family": "charter-governance-review",
+    "secondary_families": [
+      "semantic-vocabulary-data-model"
+    ],
+    "facets": [
+      "charter-governance-document",
+      "review-request-package",
+      "standardization-scope",
+      "public-governance-metadata",
+      "semantic-vocabulary",
+      "semantic-data-model"
+    ]
+  }
+}

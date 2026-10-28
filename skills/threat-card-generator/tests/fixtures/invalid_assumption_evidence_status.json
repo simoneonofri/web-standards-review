@@ -1,0 +1,37 @@
+{
+  "deck_id": "invalid-assumption-deck",
+  "title": "Invalid Assumption Evidence Deck",
+  "version": "1.0.0",
+  "status": "draft",
+  "description": "Synthetic negative fixture for assumption evidence vocabulary.",
+  "generation_mode": "source-to-cards",
+  "play_mode": "collaborative",
+  "method_notes": [],
+  "suits": [
+    {
+      "id": "ASM",
+      "name": "Assumptions",
+      "description": "Assumption-derived prompts."
+    }
+  ],
+  "cards": [
+    {
+      "id": "TEST-ASM-01",
+      "suit": "ASM",
+      "rank": 1,
+      "title": "Assumed state",
+      "prompt": "Could the assumed state be false?",
+      "look_for": ["state validation"],
+      "outputs": ["remaining question"],
+      "applies_to": ["process"],
+      "source_trace": [
+        {
+          "source_kind": "assumption",
+          "source_reference": "Synthetic assumption A-001",
+          "evidence_status": "inferred"
+        }
+      ]
+    }
+  ],
+  "playtest_log": []
+}

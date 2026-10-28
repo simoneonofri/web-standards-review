@@ -1,0 +1,42 @@
+{
+  "actors": [
+    "requesting-origin",
+    "user-agent",
+    "user"
+  ],
+  "applicability": {
+    "excluded_when": [],
+    "preconditions": [
+      "operation invokes a native platform capability"
+    ]
+  },
+  "assets": [
+    "native-capability"
+  ],
+  "confidence": 0.98,
+  "evidence": [
+    {
+      "artifact_id": "artifact-id",
+      "evidence_span": "If document does not have transient activation, reject.",
+      "interpretation": "The algorithm rejects calls without activation.",
+      "locator": "section 4.2 step 3",
+      "normative_strength": "must",
+      "source_id": "source-id",
+      "source_kind": "normative-algorithm"
+    }
+  ],
+  "evidence_class": "explicit-normative",
+  "observation_id": "obs-example-user-activation",
+  "observation_type": "security-requirement",
+  "open_questions": [],
+  "security_category": "user-intent-and-trusted-ui",
+  "security_properties": [
+    "authorization"
+  ],
+  "spec_id": "example-spec",
+  "spec_version": "2026-01-01",
+  "statement": "The operation requires transient user activation.",
+  "trust_boundaries": [
+    "web-to-native"
+  ]
+}

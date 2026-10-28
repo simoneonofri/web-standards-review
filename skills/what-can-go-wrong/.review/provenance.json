@@ -1,0 +1,112 @@
+{
+  "contract_versions": [
+    "model-packet/v1",
+    "threat-package/v1",
+    "threat-card-deck/v1",
+    "card-workshop-output/v1",
+    "candidate-ledger/v1"
+  ],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:df738fa7520fe0942bc5fede98cc65a2051cb7709ddcb92085fe76e5b3803f37",
+      "size": 13608
+    },
+    {
+      "binary": false,
+      "path": "contracts/candidate-ledger-v1.md",
+      "sha256": "sha256:d57c127f1354d7053af012d3a4a40e658bee6f6e621ecb5240836be63f6e3957",
+      "size": 4949
+    },
+    {
+      "binary": false,
+      "path": "contracts/threat-elicitation-v1.md",
+      "sha256": "sha256:9b6759cbfc688f4f84d2f2e36f21669bcb9a225b1becd7e5bda2a285aa69f5fd",
+      "size": 5046
+    },
+    {
+      "binary": false,
+      "path": "schemas/candidate-ledger-v1.schema.json",
+      "sha256": "sha256:3758c3bb069dc72e3d5f1b6aa6eb3c7c17503371478cabc7c375508596b07f35",
+      "size": 8932
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_candidate_ledger.py",
+      "sha256": "sha256:4739f5363b7888f8f4dc130ba9493532f76a2da9e8a169b8759679184018bc7e",
+      "size": 15101
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_threat_package.py",
+      "sha256": "sha256:83709d8ee0995ce993ec8e1c7679a0122a8e8d1dc3ea0b35aba0496b3b444d63",
+      "size": 20375
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/invalid-workshop-legacy-shape.json",
+      "sha256": "sha256:2be83275e01b9ab0834f30cee8d89a880a0c42cc7f13c6dd93b9700aab0afb0f",
+      "size": 3540
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/ledger-elicitation.json",
+      "sha256": "sha256:17ea7d3b76d5658d4b9c146cb5beaefe357038238e9ad378112be892467e4dcc",
+      "size": 3688
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/ledger-model.json",
+      "sha256": "sha256:560b3f4a8fdee96b919ebf6c171d207d5d24d181be0102a19abb4c2ba11aeb3f",
+      "size": 4701
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/ledger-reconciliation.json",
+      "sha256": "sha256:3094b748028d6c2942a9eb0ac8feba61e346052b4b8ad2417276d99ba047fa70",
+      "size": 7550
+    },
+    {
+      "binary": false,
+      "path": "tests/fixtures/ledger-threats.json",
+      "sha256": "sha256:e9257ec1acd572d91aaa2e668ccd3767ef8d273707b08da52a6fd23e8fc068e3",
+      "size": 6532
+    },
+    {
+      "binary": false,
+      "path": "tests/test_candidate_ledger.py",
+      "sha256": "sha256:fcfa7bb9a9975f9b5c24745f4e6d4910333593d7fb3af4bb712f31f7048aa43d",
+      "size": 8198
+    },
+    {
+      "binary": false,
+      "path": "tests/test_workshop_contract.py",
+      "sha256": "sha256:8e03dbceb7d4558ae72a52a30f227b8a79ecbf4d2155d2d2ce2b7b76033134bb",
+      "size": 11001
+    }
+  ],
+  "output_digest": "sha256:bc7359dade593483bcbe6a60c2c7989abfd5c209bbb6c454d4b2cd9900a59450",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "contract-declarations",
+    "isolated-unit-tests",
+    "candidate-ledger-round-trip"
+  ],
+  "rights_manifest_reference": "manifests/what-can-go-wrong.publication.json#include_paths",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "what-can-go-wrong",
+  "source_commit": "11e28d7d8b45a21b68c31156b1dc7e9b37042e3b",
+  "source_repository": "simoneonofri/what-can-go-wrong",
+  "tool_version": "reviewctl/0.2.0"
+}

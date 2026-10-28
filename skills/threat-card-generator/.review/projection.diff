@@ -1,0 +1,103 @@
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -40 +40 @@
+-   - Read `references/portable-card-method.md` first.
++   - Read `references/portable-card-method.md`.
+@@ -75 +75 @@
+-   - Optional editorial tools may be used when available or requested, but they are not part of the portable runtime and their absence is not an error.
++   - Optional editorial tools may be used when explicitly selected by the caller; they are not part of the portable runtime and their absence is not an error.
+--- a/scripts/validate_deck.py
++++ b/scripts/validate_deck.py
+@@ -117 +117 @@
+-        if source_kind and source_kind not in VALID_SOURCE_KINDS:
++        if not isinstance(source_kind, str) or source_kind not in VALID_SOURCE_KINDS:
+@@ -123 +123 @@
+-        if evidence_status and evidence_status not in VALID_SOURCE_EVIDENCE_STATUSES:
++        if "evidence_status" in source and (not isinstance(evidence_status, str) or evidence_status not in VALID_SOURCE_EVIDENCE_STATUSES):
+@@ -160 +160 @@
+-    if status and status not in VALID_STATUSES:
++    if not isinstance(status, str) or status not in VALID_STATUSES:
+@@ -164 +164 @@
+-    if generation_mode and generation_mode not in VALID_GENERATION_MODES:
++    if "generation_mode" in deck and (not isinstance(generation_mode, str) or generation_mode not in VALID_GENERATION_MODES):
+@@ -171 +171 @@
+-    if play_mode and play_mode not in VALID_PLAY_MODES:
++    if "play_mode" in deck and (not isinstance(play_mode, str) or play_mode not in VALID_PLAY_MODES):
+@@ -200,3 +200,3 @@
+-        if suit_id in suit_ids:
+-            errors.append(f"duplicate suit id: {suit_id}")
+-        if suit_id:
++        if is_non_empty_string(suit_id):
++            if suit_id in suit_ids:
++                errors.append(f"duplicate suit id: {suit_id}")
+@@ -216 +216 @@
+-        if card_id is not None:
++        if "id" in card:
+@@ -218 +218 @@
+-        if card_id:
++        if is_non_empty_string(card_id):
+@@ -230 +230 @@
+-        if suit and suit not in suit_ids:
++        if is_non_empty_string(suit) and suit not in suit_ids:
+@@ -232 +232 @@
+-        elif suit:
++        elif is_non_empty_string(suit):
+@@ -243 +243 @@
+-            if not prompt.strip().endswith("?"):
++            if not prompt.endswith("?"):
+@@ -282 +282 @@
+-        if card_status and card_status not in VALID_CARD_STATUSES:
++        if "card_status" in card and (not isinstance(card_status, str) or card_status not in VALID_CARD_STATUSES):
+@@ -287 +287 @@
+-        if card_status in CARD_STATUSES_REQUIRING_NOTES and not card.get("change_notes"):
++        if isinstance(card_status, str) and card_status in CARD_STATUSES_REQUIRING_NOTES and not card.get("change_notes"):
+--- a/tests/test_contract.py
++++ b/tests/test_contract.py
+@@ -93,0 +94,47 @@
++    def test_non_string_card_ids_report_errors_without_crashing(self):
++        for value in (101, [], {}, None, True):
++            with self.subTest(value=value):
++                deck = self.load_fixture()
++                deck["cards"][0]["id"] = value
++                errors, _ = validator.validate(deck)
++                self.assertTrue(any("id must be a non-empty string" in error for error in errors))
++
++    def test_invalid_suit_id_types_report_errors_without_sorting_crashes(self):
++        for value in (101, [], {}):
++            with self.subTest(value=value):
++                deck = self.load_fixture()
++                deck["suits"][0]["id"] = value
++                errors, _ = validator.validate(deck)
++                self.assertTrue(any("suits[0].id must be a non-empty string" in error for error in errors))
++
++    def test_invalid_card_suit_reference_type_reports_error(self):
++        deck = self.load_fixture()
++        deck["cards"][0]["suit"] = []
++        errors, _ = validator.validate(deck)
++        self.assertTrue(any("suit must be a non-empty string" in error for error in errors))
++
++    def test_present_top_level_enums_cannot_be_empty_or_malformed(self):
++        for field in ("status", "generation_mode", "play_mode"):
++            for value in ("", None, [], {}):
++                with self.subTest(field=field, value=value):
++                    deck = self.load_fixture()
++                    deck[field] = value
++                    errors, _ = validator.validate(deck)
++                    self.assertTrue(any(field + " must be one of" in error for error in errors))
++
++    def test_present_card_and_source_enums_cannot_be_empty_or_malformed(self):
++        for field in ("card_status", "source_kind", "evidence_status"):
++            for value in ("", None, [], {}):
++                with self.subTest(field=field, value=value):
++                    deck = self.load_fixture()
++                    target = deck["cards"][0] if field == "card_status" else deck["cards"][0]["source_trace"][0]
++                    target[field] = value
++                    errors, _ = validator.validate(deck)
++                    self.assertTrue(any(field + " must be one of" in error for error in errors))
++
++    def test_prompt_question_marker_must_be_final_character(self):
++        deck = self.load_fixture()
++        deck["cards"][0]["prompt"] += " "
++        errors, _ = validator.validate(deck)
++        self.assertTrue(any("prompt must be a question ending with" in error for error in errors))
++

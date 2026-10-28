@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "standards": [
+    {"standard_id":"compat","coverage_state":"assessed-no-reusable-control","residual_gap":"Compatibility surfaces are legacy/non-standard behavior; no explicit reusable security control was curated in the bounded pass."},
+    {"standard_id":"compression","coverage_state":"assessed-no-reusable-control","residual_gap":"Malformed streams fail, but decompression-bomb and resource-amplification limits are not explicitly defined as reusable security controls."},
+    {"standard_id":"console","coverage_state":"assessed-no-reusable-control","residual_gap":"Console formatting and debugging behavior were assessed; privacy or diagnostic leakage concerns do not yield an explicit reusable access control."},
+    {"standard_id":"cookiestore","coverage_state":"cataloged","residual_gap":"RFC 6265bis supplies much of the normative cookie security model; follow that dependency for SameSite, Domain, Path, and prefix details."},
+    {"standard_id":"dom","coverage_state":"partial","residual_gap":"Trusted Types attribute integration is cataloged; DOM is cross-cutting and downstream HTML sinks and mutation consumers remain dependency-heavy."},
+    {"standard_id":"encoding","coverage_state":"cataloged","residual_gap":"Decoder-specific malformed-sequence behavior remains distributed across individual encoding algorithms."},
+    {"standard_id":"fetch","coverage_state":"partial","residual_gap":"CORS, filtering, headers, redirects, and CORP are covered initially; mixed content, CSP, SRI, PNA, ORB, cache partitioning, and authentication dependencies require separate standards review."},
+    {"standard_id":"fs","coverage_state":"cataloged","residual_gap":"User-selected file permission lifetime and revocation are supplied by integrating specifications and user-agent policy."},
+    {"standard_id":"fullscreen","coverage_state":"cataloged","residual_gap":"Keyboard lock integration and platform UI details are not fully enumerated in this initial catalog."},
+    {"standard_id":"html","coverage_state":"partial","residual_gap":"HTML is very large; origin, sandbox, COOP/COEP, canvas, activation, and meta CSP are covered, while navigation, messaging, workers, storage, embeds, forms, and many feature-specific guards need targeted follow-up."},
+    {"standard_id":"infra","coverage_state":"assessed-no-reusable-control","residual_gap":"Infra defines generic data structures and algorithms; none were promoted without an explicit security-boundary consequence."},
+    {"standard_id":"mimesniff","coverage_state":"cataloged","residual_gap":"Context-specific sniffing tables and Fetch's X-Content-Type-Options integration need joint review for a concrete API."},
+    {"standard_id":"notifications","coverage_state":"cataloged","residual_gap":"Permission is cataloged; frequency, deceptive content, and platform anti-abuse policy are largely user-agent concerns rather than explicit reusable controls here."},
+    {"standard_id":"quirks","coverage_state":"assessed-no-reusable-control","residual_gap":"Legacy CSS/selector compatibility behavior did not expose an explicit reusable security mechanism."},
+    {"standard_id":"storage","coverage_state":"cataloged","residual_gap":"Quota and clearing are implementation-defined; storage partitioning can evolve beyond the current origin tuple."},
+    {"standard_id":"streams","coverage_state":"assessed-no-reusable-control","residual_gap":"Backpressure, cancellation, and error propagation are generic resource-management primitives unless an integrating API establishes a security boundary."},
+    {"standard_id":"testutils","coverage_state":"assessed-no-reusable-control","residual_gap":"The standard is an internal testing surface and was classified testing-only, not a production API security-control source."},
+    {"standard_id":"url","coverage_state":"cataloged","residual_gap":"Most validation errors are non-fatal; each integrating API must decide which URL conditions are security-fatal."},
+    {"standard_id":"urlpattern","coverage_state":"cataloged","residual_gap":"Regexp-group restriction is informative integration guidance, not a built-in complexity bound or policy language."},
+    {"standard_id":"webidl","coverage_state":"partial","residual_gap":"Exposure and exception redaction are covered; type conversion and binding exceptions remain generic unless tied to a concrete API boundary."},
+    {"standard_id":"websockets","coverage_state":"cataloged","residual_gap":"Server-side Origin validation, authentication, TLS, extensions, and protocol message authorization require RFC and application review."},
+    {"standard_id":"xhr","coverage_state":"cataloged","residual_gap":"XHR delegates most network security semantics to Fetch; use the Fetch catalog for complete CORS and response-filtering behavior."}
+  ]
+}

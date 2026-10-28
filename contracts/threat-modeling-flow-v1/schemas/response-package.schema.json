@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/threat-model-contract-v1/response-package.schema.json",
+  "title": "Response Package v1",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "response_package_id",
+    "model_id",
+    "threat_package_id",
+    "source_contract_version",
+    "responses",
+    "unresolved_threats",
+    "cross_cutting_assumptions",
+    "skeptic_result",
+    "next_actions"
+  ],
+  "properties": {
+    "contract_version": {"const": 1},
+    "response_package_id": {"type": "string", "minLength": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "threat_package_id": {"type": "string", "minLength": 1},
+    "source_contract_version": {"const": 1},
+    "responses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "response_id",
+          "threat_id",
+          "affected_model_elements",
+          "erta",
+          "response",
+          "mechanism_or_text",
+          "owner",
+          "evidence_status",
+          "evidence",
+          "assumptions",
+          "transfer_receiver",
+          "acceptance_rationale",
+          "revisit_trigger",
+          "remaining_threat",
+          "next_action",
+          "status"
+        ],
+        "properties": {
+          "response_id": {"type": "string", "pattern": "^R-[0-9]{2,}$"},
+          "threat_id": {"type": "string", "pattern": "^T-[0-9]{2,}$"},
+          "affected_model_elements": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^(EE|PO|DS|DF|TB)-[0-9]{2,}$"}},
+          "erta": {"enum": ["Eliminate", "Reduce", "Transfer", "Accept", "Unresolved"]},
+          "response": {"type": "string", "minLength": 1},
+          "mechanism_or_text": {"type": "string"},
+          "owner": {"type": "string"},
+          "evidence_status": {"enum": ["supplied", "verified", "inferred", "assumed", "untested", "unavailable"]},
+          "evidence": {"type": "array"},
+          "assumptions": {"type": "array"},
+          "transfer_receiver": {"type": "string"},
+          "acceptance_rationale": {"type": "string"},
+          "revisit_trigger": {"type": "string"},
+          "remaining_threat": {"type": "string"},
+          "next_action": {"type": "string", "minLength": 1},
+          "response_origin": {"enum": ["as-is", "to-be", "transfer", "accepted", "blocked", "needs-threat-clarification"]},
+          "status": {"enum": ["proposed", "existing", "needs-threat-clarification", "blocked", "ready-for-skeptic-check"]}
+        }
+      }
+    },
+    "response_statistics": {
+      "type": "object",
+      "properties": {
+        "as_is_threat_count": {"type": "integer", "minimum": 0},
+        "as_is_response_or_mitigation_count": {"type": "integer", "minimum": 0},
+        "to_be_proposed_mitigation_count": {"type": "integer", "minimum": 0},
+        "unresolved_threat_count": {"type": "integer", "minimum": 0},
+        "remaining_threat_count": {"type": "integer", "minimum": 0},
+        "erta_counts": {"type": "object"},
+        "transfer_counts_by_receiver": {"type": "object"},
+        "accepted_threats_by_rationale": {"type": "object"},
+        "blocked_threats_by_blocker": {"type": "object"}
+      }
+    },
+    "unresolved_threats": {"type": "array"},
+    "cross_cutting_assumptions": {"type": "array"},
+    "skeptic_result": {"type": "object"},
+    "next_actions": {"type": "array"}
+  }
+}

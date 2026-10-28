@@ -1,0 +1,85 @@
+{
+  "contract_version": 1,
+  "model_id": "model-demo",
+  "system_under_analysis": "Demo capability",
+  "scenario": "User agent mediates a request to a service.",
+  "dfd_detail_level": "medium-detail",
+  "abstraction_level": "spec-review",
+  "scope": ["request mediation"],
+  "out_of_scope": ["server deployment"],
+  "source_inventory": [{"id": "spec-1", "source_reference": "Spec section 2"}],
+  "external_entities": [
+    {
+      "stable_id": "EE-01",
+      "type": "External Entity",
+      "name": "User",
+      "description": "Person initiating the request.",
+      "evidence_status": "supplied",
+      "source_reference": "Spec section 2",
+      "normative_status": "informative",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "stable_id": "EE-02",
+      "type": "External Entity",
+      "name": "Service",
+      "description": "Service that receives a mediated request.",
+      "evidence_status": "supplied",
+      "source_reference": "Spec section 3.1",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "processes": [
+    {
+      "stable_id": "PO-01",
+      "type": "Process",
+      "name": "User agent mediation",
+      "description": "The user agent checks policy before sending data.",
+      "evidence_status": "supplied",
+      "source_reference": "Spec section 3",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "data_stores": [],
+  "data_flows": [
+    {
+      "stable_id": "DF-01",
+      "type": "Data Flow",
+      "name": "Mediated request",
+      "description": "Request metadata flows from user agent to service.",
+      "evidence_status": "supplied",
+      "source_reference": "Spec section 3.1",
+      "normative_status": "normative",
+      "confidence": "high",
+      "notes": "",
+      "source": "PO-01",
+      "destination": "EE-02"
+    }
+  ],
+  "trust_boundaries": [
+    {
+      "stable_id": "TB-01",
+      "type": "Trust Boundary",
+      "name": "Origin boundary",
+      "description": "The service is outside the user agent origin boundary.",
+      "evidence_status": "inferred",
+      "source_reference": "Spec section 3.1",
+      "normative_status": "normative",
+      "confidence": "medium",
+      "notes": "",
+      "justification": "The flow crosses origin and administrative control.",
+      "boundary_basis": ["origin", "administrative_domain"]
+    }
+  ],
+  "assumptions": [{"id": "A-001", "text": "The user agent enforces the policy check."}],
+  "inline_safeguards": [{"id": "S1", "source_reference": "Spec section 3", "text": "Policy check."}],
+  "implicit_threat_model_signals": [{"id": "SIG1", "text": "Policy check implies unwanted recipients matter."}],
+  "review_signals": [],
+  "unresolved_questions": [],
+  "validation_notes": []
+}

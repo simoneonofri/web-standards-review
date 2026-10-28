@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "retrieved_on": "2026-08-04",
+  "charter": {"url": "https://w3c.github.io/charter-drafts/2026/charter-wg-webappsec-2026.html", "status": "verified-official-w3c-charter-draft"},
+  "w3c_knowledge_source_packet_v1": [
+    {"shortname": "referrer-policy", "immutable_url": "https://www.w3.org/TR/2017/CR-referrer-policy-20170126/", "content_hash": "4e60be213bbe74353fd4be29e519c9dd046f3dc6f012cc1149a7d50234a81e81", "retrieval_status": "verified-local-source-packet-v1"},
+    {"shortname": "upgrade-insecure-requests", "immutable_url": "https://www.w3.org/TR/2015/CR-upgrade-insecure-requests-20151008/", "content_hash": "d981a2dda05a2421989aae7ef1b8984bca5cd67e07022072fb7808496f6dd2f1", "retrieval_status": "verified-local-source-packet-v1"}
+  ],
+  "coverage_note": "The remaining controls were verified against official W3C immutable publications, the WHATWG Web IDL Standard, or the charter-named Document Policy editor draft. Source snapshots are referenced by URL and are not copied into this repository."
+}

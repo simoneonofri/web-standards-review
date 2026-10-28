@@ -1,0 +1,14 @@
+--- a/scripts/evaluate_good_enough_gate.py
++++ b/scripts/evaluate_good_enough_gate.py
+@@ -23 +23 @@
+-    "baseline_elicitation": {"baseline_elicitation", "baseline"},
++    "baseline_elicitation": {"baseline_elicitation", "baseline_threat_elicitation", "baseline"},
+--- a/tests/test_good_enough_gate.py
++++ b/tests/test_good_enough_gate.py
+@@ -123,0 +124,6 @@
++
++
++def test_documented_baseline_threat_elicitation_name_is_recognized():
++    payload = valid_payload()
++    payload["gates"][3]["name"] = "baseline threat elicitation"
++    assert evaluate(payload)["status"] == "pass"

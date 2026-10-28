@@ -1,0 +1,15 @@
+{
+  "schema_version": "source-corpus-manifest/v1",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "rights_status": "synthetic-approved",
+  "sources": [
+    {
+      "source_id": "spec-1",
+      "title": "Synthetic Request Mediation Specification",
+      "authority": "synthetic fixture",
+      "source_reference": "fixtures/clean-room-demo/target-spec.md",
+      "evidence_status": "supplied"
+    }
+  ]
+}

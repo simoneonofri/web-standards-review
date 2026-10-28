@@ -1,0 +1,11 @@
+{
+  "schema_version": "independent-review-gate/v1",
+  "run_id": "run-clean-room-v1",
+  "target_id": "target-mediation-demo-v1",
+  "model_id": "model-clean-room",
+  "outcome": "blocked",
+  "publication_authorized": false,
+  "remaining_questions": [
+    "The threat package references an unknown model identifier."
+  ]
+}

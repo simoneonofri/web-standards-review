@@ -1,0 +1,201 @@
+{
+  "coverage": {
+    "integrity-and-authenticity": "supported",
+    "script-and-code-loading": "supported",
+    "url-fetch-and-redirect-handling": "supported"
+  },
+  "derived_pattern_candidates": [],
+  "explicit_patterns": [],
+  "limitations": [
+    "synthetic fixture, not W3C evidence"
+  ],
+  "missing_evidence": [],
+  "mode": "mine-spec",
+  "not_applicable_categories": [
+    {
+      "category": "script-and-code-loading",
+      "reason": "no script loading behavior is present"
+    }
+  ],
+  "observations": [
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "artifact_id": "art-script-loading-feature",
+          "evidence_span": "If the response MIME type is not JavaScript, abort script execution.",
+          "interpretation": "Remote script requires a JavaScript MIME type.",
+          "locator": "section 1",
+          "normative_strength": "must",
+          "source_id": "src-script-loading-feature",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-script-loading-feature-01",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "script-and-code-loading",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "script-loading-feature",
+      "spec_version": "2026-01-01",
+      "statement": "Remote script requires a JavaScript MIME type.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "artifact_id": "art-script-loading-feature",
+          "evidence_span": "The integrity metadata MUST match the response body.",
+          "interpretation": "Integrity metadata covers the fetched bytes.",
+          "locator": "section 2",
+          "normative_strength": "must",
+          "source_id": "src-script-loading-feature",
+          "source_kind": "section"
+        }
+      ],
+      "evidence_class": "explicit-normative",
+      "observation_id": "obs-script-loading-feature-02",
+      "observation_type": "security-mechanism",
+      "open_questions": [],
+      "security_category": "integrity-and-authenticity",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "script-loading-feature",
+      "spec_version": "2026-01-01",
+      "statement": "Integrity metadata covers the fetched bytes.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    },
+    {
+      "actors": [
+        "requesting-origin",
+        "user-agent"
+      ],
+      "applicability": {
+        "excluded_when": [],
+        "preconditions": [
+          "synthetic fixture condition"
+        ]
+      },
+      "assets": [
+        "protected capability"
+      ],
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "artifact_id": "art-script-loading-feature",
+          "evidence_span": "After redirects, run the integrity verification step.",
+          "interpretation": "Redirects preserve integrity checks.",
+          "locator": "section 3",
+          "normative_strength": "must",
+          "source_id": "src-script-loading-feature",
+          "source_kind": "normative-algorithm"
+        }
+      ],
+      "evidence_class": "derived-from-algorithm",
+      "observation_id": "obs-script-loading-feature-03",
+      "observation_type": "security-requirement",
+      "open_questions": [],
+      "security_category": "url-fetch-and-redirect-handling",
+      "security_properties": [
+        "integrity"
+      ],
+      "spec_id": "script-loading-feature",
+      "spec_version": "2026-01-01",
+      "statement": "Redirects preserve integrity checks.",
+      "trust_boundaries": [
+        "origin-boundary"
+      ]
+    }
+  ],
+  "optional_spec_profile": {
+    "facets": [
+      "html-dom",
+      "http-network-protocol",
+      "cross-origin"
+    ],
+    "primary_family": null,
+    "secondary_families": []
+  },
+  "security_checks": [],
+  "security_surface_profile": {
+    "actors": [
+      "requesting-origin",
+      "user-agent"
+    ],
+    "assets": [
+      "protected capability"
+    ],
+    "attacker_models": [
+      "malicious-origin"
+    ],
+    "capabilities": [],
+    "components": [
+      "browser"
+    ],
+    "dependencies": [],
+    "entry_points": [
+      "invoke"
+    ],
+    "error_channels": [],
+    "lifecycle_events": [],
+    "state": [],
+    "trust_boundaries": [
+      "origin-boundary"
+    ]
+  },
+  "source_completeness": {
+    "available_artifacts": [
+      "spec",
+      "algorithms",
+      "webidl"
+    ],
+    "limitations": [
+      "synthetic fixture"
+    ],
+    "missing_artifacts": [
+      "full dependency text"
+    ],
+    "score": 0.75
+  },
+  "specification": {
+    "spec_id": "script-loading-feature",
+    "title": "Script Loading Feature",
+    "version": "2026-01-01"
+  },
+  "unresolved_questions": []
+}
