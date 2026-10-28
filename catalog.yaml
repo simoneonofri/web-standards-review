@@ -3,7 +3,7 @@
   "catalog_version": 4,
   "project": "web-standards-review",
   "display_name": "Web Standards Review",
-  "status": "private-beta",
+  "status": "public-beta",
   "publication_review_required": true,
   "official_w3c_deliverable": false,
   "independent_maintenance": "Simone Onofri",
@@ -16,7 +16,7 @@
       "id": "what-are-we-building",
       "kind": "core",
       "path": "skills/what-are-we-building",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -42,7 +42,7 @@
       "id": "dfd-mermaid",
       "kind": "core",
       "path": "skills/dfd-mermaid",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -67,7 +67,7 @@
       "id": "what-can-go-wrong",
       "kind": "core",
       "path": "skills/what-can-go-wrong",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -99,7 +99,7 @@
       "id": "what-are-we-going-to-do-about-it",
       "kind": "core",
       "path": "skills/what-are-we-going-to-do-about-it",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -124,7 +124,7 @@
       "id": "did-we-do-a-good-enough-job",
       "kind": "core",
       "path": "skills/did-we-do-a-good-enough-job",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -152,7 +152,7 @@
       "id": "threat-card-generator",
       "kind": "extension",
       "path": "skills/threat-card-generator",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -176,7 +176,7 @@
       "id": "fact-check",
       "kind": "extension",
       "path": "skills/fact-check",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -200,7 +200,7 @@
       "id": "spec-review",
       "kind": "orchestrator",
       "path": "skills/spec-review",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -225,7 +225,7 @@
       "id": "w3c-webappsec-miner",
       "kind": "extension",
       "path": "skills/w3c-webappsec-miner",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -249,7 +249,7 @@
       "id": "whatwg-miner",
       "kind": "extension",
       "path": "skills/whatwg-miner",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -273,7 +273,7 @@
       "id": "w3c-spec-miner",
       "kind": "extension",
       "path": "skills/w3c-spec-miner",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -297,7 +297,7 @@
       "id": "w3c-security-pattern-miner",
       "kind": "extension",
       "path": "skills/w3c-security-pattern-miner",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -321,7 +321,7 @@
       "id": "w3c-horizontal-review-patterns-miner",
       "kind": "extension",
       "path": "skills/w3c-horizontal-review-patterns-miner",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -345,7 +345,7 @@
       "id": "standards-vulnerability-intel-miner",
       "kind": "extension",
       "path": "skills/standards-vulnerability-intel-miner",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -369,7 +369,7 @@
       "id": "strategy-charter-miner",
       "kind": "extension",
       "path": "skills/strategy-charter-miner",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -393,7 +393,7 @@
       "id": "threat-knowledge",
       "kind": "extension",
       "path": "skills/threat-knowledge",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -417,7 +417,7 @@
       "id": "w3c-spec-code",
       "kind": "extension",
       "path": "skills/w3c-spec-code",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -441,7 +441,7 @@
       "id": "w3c-horizontal-review",
       "kind": "orchestrator",
       "path": "skills/w3c-horizontal-review",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "contracts": {
         "consumes": [
@@ -468,7 +468,7 @@
       },
       "id": "w3c-issue-pr-review",
       "kind": "orchestrator",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "path": "skills/w3c-issue-pr-review",
       "review_state": "publication_review_required",
       "source": {
@@ -487,7 +487,7 @@
       "id": "threat-modeling-flow-v1",
       "version": 4,
       "path": "bundles/threat-modeling-flow-v1.json",
-      "maturity": "reviewed-private-beta",
+      "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
       "skills": [
         "what-are-we-building",

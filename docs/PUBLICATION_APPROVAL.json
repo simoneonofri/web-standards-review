@@ -1,0 +1,18 @@
+{
+  "schema_version": "maintainer-release-approval/v1",
+  "approved": true,
+  "approver": "simoneonofri",
+  "approved_on": "2026-10-28",
+  "repository": "https://github.com/simoneonofri/web-standards-review",
+  "scope": "public-beta",
+  "approval_basis": "Explicit maintainer instruction to make the verified fresh repository public.",
+  "verified_source_commit": "043fae67c3ed281962c66a5d733b14e7ca4d63a6",
+  "content_digest": "sha256:3644991353c2804b4b68c4b31496ad82aed0d6efc2fac8b2cf3f424ce205367b",
+  "license": "W3C-20150513",
+  "license_version_url": "https://www.w3.org/copyright/software-license-2023/",
+  "excluded_content": [
+    "personal overlays and libraries",
+    "databases and model weights",
+    "private or internal source material"
+  ]
+}

@@ -995,8 +995,8 @@ def catalog_entries(catalog: dict[str, Any], key: str) -> dict[str, dict[str, An
 
 def load_catalog(root: Path) -> dict[str, Any]:
     catalog = load_json(root / "catalog.yaml", "web-standards-review-catalog/v1")
-    if catalog.get("status") != "private-beta":
-        raise ReviewError("catalog status must be private-beta")
+    if catalog.get("status") not in {"private-beta", "public-beta"}:
+        raise ReviewError("catalog status must be private-beta or public-beta")
     if catalog.get("publication_review_required") is not True:
         raise ReviewError("catalog must retain publication_review_required")
     if catalog.get("official_w3c_deliverable") is not False:

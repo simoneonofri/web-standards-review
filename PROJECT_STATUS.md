@@ -4,7 +4,7 @@ Web Standards Review contains 19 portable skills: the original eight skills, hor
 
 This project is independently maintained by Simone Onofri. It is informed by Web standards and W3C work, but it is not an official W3C deliverable. Generated outputs do not represent W3C, Working Group, Interest Group, TAG, or horizontal-review conclusions unless adopted through the applicable process. Technical validation is not publication approval, and generated outputs require human review.
 
-## Completed private-beta surface
+## Completed beta surface
 
 - `catalog.yaml` version 4 lists the 19 skills, optional service, and versioned bundle, with contract directions, source pins, provenance, supported hosts, and publication-review state.
 - `w3c-issue-pr-review` handles thread triage, PR review, focused replies and resolution checks. Its optional specialist routes preserve evidence and coverage limits; it has no required personal profile or service and adds no modeling stage.

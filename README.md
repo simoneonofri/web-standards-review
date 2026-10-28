@@ -1,6 +1,6 @@
 # Web Standards Review
 
-Web Standards Review is a restricted private-beta marketplace for portable standards review and threat-modeling skills maintained independently by Simone Onofri. It is informed by Web standards and W3C work, but it is not an official W3C deliverable.
+Web Standards Review is a public-beta marketplace for portable standards review and threat-modeling skills maintained independently by Simone Onofri. It is informed by Web standards and W3C work, but it is not an official W3C deliverable.
 
 Generated outputs are not W3C, Working Group, Interest Group, TAG, or horizontal-review conclusions unless adopted through the applicable process. Technical validation is not publication approval, and generated outputs remain subject to human review.
 
@@ -43,7 +43,7 @@ Use `w3c-horizontal-review` for the complete specification or charter workflow. 
 
 Catalog and bundle version 4 add `w3c-issue-pr-review` as a nineteenth skill and a thread entrypoint. The five modeling stages keep their existing order. See [bundle structure](bundles/README.md).
 
-## Restricted-beta interface
+## Beta interface
 
 Run the repository-local tool as `./tools/reviewctl/reviewctl`:
 
@@ -60,7 +60,7 @@ For issue/PR review only, use `reviewctl install --skill w3c-issue-pr-review --h
 
 Installation exports the selected clean commit into a separate snapshot and creates reversible host symlinks to it. Shared contracts, scripts, and provider code travel with the skills. Checkout edits have no effect until `update` accepts the new commit. The lock records that commit, artifact digests, and the full snapshot manifest; `status` checks installed dependencies as well as skills. The installer refuses files, directories, and unrelated symlinks. `--replace-link` is explicit and applies only to an existing symlink.
 
-Invited testers must first accept GitHub's repository invitation. Use the default `main` branch for the restricted-beta snapshot:
+Use the default `main` branch for the public-beta snapshot:
 
 ```sh
 git clone --branch main --single-branch https://github.com/simoneonofri/web-standards-review.git
@@ -78,7 +78,7 @@ For the native plugin interfaces, `reviewctl export-native-marketplace --output 
 
 Follow [`providers/w3c-knowledge/README.md`](providers/w3c-knowledge/README.md) to start an empty local service, ingest needed sources, download the pinned local embedding model and index the corpus. [`providers/README.md`](providers/README.md) describes full-source capture and offline inputs. Model and data volumes remain local to each collaborator; inference uses no external API. Retrieval results preserve source hashes, offsets, versions and index coverage.
 
-## Projection, private overlays, and future publication
+## Projection and private overlays
 
 The portable repository is an allowlisted projection, not a dump of private authoring repositories. Private overlays, corpora, provider topology, internal material, review archives, personal paths, credentials, and generated private installations remain outside this tree.
 
@@ -119,6 +119,6 @@ The suites cover installer and update refusal cases, private workspace and nativ
 
 ## License
 
-[W3C Software and Document License (2023)](LICENSE.md).
+[W3C Software and Document License (2023)](LICENSE.md). SPDX: `W3C-20150513` (including the 2023 revision).
 
 Maintainer: [Simone Onofri](https://github.com/simoneonofri). Existing third-party notices and dependency licenses remain applicable.

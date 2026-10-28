@@ -28,4 +28,4 @@ Open a new host session after installation. Plugin skill names may include the p
 
 For an update, review and accept the new portable commit, export it to a fresh directory, and select that new marketplace in the host before reinstalling. The plugin version includes the source commit. Keep the old export for rollback. Exporting is local-only; it does not create a remote marketplace, publish a package, or register anything in a user's host configuration.
 
-Manifest formats follow the [Codex plugin documentation](https://developers.openai.com/plugins/build/plugins) and [Claude Code marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces). The private beta must retain its access restrictions; a future public release needs a separately reviewed export and licensing decision.
+Manifest formats follow the [Codex plugin documentation](https://developers.openai.com/plugins/build/plugins) and [Claude Code marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces). Public beta source is available under the root LICENSE.md; generated packages and subsequent changes retain their publication-review requirements.

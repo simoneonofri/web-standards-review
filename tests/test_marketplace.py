@@ -76,7 +76,7 @@ class CatalogAndAuditTests(unittest.TestCase):
             list(EXPECTED_PRIVATE_BETA_SKILLS),
         )
         self.assertEqual(catalog["bundles"][0]["skills"], list(EXPECTED_PRIVATE_BETA_SKILLS))
-        self.assertEqual(catalog["status"], "private-beta")
+        self.assertEqual(catalog["status"], "public-beta")
         self.assertIs(catalog["publication_review_required"], True)
 
     def test_exact_tree_boundary_and_skill_rights_audit_passes(self) -> None:
