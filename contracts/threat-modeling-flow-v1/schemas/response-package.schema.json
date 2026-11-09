@@ -47,7 +47,7 @@
           "response_id": {"type": "string", "pattern": "^R-[0-9]{2,}$"},
           "threat_id": {"type": "string", "pattern": "^T-[0-9]{2,}$"},
           "affected_model_elements": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^(EE|PO|DS|DF|TB)-[0-9]{2,}$"}},
-          "erta": {"enum": ["Eliminate", "Reduce", "Transfer", "Accept", "Unresolved"]},
+          "erta": {"oneOf": [{"enum": ["Eliminate", "Reduce", "Transfer", "Accept", "Unresolved"]}, {"type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true, "items": {"enum": ["Eliminate", "Reduce", "Transfer", "Accept"]}}]},
           "response": {"type": "string", "minLength": 1},
           "mechanism_or_text": {"type": "string"},
           "owner": {"type": "string"},

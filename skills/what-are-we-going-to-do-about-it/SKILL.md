@@ -146,6 +146,10 @@ Do not use a legacy singular `model_element` object. Do not use a structured
 <!-- section:erta-decisions -->
 ## ERTA Decisions
 
+Consider Eliminate, Reduce, Transfer, and Accept in that order. The strategies are not mutually exclusive: a response can transfer responsibility while reducing the threat, and an owner can accept an original or residual threat. Apply the requirements of every selected strategy. Use the combined-strategy representation in [Response Analysis Contract v1](contracts/response-analysis-v1.md#combined-strategies).
+
+Tie a response to its concrete mechanism and source location, preserving normative force. Identify the enforcing actor or component where relevant. General advice to act securely does not establish a transfer of responsibility.
+
 ### Eliminate
 
 Use `Eliminate` only when the design or requirement removes the relevant

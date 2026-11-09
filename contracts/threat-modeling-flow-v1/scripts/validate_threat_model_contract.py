@@ -845,6 +845,25 @@ def validate_independent_elicitation_pass(
         errors.append("independent_elicitation_pass.reconciliation_summary: must be an object")
 
 
+def response_strategies(value: Any, where: str, errors: list[str]) -> set[str]:
+    strategies = {"Eliminate", "Reduce", "Transfer", "Accept"}
+    if isinstance(value, str):
+        if value in strategies or value == "Unresolved":
+            return {value}
+        errors.append(f"{where}: invalid ERTA strategy; use a strategy string or array")
+        return set()
+    if not isinstance(value, list) or not 1 <= len(value) <= 4:
+        errors.append(f"{where}: ERTA must be a strategy string or array of one to four strategies")
+        return set()
+    if any(not isinstance(item, str) or item not in strategies for item in value):
+        errors.append(f"{where}: invalid ERTA array; Unresolved must be a standalone string")
+        return set()
+    if len(value) != len(set(value)):
+        errors.append(f"{where}: duplicate ERTA strategies")
+        return set()
+    return set(value)
+
+
 def validate_responses(
     package: dict[str, Any],
     threats: dict[str, Any] | None = None,
@@ -888,24 +907,24 @@ def validate_responses(
             errors.append(f"{where}: vague best-practice response")
         if "out of scope" in text:
             errors.append(f"{where}: out of scope is not an ERTA response")
-        erta = response.get("erta")
-        if erta == "Eliminate" and not response.get("mechanism_or_text"):
+        erta = response_strategies(response.get("erta"), where, errors)
+        if "Eliminate" in erta and not response.get("mechanism_or_text"):
             errors.append(f"{where}: Eliminate needs mechanism_or_text")
-        if erta == "Reduce" and not response.get("remaining_threat"):
+        if "Reduce" in erta and not response.get("remaining_threat"):
             errors.append(f"{where}: Reduce needs remaining_threat")
-        if erta == "Transfer":
+        if "Transfer" in erta:
             if not response.get("transfer_receiver"):
                 errors.append(f"{where}: Transfer needs transfer_receiver")
             if not response.get("assumptions"):
                 errors.append(f"{where}: Transfer needs explicit assumptions")
-        if erta == "Accept":
+        if "Accept" in erta:
             if not response.get("acceptance_rationale"):
                 errors.append(f"{where}: Accept needs acceptance_rationale")
             if not response.get("owner"):
                 errors.append(f"{where}: Accept needs owner")
             if not response.get("revisit_trigger"):
                 errors.append(f"{where}: Accept needs revisit_trigger")
-        if erta == "Unresolved" and response.get("status") not in {"blocked", "needs-threat-clarification"}:
+        if "Unresolved" in erta and response.get("status") not in {"blocked", "needs-threat-clarification"}:
             errors.append(f"{where}: Unresolved requires blocked or needs-threat-clarification status")
         if response.get("status") == "needs-threat-clarification" and response.get("mechanism_or_text"):
             errors.append(f"{where}: unclear threat should not gain a concrete mechanism")

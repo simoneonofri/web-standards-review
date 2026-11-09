@@ -63,6 +63,14 @@ next_action
 `affected_model_elements` is a non-empty array of canonical model IDs.
 `next_action` is a non-empty, testable string in v1.
 
+## Combined strategies
+
+The `erta` field accepts a legacy single strategy string or an array of one to four distinct strategies: `Eliminate`, `Reduce`, `Transfer`, and `Accept`. For example, use `"erta": ["Reduce", "Transfer"]` for a combined response. Keep one response row and one response ID; all selected strategies' requirements apply cumulatively. The order of consideration is E-R-T-A; array order does not change validation.
+
+`Unresolved` remains a standalone string and cannot appear in an array. Empty arrays, duplicate strategies, unknown values, and composite strings such as `"Reduce + Transfer"` are invalid. Existing valid scalar packages remain supported. Consumers must update their schema and validator before reading array-valued packages; older readers do not automatically support the extension.
+
+When producing statistics, count the response once and each selected strategy once in its own bucket. Strategy totals can therefore exceed the response count. Acceptance can concern the original threat or the residual threat after other responses; record which is accepted and retain the acceptance requirements.
+
 ## ERTA semantics
 
 ### Eliminate

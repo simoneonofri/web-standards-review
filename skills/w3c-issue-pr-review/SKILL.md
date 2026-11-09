@@ -31,6 +31,10 @@ Give only the context needed to understand the artifact's purpose, the proposed 
 
 For a PR, compare the intended issue outcome with what the diff actually changes. Follow affected definitions, algorithms, references, examples, and tests as needed. An implementation fix or passing test is evidence at its own layer; it does not establish a specification requirement or browser-wide behavior.
 
+For a follow-up review, compare the previously reviewed head with the current head and check replies against the changed source. Check whether changes in a base or dependent PR affect the result. Reuse a prior claim-level check only when its relevant inputs are unchanged or the new changes are demonstrably irrelevant; those inputs can include referenced specifications, dependencies, data, and build configuration.
+
+Before drafting another comment, identify the useful action it would request and check for duplicates in related threads. Preserve material specification ambiguities even when likely author intent can be inferred; a specification clarification does not require a demonstrated runtime exploit. When no useful request remains, recommend approval without manufacturing a comment. Keep the supporting evidence separate from the concise public reply.
+
 For a security/privacy concern, identify the actor or affected person, relevant boundary or authority, concrete mechanism, consequence, existing safeguards, and missing evidence. Keep implementation defects separate from specification gaps. A disclosure or vulnerability record can motivate investigation; a specification finding also needs current specification evidence and a specification-facing action. Keep the analysis proportional to the thread; a focused question does not require a complete threat model.
 
 Choose a recommendation supported by the evidence: accept, accept with a change, ask for clarification, defer pending specified evidence, or disagree with a reason. Make its scope explicit. Treat a blocker as a supported acceptance condition, not a synonym for a suggestion. If discussion is exploratory, ask the unresolved question without manufacturing a disposition. A recommendation to close a review is distinct from closing it.
@@ -70,6 +74,8 @@ Before recommending resolution:
 2. Verify the landed change in the authoritative source and, where relevant and available, its rendered draft. Trace the PR or commit. If only a proposal is available, assess that proposal without claiming it landed.
 3. Compare meaning, placement, normative force, references, and scope. Do not require verbatim adoption when the requested outcome is satisfied.
 4. Record material residual differences. Do not block closure on an unimplemented suggestion unless it was an acceptance condition, or present a reviewer recommendation as the group's decision.
+
+Keep approval, landing, completion of a requested outcome, and follow-up tracking distinct. A required outcome may remain open as an explicitly agreed nonblocking follow-up; do not silently reclassify it because work is underway. A proposed tracking arrangement, label, or silence does not establish that agreement.
 
 If newer changes could affect the conclusion, revalidate against the current target before any authorized remote action. If current state cannot be checked, label the result as a snapshot-based recommendation.
 
