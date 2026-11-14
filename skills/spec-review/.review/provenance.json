@@ -18,8 +18,8 @@
     {
       "binary": false,
       "path": "SKILL.md",
-      "sha256": "sha256:f5690f09b967949c201edb1acfef1bd126345d53c7696b1d73cee217b997b9e5",
-      "size": 9727
+      "sha256": "sha256:89192dabb146b603e2ce2b3735da7c1e42ab7c3db9a16df1b226d74d05608241",
+      "size": 10734
     },
     {
       "binary": false,
@@ -160,7 +160,7 @@
       "size": 28181
     }
   ],
-  "output_digest": "sha256:fdfa5daa86f5bde961df1dc9b15bfdd58b702b7d5e0c39ccba69c88551d5309d",
+  "output_digest": "sha256:d4517e36426754525e90c08bdb18257fc64f14571cb0079696d6a05315c92dfd",
   "project": "web-standards-review",
   "required_tests": [
     "boundary-audit",

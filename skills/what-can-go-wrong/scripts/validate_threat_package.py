@@ -11,7 +11,6 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-
 REQUIRED_BAD_EVENT_FIELDS = (
     "actor_or_condition",
     "action_or_failure",
@@ -128,11 +127,16 @@ def _validate_source_trace(value: Any, label: str) -> list[str]:
             continue
         source_kind = row.get("source_kind")
         if source_kind not in VALID_SOURCE_KINDS:
-            errors.append(f"{row_label}.source_kind must be one of {sorted(VALID_SOURCE_KINDS)}")
+            errors.append(
+                f"{row_label}.source_kind must be one of {sorted(VALID_SOURCE_KINDS)}"
+            )
         if not _non_empty_string(row.get("source_reference")):
             errors.append(f"{row_label}.source_reference must be a non-empty string")
         evidence_status = row.get("evidence_status")
-        if evidence_status is not None and evidence_status not in VALID_SOURCE_EVIDENCE_STATUSES:
+        if (
+            evidence_status is not None
+            and evidence_status not in VALID_SOURCE_EVIDENCE_STATUSES
+        ):
             errors.append(
                 f"{row_label}.evidence_status must be one of "
                 f"{sorted(VALID_SOURCE_EVIDENCE_STATUSES)}"
@@ -165,7 +169,9 @@ def _validate_workshop_simulation(
 
     for field in ("deck_id", "title", "version"):
         if not _non_empty_string(deck.get(field)):
-            errors.append(f"workshop_simulation.deck.{field} must be a non-empty string")
+            errors.append(
+                f"workshop_simulation.deck.{field} must be a non-empty string"
+            )
 
     status = deck.get("status")
     if status not in VALID_DECK_STATUSES:
@@ -187,7 +193,9 @@ def _validate_workshop_simulation(
         )
 
     if not _non_empty_string(deck.get("artifact_reference")):
-        errors.append("workshop_simulation.deck.artifact_reference must be a non-empty string")
+        errors.append(
+            "workshop_simulation.deck.artifact_reference must be a non-empty string"
+        )
     if deck.get("validation_status") != "passed":
         errors.append("workshop_simulation.deck.validation_status must be passed")
 
@@ -221,10 +229,16 @@ def _validate_workshop_simulation(
             errors.append(f"{label}.applies_to must be a non-empty array of strings")
 
         if generation_mode == "source-to-cards" or "source_trace" in card:
-            errors.extend(_validate_source_trace(card.get("source_trace"), f"{label}.source_trace"))
+            errors.extend(
+                _validate_source_trace(
+                    card.get("source_trace"), f"{label}.source_trace"
+                )
+            )
 
         missing_metadata = [
-            field for field in QUESTION_METADATA_FIELDS if not _non_empty_string(card.get(field))
+            field
+            for field in QUESTION_METADATA_FIELDS
+            if not _non_empty_string(card.get(field))
         ]
         if missing_metadata:
             errors.append(
@@ -234,12 +248,16 @@ def _validate_workshop_simulation(
 
         card_status = card.get("card_status")
         if card_status is not None and card_status not in VALID_CARD_STATUSES:
-            errors.append(f"{label}.card_status must be one of {sorted(VALID_CARD_STATUSES)}")
+            errors.append(
+                f"{label}.card_status must be one of {sorted(VALID_CARD_STATUSES)}"
+            )
         change_notes = card.get("change_notes")
         if change_notes is not None and not _non_empty_string_array(change_notes):
             errors.append(f"{label}.change_notes must be a non-empty array of strings")
         if card_status in CARD_STATUSES_REQUIRING_NOTES and not change_notes:
-            errors.append(f"{label}.change_notes is required when card_status is {card_status}")
+            errors.append(
+                f"{label}.change_notes is required when card_status is {card_status}"
+            )
 
     card_plays = workshop.get("card_plays")
     if not isinstance(card_plays, list) or not card_plays:
@@ -267,12 +285,16 @@ def _validate_workshop_simulation(
             seen_play_ids.add(card_play_id)
 
         if play.get("deck_id") != deck_id:
-            errors.append(f"{label}.deck_id must match workshop_simulation.deck.deck_id")
+            errors.append(
+                f"{label}.deck_id must match workshop_simulation.deck.deck_id"
+            )
 
         card_id = play.get("card_id")
         card = cards_by_id.get(card_id)
         if card is None:
-            errors.append(f"{label}.card_id must reference workshop_simulation.deck.cards_used")
+            errors.append(
+                f"{label}.card_id must reference workshop_simulation.deck.cards_used"
+            )
 
         model_element_id = play.get("model_element_id")
         if not _non_empty_string(model_element_id):
@@ -281,7 +303,9 @@ def _validate_workshop_simulation(
                 "target_model_element_ids is a legacy multi-target shape"
             )
         elif known_model_ids and model_element_id not in known_model_ids:
-            errors.append(f"{label}.model_element_id references an unknown model element")
+            errors.append(
+                f"{label}.model_element_id references an unknown model element"
+            )
 
         if _non_empty_string(card_id) and _non_empty_string(model_element_id):
             pair = (card_id, model_element_id)
@@ -301,7 +325,9 @@ def _validate_workshop_simulation(
                 errors.append(f"{label}.prompt must match the canonical card prompt")
             for field in QUESTION_METADATA_FIELDS:
                 if play.get(field) != card.get(field):
-                    errors.append(f"{label}.{field} must match the canonical card metadata")
+                    errors.append(
+                        f"{label}.{field} must match the canonical card metadata"
+                    )
             if play.get("suit") != card.get("suit"):
                 errors.append(f"{label}.suit must match the canonical card suit")
             if play.get("rank") != card.get("rank"):
@@ -332,11 +358,20 @@ def _validate_workshop_simulation(
             )
 
         non_producing_reason = play.get("non_producing_reason")
-        if answer_status in {"no_applicable_threat", "model_gap", "blocked", "deferred"}:
+        if answer_status in {
+            "no_applicable_threat",
+            "model_gap",
+            "blocked",
+            "deferred",
+        }:
             if not _non_empty_string(non_producing_reason):
-                errors.append(f"{label}.non_producing_reason is required for non-producing plays")
+                errors.append(
+                    f"{label}.non_producing_reason is required for non-producing plays"
+                )
             if derived_threat_ids:
-                errors.append(f"{label}.derived_threat_ids must be empty for non-producing plays")
+                errors.append(
+                    f"{label}.derived_threat_ids must be empty for non-producing plays"
+                )
 
         for field in (
             "applicability_basis",
@@ -349,7 +384,9 @@ def _validate_workshop_simulation(
                 errors.append(f"{label}.{field} must be a non-empty string")
 
         if not _non_empty_string_array(play.get("question_generation_inputs")):
-            errors.append(f"{label}.question_generation_inputs must be a non-empty array of strings")
+            errors.append(
+                f"{label}.question_generation_inputs must be a non-empty array of strings"
+            )
 
     return errors
 
@@ -382,23 +419,35 @@ def validate_local(package: Any, model: Any | None = None) -> list[str]:
         for field in REQUIRED_BAD_EVENT_FIELDS:
             value = threat.get(field)
             if not _non_empty_string(value):
-                errors.append(f"{label}.{field} must be a non-empty concrete bad-event field")
+                errors.append(
+                    f"{label}.{field} must be a non-empty concrete bad-event field"
+                )
             elif value.strip().lower() in GENERIC_BAD_EVENT_VALUES:
-                errors.append(f"{label}.{field} is generic rather than a concrete bad event")
+                errors.append(
+                    f"{label}.{field} is generic rather than a concrete bad event"
+                )
 
         elements = threat.get("affected_model_elements")
-        if not isinstance(elements, list) or not elements or not all(
-            _non_empty_string(item) for item in elements
+        if (
+            not isinstance(elements, list)
+            or not elements
+            or not all(_non_empty_string(item) for item in elements)
         ):
-            errors.append(f"{label}.affected_model_elements must be a non-empty array of model IDs")
+            errors.append(
+                f"{label}.affected_model_elements must be a non-empty array of model IDs"
+            )
         elif known_model_ids:
             unknown = sorted(set(elements) - known_model_ids)
             if unknown:
-                errors.append(f"{label}.affected_model_elements contains unknown model IDs: {unknown}")
+                errors.append(
+                    f"{label}.affected_model_elements contains unknown model IDs: {unknown}"
+                )
 
         evidence_status = threat.get("evidence_status")
         if evidence_status not in VALID_EVIDENCE_STATUS:
-            errors.append(f"{label}.evidence_status must be one of {sorted(VALID_EVIDENCE_STATUS)}")
+            errors.append(
+                f"{label}.evidence_status must be one of {sorted(VALID_EVIDENCE_STATUS)}"
+            )
         evidence = threat.get("evidence")
         if not isinstance(evidence, list) or not evidence:
             errors.append(
@@ -414,8 +463,13 @@ def validate_local(package: Any, model: Any | None = None) -> list[str]:
                 str(threat.get(field, "")).strip().lower()
                 for field in REQUIRED_BAD_EVENT_FIELDS
             ]
-            if story_lower in GENERIC_BAD_EVENT_VALUES or story_lower in component_values:
-                errors.append(f"{label}.threat_story is not a complete concrete bad-event story")
+            if (
+                story_lower in GENERIC_BAD_EVENT_VALUES
+                or story_lower in component_values
+            ):
+                errors.append(
+                    f"{label}.threat_story is not a complete concrete bad-event story"
+                )
 
     errors.extend(
         _validate_workshop_simulation(
@@ -431,7 +485,15 @@ def resolve_contract_root() -> Path:
     explicit = os.environ.get("STANDARDS_REVIEW_CONTRACTS_ROOT")
     repository_root = Path(__file__).resolve().parents[1]
     candidates = [Path(explicit)] if explicit else []
-    candidates.extend([repository_root, repository_root.parents[1]])
+    candidates.extend(
+        [
+            repository_root,
+            repository_root.parents[1],
+            Path(__file__).resolve().parents[3]
+            / "contracts"
+            / "threat-modeling-flow-v1",
+        ]
+    )
     for candidate in candidates:
         if (candidate / "scripts" / "validate_threat_model_contract.py").is_file():
             return candidate
@@ -441,22 +503,72 @@ def resolve_contract_root() -> Path:
     )
 
 
+def _requires_spec_knowledge(model: dict[str, Any] | None) -> bool:
+    """Require dual-provider evidence for real Web specification modeling.
+
+    Generic synthetic/diagram-only exercises without a versioned public source
+    retain the original standalone validator route.
+    """
+    if not isinstance(model, dict):
+        return False
+    if model.get("target_kind") in {"specification", "web_specification"}:
+        return True
+    if model.get("abstraction_level") not in {"spec-review", "specification-review"}:
+        return False
+    sources = model.get("source_inventory", [])
+    return isinstance(sources, list) and any(
+        isinstance(row, dict)
+        and str(row.get("source_reference", "")).startswith("https://")
+        for row in sources
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("threat_package", type=Path)
     parser.add_argument("--model", type=Path)
-    parser.add_argument("--candidate-ledger", type=Path, help="Require complete candidate reconciliation")
-    parser.add_argument("--elicitation-ledger", type=Path, help="Frozen elicitation input for reconciliation")
     parser.add_argument(
-        "--handoff", type=Path, help="Validate the multi-agent producer/consumer handoff"
+        "--candidate-ledger",
+        type=Path,
+        help="Require complete candidate reconciliation",
     )
+    parser.add_argument(
+        "--elicitation-ledger",
+        type=Path,
+        help="Frozen elicitation input for reconciliation",
+    )
+    parser.add_argument(
+        "--handoff",
+        type=Path,
+        help="Validate the multi-agent producer/consumer handoff",
+    )
+    parser.add_argument(
+        "--require-knowledge",
+        action="store_true",
+        help="Force Miner Knowledge + Threat Knowledge reconciliation for specification runs",
+    )
+    for flag in (
+        "knowledge-selection",
+        "knowledge-dispositions",
+        "knowledge-source-packet",
+        "knowledge-cache",
+        "knowledge-threat-cache",
+        "knowledge-baseline-threats",
+    ):
+        parser.add_argument("--" + flag, type=Path)
     args = parser.parse_args()
-    if bool(args.candidate_ledger) != bool(args.elicitation_ledger) or (args.candidate_ledger and not args.model):
-        parser.error("candidate reconciliation requires --model, --candidate-ledger and --elicitation-ledger together")
+    if bool(args.candidate_ledger) != bool(args.elicitation_ledger) or (
+        args.candidate_ledger and not args.model
+    ):
+        parser.error(
+            "candidate reconciliation requires --model, --candidate-ledger and --elicitation-ledger together"
+        )
 
     try:
         package = json.loads(args.threat_package.read_text(encoding="utf-8"))
-        model = json.loads(args.model.read_text(encoding="utf-8")) if args.model else None
+        model = (
+            json.loads(args.model.read_text(encoding="utf-8")) if args.model else None
+        )
         if args.handoff:
             json.loads(args.handoff.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
@@ -477,16 +589,91 @@ def main() -> int:
             frozen, frozen_digest = load(args.elicitation_ledger)
             _model, model_digest = load(args.model)
             _package, package_digest = load(args.threat_package)
-            ledger_errors = validate(ledger, model, model_digest=model_digest, threats=package, threats_digest=package_digest, elicitation=frozen, elicitation_digest=frozen_digest)
+            ledger_errors = validate(
+                ledger,
+                model,
+                model_digest=model_digest,
+                threats=package,
+                threats_digest=package_digest,
+                elicitation=frozen,
+                elicitation_digest=frozen_digest,
+            )
         except (OSError, ValueError) as error:
             print(f"ERROR: could not load candidate reconciliation: {error}")
             return 1
-        if not ledger_errors and (ledger.get("stage") != "reconciliation" or any(row["disposition"] in OPEN for row in ledger["candidates"])):
+        if not ledger_errors and (
+            ledger.get("stage") != "reconciliation"
+            or any(row["disposition"] in OPEN for row in ledger["candidates"])
+        ):
             ledger_errors.append("candidate reconciliation is not complete")
         if ledger_errors:
             for error in ledger_errors:
                 print(f"ERROR: {error}")
             return 1
+
+    knowledge_args = (
+        args.knowledge_selection,
+        args.knowledge_dispositions,
+        args.knowledge_source_packet,
+        args.knowledge_cache,
+        args.knowledge_baseline_threats,
+        args.knowledge_threat_cache,
+    )
+    knowledge_required = (
+        args.require_knowledge
+        or _requires_spec_knowledge(model)
+        or any(value is not None for value in knowledge_args)
+    )
+    if knowledge_required:
+        if not args.model or not all(knowledge_args[:4]):
+            print(
+                "ERROR: a specification threat-model run requires the exact "
+                "Miner Knowledge + Threat Knowledge selection, dispositions, "
+                "source packet, portable cache, and accepted model; "
+                "a pending queue is not a completed review"
+            )
+            return 1
+        package_root = Path(__file__).resolve().parents[3]
+        validator = package_root / "scripts/reconcile_specification_knowledge.py"
+        if not validator.is_file():
+            print("ERROR: required dual-provider knowledge reconciler is absent")
+            return 1
+        with tempfile.TemporaryDirectory(prefix="threat-knowledge-proof-") as temp_dir:
+            command = [
+                sys.executable,
+                str(validator),
+                "verify",
+                "--selection",
+                str(args.knowledge_selection),
+                "--dispositions",
+                str(args.knowledge_dispositions),
+                "--source-packet",
+                str(args.knowledge_source_packet),
+                "--cache",
+                str(args.knowledge_cache),
+                "--model",
+                str(args.model),
+                "--threats",
+                str(args.threat_package),
+                "--output",
+                str(Path(temp_dir) / "knowledge-receipt.json"),
+            ]
+            if args.knowledge_baseline_threats:
+                command.extend(
+                    ["--baseline-threats", str(args.knowledge_baseline_threats)]
+                )
+            if args.knowledge_threat_cache:
+                command.extend(["--threat-cache", str(args.knowledge_threat_cache)])
+            result = subprocess.run(
+                command, text=True, capture_output=True, check=False
+            )
+            if result.returncode != 0:
+                print("ERROR: mandatory three-pass dual-provider reconciliation failed")
+                print((result.stdout + result.stderr).strip()[:2400])
+                return 1
+            print(
+                "Dual-provider knowledge reconciliation passed against exact source and model"
+            )
 
     contract_root = resolve_contract_root()
     with tempfile.TemporaryDirectory(prefix="standards-review-threat-") as temp_dir:

@@ -58,6 +58,15 @@ Do not hard-code `/private/tmp`, a workstation path, or a personal repository
 layout. Use the platform temporary directory only for disposable work and
 report the resolved path.
 
+## Source model when W3C Knowledge is unavailable
+
+W3C Knowledge is optional. Build the model from a pinned local source
+packet, target checkout, supplied specification text or directly fetched
+public snapshot when the service is unavailable. Do not use Miner or
+Threat Knowledge caches to fabricate normative source clauses; they are
+for What Can Go Wrong after the DFD/dictionary has been frozen.
+Preserve the exact source identity and incomplete-section limitations.
+
 <!-- section:source-corpus -->
 ## Source Corpus
 

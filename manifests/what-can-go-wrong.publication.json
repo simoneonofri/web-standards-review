@@ -11,26 +11,8 @@
   "host_projection": "portable",
   "include_paths": [
     {
-      "source": "SKILL.public.md",
-      "target": "SKILL.md",
-      "rights": {
-        "source_class": "original",
-        "rights_status": "maintainer-owned",
-        "include_decision": "include"
-      }
-    },
-    {
       "source": "contracts/threat-elicitation-v1.md",
       "target": "contracts/threat-elicitation-v1.md",
-      "rights": {
-        "source_class": "original",
-        "rights_status": "maintainer-owned",
-        "include_decision": "include"
-      }
-    },
-    {
-      "source": "scripts/validate_threat_package.py",
-      "target": "scripts/validate_threat_package.py",
       "rights": {
         "source_class": "original",
         "rights_status": "maintainer-owned",
@@ -216,7 +198,7 @@
     "isolated-unit-tests",
     "candidate-ledger-round-trip"
   ],
-  "expected_output_digest": "sha256:bc7359dade593483bcbe6a60c2c7989abfd5c209bbb6c454d4b2cd9900a59450",
+  "expected_output_digest": "sha256:8b3a6b7da545815797f2d9004e2246cd89825f21b1b83c1b1d817a905e49bf6d",
   "maintainer_files": [
     {
       "source": "portable-resources/what-can-go-wrong/contracts/candidate-ledger-v1.md",
@@ -297,6 +279,26 @@
         "include_decision": "include"
       },
       "sha256": "sha256:fcfa7bb9a9975f9b5c24745f4e6d4910333593d7fb3af4bb712f31f7048aa43d"
+    },
+    {
+      "source": "portable-entrypoints/what-can-go-wrong.md",
+      "target": "SKILL.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:9ce56c230de180fbe8e383f6ff30bf3399caed3b47eb2fcdac524ce296af03d0"
+    },
+    {
+      "source": "portable-resources/what-can-go-wrong/scripts/validate_threat_package.py",
+      "target": "scripts/validate_threat_package.py",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:6e9f038939fe424fa2bb3af6fa817ed5e459d8b49e39fd77eca772330ae74133"
     }
   ]
 }

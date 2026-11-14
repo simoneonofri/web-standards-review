@@ -1,6 +1,6 @@
 {
   "schema_version": "web-standards-review-catalog/v1",
-  "catalog_version": 4,
+  "catalog_version": 5,
   "project": "web-standards-review",
   "display_name": "Web Standards Review",
   "status": "public-beta",
@@ -135,7 +135,8 @@
           "response-package/v1"
         ],
         "produces": [
-          "independent-review-gate/v1"
+          "independent-review-gate/v1",
+          "considerations-authoring-proposal/v1"
         ]
       },
       "source": {
@@ -464,7 +465,9 @@
     {
       "contracts": {
         "consumes": [],
-        "produces": []
+        "produces": [
+          "considerations-authoring-proposal/v1"
+        ]
       },
       "id": "w3c-issue-pr-review",
       "kind": "orchestrator",
@@ -480,12 +483,43 @@
         "codex",
         "claude"
       ]
+    },
+    {
+      "id": "write-considerations",
+      "kind": "extension",
+      "path": "skills/write-considerations",
+      "maturity": "reviewed-private-beta",
+      "review_state": "publication_review_required",
+      "contracts": {
+        "consumes": [
+          "source-corpus-manifest/v1",
+          "source-corpus/v1",
+          "model-packet/v1",
+          "threat-package/v1",
+          "response-package/v1"
+        ],
+        "produces": [
+          "considerations-editorial-packet/v2",
+          "considerations-draft/v1",
+          "considerations-editorial-evidence/v1",
+          "considerations-remediation-trace/v1"
+        ]
+      },
+      "source": {
+        "commit": "a08e6d92853c31b3193118a709d9f6c86f8f5082",
+        "publication_manifest": "manifests/write-considerations.publication.json",
+        "projection_manifest": "skills/write-considerations/.review/provenance.json"
+      },
+      "supported_hosts": [
+        "codex",
+        "claude"
+      ]
     }
   ],
   "bundles": [
     {
       "id": "threat-modeling-flow-v1",
-      "version": 4,
+      "version": 5,
       "path": "bundles/threat-modeling-flow-v1.json",
       "maturity": "reviewed-beta",
       "review_state": "publication_review_required",
@@ -508,7 +542,8 @@
         "threat-knowledge",
         "w3c-spec-code",
         "w3c-horizontal-review",
-        "w3c-issue-pr-review"
+        "w3c-issue-pr-review",
+        "write-considerations"
       ],
       "contracts": {
         "version": 1,
@@ -537,7 +572,8 @@
       "scripts",
       "skills",
       "tests",
-      "tools"
+      "tools",
+      "cache"
     ],
     "include_files": [
       "README.md",

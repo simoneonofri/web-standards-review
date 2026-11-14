@@ -219,6 +219,18 @@
       ],
       "role": "independent evidence/readiness gate; does not authorize publication",
       "required_for_complete_fixture": true
+    },
+    {
+      "skill_id": "write-considerations",
+      "source_commit": "a08e6d92853c31b3193118a709d9f6c86f8f5082",
+      "produces": [
+        "considerations-editorial-packet/v2",
+        "considerations-draft/v1",
+        "considerations-editorial-evidence/v1",
+        "considerations-remediation-trace/v1"
+      ],
+      "role": "direct authoring after ERTA: thematic Security and Privacy prose, minimal edits and source-linked evidence; no added signoff gate",
+      "required": false
     }
   ],
   "providers": [
@@ -336,5 +348,62 @@
       ]
     }
   ],
-  "handoff_semantics": "Handoffs carry accumulated run artifacts, including retained upstream artifacts; carrying an artifact does not transfer its producer identity."
+  "handoff_semantics": "Handoffs carry accumulated run artifacts, including retained upstream artifacts; carrying an artifact does not transfer its producer identity.",
+  "considerations_authoring": {
+    "skill_id": "write-considerations",
+    "stages_after": [
+      "what-can-go-wrong",
+      "what-are-we-going-to-do-about-it"
+    ],
+    "editorial_packet_schema": "considerations-editorial-packet/v2",
+    "composer": "skills/write-considerations/scripts/compose_considerations.py",
+    "editorial_evidence": "considerations-editorial-evidence/v1",
+    "mode": "write-or-rewrite-in-one-skill-run",
+    "not_required_for_generic_threat_model": true,
+    "trigger_stages": [
+      "did-we-do-a-good-enough-job",
+      "w3c-issue-pr-review"
+    ],
+    "decision_artifact": "considerations-authoring-proposal/v1",
+    "job_proposal_helper": "skills/did-we-do-a-good-enough-job/scripts/propose_considerations_authoring.py",
+    "writer_skill_id": "write-considerations",
+    "authorization": "when requested, write within same review; otherwise return a concrete job proposal",
+    "no_additional_review_gate": true,
+    "private_standalone_repository": "simoneonofri/write-considerations",
+    "remediation_trace_schema": "considerations-remediation-trace/v1",
+    "reference_guidance": [
+      "https://github.com/w3c/threat-modeling-guide/pull/37",
+      "https://github.com/w3c/threat-modeling-guide/pull/36"
+    ]
+  },
+  "mandatory_specification_knowledge": {
+    "schema_version": "specification-threat-knowledge/v1",
+    "stage": "what-can-go-wrong",
+    "required_for": "versioned_web_specification",
+    "providers": [
+      "miner_knowledge",
+      "threat_knowledge"
+    ],
+    "full_phases": [
+      "explicit",
+      "implicit",
+      "additional"
+    ],
+    "baseline_only_phases": [
+      "explicit",
+      "implicit"
+    ],
+    "prepare_and_verify_script": "scripts/reconcile_specification_knowledge.py",
+    "threat_source_registry": "skills/threat-knowledge/references/public-sources.json",
+    "operational_method_questions": "prompt-packs/operational-method-prompts-v1.json",
+    "threat_package_validator": "skills/what-can-go-wrong/scripts/validate_threat_package.py",
+    "quality_gate_validator": "skills/did-we-do-a-good-enough-job/scripts/evaluate_good_enough_gate.py",
+    "required_artifacts": [
+      "knowledge-selection.json",
+      "knowledge-dispositions.json",
+      "reconciliation-receipt.json"
+    ],
+    "completion_rule": "every selected item has source-linked disposition; both providers used in each required phase; no pending items",
+    "publication_authorized": false
+  }
 }

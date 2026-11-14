@@ -1,0 +1,42 @@
+{
+  "schema_version": "standalone-skill-mirror/v2",
+  "upstream_repository": "simoneonofri/write-considerations",
+  "upstream_url": "https://github.com/simoneonofri/write-considerations",
+  "upstream_visibility": "private",
+  "upstream_commit": "a08e6d92853c31b3193118a709d9f6c86f8f5082",
+  "monorepo_skill": "write-considerations",
+  "mirror_mode": "reviewed_portable_copy",
+  "files": {
+    "SKILL.md": "f974c1a86a60248952475c3ac4790d4bb7d04d324e4ac3688a884ff1f4b0ad06",
+    "references/editorial-packet-contract.md": "d6c9b9251edaa797bdf27a73818412e4f3866e17cd2caa04adeccecd337c50b3",
+    "references/fedcm-editorial-pattern.md": "d2fc358258dae59471cb206f1f1e55c7f62fafbcc30edbc9aa9a8fa20c9b1bf2",
+    "references/security-by-design-examples.md": "cfa3a6e61c12e09b2d2981e9596e877620f57bdf1a44d73ee012af47bb904825",
+    "references/shostack-four-questions.md": "25130b70b93a7bf1b03613d4f1dffb388a6faf2bf490cf61d111029492e1e523",
+    "references/w3c-guide-pr37-pr36.md": "6a7f409cbae8b190b064ae9b1642e82193cc67a11171eeb5e5fc7caa00ae9f0b",
+    "references/writing-method.md": "308475d323ba6f78ffaf31ae598bf358e07768ee668e3700ca5586d5dced77ce",
+    "scripts/check_editorial_rewrite.py": "c0453db0aced959d68b1d8cc9c6618e562b218022e22fdf11aeeaf6f8c502c52",
+    "scripts/compose_considerations.py": "20daee27d8f3b3e6d40c5b62b68360cc8a6b2d152ebd5da320938cbaece5a585",
+    "scripts/draft_considerations.py": "63ccc06f01c4e874d11e89c68a7b725d420f2868ea43d9209d39780cf9f2231e",
+    "scripts/validate_considerations.py": "dcd26ad999ca0116e2053b768dbbb785585a84fee36ffe245eccc5b43af5ec7c",
+    "scripts/validate_remediation_links.py": "fe4b8b6a5601b3e70068726a051e2563255b5a7722436130d262442dfa9826c5"
+  },
+  "sync_policy": "explicit_reviewed_commit_plus_integrity_test",
+  "publication_scope": "private_standalone; no authorization for public cache distribution",
+  "adapted_tests": {
+    "tests/test_composer.py": {
+      "upstream_sha256": "283844b3722ad6aa6a02d3f5265bdb509a791a00b976778b65f63044f2a39b9e",
+      "monorepo_sha256": "eeda66242483ddf58fbc4c200ded94337b380d477b045e19234792d1dba891eb",
+      "adaptation": "root scripts and fixtures paths only"
+    },
+    "tests/test_considerations.py": {
+      "upstream_sha256": "067e8afdf14940d8df023c5224fb7cc754212eb171e9096f4e6dcbc96719a871",
+      "monorepo_sha256": "cd388f1328b435ec0826fad888d41af0a2f92dbbe1580b791cb57481795aec52",
+      "adaptation": "root scripts and fixtures paths only"
+    }
+  },
+  "fixture_hashes": {
+    "tests/fixtures/clean-room-demo/model.json": "560b3f4a8fdee96b919ebf6c171d207d5d24d181be0102a19abb4c2ba11aeb3f",
+    "tests/fixtures/clean-room-demo/responses.json": "db44e38b54fb0ade93cfe7cb2acce72f683cbe90f054fd9c5220fb12aec7cb54",
+    "tests/fixtures/clean-room-demo/threats.json": "e9257ec1acd572d91aaa2e668ccd3767ef8d273707b08da52a6fd23e8fc068e3"
+  }
+}

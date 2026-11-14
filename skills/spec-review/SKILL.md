@@ -39,6 +39,29 @@ For `focused_w3c_reply`, read [references/focused-w3c-security-reply.md](referen
 
 Use `scripts/validate_focused_review.py --evidence <packet> --comment <comment>` from this skill directory for that route's structured projection. The validator checks the packet-to-comment relationship, source roles, and retained qualifications; source correctness requires the separate `fact-check` skill. Follow an explicit user choice of output format rather than presenting this route's short-comment format as universal.
 
+## Portable knowledge fallback when W3C Knowledge is absent
+
+W3C Knowledge is optional. If it is unavailable, freeze a complete, exact
+specification source packet using a local export, the specification's local
+checkout, or a direct fetch of the public snapshot. Never substitute prompt
+catalogs for missing specification text.
+
+With that packet, use the two bundled knowledge caches:
+
+```sh
+python3 scripts/knowledge_cache_fallback.py \
+  --source-packet /run/source-corpus/complete-primary-v1.json \
+  --model /run/model.json --domains security,privacy \
+  --output-dir /run/offline-knowledge
+```
+
+Without an accepted model, omit `--model` for a source-pinned miner preflight.
+With a model, the helper selects both Miner Knowledge and Threat Knowledge
+questions for explicit, implicit and additional threat-modeling passes.
+Review and disposition the selected questions; the resulting cache-hits are
+not executed specialist reviews. See `cache/README.md` and
+`docs/mandatory-specification-knowledge.md`.
+
 <!-- section:full-review -->
 ## Complete threat-modeling flow
 

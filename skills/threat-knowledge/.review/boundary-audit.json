@@ -4,13 +4,13 @@
     {
       "binary": false,
       "path": ".review/projection.diff",
-      "sha256": "sha256:59176e208b63e09657b41cb21b5206cc9ea53a58420ad15798b0f642f3617c14",
-      "size": 1589
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
     },
     {
       "binary": false,
       "path": ".review/provenance.json",
-      "sha256": "sha256:c81909f10d1dd6b5bb269244c794b34af50db2bfd8e0b91cc8c79256425a9101",
+      "sha256": "sha256:5db84ffc01928f262ed7eb0cd159194f8d6f4b07647557e3f88a05784f52a166",
       "size": 1684
     },
     {
@@ -28,8 +28,8 @@
     {
       "binary": false,
       "path": "SKILL.md",
-      "sha256": "sha256:b38759260a23a0616ac1e1514bed32b7240e0c8edc200c37367a486af9f32ed1",
-      "size": 2251
+      "sha256": "sha256:8180ae53ba647e88bd33002989ad2513dfe847854bbb418a88e5465174c68f4c",
+      "size": 3049
     },
     {
       "binary": false,
@@ -50,7 +50,7 @@
       "size": 2114
     }
   ],
-  "root_digest": "sha256:ce0f7c7345eb8b1559df80943b4d9f01edbf0b93354564ce3bce43b49a08f136",
+  "root_digest": "sha256:112bdec0ae4f6ceb5202cece49bc27aad1388b82bf04c42134ef63b9aff87982",
   "schema_version": "boundary-audit/v1",
   "status": "pass",
   "tool_version": "reviewctl/0.2.0"

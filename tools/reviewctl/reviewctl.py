@@ -320,6 +320,69 @@ def exact_tree_diff(previous: Path | None, projected: Path) -> str:
     return "".join(normalized)
 
 
+PUBLIC_KNOWLEDGE_CACHES = {
+    "cache/miner-knowledge-v1.zip": "web-standards-review-offline-cache/v1",
+    "cache/threat-knowledge-v1.zip": "portable-threat-knowledge/v1",
+}
+
+
+def audit_public_knowledge_cache(blob: bytes, relative: str) -> list[str]:
+    """Allow only the exact two public, integrity-checked prompt catalog ZIPs."""
+    import io
+    import zipfile
+
+    expected = PUBLIC_KNOWLEDGE_CACHES[relative]
+    if len(blob) > 500_000:
+        return ["archive exceeds 500 KB bound"]
+    problems = []
+    try:
+        with zipfile.ZipFile(io.BytesIO(blob)) as archive:
+            names = archive.namelist()
+            if len(set(names)) != len(names) or any(
+                name.startswith("/") or ".." in Path(name).parts or name.endswith("/")
+                for name in names
+            ):
+                return ["unsafe or duplicate ZIP member"]
+            if "manifest.json" not in names or "records.jsonl" not in names:
+                return ["required manifest or question records missing"]
+            if sum(item.file_size for item in archive.infolist()) > 5_000_000:
+                return ["decompressed cache exceeds size budget"]
+            data = json.loads(archive.read("manifest.json"))
+            if data.get("schema_version") != expected:
+                return ["unexpected cache manifest schema"]
+            artifacts = data.get("artifacts", {})
+            if set(artifacts) != set(names) - {"manifest.json"}:
+                return ["manifest does not account for every ZIP member"]
+            for name, info in artifacts.items():
+                member = archive.read(name)
+                if len(member) != info.get("bytes"):
+                    problems.append("member size mismatch: " + name)
+                if sha256_bytes(member).removeprefix("sha256:") != str(info.get("sha256", "")).removeprefix("sha256:"):
+                    problems.append("member SHA-256 mismatch: " + name)
+                if any(kind in name for kind in (".json", ".jsonl", ".html", ".csv", ".md")):
+                    for issue in boundary_findings(name, member.decode("utf-8")):
+                        problems.append("private-content: " + issue["code"])
+            records = [
+                json.loads(line) for line in
+                archive.read("records.jsonl").decode("utf-8").splitlines()
+                if line.strip()
+            ]
+            if len(records) != data.get("records") or not records:
+                problems.append("record count mismatch")
+            if relative.endswith("threat-knowledge-v1.zip"):
+                if data.get("publication") != "original_routing_prompts_with_public_source_links":
+                    problems.append("threat cache not marked as original routing prompts")
+                if any(
+                    row.get("source_kind") != "original_routing_question"
+                    or "docs.google.com" in str(row.get("source_url", ""))
+                    for row in records
+                ):
+                    problems.append("third-party source questions or private URLs present")
+    except (ValueError, KeyError, TypeError, UnicodeError, zipfile.BadZipFile, RuntimeError) as error:
+        return ["cache verification failed: " + str(error)[:200]]
+    return problems
+
+
 def audit_tree(root: Path, rights: dict[str, Any] | None = None) -> dict[str, Any]:
     if not root.is_dir():
         raise ReviewError(f"audit target is not a directory: {root}")
@@ -345,7 +408,21 @@ def audit_tree(root: Path, rights: dict[str, Any] | None = None) -> dict[str, An
         if len(data) > maximum:
             findings.append({"code": "unscanned-large-file", "path": relative, "size": len(data)})
         if binary and not decision.get("binary_allowed", False):
-            findings.append({"code": "unapproved-binary", "path": relative})
+            # Check the same exact cache files both at marketplace root and
+            # inside the host-native plugin subtree after export.
+            nested_prefix = "plugins/web-standards-review/"
+            cache_path = (
+                relative[len(nested_prefix):]
+                if relative.startswith(nested_prefix) else relative
+            )
+            if rights is None and cache_path in PUBLIC_KNOWLEDGE_CACHES:
+                for reason in audit_public_knowledge_cache(data, cache_path):
+                    findings.append({
+                        "code": "invalid-public-knowledge-cache",
+                        "path": relative, "reason": reason,
+                    })
+            else:
+                findings.append({"code": "unapproved-binary", "path": relative})
         if not binary:
             findings.extend(boundary_findings(relative, data.decode("utf-8")))
     return {
@@ -969,6 +1046,7 @@ EXPECTED_PRIVATE_BETA_SKILLS = (
     "w3c-spec-code",
     "w3c-horizontal-review",
     "w3c-issue-pr-review",
+    "write-considerations",
 )
 SUPPORTED_MARKETPLACE_HOSTS = ("codex", "claude")
 MARKETPLACE_LOCK_SCHEMA = "web-standards-review-lock/v1"
@@ -1007,7 +1085,8 @@ def load_catalog(root: Path) -> dict[str, Any]:
     inventories = {
         2: EXPECTED_PRIVATE_BETA_SKILLS[:8],
         3: EXPECTED_PRIVATE_BETA_SKILLS[:18],
-        4: EXPECTED_PRIVATE_BETA_SKILLS,
+        4: EXPECTED_PRIVATE_BETA_SKILLS[:19],
+        5: EXPECTED_PRIVATE_BETA_SKILLS,
     }
     expected_skills = inventories.get(catalog.get("catalog_version"))
     if expected_skills is None:

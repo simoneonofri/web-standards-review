@@ -32,7 +32,7 @@
     {
       "source": "portable-entrypoints/threat-knowledge.md",
       "target": "SKILL.md",
-      "sha256": "sha256:b38759260a23a0616ac1e1514bed32b7240e0c8edc200c37367a486af9f32ed1",
+      "sha256": "sha256:8180ae53ba647e88bd33002989ad2513dfe847854bbb418a88e5465174c68f4c",
       "rights": {
         "source_class": "original",
         "rights_status": "maintainer-owned",
@@ -70,5 +70,5 @@
   "exclude_paths": [
     "SKILL.md"
   ],
-  "expected_output_digest": "sha256:8b2b16f085d34ceeef4253d54e9de95ec9a38699e0ed19025c97ec68c1e5e004"
+  "expected_output_digest": "sha256:103e0289a1517cafd014c3dc2ee470d6155b646825af79a4df56e3dfcab14d5f"
 }

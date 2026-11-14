@@ -86,6 +86,29 @@ def validate_manifest(manifest_path: Path) -> tuple[dict[str, Any], Path, list[s
     checks: list[str] = []
     catalog = load_json(package_root / "catalog.yaml", "catalog")
     inventory = {row["id"]: row for row in catalog["skills"]}
+    knowledge = manifest.get("mandatory_specification_knowledge")
+    if knowledge is not None:
+        if (
+            not isinstance(knowledge, dict)
+            or knowledge.get("schema_version") != "specification-threat-knowledge/v1"
+            or knowledge.get("stage") != "what-can-go-wrong"
+            or knowledge.get("providers") != ["miner_knowledge", "threat_knowledge"]
+            or knowledge.get("full_phases") != ["explicit", "implicit", "additional"]
+            or knowledge.get("baseline_only_phases") != ["explicit", "implicit"]
+            or knowledge.get("publication_authorized") is not False
+        ):
+            raise BundleError(
+                "mandatory knowledge protocol must include both providers and all three phases"
+            )
+        for field in (
+            "prepare_and_verify_script",
+            "threat_source_registry",
+            "operational_method_questions",
+            "threat_package_validator",
+            "quality_gate_validator",
+        ):
+            safe_path(package_root, require_string(knowledge.get(field), field), field)
+        checks.append("specification-knowledge:three-phases-two-providers-required")
     for category in ("entrypoints", "horizontal_layers"):
         for row in manifest.get(category, []):
             identifier = row.get("skill_id")
@@ -207,6 +230,52 @@ def _identity(artifact: dict[str, Any], field: str) -> str | None:
     return value if isinstance(value, str) and value else None
 
 
+def _specification_needs_knowledge(model: dict[str, Any] | None) -> bool:
+    if not isinstance(model, dict):
+        return False
+    if model.get("target_kind") in {"specification", "web_specification"}:
+        return True
+    if model.get("abstraction_level") not in {"spec-review", "specification-review"}:
+        return False
+    return any(
+        isinstance(item, dict)
+        and str(item.get("source_reference", "")).startswith("https://")
+        for item in model.get("source_inventory", [])
+    )
+
+
+def validate_complete_specification_knowledge(
+    model: dict[str, Any] | None, receipt: dict[str, Any] | None
+) -> None:
+    if not _specification_needs_knowledge(model):
+        return
+    if not isinstance(receipt, dict) or receipt.get("status") != "pass":
+        raise BundleError(
+            "complete specification threat modeling needs a passing "
+            "Miner Knowledge + Threat Knowledge reconciliation receipt"
+        )
+    if (
+        receipt.get("run_id") != model.get("run_id")
+        or receipt.get("model_id") != model.get("model_id")
+        or not receipt.get("source_packet_sha256")
+        or receipt.get("unresolved_ids")
+        or receipt.get("errors")
+    ):
+        raise BundleError(
+            "knowledge receipt has mismatched identity or unresolved rows"
+        )
+    counts = receipt.get("phase_provider_counts", {})
+    for phase in ("explicit", "implicit", "additional"):
+        row = counts.get(phase, {}) if isinstance(counts, dict) else {}
+        if not isinstance(row, dict) or any(
+            not isinstance(row.get(provider), int) or row[provider] <= 0
+            for provider in ("miner_knowledge", "threat_knowledge")
+        ):
+            raise BundleError(
+                f"knowledge receipt lacks both providers' {phase} dispositions"
+            )
+
+
 def validate_fixture(
     manifest: dict[str, Any],
     package_root: Path,
@@ -237,6 +306,11 @@ def validate_fixture(
         paths[key] = path
         if path.suffix == ".json":
             loaded[key] = load_json(path, f"fixture.artifacts.{key}")
+
+    if outcome == "complete":
+        validate_complete_specification_knowledge(
+            loaded.get("model"), loaded.get("knowledge_reconciliation")
+        )
 
     for field in ("run_id", "target_id"):
         values = {

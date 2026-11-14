@@ -2,17 +2,29 @@
   "schema_version": "maintainer-release-approval/v1",
   "approved": true,
   "approver": "simoneonofri",
-  "approved_on": "2026-11-09",
+  "approved_on": "2026-11-14",
   "repository": "https://github.com/simoneonofri/web-standards-review",
   "scope": "public-beta",
-  "approval_basis": "Explicit maintainer confirmation to update this approval record and push branch review-followups-erta to simoneonofri/web-standards-review with only the reviewed public changes: incremental PR review guidance and combined ERTA strategies, schema, validator, documentation and synthetic tests.",
-  "verified_source_commit": "84f2cfe835eb80fa749b9bbb75ea166cc1f357bc",
-  "content_digest": "sha256:20c0642abb61a79e44cd6248afd4a493cd89ffe8a2b56adf35349b957b41c8af",
+  "approval_basis": "Explicit maintainer instruction in this conversation to publish the twentieth write-considerations skill and both offline knowledge caches, after verifying fallback by stopping W3C Knowledge Docker containers. The independent original routing-only Threat Knowledge cache excludes private source questions and private corpus URLs. Release is incremental against existing public main with the W3C Software and Document License 2023.",
+  "verified_source_commit": "c17e1366094475b5f06f89cc482b63c9020a0ae5",
+  "content_digest": "sha256:99487f663d7e2889e154e6e808789b73d709ac2a3066a52d5422dd0c86821fe3",
   "license": "W3C-20150513",
   "license_version_url": "https://www.w3.org/copyright/software-license-2023/",
   "excluded_content": [
-    "personal overlays and libraries",
-    "databases and model weights",
-    "private or internal source material"
-  ]
+    "W3C Knowledge Docker database and private source packets",
+    "Original third-party Threat Knowledge question texts and curated source spreadsheets",
+    "Private overlays, personal files, credentials, and unpublished feedback",
+    "Unreviewed third-party full documentation and binaries"
+  ],
+  "included_release_components": [
+    "20-skill portable marketplace including write-considerations",
+    "Miner Knowledge offline question index (287 records)",
+    "Threat Knowledge author-written routing-only cache (169 records)",
+    "Offline fallback and full dual-provider reconciliation workflow",
+    "Did We Do a Good Enough Job? and security/privacy PR authoring triggers"
+  ],
+  "cache_sha256": {
+    "miner-knowledge-v1.zip": "1554419a8f9926906f45a87e6bdcb2dd7cde2d87022432f0cd6616fea68dd5f5",
+    "threat-knowledge-v1.zip": "c2f7290a87a142c32da1630c4f90604ab32cb6b6d4eea5ea2d6d1fc74d2da438"
+  }
 }
