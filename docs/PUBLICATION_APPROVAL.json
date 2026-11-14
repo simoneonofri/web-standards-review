@@ -5,9 +5,9 @@
   "approved_on": "2026-11-14",
   "repository": "https://github.com/simoneonofri/web-standards-review",
   "scope": "public-beta",
-  "approval_basis": "Explicit maintainer instruction in this conversation to publish the twentieth write-considerations skill and both offline knowledge caches, after verifying fallback by stopping W3C Knowledge Docker containers. The independent original routing-only Threat Knowledge cache excludes private source questions and private corpus URLs. Release is incremental against existing public main with the W3C Software and Document License 2023.",
+  "approval_basis": "Explicit maintainer request on 2026-11-14 to add the Web Standards Review skills architecture diagram and the offline Miner Knowledge / Threat Knowledge and write-considerations flow to the public README. This is a documentation update to the already published 20-skill public marketplace.",
   "verified_source_commit": "c17e1366094475b5f06f89cc482b63c9020a0ae5",
-  "content_digest": "sha256:99487f663d7e2889e154e6e808789b73d709ac2a3066a52d5422dd0c86821fe3",
+  "content_digest": "sha256:dcd78e86e71d716aa067148b1cfcfd796da9f50b1e789599340af0bb398c973f",
   "license": "W3C-20150513",
   "license_version_url": "https://www.w3.org/copyright/software-license-2023/",
   "excluded_content": [

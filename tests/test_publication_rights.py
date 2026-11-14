@@ -22,7 +22,7 @@ class PublicationRightsGateTests(unittest.TestCase):
         report = module.inspect(ROOT)
         self.assertEqual(report["status"], "approved")
         self.assertTrue(report["publication_authorized"])
-        self.assertEqual(report["skill_count"], 19)
+        self.assertEqual(report["skill_count"], 20)
 
     def test_missing_approval_blocks_publication(self):
         with tempfile.TemporaryDirectory() as parent:
