@@ -1,0 +1,127 @@
+{
+  "schema_version": "web-standards-review-method-prompts/v1",
+  "source_policy": "original-operational-questions-requiring-independent-source-verification",
+  "questions": [
+    {
+      "source_id": "stride",
+      "domain": "security",
+      "method_id": "stride_per_element",
+      "applies_to": [
+        "processes",
+        "data_flows",
+        "trust_boundaries"
+      ],
+      "phase_questions": {
+        "explicit": "Which explicit attacker actions, authority boundaries and harms does the specification itself describe?",
+        "implicit": "Which existing checks, failure cases or permission mechanisms imply a security bad event that the considerations may not explain?",
+        "additional": "Can an actor abuse identity, authority, information flow, integrity, availability or auditability at this model boundary?"
+      }
+    },
+    {
+      "source_id": "rfc3552",
+      "domain": "security",
+      "method_id": "rfc3552_security_per_element",
+      "applies_to": [
+        "processes",
+        "data_flows",
+        "external_entities"
+      ],
+      "phase_questions": {
+        "explicit": "Which threat actors, security assumptions and failure scenarios are explicitly documented?",
+        "implicit": "Which normative protocol gates or secure defaults imply protection from an attacker not named in security considerations?",
+        "additional": "What attacker-controlled inputs or intermediary behavior could break a documented security property despite the current controls?"
+      }
+    },
+    {
+      "source_id": "linddun",
+      "domain": "privacy",
+      "method_id": "linddun_per_element",
+      "applies_to": [
+        "external_entities",
+        "data_flows",
+        "data_stores",
+        "trust_boundaries"
+      ],
+      "phase_questions": {
+        "explicit": "Which privacy harms, affected people or processing assumptions are explicitly identified in the text?",
+        "implicit": "What tracking, identifiability, disclosure or lack-of-control risk is implied by the privacy controls actually described?",
+        "additional": "Can an observer link, infer, disclose or retain personal data beyond the intended purpose at this element?"
+      }
+    },
+    {
+      "source_id": "rfc6973",
+      "domain": "privacy",
+      "method_id": "rfc6973_privacy_per_element",
+      "applies_to": [
+        "external_entities",
+        "data_flows",
+        "data_stores"
+      ],
+      "phase_questions": {
+        "explicit": "Which data subjects, collections, recipients, retention periods and consent paths are explicitly described?",
+        "implicit": "What collection limits, permission rules, minimization or deletion controls imply a privacy problem not explicitly named?",
+        "additional": "Could the selected protocol behavior create unexpected collection, correlation, retention or disclosure across lifetimes and recipients?"
+      }
+    },
+    {
+      "source_id": "rfc9620",
+      "domain": "human-rights",
+      "method_id": "rfc9620_human_rights_per_element",
+      "applies_to": [
+        "external_entities",
+        "trust_boundaries",
+        "data_flows"
+      ],
+      "phase_questions": {
+        "explicit": "Which affected people and rights-related threats are directly discussed in the review target?",
+        "implicit": "Do existing access controls, safeguards or user choices imply an unstated human-rights impact pathway?",
+        "additional": "What concrete misuse or failure could affect privacy, autonomy, expression, association or non-discrimination for a named stakeholder?"
+      }
+    },
+    {
+      "source_id": "xsleaks",
+      "domain": "security",
+      "method_id": "xs_leaks_oracle_checklist",
+      "applies_to": [
+        "data_flows",
+        "processes",
+        "trust_boundaries"
+      ],
+      "phase_questions": {
+        "explicit": "Does the target explicitly identify side-channel or cross-origin observation threats?",
+        "implicit": "Do cross-origin separation, restricted exposure or timing guards imply an unintended observable signal?",
+        "additional": "Can a hostile origin infer a protected state through timing, state transitions or indirect observable behavior?"
+      }
+    },
+    {
+      "source_id": "fingerprinting",
+      "domain": "privacy",
+      "method_id": "browser_fingerprinting_prompt_lens",
+      "applies_to": [
+        "data_flows",
+        "external_entities",
+        "data_stores"
+      ],
+      "phase_questions": {
+        "explicit": "Does the specification explicitly discuss fingerprinting entropy and linkability from the feature?",
+        "implicit": "Do rounding, bucketing, permission or precision constraints imply a tracking risk without documenting it?",
+        "additional": "Does the API reveal stable, precise or cross-context information that supports re-identification or linkage?"
+      }
+    },
+    {
+      "source_id": "harms",
+      "domain": "harms",
+      "method_id": "microsoft_harms_modeling_per_element",
+      "applies_to": [
+        "external_entities",
+        "processes",
+        "data_flows"
+      ],
+      "phase_questions": {
+        "explicit": "Which harms to users, bystanders or affected groups are named in the target's considerations?",
+        "implicit": "Which safety, access, fairness or autonomy safeguards imply an intended avoidance of harm?",
+        "additional": "How could incorrect outputs, exclusion, misuse, reliance or unavailable service produce a concrete harm to an affected person?"
+      }
+    }
+  ]
+}

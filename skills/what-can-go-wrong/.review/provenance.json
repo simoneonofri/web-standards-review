@@ -19,8 +19,8 @@
     {
       "binary": false,
       "path": "SKILL.md",
-      "sha256": "sha256:df738fa7520fe0942bc5fede98cc65a2051cb7709ddcb92085fe76e5b3803f37",
-      "size": 13608
+      "sha256": "sha256:9ce56c230de180fbe8e383f6ff30bf3399caed3b47eb2fcdac524ce296af03d0",
+      "size": 15437
     },
     {
       "binary": false,
@@ -49,8 +49,8 @@
     {
       "binary": false,
       "path": "scripts/validate_threat_package.py",
-      "sha256": "sha256:83709d8ee0995ce993ec8e1c7679a0122a8e8d1dc3ea0b35aba0496b3b444d63",
-      "size": 20375
+      "sha256": "sha256:6e9f038939fe424fa2bb3af6fa817ed5e459d8b49e39fd77eca772330ae74133",
+      "size": 25588
     },
     {
       "binary": false,
@@ -95,7 +95,7 @@
       "size": 11001
     }
   ],
-  "output_digest": "sha256:bc7359dade593483bcbe6a60c2c7989abfd5c209bbb6c454d4b2cd9900a59450",
+  "output_digest": "sha256:8b3a6b7da545815797f2d9004e2246cd89825f21b1b83c1b1d817a905e49bf6d",
   "project": "web-standards-review",
   "required_tests": [
     "boundary-audit",

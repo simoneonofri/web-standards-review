@@ -1,0 +1,112 @@
+{
+  "files": {
+    ".review/boundary-audit.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/projection.diff": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/provenance.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    ".review/rights.json": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "generated-metadata",
+      "source_class": "original"
+    },
+    "PROJECT_STATUS.md": {
+      "binary_allowed": false,
+      "include_decision": "generated",
+      "max_bytes": 1000000,
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "SKILL.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/editorial-packet-contract.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/fedcm-editorial-pattern.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/security-by-design-examples.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/shostack-four-questions.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/w3c-guide-pr37-pr36.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "references/writing-method.md": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/check_editorial_rewrite.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/compose_considerations.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/draft_considerations.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/validate_considerations.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "scripts/validate_remediation_links.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_composer.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
+    "tests/test_considerations.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    }
+  },
+  "manifest_reference": "manifests/write-considerations.publication.json#maintainer_files",
+  "pending": [],
+  "schema_version": "rights-manifest/v1"
+}

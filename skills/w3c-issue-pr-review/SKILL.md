@@ -61,6 +61,46 @@ Use an integration only when available and relevant. Without it, perform the bou
 
 When handing work to another skill, read [marketplace-integration.md](references/marketplace-integration.md). Pass the exact target, question, evidence and coverage limits, then return here to reconcile the result with the thread and draft the response. Do not restart a completed review or broaden its scope just because another skill is available.
 
+## Security/privacy PR Considerations job detection
+
+When a PR modifies the Security or Privacy Considerations, a permission,
+authorization, origin or data-processing algorithm, or changes a mechanism
+with security/privacy consequences, check whether the current sections
+still explain the relevant threat, response, enforcement responsibility
+and residual effects. Do this even when the PR does not itself modify the
+Considerations headings; the changed normative behavior may require a new
+explanation.
+
+For a source-pinned model with threat and response evidence, the shared
+D2D proposal helper supports PR mode and focused changed areas:
+
+```sh
+python3 skills/did-we-do-a-good-enough-job/scripts/propose_considerations_authoring.py \
+  --kind pr --changed-area "Security Considerations" \
+  --model /run/model.json --source-packet /run/source.json \
+  --threats /run/threats.json --responses /run/responses.json \
+  --output /run/considerations-pr-proposal.json
+```
+
+The PR review reports the recommended `write-considerations`
+job with exact source/PR scope. If asked for PR-ready section text or a
+proposed wording change, invoke the writer and **produce the draft**.
+If only asked to review, propose the update and its reason; do not silently
+post or push a PR. A focused PR with no complete threat model can still
+propose a bounded textual change from the diff and authoritative spec,
+without pretending to have run all miners.
+
+## Considerations editing during issue or pull request review
+
+If an issue or pull request asks for changes to Security Considerations or
+Privacy Considerations, invoke `write-considerations`
+with the exact target snapshot and any available model/threat/ERTA artifacts.
+Produce the proposed replacement or minimal textual change directly,
+with traceable sources and remaining threats. Do not send the user back to
+the older per-threat scaffold or require a separate hand-written draft.
+A narrow issue need not run the entire six-miner inventory unless a full
+threat-model review is independently requested.
+
 ## Response and resolution
 
 <!-- section:response -->
@@ -80,6 +120,16 @@ Keep approval, landing, completion of a requested outcome, and follow-up trackin
 If newer changes could affect the conclusion, revalidate against the current target before any authorized remote action. If current state cannot be checked, label the result as a snapshot-based recommendation.
 
 ## Sharing and action boundaries
+
+## Offline source and knowledge for focused PRs
+
+For an unavailable W3C Knowledge service, read the pinned specification or
+diff directly and use the bundled Miner and Threat Knowledge caches for
+relevant control patterns. A focused PR does not require a complete
+three-pass threat model. If the diff changes a security/privacy mechanism,
+check whether the Considerations need updating; propose or invoke
+`write-considerations` as requested, with exact remediation links and
+minacce residue.
 
 <!-- section:publication-contract protected -->
 Keep private analysis and unpublished source material outside public repositories and drafts. Include only evidence appropriate for the destination. Do not disclose private links merely because they support the analysis; identify the evidence gap or prepare an authorized public explanation.

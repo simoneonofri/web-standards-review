@@ -17,3 +17,18 @@ This project is independently maintained by Simone Onofri. It is informed by Web
 - The evidence client checks snapshot identity and complete primary section coverage, attaching full sections from the selected version when the source packet omits inventory entries.
 - The shared contract package, complete/partial/blocked fixtures, component tests, bundle validation, catalog audit, installer drift/refusal checks, and clean-room export/import round trip are covered by the local test suites and CLI gates. No CI workflow is included in this snapshot.
 - `main` is the current beta branch. Clone, installation, and contribution instructions are in `README.md`.
+
+
+## 20-skill release update — 14 November 2026
+
+The incremental public release adds `write-considerations`, its D2D/PR
+authoring job routing, immutable model/source-linked dual-provider
+reconciliation, and portable Miner/Threat Knowledge question caches.
+The latter are original prompt indexes; source-derived third-party
+question texts and the private curation corpus are excluded.
+
+With both W3C Knowledge Docker containers stopped, Geolocation's
+source-pinned model selected candidate prompts from both ZIPs; the
+unmodeled preflight and standalone query tools also worked. Both
+containers were restored successfully. A cache lookup is not a
+live-miner execution or a completed threat model.

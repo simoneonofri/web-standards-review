@@ -1,0 +1,111 @@
+{
+  "contract_versions": [],
+  "export_policy": "explicit-allowlist",
+  "host_projection": "portable",
+  "human_review_decision": "publication_review_required",
+  "included_files": [
+    {
+      "binary": false,
+      "path": "PROJECT_STATUS.md",
+      "sha256": "sha256:8d2e7a7f917cfe77c5526da9d58d006acedb33e895133855c8e95695f017b957",
+      "size": 363
+    },
+    {
+      "binary": false,
+      "path": "SKILL.md",
+      "sha256": "sha256:f974c1a86a60248952475c3ac4790d4bb7d04d324e4ac3688a884ff1f4b0ad06",
+      "size": 9853
+    },
+    {
+      "binary": false,
+      "path": "references/editorial-packet-contract.md",
+      "sha256": "sha256:d6c9b9251edaa797bdf27a73818412e4f3866e17cd2caa04adeccecd337c50b3",
+      "size": 8338
+    },
+    {
+      "binary": false,
+      "path": "references/fedcm-editorial-pattern.md",
+      "sha256": "sha256:d2fc358258dae59471cb206f1f1e55c7f62fafbcc30edbc9aa9a8fa20c9b1bf2",
+      "size": 3025
+    },
+    {
+      "binary": false,
+      "path": "references/security-by-design-examples.md",
+      "sha256": "sha256:cfa3a6e61c12e09b2d2981e9596e877620f57bdf1a44d73ee012af47bb904825",
+      "size": 2913
+    },
+    {
+      "binary": false,
+      "path": "references/shostack-four-questions.md",
+      "sha256": "sha256:25130b70b93a7bf1b03613d4f1dffb388a6faf2bf490cf61d111029492e1e523",
+      "size": 1076
+    },
+    {
+      "binary": false,
+      "path": "references/w3c-guide-pr37-pr36.md",
+      "sha256": "sha256:6a7f409cbae8b190b064ae9b1642e82193cc67a11171eeb5e5fc7caa00ae9f0b",
+      "size": 4989
+    },
+    {
+      "binary": false,
+      "path": "references/writing-method.md",
+      "sha256": "sha256:308475d323ba6f78ffaf31ae598bf358e07768ee668e3700ca5586d5dced77ce",
+      "size": 2162
+    },
+    {
+      "binary": false,
+      "path": "scripts/check_editorial_rewrite.py",
+      "sha256": "sha256:c0453db0aced959d68b1d8cc9c6618e562b218022e22fdf11aeeaf6f8c502c52",
+      "size": 8701
+    },
+    {
+      "binary": false,
+      "path": "scripts/compose_considerations.py",
+      "sha256": "sha256:20daee27d8f3b3e6d40c5b62b68360cc8a6b2d152ebd5da320938cbaece5a585",
+      "size": 20734
+    },
+    {
+      "binary": false,
+      "path": "scripts/draft_considerations.py",
+      "sha256": "sha256:63ccc06f01c4e874d11e89c68a7b725d420f2868ea43d9209d39780cf9f2231e",
+      "size": 16167
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_considerations.py",
+      "sha256": "sha256:dcd26ad999ca0116e2053b768dbbb785585a84fee36ffe245eccc5b43af5ec7c",
+      "size": 6546
+    },
+    {
+      "binary": false,
+      "path": "scripts/validate_remediation_links.py",
+      "sha256": "sha256:fe4b8b6a5601b3e70068726a051e2563255b5a7722436130d262442dfa9826c5",
+      "size": 18824
+    },
+    {
+      "binary": false,
+      "path": "tests/test_composer.py",
+      "sha256": "sha256:eeda66242483ddf58fbc4c200ded94337b380d477b045e19234792d1dba891eb",
+      "size": 24400
+    },
+    {
+      "binary": false,
+      "path": "tests/test_considerations.py",
+      "sha256": "sha256:cd388f1328b435ec0826fad888d41af0a2f92dbbe1580b791cb57481795aec52",
+      "size": 8719
+    }
+  ],
+  "output_digest": "sha256:09daa504ac3864123a4c8dd3eae17e1bbf9a1f247d5a5560613928d7d3015066",
+  "project": "web-standards-review",
+  "required_tests": [
+    "boundary-audit",
+    "resource-integrity",
+    "portable-workflow"
+  ],
+  "rights_manifest_reference": "manifests/write-considerations.publication.json#maintainer_files",
+  "schema_version": "projection-provenance/v1",
+  "skill_id": "write-considerations",
+  "source_commit": "a08e6d92853c31b3193118a709d9f6c86f8f5082",
+  "source_repository": "simoneonofri/write-considerations",
+  "tool_version": "reviewctl/0.2.0"
+}

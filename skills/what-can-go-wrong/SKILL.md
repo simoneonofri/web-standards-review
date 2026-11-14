@@ -180,6 +180,38 @@ question. Do not describe the result as full coverage.
 Use `comparison` when several methods must be evaluated. Keep each method's
 trace, then reconcile to one authoritative threat table.
 
+## Mandatory Miner Knowledge and Threat Knowledge, including offline
+
+For a full versioned Web specification threat model, use **both** providers:
+Miner Knowledge (observed/missing normative control patterns and prior review
+questions) and Threat Knowledge (STRIDE, RFCs, LINDDUN, harms, rights and
+stakeholders). Apply and reconcile candidates in three distinct phases:
+(1) explicitly documented threats, (2) implicit bad events reconstructed
+from present, partial or missing safeguards, (3) independent additional
+threat elicitation. Baseline-only work uses the first two.
+
+Use `../../scripts/knowledge_cache_fallback.py` with the accepted model and complete
+source packet. It works with the local `cache/miner-knowledge-v1.zip` and
+`cache/threat-knowledge-v1.zip`, even if W3C Knowledge/Docker is stopped.
+The source packet itself must come from the real specification; do not
+claim it was generated from a cached question. The output selection and
+dispositions are pinned to the exact source/model/catalog hashes.
+
+After actual application, run
+`scripts/reconcile_specification_knowledge.py verify` using the same
+`--cache` and `--threat-cache` ZIPs, frozen baseline and final threats.
+For a complete spec-model handoff, pass `--knowledge-selection`,
+`--knowledge-dispositions`, `--knowledge-source-packet`,
+`--knowledge-cache`, `--knowledge-threat-cache` and
+`--knowledge-baseline-threats` to this skill's
+`scripts/validate_threat_package.py`. A selection-only receipt is pending
+work, not proof of completed analysis.
+
+Keep per-source selection bounded, but disposition **every selected** item.
+Record source controls as source observations, not implementation assertions.
+Remediation and remaining threats belong to the response/writing stages.
+Read `docs/mandatory-specification-knowledge.md` for the evidence contract.
+
 <!-- section:prompt-selection -->
 ## Prompt Selection
 

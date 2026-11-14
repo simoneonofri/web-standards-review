@@ -252,6 +252,39 @@ whether an implementer or reviewer can understand:
 Preserve source references for both sides of the comparison. Missing corpus
 support is a source or coverage gap, not permission to infer coverage.
 
+### 7A. Propose a Considerations authoring job
+
+After comparing the explicit/implicit model, ERTA responses and target
+Security and Privacy Considerations, make **writing or updating the sections**
+an explicit possible outcome of Did We Do A Good Enough Job? This is a D2D
+recommendation/job, not a prerequisite for running the quality assessment.
+
+When a substantive threat, mitigation, enforcing actor or residual exposure
+is not sufficiently explained to the specification's readers, recommend
+`write-considerations`. The authoring skill must then
+**write the proposed sections**, reusing existing accurate text and preparing
+a minimal patch when appropriate. Preserve source/threat/response IDs in the
+sidecar ledger, not in the final prose.
+
+Run the shared job-proposal helper with the current model, source packet,
+threat and response packages:
+
+```sh
+python3 skills/did-we-do-a-good-enough-job/scripts/propose_considerations_authoring.py \
+  --kind d2d --model /run/model.json \
+  --source-packet /run/source-corpus/complete-primary-v1.json \
+  --threats /run/threats.json --responses /run/responses.json \
+  --output /run/considerations-authoring-proposal.json
+```
+
+It records source identity and whether existing Security and Privacy text
+should be extended or preserved, then proposes a job payload for the writer.
+The current D2D gate result remains independent: a merely recommended
+considerations update is **not** a new blocking approval stage. If the
+current user request already includes writing the considerations, dispatch
+the writer in this run; otherwise include the concrete proposal in D2D
+next actions.
+
 ### 8. Judge stage-appropriate sufficiency
 
 Use these semantic judgments for specification work:
@@ -378,6 +411,16 @@ Write large sidecar artifacts when useful:
 - `good-enough-delta.json`;
 - `good-enough-delta.csv`;
 - `independent-review-gate.json`.
+
+## Offline knowledge execution evidence
+
+A completed specification threat model may use the bundled Miner Knowledge
+and Threat Knowledge ZIPs when W3C Knowledge is down. Require the **actual**
+dispositions of the selected source-linked checks to support completeness,
+not the mere existence of cache-hit records. Unavailable providers or
+unfinished selected prompts remain distinct from final findings. Suggest
+writing updated Considerations where the reviewed threats and remediation
+are missing from the specification; that suggestion does not block writing.
 
 <!-- section:gate-separation -->
 ## Gate Separation

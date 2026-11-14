@@ -50,6 +50,11 @@
       "rights_status": "maintainer-owned",
       "source_class": "original"
     },
+    "scripts/propose_considerations_authoring.py": {
+      "include_decision": "include",
+      "rights_status": "maintainer-owned",
+      "source_class": "original"
+    },
     "tests/fixtures/invalid-gate-input.json": {
       "include_decision": "include",
       "rights_status": "synthetic-approved",

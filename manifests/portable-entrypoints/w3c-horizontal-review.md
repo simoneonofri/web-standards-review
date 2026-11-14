@@ -20,6 +20,17 @@ Run this skill's helper commands from the physical installed skill directory, us
 
 Extract controls/properties into the checklist; route security/privacy/harms/stakeholder repertoires into a separate threat-model queue. Preserve source identity, authority, extractor, applicability conditions, limitations and provenance through deduplication. Vulnerability intelligence is represented for every run, but online refresh depends on target relevance and available evidence.
 
+## Offline knowledge sources
+
+When W3C Knowledge is unavailable, reuse a complete local or directly
+fetched specification packet and the two bundled ZIP caches through
+`../../scripts/knowledge_cache_fallback.py`. Preserve separate domain coverage
+and candidate dispositions. This is a source-linked prompt selection,
+not an executed horizontal review; specialist work and unsupported
+domains must stay explicit. Charter reviews continue to use charter
+questions and prior-charter evidence rather than forcing a technical
+WebIDL threat model.
+
 <!-- section:three-flows -->
 For a full specification review:
 

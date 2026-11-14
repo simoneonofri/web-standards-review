@@ -122,3 +122,35 @@ The suites cover installer and update refusal cases, private workspace and nativ
 [W3C Software and Document License (2023)](LICENSE.md). SPDX: `W3C-20150513` (including the 2023 revision).
 
 Maintainer: [Simone Onofri](https://github.com/simoneonofri). Existing third-party notices and dependency licenses remain applicable.
+
+
+## Offline knowledge caches and Considerations authoring (v5)
+
+This release includes 20 skills, including
+[`write-considerations`](skills/write-considerations/SKILL.md), and two
+small, source-linked, offline knowledge indexes:
+
+- `cache/miner-knowledge-v1.zip`: 287 reusable miner questions/patterns;
+- `cache/threat-knowledge-v1.zip`: 169 original routing prompts for
+  STRIDE, RFC 3552/6973/9620, LINDDUN, harms and stakeholder questions.
+
+When W3C Knowledge/Docker is unavailable, the skills can consume a
+**pinned specification packet** alongside the caches:
+
+```sh
+python3 scripts/knowledge_cache_fallback.py \
+  --source-packet /run/source-corpus/complete-primary-v1.json \
+  --model /run/model.json --domains security,privacy,human-rights,harms \
+  --output-dir /run/offline-knowledge
+```
+
+The resulting selection is still subject to actual target-specific
+disposition. No W3C Knowledge API, cloud account or private third-party
+corpus is needed for cache browsing. The standalone writer can create
+Security and Privacy Considerations using the pinned threat/response
+packages and direct source evidence; Did We Do A Good Enough Job? and
+the security/privacy PR review can propose this writing job.
+
+A real Docker-offline Geolocation test used both caches successfully,
+and W3C Knowledge services were restored afterward. See the
+[cache documentation](cache/README.md) for data and coverage limits.

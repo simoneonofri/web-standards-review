@@ -1,6 +1,6 @@
 {
   "exclude_paths": [],
-  "expected_output_digest": "sha256:08e8f3aacc56eec320f64a9fd15bbb5be3a8734c1b27e725fbbcad5dbbcadbf7",
+  "expected_output_digest": "sha256:24b3d8b6b5c265c1595ec71146b8d9844a9f07d705029a70c5895aefe08a3e6f",
   "expected_public_contracts": [],
   "human_review_decision": "publication_review_required",
   "include_paths": [
@@ -10,16 +10,7 @@
         "rights_status": "maintainer-owned",
         "source_class": "original"
       },
-      "source": "SKILL.md",
-      "target": "SKILL.md"
-    },
-    {
-      "rights": {
-        "include_decision": "include",
-        "rights_status": "maintainer-owned",
-        "source_class": "original"
-      },
-      "source": "agents/openai.yaml",
+      "source": "skills/w3c-issue-pr-review/agents/openai.yaml",
       "target": "agents/openai.yaml"
     },
     {
@@ -28,7 +19,7 @@
         "rights_status": "maintainer-owned",
         "source_class": "original"
       },
-      "source": "references/response-patterns.md",
+      "source": "skills/w3c-issue-pr-review/references/response-patterns.md",
       "target": "references/response-patterns.md"
     },
     {
@@ -37,14 +28,23 @@
         "rights_status": "maintainer-owned",
         "source_class": "original"
       },
-      "source": "references/marketplace-integration.md",
+      "source": "skills/w3c-issue-pr-review/references/marketplace-integration.md",
       "target": "references/marketplace-integration.md"
     }
   ],
-  "maintainer_files": [],
-  "normalizations": [
-    {"path": "references/marketplace-integration.md", "find": "| One specification security/privacy concern | `spec-review` in its focused reply mode | Evidence, bounded consequence, caveats, and proposed specification action |\n| Charter/recharter thread | `strategy-charter-miner` for relevant precedents, then `w3c-horizontal-review` for the requested current-target analysis | Current-candidate evidence, relevant per-domain status, and questions that remain open |\n| Implementation or test offered as proof | `w3c-spec-code`; reconcile through `spec-review` or `w3c-horizontal-review` when a specification finding is proposed | Pinned mapping, observed implementation behavior, and the separate specification conclusion |\n| Full specification security/privacy review requested through an issue | `w3c-horizontal-review` for the full workflow; `spec-review` for its finding contracts | Review coverage, atomic findings, unresolved evidence gaps, and the thread-specific disposition |\n| Request to close an existing review | Use this skill's resolution checks; reuse a specialist only for unresolved technical evidence | Required outcomes versus landed changes and a bounded closure recommendation |\n\n", "replace": "| One specification security/privacy concern | `spec-review` in its focused reply mode | Evidence, bounded consequence, caveats, and proposed specification action |\n| Charter/recharter thread | `strategy-charter-miner` for relevant precedents, then `w3c-horizontal-review` for the requested current-target analysis | Current-candidate evidence, relevant per-domain status, and questions that remain open |\n| Implementation or test offered as proof | `w3c-spec-code`; reconcile through `spec-review` or `w3c-horizontal-review` when a specification finding is proposed | Pinned mapping, observed implementation behavior, and the separate specification conclusion |\n| Threat/privacy prompts for an accepted target model | `threat-knowledge`; supply the selected model elements, assumptions and question | Model-attached prompt candidates and source limits; verify any resulting claim against target evidence before drafting the thread response |\n| Full specification security/privacy review requested through an issue | `w3c-horizontal-review` for the full workflow; `spec-review` for its finding contracts | Review coverage, atomic findings, unresolved evidence gaps, and the thread-specific disposition |\n| Request to close an existing review | Use this skill's resolution checks; reuse a specialist only for unresolved technical evidence | Required outcomes versus landed changes and a bounded closure recommendation |\n\n", "expected_count": 1}
+  "maintainer_files": [
+    {
+      "source": "portable-entrypoints/w3c-issue-pr-review.md",
+      "target": "SKILL.md",
+      "rights": {
+        "source_class": "original",
+        "rights_status": "maintainer-owned",
+        "include_decision": "include"
+      },
+      "sha256": "sha256:27c651e258cfb2610b35cbbd89936435f780d5ac81b83f919bd8b130b6214859"
+    }
   ],
+  "normalizations": [],
   "private_dependency_replacements": [],
   "project": "web-standards-review",
   "required_tests": [
@@ -57,9 +57,9 @@
   "schema_version": "publication-manifest/v1",
   "skill_id": "w3c-issue-pr-review",
   "source": {
-    "commit": "b5510892575b7cc5e2cf251c38c340cb9ec052f5",
-    "repository": "w3c-issue-pr-review-portable",
-    "repository_path": "portable-source"
+    "repository": "simoneonofri/web-standards-review",
+    "repository_path": "web-standards-review-public-release-20261114",
+    "commit": "c17e1366094475b5f06f89cc482b63c9020a0ae5"
   },
   "target_path": "skills/w3c-issue-pr-review"
 }
