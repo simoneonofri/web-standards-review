@@ -4,9 +4,62 @@ Web Standards Review is a public-beta marketplace for portable standards review 
 
 Generated outputs are not W3C, Working Group, Interest Group, TAG, or horizontal-review conclusions unless adopted through the applicable process. Technical validation is not publication approval, and generated outputs remain subject to human review.
 
+## Workflow architecture
+
+The entrypoint selects the review scope. Skills share source-pinned artifacts
+(model, DFD, threats, ERTA responses, and evidence) rather than treating a
+catalog question as a finding.
+
+```mermaid
+flowchart TB
+    TARGET["Versioned specification, charter, issue or PR"]
+    TARGET --> HR["w3c-horizontal-review"]
+    TARGET --> SR["spec-review"]
+    TARGET --> PR["w3c-issue-pr-review"]
+
+    HR --> SOURCE["Pinned specification / source packet"]
+    SR --> SOURCE
+    PR --> SOURCE
+    SERVICE["W3C Knowledge (optional)"] -. "retrieval" .-> SOURCE
+
+    SOURCE --> MODEL["what-are-we-building"]
+    MODEL --> DFD["dfd-mermaid"]
+    DFD --> WRONG["what-can-go-wrong"]
+    WRONG --> ERTA["what-are-we-going-to-do-about-it"]
+    ERTA --> GOOD["did-we-do-a-good-enough-job"]
+    GOOD --> WRITE["write-considerations"]
+
+    MINER["Miner Knowledge ZIP · 287 patterns"] -. "source-linked checks" .-> WRONG
+    THREAT["Threat Knowledge ZIP · 169 prompts"] -. "threat lenses" .-> WRONG
+    PR -. "focused Security / Privacy delta" .-> WRITE
+
+    WRITE --> OUTPUT["Security & Privacy Considerations"]
+    WRITE --> LEDGER["Remediation, ownership and remaining-threat trace"]
+
+    classDef entry fill:#005A9C,color:#fff,stroke:#004A80;
+    classDef core fill:#EAF3FA,color:#122B40,stroke:#005A9C;
+    classDef cache fill:#DDF1F0,color:#073B3A,stroke:#18817C;
+    class HR,SR,PR entry;
+    class MODEL,DFD,WRONG,ERTA,GOOD,WRITE core;
+    class MINER,THREAT cache;
+```
+
+The five modeling steps keep their original order. The authoring extension
+[`write-considerations`](skills/write-considerations/SKILL.md)
+follows the adequacy comparison—or can be proposed for a focused
+Security/Privacy PR—using the chain **threat → ERTA response → remediation
+location → responsible actor → remaining threat**. An issue or PR need not
+run the full model to request a bounded editorial update.
+
+When the optional W3C Knowledge service is unavailable, the skills use an
+existing versioned source packet or retrieve the public specification, plus
+the two packaged [offline knowledge caches](cache/README.md). The cache
+supplies questions and patterns for analysis, not the source specification
+or completed findings.
+
 ## Skill inventory
 
-The private beta contains 19 portable skills, including issue/PR review, the five-stage threat-modeling flow, specification and horizontal-review orchestration, and nine extraction or implementation layers. The optional local W3C Knowledge service supports lexical, vector and hybrid retrieval with a CPU model. Personal libraries, model weights and database contents are not included.
+The public beta contains **20 portable skills**, including issue/PR review, the five-stage threat-modeling flow, specification and horizontal-review orchestration, the `write-considerations` authoring extension, and the specialized extraction and implementation layers. The optional local W3C Knowledge service supports lexical, vector and hybrid retrieval with a CPU model. Personal libraries, model weights and database contents are not included.
 
 Choose an entrypoint for the task:
 
@@ -41,7 +94,7 @@ Use `w3c-horizontal-review` for the complete specification or charter workflow. 
 
 `bundles/threat-modeling-flow-v1.json` pins the ordered flow, contracts, component sources, host projections, fixtures, and required tests. `catalog.yaml` is the install authority; an unlisted skill is not installable.
 
-Catalog and bundle version 4 add `w3c-issue-pr-review` as a nineteenth skill and a thread entrypoint. The five modeling stages keep their existing order. See [bundle structure](bundles/README.md).
+Catalog **version 5** adds `write-considerations` as the twentieth skill, along with the Miner and Threat Knowledge offline caches and their source-linked reconciliation. The five modeling stages keep their existing order. See [bundle structure](bundles/README.md).
 
 ## Beta interface
 
